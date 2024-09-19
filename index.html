@@ -1,0 +1,955 @@
+<!-- path C:\Users\Owner\VS_Code\HTML_projects\31_DelphineVincent_website_2024-09-04\index.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delphine Vincent</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg+xml" href="resources/images/DV_favicons.ico/favicon.svg">
+        <link rel="icon" type="image/png" href="resources/images/DV_favicons.ico/favicon.png">
+        <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    </head>
+
+    <body>
+        <div id="Home" class="navigation" class="container">
+            <nav class="navbar_content">
+                <button class="navbar_toggle" onclick="toggleNav()">☰</button>
+                <div class="navbar_index">
+                    <a href="#Home"><img alt="Delphine Vincent initials brand logo" loading="lazy" width="50" height="20" decoding="async" src="resources/images/DV_brand/brand_DV_new_favicon.png">Home</a>
+                    <a href="#Biography">Biography</a>
+                    <a href="/#Skills">Skills</a>
+                    <a href="/#Portofolio">Portofolio</a>
+                    <a href="/#Certificates">Certificates-Diploma</a>
+                    <a href="resources/files/Delphine-Vincent_resume_2024-09-04.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
+            </nav>
+        </div>
+        <div><br></div>
+
+        <script>
+            // Navbar toggle button
+            function toggleNav() {
+                document.querySelector('.navbar_content').classList.toggle('active');
+            }
+
+            // Navbar link active state
+            document.querySelectorAll('.navbar_index a').forEach(link => {
+                link.addEventListener('click', function () {
+                    document.querySelectorAll('.navbar_index a').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        </script>
+
+        <header class="container">
+            <section class="badge_container">
+                <div class="logo_left">
+                    <img alt="Delphine Vincent full brand logo" role="presentation" loading="lazy" width=100% height=auto src="resources/images/DV_brand/brand_delphinevincent_new.png">
+                </div>
+                <div class="badge_bottom_section">
+                    <img class="photo-DV-portrait" alt="portrait photo of Delphine Vincent" loading="lazy" width=60% height=auto src="resources/images/DV_brand/photo_delphinevincent.jpg">
+                    <section class="badge_links">
+                        <h2>Links</h2><br>
+                        <div class="badge_sociallinks">
+                            <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
+                                <img src="resources/images/logo_icons/logo_LinkedIn_initials.png" alt="LinkedIn Icon" width="20" height="20">
+                            </a>
+                            <a href="https://scholar.google.com.au/citations?hl=en&tzom=-600&user=ry5O9ukAAAAJ" target="_blank" rel="noreferrer">Google Scholar
+                                <img src="resources/images/logo_icons/logo_Google_Scholar.png" alt="Google Scholar Icon" width="20" height="20">
+                            </a>
+                            <a href="https://orcid.org/0000-0002-9083-015X" target="_blank" rel="noreferrer">ORCID
+                                <img src="resources/images/logo_icons/logo_orcid.png" alt="ORCID Icon" width="20" height="20">
+                            </a>
+                            <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
+                                <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" width="20" height="20">
+                            </a>
+                            <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">
+                                Tableau
+                                <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" width="20" height="20">
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section id="Biography" class="infobox_container">
+                <h2>Biography</h2>
+
+                <!-- Biography Section -->
+                <div class="infobox_tab">
+                    <button class="infobox_tab_button" onclick="showBioTab('lifescience')">
+                        <h4>Research Scientist (1998-2023)</h4>
+                    </button>
+                    <button class="infobox_tab_button" onclick="showBioTab('datascience')">
+                        <h4>Data Scientist (2023-now)</h4>
+                    </button>
+                </div>
+                
+                <div id="lifescience" class="infobox_tab_scrollable">
+                    <h5>Research Scientist (1998-2023)</h5> <br>
+                    <p>I have accrued 25 years of experience in life science research and data analysis.</p><br>
+                    <ul>
+                        <li><strong>Ph.D. in Plant Sciences</strong> with Highest Distinction in 2003.</li><br>
+                        <li><strong>Post-doctorates</strong> in the USA, France, and Australia from 2003-2013.</li><br>
+                        <li><strong>Senior Research Scientist</strong> for the Victorian State Government from 2013-2023.</li><br>
+                    </ul>
+                    <br>
+                    <p><strong>I have extensive statistical, analytical, and visualization skills, as well as storytelling experience.</strong></p><br>
+                    <ul>
+                        <li>Utilization of Excel, SQL, R, and Python for <em>handling, transforming and cleaning qualitative and quantitative data</em> (sort, merge, filter, append, combine, transpose, remove duplicate, fill in missing values, identify outliers, standardise, normalise, etc..).</li><br>
+                        <li>Expertise in <em>descriptive</em> (means, SDs, quartiles, medians, box plots, histograms, etc..), <em>univariate</em> (LM, regression, AOV) and <em>multivariate</em> (PCA, SOM, HCA, k-means clustering, heat maps) <em>statistical analyses</em> using various programs (Python, R, Genedata Expressionist, SAS, JMP, Statistica).</li><br>
+                        <li><em>Data visualization</em> skills using diverse tools (Python, R, Power BI, Tableau, Excel) and methods (Gantt, histogram, scatterplot, box plot, biplots, line charts, treemap, pie chart, violin plot, heat maps, volcano plot, word clouds, Circos plot, etc…) for effective presentation.</li><br>
+                        <li>Expertise in <em>data interpretation</em> and <em>storytelling</em> as attested by all my peer-reviewed published scientific articles in which I summarise the process in a simplified schematic diagram, present all results with appropriate charts to facilitate interpretation. </li><br>
+                        <li>Codes and data freely avalaible from <em>public repositories</em>: GitHub, Public Tableau, MassIVE, ProteomeXchange and Apollo Jbrowse.</li><br>
+                    </ul>
+                    <br>
+                    <p>I been a <strong>reviewer</strong> and an <strong>editor</strong> for multiple scientific journals for the past 20 years.</p><br>
+                </div>
+
+                <div id="datascience" class="infobox_tab_scrollable">
+                    <h5>Data Scientist (2023-now)</h5><br>
+                    <p>So far, my whole career has focused on biology. <br>
+                    <br><strong>I now wish to transition towards data analyst/data scientist roles.</strong> <br>
+                    <br>To this end, I have completed the CodeCademy Career Path course <em>“Data Scientist - Analytics Specialist”</em>, covering SQL, Python 3, Tableau, Excel and GitHub. <br>
+                    <br> I could apply my newly aquired Python skills and perform exploratory data analysis on the largest proteogenomics dataset to date and refine wheat genome annotation (DOI 10.3390/ijms25168614, more details in Big Data tab). <br>
+                    <img src="resources/images/logo_icons/biographyicons.png" alt="Python generated charts" role="presentation" width="80%" height="auto"> <br>
+                    <br>I have also completed the CodeCademy Skill Path <em>“Build a website with HTML, CSS and GitHub pages”</em>. <br> 
+                    Using HTML, JS and CSS, I was able to create this website.</p>
+                    <img src="resources/images/logo_icons/websiteicons.png" alt="website screenshot" role="presentation" width="50%" height="auto"> <br>
+                </div>
+            </section>
+
+            <script>
+                // Biography tab button active state
+                function showBioTab(tabName) {
+                    // Hide all biography content sections
+                    document.querySelectorAll('.infobox_tab_scrollable').forEach(tab => {
+                        tab.style.display = 'none'; // Hide all tabs
+                    });
+            
+                    // Remove 'active' class from all buttons
+                    document.querySelectorAll('.infobox_tab_button').forEach(button => {
+                        button.classList.remove('active'); // Remove active state from all buttons
+                    });
+            
+                    // Show the selected tab content
+                    document.getElementById(tabName).style.display = 'block';
+            
+                    // Add 'active' class to the clicked button
+                    event.target.classList.add('active');
+                }
+            
+                // Function to handle default active tab on page load
+                window.onload = function() {
+                    document.querySelector('.infobox_tab_button').click(); // Simulate a click to set the first tab as active
+                };
+            </script>
+
+        </header>
+
+        <section id="Skills" class="skillbox_container">
+            <h2>Skills</h2>
+            <!-- Skills Section -->
+            <div class="skills_tab">
+                <button class="skills_tab_button" onclick="showSkillTab('computer', this)">
+                    <h4>Computer OS</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('programming', this)">
+                    <h4>Programming</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('statistics', this)">
+                    <h4>Statistical Analyses</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('bioinformatics', this)">
+                    <h4>Bioinformatics and Data Mining</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('visualisation', this)">
+                    <h4>Data Visualisation</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('storytelling', this)">
+                    <h4>Data interpretation and Storytelling</h4>
+                </button>
+                <button class="skills_tab_button" onclick="showSkillTab('editor', this)">
+                    <h4>Editor and Reviewer</h4>
+                </button>
+            </div>
+
+            <div id="computer" class="skills_tab_scrollable" style="display:none;">
+                <h5>Computer OS</h5> <br>
+                <p>I am proficient with <strong>MS Windows Office 365</strong> (Word, Excel, Powerpoint, Sharepoint, Teams, OneNote, Outlook, Power BI etc…) on PC.
+                    <br>
+                </p>
+                <img class="office365-icons" alt="office 365 icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/Office365icons.png">
+                <p>I am familiar with <strong>Apple Mac OS system</strong>.</p>
+            </div>
+
+            <div id="programming" class="skills_tab_scrollable" style="display:none;">
+                <h5>Programming languages and code editors</h5> <br>
+                <p>I know the following <strong>coding languages</strong> and edit them using the <strong>code editors/IDE</strong> listed below:</p> <br>
+                <img class="programming-icons" alt="code program icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/programmingicons.png">
+            </div>
+
+            <div id="statistics" class="skills_tab_scrollable" style="display:none;">                
+                <h5>Statistical Analyses</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>I can apply the following <strong>statistical analyses</strong> using various software (Genedata Expressionist Analyst, SAS, R, JMP, Statistica, Python):</p>
+                        <ul><strong>descriptive</strong><br>
+                            <li>means</li>
+                            <li>standard deviations and errors</li>
+                            <li>variances</li>
+                            <li>quartiles and quantiles</li>
+                            <li>medians</li>
+                            <li>box plots</li>
+                            <li>histograms, etc...</li><br>                    
+                        </ul>
+                        <ul><strong>univariate</strong><br>
+                            <li>linear models</li>
+                            <li>analysis of variance (ANOVA)</li>
+                            <li>correlation</li>
+                            <li>regression, etc...</li><br>
+                        </ul>
+                        <ul><strong>multivariate</strong><br>
+                            <li>principal component analysis (PCA)</li>
+                            <li>partial least square (PLS)</li>
+                            <li>k-means clustering</li>
+                            <li>self-organising map (SOM)</li>
+                            <li>hierarchical clustering analysis(HCA)</li> <br>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img class="stats-icons" alt="charts icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/statsicons.png">
+                    </div>
+                </div>
+            </div>
+            <div id="bioinformatics" class="skills_tab_scrollable" style="display:none;">
+                <h5>Bioinformatics and Data Mining</h5> <br>
+                <p>Below are listed some of the <strong>bioinformatics</strong> and <strong>data mining</strong> tools I have used:</p>
+                <img class="bioinformatics-icons" alt="bioinformatics tools icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/bioinformaticsicons.png">
+            </div>
+            <div id="visualisation" class="skills_tab_scrollable" style="display:none;">
+                <h5>Data Visualisation</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>Throughout my career, I've created many <strong>visualisations</strong> to describe categorical and quantitative data:</p>
+                        <ul><strong>distribution</strong><br>
+                            <li>one variable:</li>
+                                <ul>
+                                    <li>histogram</li>
+                                    <li>box and wisker plot</li>
+                                    <li>density plot</li>
+                                    <li>violin plot</li>
+                                </ul>
+                            <li>two variables:</li>
+                                <ul>
+                                    <li>scatterplot</li>
+                                    <li>stacked histogram</li>
+                                    <li>pyramid plot</li>
+                                </ul> 
+                            <li>text data:</li>
+                                <ul>
+                                    <li>wordcloud</li>
+                                </ul><br>                    
+                        </ul>
+                        <ul><strong>relationship</strong><br>
+                            <li>two variables:</li>
+                                <ul>
+                                    <li>scatterplot</li>
+                                    <li>heatmap</li>
+                                    <li>volcano plot</li>
+                                </ul> 
+                            <li>three or more variables:</li>
+                                <ul>
+                                    <li>scatter bubble plot</li>
+                                    <li>chord diagram</li>
+                                    <li>network diagram</li>
+                                    <li>pair grid plot</li> <br>
+                                </ul> 
+                        </ul>
+                        <ul><strong>comparison</strong><br>
+                            <li>static</li>
+                                <ul>
+                                    <li>pie chart</li>
+                                    <li>donut chart</li>
+                                    <li>waterfall chart</li>
+                                    <li>stacked bar chart</li>
+                                    <li>tree map</li>
+                                    <li>Venn diagram</li>
+                                </ul>
+                            <li>change over time</li>
+                            <ul>
+                                <li>stacked bar chart</li>
+                                <li>stacked area chart</li>
+                                <li>100% stacked bar/area chart</li><br>
+                            </ul>
+                        </ul>
+                        <ul><strong>composition</strong><br>
+                            <li>among items</li>
+                                <ul>
+                                    <li>few categories</li>
+                                        <ul>
+                                            <li>vertical bar chart</li>
+                                            <li>horizontal bar chart</li>
+                                        </ul>
+                                    <li>many categories</li>
+                                    <ul>
+                                        <li>pair plots</li>
+                                        <li>heatmap</li>
+                                    </ul>
+                                </ul>
+                            <li>over time</li>
+                            <ul>
+                                <li>cyclical data</li>
+                                    <ul>
+                                        <li>circular area chart</li>
+                                    </ul>
+                                <li>non cyclical data</li>
+                                <ul>
+                                    <li>line chart</li>
+                                    <li>Gantt chart</li>
+                                </ul>
+                                <li>few categories</li>
+                                    <ul>
+                                        <li>vertical bar chart</li>
+                                    </ul>
+                                <li>many categories</li>
+                                    <ul>
+                                        <li></li>
+                                        <li>line chart</li><br>
+                                    </ul>
+                            </ul>
+                        </ul>
+                        <ul><strong>geographic</strong><br>
+                            <li>map using latitude and longitude</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img class="visualisation-icons" alt="data visualisation icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/visualisationicons.png">
+                    </div>
+                </div>
+            </div>
+            <div id="storytelling" class="skills_tab_scrollable" style="display:none;">
+                <h5>Data Representation, Interpretation, and Storytelling</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>
+                            Being a published author having co-authored >30 peer-reviewed scientific article, I've amply demonstrated my data interpretation, dashboards and storytelling skills. <br> 
+                            <br>
+                            I've presented my results at many conferences and stakeholders.
+                        </p><br>
+                        <ul>
+                            <li><strong>Data Representation and Interpretation</strong></li><br>
+                                <ul>
+                                    <li>Analyze large datasets to identify trends, patterns and outliers</li>
+                                    <li>Apply statistical methods to derive meaningful insights</li>
+                                    <li>Utilize tools like Tableau, Power BI, Python, R or Excel to visualize data and generate relevant charts</li>
+                                    <li>Design interactive and user-friendly dashboards</li>
+                                    <li>Translate raw data into actionable business strategies</li><br>    
+                                </ul>
+                            <li><strong>Storytelling</strong></li><br>
+                                <ul>
+                                    <li>Craft compelling narratives using data insights</li>
+                                    <li>Present findings to both technical and non-technical audiences</li>
+                                    <li>Use visuals and data to support strategic decision-making</li><br>
+                                </ul> <br>
+                            <li><strong>Selection of presentations</strong></li><br>
+                                <ul>
+                                    <li>Scientific conference talks: <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-12-02.pdf" target="_blank" rel="noreferrer">
+                                            >> Finding the LMA needle in the wheat haystack proteome
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-02-04.pdf" target="_blank" rel="noreferrer">
+                                            >> Mining the wheat grain proteome
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2019-12-13.pdf" target="_blank" rel="noreferrer">
+                                            >> Proteomics tools for medicinal cannabis
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2020-05-01.pdf" target="_blank" rel="noreferrer">
+                                            >> The power of 3 for shotgun proteomics: proteases, databases and search engines
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2018-03-10.pdf" target="_blank" rel="noreferrer">
+                                            >> Milk Top Down Proteomics
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2013-11-11.pdf" target="_blank" rel="noreferrer">
+                                            >> MALDI Biotyper: an alternative to identify microorganisms
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2017-11-10.pdf" target="_blank" rel="noreferrer">
+                                            >> Proteomics rocks my world
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2011-03-18.pdf" target="_blank" rel="noreferrer">
+                                            >> Stagonospora nodorum effector mode-of-action in wheat
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2009-11-25.pdf" target="_blank" rel="noreferrer">
+                                            >> Fungal secretomes: not so secret anymore!
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2007-03-27.pdf" target="_blank" rel="noreferrer">
+                                            >> Apprendre a faire du vin aux USA (in French)
+                                        </a> <br>
+                                    </li><br>
+
+                                    <li>Scientific conference posters: <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2023-01-20.pdf" target="_blank" rel="noreferrer">
+                                            >> Finding the LMA needle in the wheat haystack proteome
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-10-10.pdf" target="_blank" rel="noreferrer">
+                                            >> Top-down, middle-down and bottom-up proteomics analysis of medicinal cannabis
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-02-05.pdf" target="_blank" rel="noreferrer">
+                                            >> Optimisation of protein extraction from medicinal cannabis mature buds for shotgun bottom-up proteomics
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2018-02-05.pdf" target="_blank" rel="noreferrer">
+                                            >> Top-down proteomics investigation of age gelation mechanisms in genetically selected milks
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-02-05.pdf" target="_blank" rel="noreferrer">
+                                            >> Analysis of milk intact proteins using LC-MS
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-07-20.pdf" target="_blank" rel="noreferrer">
+                                            >> Bottom-up and tyop-down analysis of milk proteins unsing LC-MS/MS
+                                        </a> <br>  
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2011-03-20.pdf" target="_blank" rel="noreferrer">
+                                            >> A proteomics approach to dissect SnToxA effector mode-of-action
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2009-07-20.pdf" target="_blank" rel="noreferrer">
+                                            >> The secretome of the free-living mycelium from the ectomycorrhizal basidiomycete Laccaria bicolor
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-03-14.pdf" target="_blank" rel="noreferrer">
+                                            >> High Resolution Analysis of Fungal Secretomes
+                                        </a> <br>
+                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-01-07.pdf" target="_blank" rel="noreferrer">
+                                            >> A proteomic study of water deficit-responsive proteins in poplar roots
+                                        </a> <br>
+                                        <a href="resources/presentations/" target="_blank" rel="noreferrer">
+                                            
+                                        </a> <br>                                       
+                                    </li><br>
+
+
+                                    <li>Scientific lectures: <br>
+                                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2019-05-22.pdf" target="_blank" rel="noreferrer">
+                                            >> Analysis of peptides and proteins using MS-based proteomics
+                                        </a> <br>
+                                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2008-10-06.pdf" target="_blank" rel="noreferrer">
+                                            >> Proteomique quantitative: electrophorese bidimensionelle (in French)
+                                        </a> <br>
+                                    </li><br>
+                                    <li>Tableau Public Dashboards: <br>
+                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications" target="_blank" rel="noreferrer">
+                                            >> Analysis of the metadata from 120,000 scientific articles
+                                        </a> <br>
+                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Airplane_Wildlife_Strikes_dlf2024/DashboardSpecies" target="_blank" rel="noreferrer">
+                                            >> Analysis of collisions between wildlife and airplanes in the US
+                                        </a> <br>
+                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Tree_Census_NYC_2015_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                                            >> Analysis of tree census data and incomes from New York area
+                                        </a> <br>
+                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Volcanic-eruptions_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                                            >> Analysis of worldwide volcanic eruptions
+                                        </a> <br>
+                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Rotten-tomatoes_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                                            >> Analysis of Rotten Tomatoes reviews
+                                        </a> <br>
+                                    </li> <br>
+
+                                    <li>Power BI Dashboards: <br>
+                                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_safflower-study_2023-12-07.pdf" target="_blank" rel="noreferrer">
+                                            >> Dashboards to support safflower study data analysis (DOI: 10.3390/biom14040414)
+                                        </a> <br>
+                                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_wheat-study_2022-11-18.pdf" target="_blank" rel="noreferrer">
+                                            >> Dashboards to support wheat study data analysis (DOI: 10.1093/gigascience/giad084)
+                                        </a> <br>
+                                    </li>
+                                </ul><br>
+                        </ul>
+                    </div>                
+                    <div class="image-content">
+                        <img class="storytelling-icons" alt="dashboards icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/storytellingicons.png">
+                    </div>
+                </div>
+            </div>
+            <div id="editor" class="skills_tab_scrollable" style="display:none;">
+                <h5>Editor and Reviewer</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                    <p>I have created and edited several Special Issues and Research Topics:</p>
+                    <ul>
+                        <li>In <strong>Frontiers and Plant Science</strong> journal:<br>
+                            <a href="http://journal.frontiersin.org/researchtopic/3337/how-can-secretomics-help-unravel-the-secrets-of-plant-microbe-interactions" target="_blank" rel="noreferrer">
+                                How can secretomics help unravel the secrets of plant-microbe interactions?
+                            </a> <br>
+                            <a href="https://www.frontiersin.org/research-topics/8846/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions" target="_blank" rel="noreferrer">
+                                Secretomics: More Secrets to Unravel on Plant-Fungus Interactions, Volume I
+                            </a> <br>
+                            <a href="https://www.frontiersin.org/research-topics/26463/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions-volume-ii" target="_blank" rel="noreferrer">
+                                Secretomics: More Secrets to Unravel on Plant-Fungus Interactions, Volume II
+                            </a> 
+                        </li> <br>
+                        <li>In <strong>Proteomes</strong> journal: <br>
+                            <a href="https://www.mdpi.com/journal/proteomes/special_issues/proteomics_technologies" target="_blank" rel="noreferrer">
+                                Proteomics: Technologies and Their Applications
+                            </a>
+                        </li> <br>
+                        <li>In <strong>Biomolecules</strong> journal: <br>
+                            <a href="https://www.mdpi.com/journal/biomolecules/special_issues/plant_adaptation_secretomics" target="_blank" rel="noreferrer">
+                                Plant Adaptation to Their Biotic and Abiotic Environment Through the Lens of Secretomics
+                            </a> <br>
+                            <a href="https://www.mdpi.com/journal/biomolecules/special_issues/67L276P516" target="_blank" rel="noreferrer">
+                                Sowing the seed to ensure the future of plant proteomics: Commemorative Issue in Honor of Dr. Dominique Job (1947-2022)
+                            </a> <br>
+                        </li> <br>
+                        <li>In <strong>International Journal of Molecular Sciences</strong>: <br>
+                            <a href="https://www.mdpi.com/journal/ijms/special_issues/Mol_Plant_Au" target="_blank" rel="noreferrer">
+                                State-of-the-Art Molecular Plant Sciences in Australia
+                            </a>
+                        </li> <br>
+                    </ul>
+                    <br>
+                    <p>During my life science career, I've been a reviewer for the following scientific journals:</p>
+                    <ul>
+                        <li>since 2006  <em>Proteomics; Electrophoresis</em></li>
+                        <li>since 2008	<em>New Phytologist; Annals of Forest Science</em></li>
+                        <li>since 2009	<em>Journal of Proteome Research; Plant, Cell and Environment</em></li>
+                        <li>since 2011	<em>Biotechnology and Molecular Biology Reviews; Journal of Agricultural and Food Chemistry</em></li>
+                        <li>since 2014	<em>Frontiers in Plant Science</em></li>
+                        <li>since 2015	<em>Animal Production Science; BMC Microbiology; PLoS ONE</em></li>
+                        <li>since 2016	<em>Annals of botany; Talanta</em></li>
+                        <li>since 2017	<em>Journal of Microbiology</em></li>
+                        <li>since 2018	<em>BethamScience; BMC Plant Biology</em></li>
+                        <li>since 2019	<em>Molecules; Proteomes; International Journal of Molecular Sciences</em></li>
+                        <li>since 2020	<em>Biomolecules; Scientific Reports; Pathogens; Food Research International; Plants</em></li>
+                        <li>since 2021	<em>Cells</em></li>
+                        <li>since 2022	<em>Foods</em></li> <br>
+                    </ul>
+                    </div>                
+                    <div class="image-content">
+                        <img class="editor-icons" alt="scientfic journal icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/editoricons.png">
+                    </div>
+                </div>
+            </div>
+
+            <script>            
+                // Function to handle skills tab active state
+                function showSkillTab(tabName, element) {
+                    // Hide all skills tab content
+                    document.querySelectorAll('.skills_tab_scrollable').forEach(tab => {
+                        tab.style.display = 'none'; // Hide all tabs
+                    });
+
+                    // Remove 'active' class from all buttons
+                    document.querySelectorAll('.skills_tab_button').forEach(button => {
+                        button.classList.remove('active');
+                    });
+
+                    // Show the selected tab content
+                    document.getElementById(tabName).style.display = 'block';
+
+                    // Add 'active' class to the clicked button
+                    element.classList.add('active');
+                }
+            </script>
+
+        </section>
+
+        <section id="Portofolio" class="container">
+            <h2>Portofolio</h2>
+            <!-- Portofolio Section -->
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('bigdata', this)">
+                    <h4>Big Data</h4>
+                </button>
+            </div>
+
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('systemsbiology', this)">
+                    <h4>Systems Biology</h4>
+                </button>
+            </div>
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('patents', this)">
+                    <h4>Patents</h4>
+                </button>
+            </div>
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademycareer', this)">
+                    <h4>CodeCademy Career Path - Data Science/Analytics</h4>
+                </button>
+            </div>
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyskill', this)">
+                    <h4>CodeCademy Skill Path - Build a website</h4>
+                </button>
+            </div>
+
+            <div id="bigdata" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Big Data Projects on Wheat</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>
+                            Wheat (Triticum aestivum) is an important crop whose reference genome offers a valuable resource for understanding wheat genetic structure, improving agronomic traits, and developing new cultivars. <br> 
+                            I was tasked to develop a processing and analytical workflow to screen the proteome (all the proteins) of thousands of cultivars. <br>
+                            <br>
+                            I first developped a fast, accurate and reproducible method which I then applied to 4,087 wheat grain samples.
+                            <br>
+                            I produced, managed and analysed close to 8,000 files representing >1.2 Gb of data. <br>
+                            <br>
+                            I employed sophisticated methods of statistical analyses, bioinformatics amd data mining to generate meaningful biological insights. <br>
+                            <br>
+                            Proteins were then mapped onto the wheat genome (version 2) which not only validated genes of high confidence, but also promoted genes of low confidence as well as detect novel genes. <br>
+                            <br>
+                            Links to the scientific articles are provided below.<br>
+                        </p>
+                        <ul>
+                            <li><strong>Optimising the protein extraction and digestion from wheat grains</strong> <br>
+                                <a href="https://www.mdpi.com/1422-0067/23/2/713" target="_blank" rel="noreferrer">
+                                    >> Mining the Wheat Grain Proteome
+                                </a>
+                            </li> <br>
+                            <li><strong>Screening the proteome of >4,000 wheat cultivars</strong> <br>
+                                <a href="https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad084/7335571?login=false" target="_blank" rel="noreferrer">
+                                    >> A community resource to mass explore the wheat grain proteome and its application to the late-maturity alpha-amylase (LMA) problem 
+                                </a>
+                            </li> <br>
+                            <li><strong>Mapping the wheat proteins onto the genome</strong> <br>
+                                <a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">
+                                    >> Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations 
+                                </a>
+                            </li> <br>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img class="big data-icons" alt="big data icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/bigdataicons.png">
+                    </div>
+                </div>
+            </div>
+
+            <div id="systemsbiology" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Systems Biology and Post-Genomics Projects</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>
+                            Below is a list of articles I co-authored in the life science fields of systems biology and post-genomics:<br>
+                        </p>
+                        <ul>
+                            <li><strong>Safflower seed development</strong> <br>
+                                <a href="https://www.mdpi.com/2218-273X/14/4/414" target="_blank" rel="noreferrer">
+                                    >> Integrated Proteomics and Metabolomics of Safflower Petal Wilting and Seed Development
+                                </a><br>
+                            </li> <br>
+
+                            <li><strong>Medicinal cannabis</strong> <br>
+                                <a href="https://www.mdpi.com/2227-7382/8/2/13" target="_blank" rel="noreferrer">
+                                    >> The power of three in cannabis shotgun proteomics: Proteases, databases and search engines
+                                </a><br>
+                                <a href="https://www.mdpi.com/1422-0067/20/22/5630" target="_blank" rel="noreferrer">
+                                    >> A multiple protease strategy to optimise the shotgun proteomics of mature medicinal cannabis buds
+                                </a><br>
+                                <a href="https://www.mdpi.com/2227-7382/7/4/33" target="_blank" rel="noreferrer">
+                                    >> Top-down proteomics of medicinal cannabis
+                                </a><br>
+                                <a href="https://www.mdpi.com/1420-3049/24/4/659" target="_blank" rel="noreferrer">
+                                    >> Optimisation of protein extraction from medicinal cannabis mature buds for bottom-up proteomics
+                                </a><br>
+                                <a href="https://www.nature.com/articles/s41598-020-66119-1" target="_blank" rel="noreferrer">
+                                    >> Utilisation of design of experiments approach to optimise supercritical fluid extraction of medicinal cannabis
+                                </a><br>
+                                <a href="https://pag.confex.com/pag/xxvii/meetingapp.cgi/Paper/37067" target="_blank" rel="noreferrer">
+                                    >> Molecular Phenotyping of Medicinal Cannabis Strains - Enabling Genomic Selection and Gene Annotation
+                                </a><br>
+                            </li> <br>
+
+                            <li><strong>Plant-microbe interactions</strong> <br>
+                                <a href="https://kew.iro.bl.uk/concern/reports/e30de436-455d-410e-8605-8c533a0398ce?locale=en" target="_blank" rel="noreferrer">
+                                    >> State of the World’s Fungi 2018. 8. Plant-killers: Fungal threats to ecosystems
+                                </a> <br>
+                                <a href="https://www.nature.com/articles/ncomms1189" target="_blank" rel="noreferrer">
+                                    >> Effector diversification within compartments of the Leptosphaeria maculans genome affected by Repeat-Induced Point mutations 
+                                </a> <br>
+                                <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2019.01626/full" target="_blank" rel="noreferrer">
+                                    >> The multiple facets of plant–fungal interactions revealed through plant and fungal secretomics 
+                                </a> <br>
+                                <a href="https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2015.00900/full" target="_blank" rel="noreferrer">
+                                    >> Surveying the potential of secreted antimicrobial peptides to enhance plant disease resistance 
+                                </a> <br>
+                                <a href="https://www.longdom.org/open-access/secretomics-of-plantfungus-associations-more-secrets-to-unravel-2329-9029.1000e117.pdf" target="_blank" rel="noreferrer">
+                                    >> Secretomics of plant-fungus associations: more secrets to unravel 
+                                </a> <br>
+                                <a href="https://pubs.acs.org/doi/abs/10.1021/pr200895f" target="_blank" rel="noreferrer">
+                                    >> Secretome of the free-living mycelium from the ectomycorrhizal basidiomycete Laccaria bicolor
+                                </a> <br>
+                                <a href="https://bsppjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.1364-3703.2011.00763.x" target="_blank" rel="noreferrer">
+                                    >> A functional genomics approach to dissect the mode of action of the Stagonospora nodorum effector protein SnToxA in wheat
+                                </a><br>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1095643308009793?via%3Dihub" target="_blank" rel="noreferrer">
+                                    >> Hunting fungal secreted proteins down
+                                </a><br>
+                                <a href="https://link.springer.com/protocol/10.1007/978-1-61779-501-5_5" target="_blank" rel="noreferrer">
+                                    >> Proteomic techniques for plant–fungal interactions
+                                </a><br>
+                                <a href="https://hal.science/hal-02755363/" target="_blank" rel="noreferrer">
+                                    >> Identification and functional analysis of Magnaporthe oryzae effectors
+                                </a><br>
+                                <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/elps.200900415" target="_blank" rel="noreferrer">
+                                    >> Hunting down fungal secretomes using liquid‐phase IEF prior to high resolution 2‐DE
+                                </a><br>
+                            </li> <br>
+
+                            <li><strong>Grape response to environmental stress</strong> <br>
+                                <a href="https://link.springer.com/article/10.1007/s10142-006-0039-y" target="_blank" rel="noreferrer">
+                                    >> Water and salinity stress in grapevines: early and late changes in transcript and metabolite profiles 
+                                </a> <br>
+                                <a href="https://link.springer.com/article/10.1007/s10142-007-0051-x" target="_blank" rel="noreferrer">
+                                    >> Transcript abundance profiles reveal larger and more complex responses of grapevine to chilling compared to osmotic and salinity stress 
+                                </a> <br>
+                                <a href="https://www.cabidigitallibrary.org/doi/full/10.5555/20073019721" target="_blank" rel="noreferrer">
+                                    >> Systems biology of grapes 
+                                </a> <br>
+                                <a href="https://academic.oup.com/jxb/article/58/7/1873/513130?login=false" target="_blank" rel="noreferrer">
+                                    >> Proteomic analysis reveals differences between Vitis vinifera Chardonnay and Cabernet Sauvignon and their responses to water deficit and salinity 
+                                </a> <br>
+                                <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/elps.200500698" target="_blank" rel="noreferrer">
+                                    >> Optimization of protein extraction and solubilization for mature grape berry clusters
+                                </a> <br>
+                            </li> <br>
+
+                            <li><strong>Plant and water stress</strong> <br>
+                                <a href="https://link.springer.com/article/10.1007/s10142-020-00746-9" target="_blank" rel="noreferrer">
+                                    >> Proteomic profiling of developing wheat heads under water-stress
+                                </a> <br>
+                                <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-3040.2011.02452.x" target="_blank" rel="noreferrer">
+                                    >> Proteomic plasticity of two Eucalyptus genotypes under contrasted water regimes in the field
+                                </a> <br>
+                                <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/pmic.200900047" target="_blank" rel="noreferrer">
+                                    >> Leaf proteome analysis of eight Populus× euramericana genotypes: Genetic variation in drought response and in water‐use efficiency involves photosynthesis‐related proteins
+                                </a> <br>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031942209002088" target="_blank" rel="noreferrer">
+                                    >> Genetic variation and drought response in two Populus× euramericana genotypes through 2-DE proteomic analysis of leaves from field and glasshouse cultivated plants
+                                </a> <br>
+                                <a href="https://hal.science/hal-02815651/" target="_blank" rel="noreferrer">
+                                    >> Impact of water deficit on the leaf proteome of 2 Populus deltoides x P. nigra grown in glasshouse or in nursery
+                                </a> <br>
+                                <a href="https://policycommons.net/artifacts/15827804/popsec/16718663/" target="_blank" rel="noreferrer">
+                                    >> POPSEC: molecular bases of acclimation to water deficit in poplar
+                                </a> <br>
+                                <a href="https://inria.hal.science/hal-02819720/" target="_blank" rel="noreferrer">
+                                    >> A proteomic study of water deficit-responsive proteins in poplar roots
+                                </a> <br>
+                                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/b10819-12/phenylpropanoid-phenolic-metabolism-populus-gene-family-structure-comparative-functional-genomics-carl-douglas-j%C3%BCrgen-ehlting-scott-harding" target="_blank" rel="noreferrer">
+                                    >> Poplar proteomics: update and future challenges
+                                </a> <br>
+                                <a href="https://link.springer.com/book/10.1007/978-3-540-72617-3#page=374" target="_blank" rel="noreferrer">
+                                    >> Plant proteome responses to abiotic stress
+                                </a> <br>
+                                <a href="https://jiomics.com/index.php/jiomics/article/view/39" target="_blank" rel="noreferrer">
+                                    >> Development of an in-house protocol for the OFFGEL fractionation of plant proteins
+                                </a> <br>
+                                <a href="https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/pmic.200401111" target="_blank" rel="noreferrer">
+                                    >> PROTICdb: A web‐based application to store, track, query, and compare plant proteome data
+                                </a> <br>
+                                <a href="https://academic.oup.com/plphys/article/137/3/949/6112675?login=false" target="_blank" rel="noreferrer">
+                                    >> Water Deficits Affect Caffeate O-Methyltransferase, Lignification, and Related Enzymes in Maize Leaves. A Proteomic Investigation
+                                </a> <br>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0981942804001548" target="_blank" rel="noreferrer">
+                                    >> Deciphering genetic variations of proteome responses to water deficit in maize leaves
+                                </a> <br>
+                            </li> <br>
+
+                            <li><strong>Milk proteomics</strong> <br>
+                                <a href="https://www.sciencedirect.com/science/article/pii/S0889157523007287" target="_blank" rel="noreferrer">
+                                    >> Advancement of milk protein analysis: From determination of total proteins to their identification and quantification by proteomic approaches
+                                </a> <br>
+                                <a href="https://www.mdpi.com/2306-5710/4/4/95" target="_blank" rel="noreferrer">
+                                    >> Investigation of age gelation in uht milk
+                                </a> <br>
+                                <a href="https://www.mdpi.com/1420-3049/23/11/2777" target="_blank" rel="noreferrer">
+                                    >> Optimisation of milk protein top-down sequencing using in-source collision-induced dissociation in the maxis quadrupole time-of-flight mass spectrometer
+                                </a><br>
+                                <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0163471" target="_blank" rel="noreferrer">
+                                    >> Quantitation and identification of intact major milk proteins for high-throughput LC-ESI-Q-TOF MS analyses
+                                </a> <br>
+                                <a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2015.00360/full" target="_blank" rel="noreferrer">
+                                    >> Milk bottom-up proteomics: Method optimization
+                                </a> <br>
+                            </li> <br>
+
+                            <li><strong>Ergotamine and brain</strong> <br>
+                                <a href="https://www.nature.com/articles/s41598-021-98870-4" target="_blank" rel="noreferrer">
+                                    >> Effects of ergotamine on the central nervous system using untargeted metabolomics analysis in a mouse model 
+                                </a>
+                            </li> <br>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img class="metabolomics-icons" alt="metabolomics icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/metabolomicsicons.png">
+                    </div>
+                </div>
+            </div>
+
+            <div id="patents" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Patents</h5> <br>
+                <p>I contributed to 2 patents:</p> 
+                <ul>
+                    <li><strong>Medicinal cannabis protein extraction</strong> <br>
+                        <a href="resources/files/Patent_Cannabis-protein_CA3122758A1.pdf" target="_blank" rel="noreferrer">
+                            Patent US 2022/0333151 A1 <br>
+                            Plant microbiome and methods for profilling plant microbiome 
+                        </a>
+                    </li> <br>
+                    <li><strong>Profiling plant microbes</strong> <br>
+                        <a href="resources/files/Patent_MALDI_US20220333151A1.pdf" target="_blank" rel="noreferrer">
+                            Patent WO 2020/124128 A1 <br>
+                            Method of protein extraction from cannabis plant material
+                        </a>
+                    </li> <br>
+                </ul>
+            </div>
+
+            <div id="codecademycareer" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>CodeCademy Career Path - Data Science / Analytics</h5> <br>
+                <p>
+                    For the final portofolio in the <em>CodeCademy Career Path course “Data Scientist - Analytics Specialist”</em>, I chose to analyse the metadata of 120,000 scientific articles (dataset retrieved from Kaggle) to understand publication trends and topics of interest. <br>
+                    <img class="codecademy-icons" alt="workflow icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/codecademycareer1icons.png">
+                </p>
+                <ul>
+                    <li><strong>1. Hypotheses</strong> <br>
+                        <ul>
+                            <li>Publication rate over time</li>
+                            <li>Successful publishers and favored journals</li>
+                            <li>Prolific authors</li>
+                            <li>Number of citations and length of title over time</li>
+                            <li>Preferred publication types</li>
+                            <li>Languages used</li>
+                            <li>Most popular subjects</li>
+                            <img class="codecademy-icons" alt="brainstorming icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademycareer2icons.png">
+                        </ul><br>
+                    </li>
+                    <li><strong>2. Data handling and analysis using Excel and Python</strong> <br>
+                        <a href="https://github.com/dlf2024/Python_Tableau_scientific_papers_metadata" target="_blank" rel="noreferrer">
+                            Link to GitHub repository containing the raw and clean datasets, as well as the Jupyter notebook with detailed Python code
+                        </a> <br>
+                        <ul>
+                            <li>Data assessment helped decide which variables to keep, what needed transformation, and the existence of missing values.</li>
+                            <li>Data wrangling and cleaning involved coercing dates, renaming headers into meanigful names, replacing missing values, transforming article titles and creating new numerical variables for data analsyis.</li>
+                            <li>Exploratory Data Analysis (EDA) included line charts, wordclouds, bubble plots, bar and pie charts, treemaps, scatterplots, histograms and box and wisker plots.</li>   <br>   
+                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=80% height=auto src="resources/images/logo_icons/codecademycareer3icons.png">        
+                        </ul>
+                    </li> <br>
+                    <li><strong>3. Data visualisation, interpretation and storytelling using Tableau and Powerpoint</strong> <br>
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications?publish=yes" target="_blank" rel="noreferrer">
+                            Link to Tableau Public dashboard and data analysis
+                        </a> <br>
+                        <a href="resources/presentations/CodeCademy_final_portofolio_report_Delphine-Vincent_2024-08-05.pdf" target="_blank" rel="noreferrer">
+                            Report on my process, analysis and observations
+                        </a> <br>
+                            <img class="codecademy-icons" alt="dashboard and report cover screenshots" loading="lazy" width=60% height=auto src="resources/images/logo_icons/codecademycareer4icons.png"> <br>
+                    </li> <br>
+                    <li><strong>4. Conclusions</strong> <br>
+                        <ul>
+                            <li>Yearly rate of publication gradually increases from the 60’s onward to reach 2,500 publications per year in the mid-90’s. </li>
+                            <li>2007 featured many more publications than other years. Is it a dataset bias or did something happen to explain such spike?</li>
+                            <li>Most publications are journal article (94%,) followed by proceeding articles (3%), and book chapters (2%)</li>
+                            <li>The popularity and longevity of journals vary immensely</li>
+                            <li>Most successful publishers host a larger number of journals</li>
+                            <li>Publications are overwhelmingly written in English</li>
+                            <li>The number of citations as well as the title length are both on the rise</li>
+                            <li>The most popular subjects deal with social sciences, computer science, electrical and general engineering as well as chemistry</li>
+                            <li>Some subjects are long-lasting while others are short-lived or emerging</li>
+                            <img class="codecademy-icons" alt="data interpretation icons" loading="lazy" width=15% height=auto src="resources/images/logo_icons/codecademycareer5icons.png">
+                        </ul><br>
+                    </li>
+                    <li><strong>5. Future directions</strong> <br>
+                        <ul>
+                            <li>Create more sophisticated visualization (e.g. Sankey or chord diagrams) to better explore relationship across variables</li>
+                            <li>Refine the text-mining models using other LNP methods</li>
+                            <li>Fetch more metadata (co-authors, keywords, geographic data,...)</li>
+                            <img class="codecademy-icons" alt="following up icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademycareer6icons.png">
+                        </ul><br>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="codecademyskill" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>CodeCademy Skill Path - Build a website</h5> <br>
+                <p>
+                    Following the <em>CodeCademy Career Skill course “Build a website with HTML, CSS and GitHub pages”</em>, I set out to create the website you're browsing. <br>
+                    <br>
+                    I took this opportunity to create my brand. I opted for a simple and clear design with vivid contrasting colors. I display my full name in the header and my initials in the browser tab (favicon).<br>
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademyskill1icons.png"> <br>
+                    I used the Visual Studio (VS) Code IDE with the Live Server extension to create, edit, test and debug the Hypertext Markup Language (HTML), javascript (JS), Cascading Style Sheet (CSS) codes. <br>
+                    When statisfied with the result, I published my website using GitHub desktop. <br>
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademyskill2icons.png"> <br>
+                    The navigation bar allows for quick access to the various website sections. It stays on top and is transparent so it doesn't obscure what lays under it. It also toggles for small screens. <br>
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyskill3icons.png"> <br>
+                    Sections are scrollable to minimise vertical layout. Hidden contents visible via clickable tabs allow for a succinct yet interactive display. <br>
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyskill4icons.png"> <br>
+                    Clickable items (tabs, URLs) change color for better interactivity. Documents can easily be accessed and open in a new tab.<br>
+                    I've added lots of images to make it more enticing and to better showcase my skills. I used flexbox to optimise element positioning.<br>
+                    I've included images description via ARIA alt attribute and presentation role to make my website accessible to visually-impaired users.
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyskill5icons.png"> <br>
+                    The responsive design should maintain readability and visual appeal across all devices, and screen sizes. <br>
+                    I hope you'll find my website user-friendly and informative!
+                </p> <br>
+
+            </div>
+
+            <script>
+                // Function to handle skills tab active state
+                function showPortofolioTab(tabName, element) {
+                    // Hide all portfolio tab content
+                    document.querySelectorAll('.portofolio_tab_scrollable').forEach(tab => {
+                        tab.style.display = 'none'; // Hide all tabs
+                    });
+
+                    // Remove 'active' class from all buttons
+                    document.querySelectorAll('.portofolio_tab_button').forEach(button => {
+                        button.classList.remove('active');
+                    });
+
+                    // Show the selected tab content
+                    document.getElementById(tabName).style.display = 'block';
+
+                    // Add 'active' class to the clicked button
+                    element.classList.add('active');
+                }
+            </script>
+
+       </section>
+
+
+        <section id="Certificates" class="container">
+            <h2>Certificates and Diploma</h2>
+            <a href="resources/files/Delphine-Vincent_PhD-diploma_life-science_2003-07-08.pdf" target="_blank" rel="noopener noreferrer">PhD diploma in Life Science</a>
+            <a href="resources/files/Delphine-Vincent_CodeCademy_Professional-Certification_Data-Scientist_Analytics_2024-08-08.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - Data Scientist Analyst certificate</a>
+            <a href="resources/files/Delphine-Vincent_CodeCademy_SkillPath-Certification_Build-a-website-with-HTML-CSS_2024-09-03.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - HTML CSS Web-Building certificate</a>
+            <a href="resources/files/Delphine Vincent_SoT_LT_diploma_2020-11-16.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Lateral Thinking</a>
+            <a href="resources/files/Delphine Vincent_SoT_LTA_diploma_2020-08-20.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Advanced Lateral Thinking</a>
+            <a href="resources/files/Delphine Vincent_SoT_LTMaster_diploma_2022-11-21.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Master Lateral Thinking</a>        
+        </section>
+        
+
+        <footer class="footer_content" class="container">
+            <p><strong>Designed and created by Delphine Vincent</strong></p>
+            <sub><b>Version 1: 19 September 2024</b></sub><br>
+            <sub>© Copyright 2024 Delphine Vincent</sub>
+            <div class="footer_sociallinks">
+                <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
+                    <img src="resources/images/logo_icons/logo_LinkedIn_initials.png" alt="LinkedIn Icon" role="presentation" width="20" height="20">
+                </a>
+                <a href="https://scholar.google.com.au/citations?hl=en&tzom=-600&user=ry5O9ukAAAAJ" target="_blank" rel="noreferrer">Google Scholar
+                    <img src="resources/images/logo_icons/logo_Google_Scholar.png" alt="Google Scholar Icon" role="presentation" width="20" height="20">
+                </a>
+                <a href="https://orcid.org/0000-0002-9083-015X" target="_blank" rel="noreferrer">ORCID
+                    <img src="resources/images/logo_icons/logo_orcid.png" alt="ORCID Icon" role="presentation" width="20" height="20">
+                </a>
+                <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
+                    <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" role="presentation" width="20" height="20">
+                </a>
+                <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">
+                    Tableau
+                    <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" role="presentation" width="20" height="20">
+                </a>
+            </div>
+
+        </footer>
+
+    </body>
+</html>
+
