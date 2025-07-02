@@ -63,9 +63,11 @@
                             <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
                                 <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" width="20" height="20">
                             </a>
-                            <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">
-                                Tableau
+                            <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">Tableau
                                 <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" width="20" height="20">
+                            </a>
+                            <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
+                                <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
                             </a>
                         </div>
                     </section>
@@ -116,8 +118,11 @@
                     <br>Furthermore, I have completed the CodeCademy Career Path course <em>“Data Scientist - Machine Learning”</em>, covering supervised and unsupervised learning, Ensemble methods, Support Vector Machine, Recommender systems, Naive Bayes algorithm, Deep Learning, and Neural Networks using Python codes(<a href="https://www.codecademy.com/career-journey/data-scientist-ml" target="_blank" rel="noreferrer">syllabus</a>). <br>
                     <br> I practised those skills by revisiting the largest proteogmics dataset I produced in 2023 (DOI 10.1093/gigascience/giad084). I performed exploratory data analysis (EDA) to identify hidden patterns to classify genotypes based on peptide profiles, followed by machine learning (ML) models to target peptides contributing most to genotype classes (more details in Portofolio tab). <br>
                     <img src="resources/images/logo_icons/MLicons.png" alt="Python generated charts" role="presentation" width="80%" height="auto"> <br>
-                    <br>I have also completed the CodeCademy Skill Path <em>“Build a website with HTML, CSS and GitHub pages”</em> (<a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites" target="_blank" rel="noreferrer">syllabus</a>).<br> 
+                    <br>I have finished the CodeCademy Skill Path <em>“Build a website with HTML, CSS and GitHub pages”</em> (<a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites" target="_blank" rel="noreferrer">syllabus</a>).<br> 
                     Using HTML, JS and CSS, I was able to create my own website (the very same you're currently browsing!).</p>
+                    <img src="resources/images/logo_icons/websiteicons.png" alt="website screenshot" role="presentation" width="50%" height="auto"> <br>
+                    <br>I have also performed the CodeCademy Course <em>“Learn Prompt Engineering”</em> (<a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering" target="_blank" rel="noreferrer">syllabus</a>).<br> 
+                    This enables me to ensure a productive interaction with generative AI systems.</p>
                     <img src="resources/images/logo_icons/websiteicons.png" alt="website screenshot" role="presentation" width="50%" height="auto"> <br>
                 </div>
             </section>
@@ -566,14 +571,18 @@
             <h2>Portofolio</h2>
             <!-- Portofolio Section -->
             <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('systemsbiology', this)">
+                    <h4>Systems Biology & Post-Genomics</h4>
+                </button>
+            </div>
+            <div class="portofolio_tab">
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('bigdata', this)">
                     <h4>Big Data</h4>
                 </button>
             </div>
-
             <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('systemsbiology', this)">
-                    <h4>Systems Biology</h4>
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('ML', this)">
+                    <h4>Machine Learning</h4>
                 </button>
             </div>
             <div class="portofolio_tab">
@@ -592,61 +601,16 @@
                 </button>
             </div>
             <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('ML', this)">
-                    <h4>Machine Learning</h4>
-                </button>
-            </div>
-            <div class="portofolio_tab">
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyskill', this)">
                     <h4>CodeCademy Skill Path - Build a website</h4>
                 </button>
             </div>
-
-            <div id="bigdata" class="portofolio_tab_scrollable" style="display:none;">
-                <h5>Big Data Projects on Wheat</h5> <br>
-                <div class="left_right" role="presentation">
-                    <div class="text-content">
-                        <p>
-                            Wheat (Triticum aestivum) is an important crop whose reference genome offers a valuable resource for understanding wheat genetic structure, improving agronomic traits, and developing new cultivars. <br> 
-                            I was tasked to develop a processing and analytical workflow to screen the proteome (all the proteins) of thousands of cultivars. <br>
-                            <br>
-                            I first developped a fast, accurate and reproducible method which I then applied to 4,087 wheat grain samples.
-                            <br>
-                            I produced, managed and analysed close to 8,000 files representing >1.2 Gb of data. <br>
-                            <br>
-                            I employed sophisticated methods of statistical analyses, bioinformatics amd data mining to generate meaningful biological insights. <br>
-                            <br>
-                            Proteins were then mapped onto the wheat genome (version 2) which not only validated genes of high confidence, but also promoted genes of low confidence as well as detect novel genes. <br>
-                            <br>
-                            Links to the scientific articles are provided below.<br>
-                        </p>
-                        <ul>
-                            <li><strong>Optimising the protein extraction and digestion from wheat grains</strong> <br>
-                                <a href="https://www.mdpi.com/1422-0067/23/2/713" target="_blank" rel="noreferrer">
-                                    >> Mining the Wheat Grain Proteome
-                                </a>
-                            </li> <br>
-                            <li><strong>Screening the proteome of >4,000 wheat cultivars</strong> <br>
-                                <a href="https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad084/7335571?login=false" target="_blank" rel="noreferrer">
-                                    >> A community resource to mass explore the wheat grain proteome and its application to the late-maturity alpha-amylase (LMA) problem 
-                                </a>
-                            </li> <br>
-                            <li><strong>Mapping the wheat proteins onto the genome</strong> <br>
-                                <a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">
-                                    >> Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations 
-                                </a>
-                            </li> <br>
-                        </ul>
-                        <p>
-                            I have recently revisited the dataset listing the peptide profiles of >4,000 wheat cultivars in order to classify them using machine learning algorithms, and determine peptides contributing most to these classes (article in preparation). <br>
-                            More details can be found on the Machine Learning tab. <br>
-                        </p>
-                    </div>
-                    <div class="image-content">
-                        <img class="big data-icons" alt="big data icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/bigdataicons.png">
-                    </div>
-                </div>
+            <div class="portofolio_tab">
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyprompt', this)">
+                    <h4>CodeCademy Course - Learn Prompt Engineering</h4>
+                </button>
             </div>
+
 
             <div id="systemsbiology" class="portofolio_tab_scrollable" style="display:none;">
                 <h5>Systems Biology and Post-Genomics Projects</h5> <br>
@@ -837,6 +801,117 @@
                 </div>
             </div>
 
+            <div id="bigdata" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Big Data Projects on Wheat</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                        <p>
+                            Wheat (Triticum aestivum) is an important crop whose reference genome offers a valuable resource for understanding wheat genetic structure, improving agronomic traits, and developing new cultivars. <br> 
+                            I was tasked to develop a processing and analytical workflow to screen the proteome (all the proteins) of thousands of cultivars. <br>
+                            <br>
+                            I first developped a fast, accurate and reproducible method which I then applied to 4,087 wheat grain samples.
+                            <br>
+                            I produced, managed and analysed close to 8,000 files representing >1.2 Gb of data. <br>
+                            <br>
+                            I employed sophisticated methods of statistical analyses, bioinformatics amd data mining to generate meaningful biological insights. <br>
+                            <br>
+                            Proteins were then mapped onto the wheat genome (version 2) which not only validated genes of high confidence, but also promoted genes of low confidence as well as detect novel genes. <br>
+                            <br>
+                            Links to the scientific articles are provided below.<br>
+                        </p>
+                        <ul>
+                            <li><strong>Optimising the protein extraction and digestion from wheat grains</strong> <br>
+                                <a href="https://www.mdpi.com/1422-0067/23/2/713" target="_blank" rel="noreferrer">
+                                    >> Mining the Wheat Grain Proteome
+                                </a>
+                            </li> <br>
+                            <li><strong>Screening the proteome of >4,000 wheat cultivars</strong> <br>
+                                <a href="https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad084/7335571?login=false" target="_blank" rel="noreferrer">
+                                    >> A community resource to mass explore the wheat grain proteome and its application to the late-maturity alpha-amylase (LMA) problem 
+                                </a>
+                            </li> <br>
+                            <li><strong>Mapping the wheat proteins onto the genome</strong> <br>
+                                <a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">
+                                    >> Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations 
+                                </a>
+                            </li> <br>
+                        </ul>
+                        <p>
+                            I have recently revisited the dataset listing the peptide profiles of >4,000 wheat cultivars in order to classify them using machine learning algorithms, and determine peptides contributing most to these classes (article in preparation). <br>
+                            More details can be found on the Machine Learning tab. <br>
+                        </p>
+                    </div>
+                    <div class="image-content">
+                        <img class="big data-icons" alt="big data icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/bigdataicons.png">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="ML" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Machine Learning</h5> <br>
+                <ul>
+                    <li><strong>List of ML projects</strong> <br>
+                        <ul>
+                            <li>Aliens, Algorithms & Anomalies: Visualizing the NUFORC UFO Sightings (<a href="https://github.com/dlf2024/Python_Tableau_EDA_ML_NUFORC-database/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>).</li>
+                            <li>Decoding Love with Data: Matchmaking in dating app (<a href="https://github.com/dlf2024/Python_OKCupid_date-a-scientist/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>). For a quick snapshot, check out tab  <a href="#codecademycareerML" onclick="showPortofolioTab('codecademycareerML', this)">"CodeCademy Career Path - Data Science/Machine Learning"</a>.</li>
+                            <li>Mapping the Landscape of Scientific Publications (<a href="https://github.com/dlf2024/Python_Tableau_scientific_papers_metadata/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>). For a quick snapshot, check out tab <a href="#codecademycareer" onclick="showPortofolioTab('codecademycareer', this)">"CodeCademy Career Path - Data Science/Analytics"</a>.</li>
+                            <li>Machine Learning to understand milk fermentation (article in preparation)</li>
+                            <li>Wheat cultivar classification (details below)</li>
+                        </ul><br>
+                    </li>
+                </ul>
+                <p>
+                    I applied ML on the <em>largest proteomics dataset published in a single experiment to date</em> (DOI 10.1093/gigascience/giad084) to classify the 4000 genotypes based on peptide abundance and determine the most contributing features. This study is outlined hereafter:<br>
+                    <img class="codecademy-icons" alt="workflow icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/codecademycareer1icons.png">
+                </p>
+                <ul>
+                    <li><strong>1. Data preparation using Python</strong> <br>
+                        <ul>
+                            <li>Sourcing the data from public repository</li>
+                            <li>Filtering it to targeted peptides for computational efficiency</li>
+                            <li>Normalising quantitative data for statistical analyses</li>
+                            <img class="codecademy-icons" alt="data transformation charts" loading="lazy" width=20% height=auto src="resources/images/logo_icons/datatransformationicons.png">
+                        </ul><br>
+                    </li>
+                    <li><strong>2. EDA and statistical analyses using Python</strong> <br>
+                        <ul>
+                            <li>Multivariate analyses (K-means, PCA, LDA, HCA, SOM)</li>
+                            <li>Bivariate analyses (correlations)</li>
+                            <li>Univariate analyses (Two-tailed tests, one-way AOV)</li> <br>   
+                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=40% height=auto src="resources/images/logo_icons/EDAicons.png">        
+                        </ul>
+                    </li> <br>
+                    <li><strong>3. ML using Python</strong> <br>
+                        <ul>
+                            <li>Data aggregation</li>
+                            <li>Random Forest (RF)</li>
+                            <li>Support Vector Machine (SVM)</li>
+                            <li>Multi-Layer Perceptron (MLP)</li>   
+                            <li>Stacked Model</li><br>   
+                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=30% height=auto src="resources/images/logo_icons/MLresultsicons.png">        
+                        </ul>
+                    </li> <br>
+                    <li><strong>4. Interpretation and storytelling using Tableau and Powerpoint</strong> <br>
+                        <ul>
+                            <li>Results exported to Tableau for easy access to stakeholders</li>
+                            <li>Report created using Powerpoint and presented/circulated to stakeholders</li> <br>
+                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=40% height=auto src="resources/images/logo_icons/MLconclusionsicons.png"> <br>
+                        </ul>
+                    </li> <br>
+                    <li><strong>5. Conclusions</strong> <br>
+                        <ul>
+                            <li>EDA (kmeans, PCA, LDA, HCA, SOM, t-test, aov, correlation) successfully classified genotypes, peptides and protein groups. </li>
+                            <li>The statistical results were agglomerated into a single variable to perform ML on genotypes using peptide profiles.</li>
+                            <li>Four ML models were tested (RF, SVM, MLP, stacked). </li>
+                            <li>The stacked model incorporating all other 3 models was deemed the best one.</li>
+                            <li>It allowed to accurately capture the data hidden structure revealed by EDA, and to identify the peptides contributing the most to this model.</li> <br>
+                            <img class="codecademy-icons" alt="data interpretation icons" loading="lazy" width=15% height=auto src="resources/images/logo_icons/codecademycareer5icons.png">
+                        </ul><br>
+                    </li>
+                </ul>
+            </div>
+
             <div id="patents" class="portofolio_tab_scrollable" style="display:none;">
                 <h5>Patents</h5> <br>
                 <p>I contributed to 2 patents:</p> 
@@ -1009,68 +1084,6 @@
                 </ul>
             </div>
 
-            <div id="ML" class="portofolio_tab_scrollable" style="display:none;">
-                <h5>Machine Learning</h5> <br>
-                <ul>
-                    <li><strong>List of ML projects</strong> <br>
-                        <ul>
-                            <li>Aliens, Algorithms & Anomalies: Visualizing the NUFORC UFO Sightings (<a href="https://github.com/dlf2024/Python_Tableau_EDA_ML_NUFORC-database/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>).</li>
-                            <li>Decoding Love with Data: Matchmaking in dating app (<a href="https://github.com/dlf2024/Python_OKCupid_date-a-scientist/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>). For a quick snapshot, check out tab  <a href="#codecademycareerML" onclick="showPortofolioTab('codecademycareerML', this)">"CodeCademy Career Path - Data Science/Machine Learning"</a>.</li>
-                            <li>Mapping the Landscape of Scientific Publications (<a href="https://github.com/dlf2024/Python_Tableau_scientific_papers_metadata/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>). For a quick snapshot, check out tab <a href="#codecademycareer" onclick="showPortofolioTab('codecademycareer', this)">"CodeCademy Career Path - Data Science/Analytics"</a>.</li>
-                            <li>Wheat cultivar classification (details below)</li>
-                        </ul><br>
-                    </li>
-                </ul>
-                <p>
-                    I applied ML on the <em>largest proteomics dataset published in a single experiment to date</em> (DOI 10.1093/gigascience/giad084) to classify the 4000 genotypes based on peptide abundance and determine the most contributing features. This study is outlined hereafter:<br>
-                    <img class="codecademy-icons" alt="workflow icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/codecademycareer1icons.png">
-                </p>
-                <ul>
-                    <li><strong>1. Data preparation using Python</strong> <br>
-                        <ul>
-                            <li>Sourcing the data from public repository</li>
-                            <li>Filtering it to targeted peptides for computational efficiency</li>
-                            <li>Normalising quantitative data for statistical analyses</li>
-                            <img class="codecademy-icons" alt="data transformation charts" loading="lazy" width=20% height=auto src="resources/images/logo_icons/datatransformationicons.png">
-                        </ul><br>
-                    </li>
-                    <li><strong>2. EDA and statistical analyses using Python</strong> <br>
-                        <ul>
-                            <li>Multivariate analyses (K-means, PCA, LDA, HCA, SOM)</li>
-                            <li>Bivariate analyses (correlations)</li>
-                            <li>Univariate analyses (Two-tailed tests, one-way AOV)</li> <br>   
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=40% height=auto src="resources/images/logo_icons/EDAicons.png">        
-                        </ul>
-                    </li> <br>
-                    <li><strong>3. ML using Python</strong> <br>
-                        <ul>
-                            <li>Data aggregation</li>
-                            <li>Random Forest (RF)</li>
-                            <li>Support Vector Machine (SVM)</li>
-                            <li>Multi-Layer Perceptron (MLP)</li>   
-                            <li>Stacked Model</li><br>   
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=30% height=auto src="resources/images/logo_icons/MLresultsicons.png">        
-                        </ul>
-                    </li> <br>
-                    <li><strong>4. Interpretation and storytelling using Tableau and Powerpoint</strong> <br>
-                        <ul>
-                            <li>Results exported to Tableau for easy access to stakeholders</li>
-                            <li>Report created using Powerpoint and presented/circulated to stakeholders</li> <br>
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=40% height=auto src="resources/images/logo_icons/MLconclusionsicons.png"> <br>
-                        </ul>
-                    </li> <br>
-                    <li><strong>5. Conclusions</strong> <br>
-                        <ul>
-                            <li>EDA (kmeans, PCA, LDA, HCA, SOM, t-test, aov, correlation) successfully classified genotypes, peptides and protein groups. </li>
-                            <li>The statistical results were agglomerated into a single variable to perform ML on genotypes using peptide profiles.</li>
-                            <li>Four ML models were tested (RF, SVM, MLP, stacked). </li>
-                            <li>The stacked model incorporating all other 3 models was deemed the best one.</li>
-                            <li>It allowed to accurately capture the data hidden structure revealed by EDA, and to identify the peptides contributing the most to this model.</li> <br>
-                            <img class="codecademy-icons" alt="data interpretation icons" loading="lazy" width=15% height=auto src="resources/images/logo_icons/codecademycareer5icons.png">
-                        </ul><br>
-                    </li>
-                </ul>
-            </div>
 
             <div id="codecademyskill" class="portofolio_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Skill Path - Build a website</h5> <br>
@@ -1094,8 +1107,26 @@
                     The responsive design should maintain readability and visual appeal across all devices, and screen sizes. <br>
                     I hope you'll find my website user-friendly and informative!
                 </p> <br>
-
             </div>
+
+            <div id="codecademyprompt" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>CodeCademy Certification - Learn Prompt Engineering</h5> <br>
+                <p>
+                    The syllabus of the <em>CodeCademy course “Learn Promt Engineering”</em> is listed here (<a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
+                    The topics covered are:</p>
+                    <li>Setting the Context</li>
+                    <li>Zero-Shot Prompting</li>
+                    <li>One-Shot Prompting</li>
+                    <li>Few-Shot Prompting</li>
+                    <li>Chain-of-Thought (Cot)</li>
+                    <li>Break Complex Tasks into Subtasks</li>
+                    <li>Retrieval Augmented Generation (RAG)</li><br>
+                    I've learned how to use effective prompt engineering techniques to ensure a productive interaction with generative AI systems.<br>
+                    I've been introduced to Retrieval-Augmented Generation (RAG) and how to use it for processing custom data with generative AI.
+                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyprompticons.png"> <br>
+                </p> <br>
+            </div>
+
 
             <script>
                 // Function to handle skills tab active state
@@ -1127,6 +1158,7 @@
             <a href="resources/files/Delphine-Vincent_CodeCademy_Professional-Certification_Data-Scientist_Analytics_2024-08-08.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - Data Scientist Analyst certificate</a>
             <a href="resources/files/Delphine-Vincent_CodeCademy_SkillPath-Certification_Build-a-website-with-HTML-CSS_2024-09-03.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - HTML CSS Web-Building certificate</a>
             <a href="resources/files/Delphine-Vincent_CodeCademy_Professional-Certification_Data-Scientist_Machine-Learning_2025-03-18.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - Data Scientist Machine Learning certificate</a>
+            <a href="resources/files/Delphine-Vincent_CodeCademy_Certification_Learn-Prompt-Engineering_2025-07-02.pdf" target="_blank" rel="noopener noreferrer">CodeCademy - Learn Prompt Engineering certificate</a>
             <a href="resources/files/Delphine Vincent_SoT_LT_diploma_2020-11-16.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Lateral Thinking</a>
             <a href="resources/files/Delphine Vincent_SoT_LTA_diploma_2020-08-20.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Advanced Lateral Thinking</a>
             <a href="resources/files/Delphine Vincent_SoT_LTMaster_diploma_2022-11-21.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Master Lateral Thinking</a>        
@@ -1136,7 +1168,7 @@
         <footer class="footer_content" class="container">
             <p><strong>Designed and created by Delphine Vincent</strong></p>
             <sub><b>Version 4: 19 June 2025</b></sub><br>
-            <sub>Data science Machine Learning Service Provider [ABN 74 267 801 710]</sub>
+            <sub>Data science Machine Learning Service Provider [ABN 74 267 801 710]</sub><br>
             <sub>© Copyright 2024 Delphine Vincent</sub>
             <div class="footer_sociallinks">
                 <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
@@ -1151,9 +1183,11 @@
                 <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
                     <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" role="presentation" width="20" height="20">
                 </a>
-                <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">
-                    Tableau
+                <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">Tableau
                     <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" role="presentation" width="20" height="20">
+                </a>
+                <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
+                    <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
                 </a>
             </div>
 
