@@ -459,8 +459,8 @@ button.skills_tab_button.active, button.portofolio_tab_button.active {
     border-radius: 15px;
 }
 
-#editor a, #storytelling a, #bigdata a, #systemsbiology a, #datascience a, 
-#patents a, #codecademycareer a,  #codecademyskill a {
+#editor a, #storytelling a, #bigdata a, #systemsbiology a, #datascience a, #lifescience a, #Biography a,
+#patents a, #codecademycareer a,  #codecademyskill a, #codecademyskill2 a, #codecademyprompt a {
     text-decoration: underline;
     color:  #3F007E;
 }
