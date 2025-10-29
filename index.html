@@ -1142,19 +1142,31 @@
                         <li>Machine translation (<a href="https://github.com/dlf2024/Python_chatbot_machine-translation/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>)</li>
                         <li>Twitter (<a href="https://github.com/dlf2024/Python_chatbot_twitter/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>)</li>
                     </ul><br>
-                    My capstone project is to <strong>develop a chatbot for my professional website</strong>. <br>
+                    My capstone project is to <strong>develop a chatbot for my professional website</strong>.<br>
+                    The various steps include: 
                     <ul>
-                        <li>Designed a <em>custom Python backend</em> (FastAPI) deployed on <em>Render</em> to handle chat requests securely.</li>
-                        <li>Integrated a <em>JavaScript chat widget</em> into this website (GitHub Pages) to provide live interaction with visitors.</li>
-                        <li>Implemented <em>intent recognition</em> using both <em>regular expressions</em> and <em>fuzzy string matching</em> (RapidFuzz) for flexible understanding of user input.</li>
-                        <li>Built a <em>privacy-aware contact flow</em> that masks personal information and invites genuine leads to connect via the CV link.</li>
-                        <li>Added intelligent navigation commands so users can explore <em>About, Projects, Publications, Resume</em> directly through chat.</li>
-                        <li>Configured automated <em>deployment and updates</em> via GitHub commits and Render auto-builds.</li>
-                        <li>Structured a modular codebase that can later evolve toward <em>retrieval-based</em> or <em>LLM-powered</em> chat.</li>
+                    <li>Develop a <em>custom Python backend</em> using <em>FastAPI</em> and deployed it on <em>Render</em> to handle chat requests securely and efficiently.</li>
+                    <li>Integrate a <em>JavaScript chat widget</em> into this GitHub Pages site for seamless, real-time interaction with visitors.</li>
+                    <li>Implement <em>multi-stage intent recognition</em>:
+                        <ul>
+                        <li><em>Rule-based patterns</em> for navigation and commands,</li>
+                        <li><em>Fuzzy string matching</em> with RapidFuzz to interpret typos and informal phrasing, and</li>
+                        <li><em>FAQ retrieval</em> from a structured <code>faqs.json</code> file for content-specific answers.</li>
+                        </ul>
+                    </li>
+                    <li>Add a lightweight <em>TF-IDF semantic search engine</em> that indexes the main sections of the website (Biography, Skills, Portfolio, Certificates) and provides concise, content-aware answers with direct “Read more” links.</li>
+                    <li>Create an <em>admin /reindex endpoint</em> to hot-reload FAQ data and rebuild the TF-IDF site index without redeploying the app.</li>
+                    <li>Design a <em>privacy-first contact workflow</em> that masks any personal information and invites genuine leads to connect via the embedded CV link.</li>
+                    <li>Configure <em>automatic deployment and updates</em> through GitHub commits and Render auto-builds, ensuring continuous delivery of improvements.</li>
+                    <li>Structure a clean, modular codebase ready to evolve toward <em>retrieval-augmented generation</em> (RAG) or <em>LLM-powered dialogue</em> in the future.</li>
                     </ul>
+
                     <p>
-                    The chatbot you see here is the <em>Minimum Viable Product</em> (MVP). Next steps will include adding FAQ learning, semantic search, and possibly an LLM layer for richer dialogue.
+                    The chatbot you see here now combines <em>rule-based logic</em>, <em>fuzzy matching</em>, and <em>semantic retrieval</em> to provide context-aware responses. <br>
+                    Future enhancements will include conversational memory, dynamic topic expansion, and integration with generative AI models for richer, adaptive dialogue. <br>
+                    The codes are available on <a href="https://github.com/dlf2024/dlf-website-bot-backend" target="_blank" rel="noreferrer">GitHub</a>.
                     </p><br>
+
 
                     <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademychatbotsicons.png"> <br>
                 </p> <br>
