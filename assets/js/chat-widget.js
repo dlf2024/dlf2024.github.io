@@ -60,7 +60,8 @@ const QUICK_ACTIONS = {
   "ML projects":    () => openPortfolioTab("ML"),          // <div id="ML" ...>       (Portfolio)
   "Wheat Big Data": () => openPortfolioTab("bigdata"),     // <div id="bigdata" ...>  (Portfolio)
   "Storytelling":   () => openSkillsTab("storytelling"),   // <div id="storytelling" ...> (Skills)
-  "Coding skills":  () => openSkillsTab("programming")     // <div id="programming" ...>  (Skills)
+  "Coding skills":  () => openSkillsTab("programming"),     // <div id="programming" ...>  (Skills)
+  "Biography":      () => scrollToId('#Biography')          // <div id="biography" ...>  (Biography)
 };
 
 
@@ -96,7 +97,7 @@ const QUICK_ACTIONS = {
     <div class="dlf-head">Chat with Delphine’s site bot</div>
     <div class="dlf-body"></div>
     <div class="dlf-input">
-      <input type="text" placeholder="Try: “SOM + UMAP”, “stacked models”, or use the buttons below…"/>
+      <input type="text" placeholder=""/>
       <button>Send</button>
     </div>
   `;
