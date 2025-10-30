@@ -3,6 +3,67 @@
   const API = (cfg.apiBase || "http://localhost:8001") + "/chat";
   let sessionId = null;
 
+  // === Quick actions: open site tabs without calling backend ===
+
+// Smoothly scroll a section into view (helper)
+function scrollToId(id) {
+  const el = document.querySelector(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Open a Portfolio tab (uses your site's showPortofolioTab if present)
+function openPortfolioTab(tabId) {
+  // 1) scroll to the Portfolio section (your site uses "#Portofolio")
+  scrollToId('#Portofolio');
+
+  // 2) Prefer your existing tab API if available
+  if (typeof window.showPortofolioTab === 'function') {
+    // Pass a dummy element for the "this" param; your function only uses it for active-state styling
+    window.showPortofolioTab(tabId, document.createElement('button'));
+    return;
+  }
+
+  // 3) Fallback: manually toggle visibility (matches your class names)
+  document.querySelectorAll('.portofolio_tab_scrollable').forEach(el => el.style.display = 'none');
+  const target = document.getElementById(tabId);
+  if (target) {
+    target.style.display = 'block';
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    console.warn('[DLF bot] Portfolio tab not found:', tabId);
+  }
+}
+
+// Open a Skills tab (uses your show'showSkillTab' if present)
+function openSkillsTab(tabId) {
+  scrollToId('#Skills');
+
+  if (typeof window.showSkillTab === 'function') {
+    // Pass a dummy element for the active class; your function expects (tabName, element)
+    window.showSkillTab(tabId, document.createElement('button'));
+    return;
+  }
+
+  // Fallback if function is missing
+  document.querySelectorAll('.skills_tab_scrollable').forEach(el => el.style.display = 'none');
+  const target = document.getElementById(tabId);
+  if (target) {
+    target.style.display = 'block';
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    console.warn('[DLF bot] Skills tab not found:', tabId);
+  }
+}
+
+// Map the four buttons → your real tab IDs
+const QUICK_ACTIONS = {
+  "ML projects":    () => openPortfolioTab("ML"),          // <div id="ML" ...>       (Portfolio)
+  "Wheat Big Data": () => openPortfolioTab("bigdata"),     // <div id="bigdata" ...>  (Portfolio)
+  "Storytelling":   () => openSkillsTab("storytelling"),   // <div id="storytelling" ...> (Skills)
+  "Coding skills":  () => openSkillsTab("programming")     // <div id="programming" ...>  (Skills)
+};
+
+
   // Styles (inline for easy drop-in)
   const style = document.createElement('style');
   style.textContent = `
@@ -35,10 +96,11 @@
     <div class="dlf-head">Chat with Delphine’s site bot</div>
     <div class="dlf-body"></div>
     <div class="dlf-input">
-      <input type="text" placeholder="Ask about About, Projects, Contact, CV…"/>
+      <input type="text" placeholder="Try: “SOM + UMAP”, “stacked models”, or use the buttons below…"/>
       <button>Send</button>
     </div>
   `;
+
 
   document.body.appendChild(bubble);
   document.body.appendChild(panel);
@@ -65,7 +127,18 @@
     sugs.forEach(s => {
       const btn = document.createElement('button');
       btn.textContent = s;
-      btn.onclick = () => { input.value = s; send(); };
+      btn.onclick = () => {
+        const label = s.trim();
+        if (QUICK_ACTIONS[label]) {
+          // Do the local action and add a tiny confirmation message
+          QUICK_ACTIONS[label]();
+          addMsg(`Opened: <em>${label}</em>`, 'bot');
+        } else {
+          input.value = label;
+          send();
+        }
+      };
+
       row.appendChild(btn);
     });
     body.appendChild(row);
@@ -96,8 +169,11 @@
 
   bubble.onclick = ()=>{
     panel.classList.toggle('open');
-    if(panel.classList.contains('open') && body.childElementCount===0){
-      addMsg('Hello! I can help you navigate the site and answer basic questions about services.', 'bot');
+    if (panel.classList.contains('open') && body.childElementCount===0) {
+      addMsg('Hi! Use the buttons below for quick jumps or ask things like "What services do you offer"?', 'bot');
+      // Render your 4 quick actions as suggestions
+      addSuggestions(Object.keys(QUICK_ACTIONS));
     }
   };
+
 })();
