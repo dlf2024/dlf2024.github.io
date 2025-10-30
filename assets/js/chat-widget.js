@@ -171,7 +171,7 @@ const QUICK_ACTIONS = {
   bubble.onclick = ()=>{
     panel.classList.toggle('open');
     if (panel.classList.contains('open') && body.childElementCount===0) {
-      addMsg('Hi! Use the buttons below for quick jumps or ask things like "What services do you offer"?', 'bot');
+      addMsg('Hi! Use the buttons below for quick jumps or ask things like "What services do you offer"? Please be patient, depending on your query my answer might take a while to display... Thank you for interacting with me!', 'bot');
       // Render your 4 quick actions as suggestions
       addSuggestions(Object.keys(QUICK_ACTIONS));
     }
