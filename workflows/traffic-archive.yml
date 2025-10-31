@@ -1,0 +1,178 @@
+name: Archive GitHub Traffic
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Runs daily at ~14:05 UTC (≈ late night AU). Adjust if you want.
+    - cron: "5 14 * * *"
+
+permissions:
+  contents: write   # needed to commit CSV updates
+  actions: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Ensure data/ folder exists
+        run: |
+          mkdir -p data scripts
+
+      - name: Write collector script
+        run: |
+          cat > scripts/collect_traffic.py << 'PY'
+          import csv, os, requests, sys, time
+          from datetime import datetime, timezone
+
+          REPO = os.getenv("GITHUB_REPOSITORY")  # owner/repo from Actions env
+          TOKEN = os.getenv("GITHUB_TOKEN")      # auto-provided token in Actions
+          BASE = f"https://api.github.com/repos/{REPO}/traffic"
+
+          HEADERS = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {TOKEN}",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+
+          def get(url):
+              r = requests.get(url, headers=HEADERS, timeout=30)
+              if r.status_code != 200:
+                  print(f"ERROR {r.status_code}: {r.text}", file=sys.stderr)
+                  r.raise_for_status()
+              return r.json()
+
+          def append_unique_rows(csv_path, fieldnames, rows, key_fields):
+              os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+              existing = set()
+              data = []
+
+              if os.path.exists(csv_path):
+                  with open(csv_path, "r", encoding="utf-8", newline="") as f:
+                      reader = csv.DictReader(f)
+                      for row in reader:
+                          data.append(row)
+                          existing.add(tuple(row[k] for k in key_fields))
+
+              new_rows = []
+              for r in rows:
+                  key = tuple(r[k] for k in key_fields)
+                  if key not in existing:
+                      new_rows.append(r)
+                      existing.add(key)
+
+              if new_rows:
+                  write_header = not os.path.exists(csv_path)
+                  with open(csv_path, "a", encoding="utf-8", newline="") as f:
+                      w = csv.DictWriter(f, fieldnames=fieldnames)
+                      if write_header:
+                          w.writeheader()
+                      for r in new_rows:
+                          w.writerow(r)
+                  print(f"Appended {len(new_rows)} rows -> {csv_path}")
+              else:
+                  print(f"No new rows for {csv_path}")
+
+          # 1) Views (last 14 days daily buckets)
+          views = get(f"{BASE}/views?per=day")  # {count, uniques, views:[{timestamp, count, uniques}]}
+          view_rows = []
+          for v in views.get("views", []):
+              view_rows.append({
+                  "repo": REPO,
+                  "date": v["timestamp"][:10],   # YYYY-MM-DD
+                  "count": str(v["count"]),
+                  "uniques": str(v["uniques"]),
+              })
+          append_unique_rows(
+              "data/traffic_views.csv",
+              ["repo","date","count","uniques"],
+              view_rows,
+              key_fields=["repo","date"]
+          )
+
+          # 2) Clones (last 14 days daily buckets)
+          clones = get(f"{BASE}/clones?per=day")  # {count, uniques, clones:[{timestamp, count, uniques}]}
+          clone_rows = []
+          for c in clones.get("clones", []):
+              clone_rows.append({
+                  "repo": REPO,
+                  "date": c["timestamp"][:10],
+                  "count": str(c["count"]),
+                  "uniques": str(c["uniques"]),
+              })
+          append_unique_rows(
+              "data/traffic_clones.csv",
+              ["repo","date","count","uniques"],
+              clone_rows,
+              key_fields=["repo","date"]
+          )
+
+          # 3) Referrers (top 10 snapshot now)
+          referrers = get(f"{BASE}/popular/referrers")  # list of {referrer, count, uniques}
+          ts = datetime.now(timezone.utc).isoformat()
+          ref_rows = []
+          for r in referrers:
+              ref_rows.append({
+                  "repo": REPO,
+                  "fetched_at": ts,
+                  "referrer": r["referrer"],
+                  "count": str(r["count"]),
+                  "uniques": str(r["uniques"]),
+              })
+          append_unique_rows(
+              "data/traffic_referrers.csv",
+              ["repo","fetched_at","referrer","count","uniques"],
+              ref_rows,
+              key_fields=["repo","fetched_at","referrer"]
+          )
+
+          # 4) Popular paths (top 10 snapshot now)
+          paths = get(f"{BASE}/popular/paths")  # list of {path, title, count, uniques}
+          path_rows = []
+          for p in paths:
+              path_rows.append({
+                  "repo": REPO,
+                  "fetched_at": ts,
+                  "path": p.get("path",""),
+                  "title": (p.get("title") or "").replace(",", " "),
+                  "count": str(p.get("count",0)),
+                  "uniques": str(p.get("uniques",0)),
+              })
+          append_unique_rows(
+              "data/traffic_paths.csv",
+              ["repo","fetched_at","path","title","count","uniques"],
+              path_rows,
+              key_fields=["repo","fetched_at","path"]
+          )
+
+          PY
+
+      - name: Run collector
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/collect_traffic.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "traffic-archive-bot"
+          git config user.email "traffic-archive-bot@users.noreply.github.com"
+          git add data/*.csv
+          if git diff --cached --quiet; then
+            echo "No CSV changes to commit."
+          else
+            git commit -m "chore: update traffic CSVs [skip ci]"
+            git push
+          fi

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GitHub Traffic Analytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-3m17dQ4F8IyxhQz6qC7WbM4Cmlt3s2t8X8n0d9y4H0M7U1i3O1o9n1l1rj1f6k1P" crossorigin="anonymous"></script>
+<style>
+  :root{ --bg:#0b1220; --fg:#e9eefb; --muted:#9db0df; --card:#121a2c; --line:#243252; --accent:#7aa2ff; }
+  *{ box-sizing:border-box }
+  body{ margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; background:var(--bg); color:var(--fg) }
+  header{ padding:18px 16px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px; align-items:center }
+  h1{ font-size:18px; margin:0; color:#cfe0ff }
+  .container{ max-width:1100px; margin:0 auto; padding:16px }
+  .grid{ display:grid; grid-template-columns:1fr; gap:16px }
+  @media(min-width:980px){ .grid{ grid-template-columns:repeat(12,1fr) } .span6{ grid-column:span 6 } .span12{ grid-column:span 12 } }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px }
+  h2{ margin:0 0 10px 0; font-size:16px; color:#cfe0ff }
+  table{ width:100%; border-collapse:collapse; font-size:14px }
+  th, td{ border-bottom:1px solid var(--line); padding:8px; text-align:left }
+  th{ color:#a7b7e1 }
+  tr:hover td{ background:#0f1730 }
+  .muted{ color:var(--muted); font-size:13px }
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+  .kpi{ background:#0f1626; border:1px solid var(--line); border-radius:10px; padding:12px }
+  .kpi .v{ font-size:22px; font-weight:700 }
+  .kpi .l{ font-size:12px; color:var(--muted) }
+  .err{ color:#ff9aa4; font-size:13px; margin-top:6px }
+  a{ color:var(--accent) }
+</style>
+</head>
+<body>
+<header class="container">
+  <h1>GitHub Traffic Analytics</h1>
+  <div class="muted" style="margin-left:auto">Data from <code>data/traffic_*.csv</code> (updated daily by GitHub Action)</div>
+</header>
+
+<main class="container">
+  <div class="grid">
+    <div class="card span12">
+      <h2>Overview</h2>
+      <div class="kpis">
+        <div class="kpi"><div class="v" id="k_days">—</div><div class="l">Days Recorded</div></div>
+        <div class="kpi"><div class="v" id="k_views">—</div><div class="l">Total Views</div></div>
+        <div class="kpi"><div class="v" id="k_visitors">—</div><div class="l">Total Unique Visitors</div></div>
+        <div class="kpi"><div class="v" id="k_last">—</div><div class="l">Last Updated (UTC)</div></div>
+      </div>
+      <div id="error" class="err"></div>
+    </div>
+
+    <div class="card span6">
+      <h2>Views (count vs uniques)</h2>
+      <canvas id="chartViews" height="220"></canvas>
+    </div>
+    <div class="card span6">
+      <h2>Clones (count vs uniques)</h2>
+      <canvas id="chartClones" height="220"></canvas>
+    </div>
+
+    <div class="card span6">
+      <h2>Top Referrers (latest snapshot)</h2>
+      <canvas id="chartRef" height="220"></canvas>
+    </div>
+    <div class="card span6">
+      <h2>Top Paths (latest snapshot)</h2>
+      <canvas id="chartPaths" height="220"></canvas>
+    </div>
+
+    <div class="card span12">
+      <h2>Views (table)</h2>
+      <table id="tblViews"><thead><tr><th>Date (UTC)</th><th>Views</th><th>Unique Visitors</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card span12">
+      <h2>Clones (table)</h2>
+      <table id="tblClones"><thead><tr><th>Date (UTC)</th><th>Clones</th><th>Unique Cloners</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card span12">
+      <h2>Referrers (table)</h2>
+      <table id="tblRef"><thead><tr><th>Fetched At (UTC)</th><th>Referrer</th><th>Count</th><th>Uniques</th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <div class="card span12">
+      <h2>Paths (table)</h2>
+      <table id="tblPaths"><thead><tr><th>Fetched At (UTC)</th><th>Path</th><th>Title</th><th>Count</th><th>Uniques</th></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+</main>
+
+<script>
+async function fetchText(url){
+  const r = await fetch(url, {cache:"no-cache"});
+  if(!r.ok) throw new Error(url + " -> " + r.status);
+  return r.text();
+}
+
+// very simple CSV parser (our CSVs don't include commas inside fields, titles were sanitized)
+function parseCSV(text){
+  const lines = text.trim().split(/\r?\n/);
+  const header = lines.shift().split(",");
+  return lines.filter(Boolean).map(line=>{
+    const cols = line.split(",");
+    const obj = {};
+    header.forEach((h,i)=> obj[h.trim()] = (cols[i]||"").trim());
+    return obj;
+  });
+}
+
+function sum(arr, key){ return arr.reduce((acc,x)=> acc + (Number(x[key])||0), 0); }
+function fmt(n){ return Number(n).toLocaleString(); }
+function byDateAsc(a,b){ return (a.date||"").localeCompare(b.date||""); }
+function last(arr){ return arr.length ? arr[arr.length-1] : null; }
+
+function fillTable(tbodySel, rows, cols){
+  const tb = document.querySelector(tbodySel);
+  tb.innerHTML = "";
+  for(const r of rows){
+    const tr = document.createElement("tr");
+    tr.innerHTML = cols.map(c => `<td>${(r[c] ?? "").toString()}</td>`).join("");
+    tb.appendChild(tr);
+  }
+}
+
+let chartViews, chartClones, chartRef, chartPaths;
+
+function drawLines(canvasId, labels, series1, series2, label1, label2){
+  const ctx = document.getElementById(canvasId);
+  if(canvasId==="chartViews" && chartViews) chartViews.destroy();
+  if(canvasId==="chartClones" && chartClones) chartClones.destroy();
+
+  const chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        { label: label1, data: series1 },
+        { label: label2, data: series2 }
+      ]
+    },
+    options: { responsive:true, plugins:{ legend:{ position:"bottom" } } }
+  });
+  if(canvasId==="chartViews") chartViews = chart;
+  if(canvasId==="chartClones") chartClones = chart;
+}
+
+function drawBars(canvasId, labels, data, label){
+  const ctx = document.getElementById(canvasId);
+  if(canvasId==="chartRef" && chartRef) chartRef.destroy();
+  if(canvasId==="chartPaths" && chartPaths) chartPaths.destroy();
+
+  const chart = new Chart(ctx, {
+    type: "bar",
+    data: { labels, datasets: [{ label, data }] },
+    options: { responsive:true, plugins:{ legend:{ display:false } } }
+  });
+  if(canvasId==="chartRef") chartRef = chart;
+  if(canvasId==="chartPaths") chartPaths = chart;
+}
+
+(async function main(){
+  try{
+    // Load CSVs (relative paths)
+    const [viewsCSV, clonesCSV, refCSV, pathsCSV] = await Promise.all([
+      fetchText("data/traffic_views.csv"),
+      fetchText("data/traffic_clones.csv"),
+      fetchText("data/traffic_referrers.csv"),
+      fetchText("data/traffic_paths.csv")
+    ]);
+
+    const views = parseCSV(viewsCSV).sort(byDateAsc);
+    const clones = parseCSV(clonesCSV).sort(byDateAsc);
+    const refs = parseCSV(refCSV);
+    const paths = parseCSV(pathsCSV);
+
+    // Overview KPIs
+    document.getElementById("k_days").textContent = views.length.toString();
+    document.getElementById("k_views").textContent = fmt(sum(views,"count"));
+    document.getElementById("k_visitors").textContent = fmt(sum(views,"uniques"));
+    const latest = last(views) || last(clones);
+    document.getElementById("k_last").textContent = latest ? (latest.date || latest.fetched_at || "—") : "—";
+
+    // Charts: Views
+    drawLines(
+      "chartViews",
+      views.map(v=>v.date),
+      views.map(v=>Number(v.count)||0),
+      views.map(v=>Number(v.uniques)||0),
+      "Views",
+      "Unique Visitors"
+    );
+
+    // Charts: Clones
+    drawLines(
+      "chartClones",
+      clones.map(v=>v.date),
+      clones.map(v=>Number(v.count)||0),
+      clones.map(v=>Number(v.uniques)||0),
+      "Clones",
+      "Unique Cloners"
+    );
+
+    // Charts: Referrers (latest snapshot rows, sort by count desc, top 10)
+    const refTop = [...refs].sort((a,b)=>Number(b.count)-Number(a.count)).slice(0,10);
+    drawBars("chartRef", refTop.map(r=>r.referrer), refTop.map(r=>Number(r.count)||0), "Referrer Count");
+
+    // Charts: Paths (latest snapshot rows, sort by count desc, top 10)
+    const pathTop = [...paths].sort((a,b)=>Number(b.count)-Number(a.count)).slice(0,10);
+    drawBars("chartPaths", pathTop.map(p=>p.path||"/"), pathTop.map(p=>Number(p.count)||0), "Path Count");
+
+    // Tables
+    fillTable("#tblViews tbody", views, ["date","count","uniques"]);
+    fillTable("#tblClones tbody", clones, ["date","count","uniques"]);
+    // For referrers & paths tables, show all rows (they’re usually <=10)
+    const refRows = refs.map(r=>({
+      fetched_at: r.fetched_at, referrer: r.referrer, count: r.count, uniques: r.uniques
+    }));
+    fillTable("#tblRef tbody", refRows, ["fetched_at","referrer","count","uniques"]);
+
+    const pathRows = paths.map(p=>({
+      fetched_at: p.fetched_at, path: p.path, title: p.title, count: p.count, uniques: p.uniques
+    }));
+    fillTable("#tblPaths tbody", pathRows, ["fetched_at","path","title","count","uniques"]);
+
+  }catch(err){
+    document.getElementById("error").textContent = "Failed to load CSVs: " + err.message;
+  }
+})();
+</script>
+</body>
+</html>
