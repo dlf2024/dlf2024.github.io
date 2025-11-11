@@ -21,6 +21,11 @@
     </head>
 
     <body>
+        <video autoplay muted loop playsinline id="background-video">
+        <source src="resources/videos/animated-background-1_diff_4x2_grid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+
         <div id="Home" class="navigation" class="container">
             <nav class="navbar_content">
                 <button class="navbar_toggle" onclick="toggleNav()">☰</button>
@@ -28,7 +33,8 @@
                     <a href="#Home"><img alt="Delphine Vincent initials brand logo" loading="lazy" width="50" height="20" decoding="async" src="resources/images/DV_brand/brand_DV_new_favicon.png">Home</a>
                     <a href="#Biography">Biography</a>
                     <a href="/#Skills">Skills</a>
-                    <a href="/#Portofolio">Portofolio</a>
+                    <a href="/#Portofolio">Portfolio</a>
+                    <a href="/#Learning">Learning</a>
                     <a href="/#Certificates">Certificates-Diploma</a>
                     <a href="resources/files/Delphine-Vincent_resume_2025-09-01.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                     <a href="resources/files/Delphine-Vincent_publications_2025-06-19.csv" target="_blank" rel="noopener noreferrer">Publications</a>
@@ -58,7 +64,7 @@
                     <img alt="Delphine Vincent full brand logo" role="presentation" loading="lazy" width=100% height=auto src="resources/images/DV_brand/brand_delphinevincent_new.png">
                 </div>
                 <div class="badge_bottom_section">
-                    <img class="photo-DV-portrait" alt="portrait photo of Delphine Vincent" loading="lazy" width=60% height=auto src="resources/images/DV_brand/photo_delphinevincent.jpg">
+                    <img class="photo-DV-portrait" alt="portrait photo of Delphine Vincent" loading="lazy" width=60% height=auto src="resources/images/DV_brand/photo_delphinevincent2.jpg">
                     <section class="badge_links">
                         <h2>Links</h2><br>
                         <div class="badge_sociallinks">
@@ -132,19 +138,23 @@
                         For a full list of my ML projects, check out <a href="#ML" onclick="showPortofolioTab('ML', this)">"Machine Learning"</a>.<br></li>
                         <li>3/ CodeCademy Skill Path <em>“Build a website with HTML, CSS and GitHub pages”</em> (<a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites" target="_blank" rel="noreferrer">syllabus</a>).<br> 
                         Using HTML, JS and CSS, I was able to create my own website (the very same you're currently browsing!).<br>
-                        For more details on the design of my website, check out <a href="#codecademyskill" onclick="showPortofolioTab('codecademyskill', this)">"CodeCademy Skill Path - Build a website"</a>.</p>
-                        <img src="resources/images/logo_icons/websiteicons.png" alt="website screenshot" role="presentation" width="35%" height="auto"> <br></li>
+                        For more details on the design of my website, check out <a href="#codecademyskill" onclick="showLearningTab('codecademyskill', this)">"CodeCademy Skill Path - Build a website"</a>.</p>
+                        <img src="resources/images/logo_icons/websiteicons.png" alt="website screenshot" role="presentation" width="35%" height="auto"> <br>
+                        <p>I am currently designing a website for <em>Data Biome</em>. The strategy is described <a href="#webdesign" onclick="showPortofolioTab('webdesign', this)">here</a>.</p></li>
                         <li>4/ CodeCademy Course <em>“Learn Prompt Engineering”</em> (<a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering" target="_blank" rel="noreferrer">syllabus</a>).<br> 
                         This enables me to ensure a productive interaction with generative AI systems.<br>
-                        For more details on my this course, check out <a href="#codecademyprompt" onclick="showPortofolioTab('codecademyprompt', this)">"CodeCademy Course - Learn Prompt Engineeding"</a>.                        
+                        For more details on my this course, check out <a href="#codecademyprompt" onclick="showLearningTab('codecademyprompt', this)">"CodeCademy Course - Learn Prompt Engineeding"</a>.<br>                        
                         <img src="resources/images/logo_icons/codecademyprompticons.png" alt="website screenshot" role="presentation" width="20%" height="auto"> <br></li>
                         <li>5/ CodeCademy Skill Path <em>“Build a chatbot with Python”</em> (<a href="https://www.codecademy.com/learn/paths/build-chatbots-with-python" target="_blank" rel="noreferrer">syllabus</a>).<br> 
                         I have learned how to create a chatbot with python and have implemented a close-domain chatbot for this very website! You'll find it at the bottom rigt corner of my website. Give it a try! Please be patient, answers may take a while to display...<br>
-                        For more details on how I developped my chatbot, check out <a href="#codecademyskill2" onclick="showPortofolioTab('codecademyskill2', this)">"CodeCademy Skill Path - Build a chatbot in Python"</a>.</p>
+                        For more details on how I developped my chatbot, check out <a href="#codecademyskill2" onclick="showLearningTab('codecademyskill2', this)">"CodeCademy Skill Path - Build a chatbot in Python"</a>.</p>
                         <img src="resources/images/logo_icons/chatbotsicons.png" alt="website screenshot" role="presentation" width="10%" height="auto"> <br></li>
                         <li>6/ CodeCademy Course <em>“Large Language Model (LLM)”</em> (<a href="https://www.codecademy.com/learn/intro-to-llms" target="_blank" rel="noreferrer">syllabus</a>).<br> 
                         This short course covers the basics of large language models (LLMs) and text-based Generative Artificial Intelligence (AI). </p>
                         <img src="resources/images/logo_icons/LLMicons.png" alt="website screenshot" role="presentation" width="20%" height="auto"> <br></li>
+                        <li>7/ <em>Automating Visual Storytelling with Python</em> and posting resulting videos on (<a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube</a>) or (<a href="https://www.tiktok.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">TikTok</a>).<br> 
+                        Using Python and FFmpeg, I automate the creation of aesthetic photo montages with ambient sounds from my vast collection of digital images. Details are provided <a href="#youtube" onclick="showLearningTab('youtube', this)">here</a>.</p>
+                        <img src="resources/images/logo_icons/youtubebannericons.png" alt="youtube banner" role="presentation" width="40%" height="auto"> <br></li>
                     </ul>
                 </div>
             </section>
@@ -590,7 +600,7 @@
         </section>
 
         <section id="Portofolio" class="container">
-            <h2>Portofolio</h2>
+            <h2>Portfolio</h2>
             <!-- Portofolio Section -->
             <div class="portofolio_tab">
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('systemsbiology', this)">
@@ -613,28 +623,13 @@
                 </button>
             </div>
             <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademycareer', this)">
-                    <h4>CodeCademy Career Path - Data Science/Analytics</h4>
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('youtube', this)">
+                    <h4>Visual Automation</h4>
                 </button>
             </div>
             <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademycareerML', this)">
-                    <h4>CodeCademy Career Path - Data Science/Machine Learning</h4>
-                </button>
-            </div>
-            <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyskill', this)">
-                    <h4>CodeCademy Skill Path - Build a website</h4>
-                </button>
-            </div>
-            <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyskill2', this)">
-                    <h4>CodeCademy Skill Path - Build a chatbot in Python</h4>
-                </button>
-            </div>
-            <div class="portofolio_tab">
-                <button class="portofolio_tab_button" onclick="showPortofolioTab('codecademyprompt', this)">
-                    <h4>CodeCademy Course - Learn Prompt Engineering</h4>
+                <button class="portofolio_tab_button" onclick="showPortofolioTab('webdesign', this)">
+                    <h4>Website design</h4>
                 </button>
             </div>
 
@@ -959,7 +954,227 @@
                 </ul>
             </div>
 
-            <div id="codecademycareer" class="portofolio_tab_scrollable" style="display:none;">
+            <div id="youtube" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Visual Automation</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                    <p>
+                        I am a keen photgrapher and have taken a plethora of digital pictures for the past 3 decades. In May 2025, I started to share them on social media. <br>
+                        My chanels <em>@60_seconds_of_calm</em> showcases my travels, garden, and travels. <br>
+                        I am using a Python program to automate the creation of an aesthetic photo montage using Python and FFmpeg. <br>
+                        It processes a folder of images, applies fade transitions, and enriches the final video with ambient sounds and a piano music.<br>                        
+                        There are 15 themes (castle, church, national parks, cities, villages, garden, art, whimsical etc...) which are processed in batch. <br>
+                        A stylised "door opening & closing" animation that I creayed overlays the video to simulate stepping outside for a 1 min break.<br>
+                        Each video contains 20 images, which are being processed as described below. <br>
+                        You can view those videos on <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer"> YouTube</a> and <a href="https://www.tiktok.com/@60_seconds_of_calm" target="_blank" rel="noreferrer"> TikTok</a>.
+                    </p>
+                    <strong>Technologies Used</strong>
+                    <ul>
+                        <li>Python (OpenCV, Pillow)</li>
+                        <li>FFmpeg (Video compression, audio mixing, overlay effects)</li>
+                        <li>Command-line automation using <code>subprocess</code></li>
+                    </ul><br>
+
+                    <strong>Workflow Steps</strong>
+                    <ol>
+                        <li>
+                        <em>Load Images:</em> Count all JPG/PNG files in a folder.
+                        </li>
+                        <li>
+                        <em>Resize & Prepare:</em> Each image is padded and resized to fit a 1920×1080 frame while preserving its aspect ratio.
+                        </li>
+                        <li>
+                        <em>Montage Creation:</em> A video is generated with each image shown for 2 seconds, and smooth crossfades between them using OpenCV.
+                        </li>
+                        <li>
+                        <em>Video Compression:</em> The montage is compressed with FFmpeg using the H.264 codec (CRF=28) to reduce file size.
+                        </li>
+                        <li>
+                        <em>Ambient Sound:</em> A high-quality nature soundscape is layered under the video with fade-in and fade-out effects.
+                        </li>
+                        <li>
+                        <em>Background Music:</em> A piano loop is blended with the ambient sound using precise volume and fading controls.
+                        </li>
+                        <li>
+                        <em>Door Animation Overlay:</em> A stylised "door opening" appears at the beginning, and a "door closing" fades in at the end, overlayed on the video.
+                        </li>
+                        <li>
+                        <em>Final Output:</em> A beautifully compressed MP4 (1080p, H.264) video montage, complete with ambient atmosphere and musical mood.
+                        </li>
+                    </ol>                    
+                    </div>                    
+                    <div class="image-content">
+                        <img class="youtube-icons" alt="view of my youtube channel" loading="lazy" width=50% height=auto src="resources/images/logo_icons/youtubeicons.png">
+                    </div>
+                </div>
+            </div>
+
+            <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;">
+                <h5>Website design</h5> <br>
+                <div class="left_right" role="presentation">
+                    <div class="text-content">
+                    <p>
+                        I am currently designing the website for <em>Data Biome</em>, a startup developping probiotics for ruminants to reduce methane emissions and mitigate greenhouse gas impact. <br>
+                        The steps involved are described below. <br>
+                    </p>
+                      <ol>
+                        <li><strong>Project setup & structure</strong>
+                        <ul>
+                            <li>Created repo & local project with <code>index.html</code>, <code>resources/css/style.css</code>, <code>resources/css/reset.css</code>, <code>resources/js/main.js</code>, <code>resources/images/</code>, <code>resources/files/</code>, <code>resources/videos/</code>.</li>
+                            <li>Defined colour palette (Powder Blue <code>#B0E0E6</code>, Dodger Blue <code>#1E90FF</code>, Navy <code>#000080</code>, Dark Orange <code>#F54927</code>).</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Information architecture & layout</strong>
+                        <ul>
+                            <li>Sections: <em>Home (hero)</em>, <em>Projects</em>, <em>Science</em>, <em>Partners</em>, <em>People</em>, <em>Contact</em>.</li>
+                            <li>Built reusable “card” layout: image left, text right; responsive stack on mobile.</li>
+                            <li>Sticky, accessible top navigation with clear focus states and keyboard support.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Branding & visuals</strong>
+                        <ul>
+                            <li>Integrated revised logo options and hero typographic lockup.</li>
+                            <li>Section background imagery with subtle white overlay for legibility.</li>
+                            <li>Vision-impaired friendly contrast; scalable typography across breakpoints.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Hero background animation</strong>
+                        <ul>
+                            <li>Implemented full-width, fixed MP4 background with safe z-index layering.</li>
+                            <li>Produced animation variants via FFmpeg: slowed playback (<code>setpts</code>), mirrored/flipped (<code>hflip/vflip</code>), side-by-side (<code>hstack</code>), top–bottom (<code>vstack</code>), and 2×2 grid (<code>xstack</code>).</li>
+                            <li>Exported web-ready H.264 (<code>-crf</code>, <code>-preset</code>, <code>+faststart</code>), muted when appropriate.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Accessibility & UX</strong>
+                        <ul>
+                            <li>Semantic HTML5 landmarks; descriptive alt text; keyboard-navigable menus.</li>
+                            <li>Reduced-motion consideration for users with motion sensitivity.</li>
+                            <li>Anchor jump offsets for fixed header (modern browsers).</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Contact form</strong>
+                        <ul>
+                            <li>Accessible form with client-side validation and honeypot anti-spam field.</li>
+                            <li>Server-side handler (<code>contact.php</code>) and thank-you page with redirect.</li>
+                            <li>SMTP delivery (PHPMailer) via <code>no-reply@domain</code> for reliable mail.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>WebCentral-compatible CSS (legacy linter safe)</strong>
+                        <ul>
+                            <li>Avoided <code>clamp()</code>, <code>color-mix()</code>, <code>inset:</code>, <code>gap:</code> in production CSS.</li>
+                            <li>Replaced modern functions with media queries and margin patterns.</li>
+                            <li>Placed hex fallbacks before RGBA for backgrounds/borders; used classic properties in place of logical shorthands.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Server setup (WebCentral cPanel)</strong>
+                        <ul>
+                            <li>Created mailbox <code>no-reply@domain</code> (strong password; SMTP credentials captured).</li>
+                            <li>Prepared <code>public_html/dev/</code> staging folder; enabled password protection for private review.</li>
+                            <li>Uploaded site via File Manager: extracted ZIP to <code>dev</code> (then later to <code>public_html</code> for go-live).</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Deploy & cache strategy</strong>
+                        <ul>
+                            <li>Added cache-busters to CSS/JS links (e.g., <code>?v=YYYYMMDD</code>) to avoid stale assets.</li>
+                            <li>Verified paths are case-accurate (Linux hosting is case-sensitive).</li>
+                            <li>Cleared/invalidated caches and performed hard refresh / Incognito checks.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>QA & cross-browser testing</strong>
+                        <ul>
+                            <li>Compared local VS Code preview vs hosted dev; reconciled differences (validator warnings, path case, media loading).</li>
+                            <li>Checked responsive behaviour across mobile/tablet/desktop and common browsers.</li>
+                            <li>Validated form submission end-to-end (client → SMTP → inbox).</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Go-live</strong>
+                        <ul>
+                            <li>Backed up original <code>index.html</code>; deployed production bundle to <code>public_html</code>.</li>
+                            <li>Re-tested navigation, hero video, images, and contact form in production.</li>
+                            <li>Provided handover notes: editing content, adding images, and safe update workflow.</li>
+                        </ul>
+                        </li>
+
+                        <li><strong>Maintenance</strong>
+                        <ul>
+                            <li>Monthly care: minor content updates, link checks, form delivery verification.</li>
+                            <li>Versioning: increment cache-buster on each deploy; keep local and server copies in sync.</li>
+                            <li>Future-proofing: roadmap for blog/chatbot integration and additional project pages.</li>
+                        </ul>
+                        </li>
+                        </ol>
+                    </div>                    
+                    <div class="image-content">
+                        <img class="databiome-icons" alt="scientfic journal icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/databiomeicons.png">
+                    </div>
+                </div>
+            </div>            
+
+            <script>
+                // Function to handle skills tab active state
+                function showPortofolioTab(tabName, element) {
+                    // Hide all portfolio tab content
+                    document.querySelectorAll('.portofolio_tab_scrollable').forEach(tab => {
+                        tab.style.display = 'none'; // Hide all tabs
+                    });
+
+                    // Remove 'active' class from all buttons
+                    document.querySelectorAll('.portofolio_tab_button').forEach(button => {
+                        button.classList.remove('active');
+                    });
+
+                    // Show the selected tab content
+                    document.getElementById(tabName).style.display = 'block';
+
+                    // Add 'active' class to the clicked button
+                    element.classList.add('active');
+                }
+            </script>
+
+       </section>
+
+
+        <section id="Learning" class="container">
+            <h2>Learning</h2>
+            <!-- Learning Section -->
+            <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('codecademycareer', this)">
+                    <h4>CodeCademy Career Path - Data Science/Analytics</h4>
+                </button>
+            </div>
+            <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('codecademycareerML', this)">
+                    <h4>CodeCademy Career Path - Data Science/Machine Learning</h4>
+                </button>
+            </div>
+            <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('codecademyskill', this)">
+                    <h4>CodeCademy Skill Path - Build a website</h4>
+                </button>
+            </div>
+            <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('codecademyskill2', this)">
+                    <h4>CodeCademy Skill Path - Build a chatbot in Python</h4>
+                </button>
+            </div>
+            <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('codecademyprompt', this)">
+                    <h4>CodeCademy Course - Learn Prompt Engineering</h4>
+                </button>
+            </div>
+
+
+            <div id="codecademycareer" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Career Path - Data Science / Analytics</h5> <br>
                 <p>
                     The syllabus of the <em>CodeCademy Career Path course “Data Scientist - Analytics Specialist”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/data-analyst" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
@@ -1027,7 +1242,7 @@
                 </ul>
             </div>
 
-            <div id="codecademycareerML" class="portofolio_tab_scrollable" style="display:none;">
+            <div id="codecademycareerML" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Career Path - Data Science / Machine Learning</h5> <br>
                 <p>
                     The syllabus of the <em>CodeCademy Career Path course “Data Scientist - Machine Learning Specialist”</em> is listed here (<a href="https://www.codecademy.com/career-journey/data-scientist-ml" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
@@ -1113,7 +1328,7 @@
             </div>
 
 
-            <div id="codecademyskill" class="portofolio_tab_scrollable" style="display:none;">
+            <div id="codecademyskill" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Skill Path - Build a website</h5> <br>
                 <p>
                     The syllabus of the <em>CodeCademy Career Skill course “Build a website with HTML, CSS and GitHub pages”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
@@ -1139,7 +1354,7 @@
                 </p> <br>
             </div>
 
-            <div id="codecademyskill2" class="portofolio_tab_scrollable" style="display:none;">
+            <div id="codecademyskill2" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Skill Path - Build a chatbot in Python</h5> <br>
                 <p>
                     The syllabus of the <em>CodeCademy Career Skill course “Build a chatbot in Python”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/build-chatbots-with-python" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
@@ -1190,7 +1405,7 @@
             </div>
 
 
-            <div id="codecademyprompt" class="portofolio_tab_scrollable" style="display:none;">
+            <div id="codecademyprompt" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Certification - Learn Prompt Engineering</h5> <br>
                 <p>
                     The syllabus of the <em>CodeCademy course “Learn Promt Engineering”</em> is listed here (<a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
@@ -1213,14 +1428,14 @@
 
             <script>
                 // Function to handle skills tab active state
-                function showPortofolioTab(tabName, element) {
+                function showLearningTab(tabName, element) {
                     // Hide all portfolio tab content
-                    document.querySelectorAll('.portofolio_tab_scrollable').forEach(tab => {
+                    document.querySelectorAll('.learning_tab_scrollable').forEach(tab => {
                         tab.style.display = 'none'; // Hide all tabs
                     });
 
                     // Remove 'active' class from all buttons
-                    document.querySelectorAll('.portofolio_tab_button').forEach(button => {
+                    document.querySelectorAll('.learning_tab_button').forEach(button => {
                         button.classList.remove('active');
                     });
 

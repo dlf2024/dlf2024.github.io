@@ -13,7 +13,7 @@
 }
 
 body,html {
-    background-color: white;
+    background-color: transparent; /* white */
     max-width: 100vw;
     overflow-x: hidden;
     font-size: 16px;
@@ -325,7 +325,7 @@ button.infobox_tab_button.active {
     margin-top: 0.25rem;
 }
 
-#Skills, #Portofolio {
+#Skills, #Portofolio, #Learning {
     display: flex;
     flex-direction: row; /* Aligns content horizontally */
     justify-content: center; /* Centers the content horizontally */
@@ -337,20 +337,20 @@ button.infobox_tab_button.active {
     margin: 0 auto; /* Centers the section on the page */
 }
 
-#Skills h2, #Portofolio h2 {
+#Skills h2, #Portofolio h2, #Learning h2 {
     margin-bottom: 10px;
     width: 100%; /* Ensures the title takes up the full width */
     text-align: center; /* Centers the heading text */
 }
 
-#Skills a, #Portofolio a {
+#Skills a, #Portofolio a, #Learning a {
     color: initial; /* Default color for your links */
     background-color: initial;
     text-decoration: none; /* Remove underline by default */
     transition: color 0.3s ease; /* Smooth transition for color changes */
 }
 
-#Skills a:hover, #Portofolio a:hover {
+#Skills a:hover, #Portofolio a:hover, #Learning a:hover {
     color: #FFC000; /* Change color when hovered */
     background-color: initial; /* Reset any background color */
     text-decoration: none;
@@ -363,8 +363,13 @@ button.infobox_tab_button.active {
     color: #FFC000; /* Retain the color when clicked or focused */
     text-decoration: none; /* Ensure no underline on active or focus */
 }
+#Learning a:focus,
+#Learning a:active {
+    color: #FFC000; /* Retain the color when clicked or focused */
+    text-decoration: none; /* Ensure no underline on active or focus */
+}
 
-.skills_tab_button:hover, .portofolio_tab_button:hover {
+.skills_tab_button:hover, .portofolio_tab_button:hover, .learning_tab_button:hover {
     background-color: #FFC000; /* Adds a hover effect */
 }
 
@@ -385,7 +390,8 @@ button.infobox_tab_button.active {
 
 /* General Styles for Scrollable Tabs (Skills and Portfolio) */
 .skills_tab_scrollable, 
-.portofolio_tab_scrollable {
+.portofolio_tab_scrollable,
+.learning_tab_scrollable {
     display: none; /* Initially hide all tabs */
     width: 100%;
     padding: 1rem;
@@ -404,7 +410,8 @@ button.infobox_tab_button.active {
 
 /* Styles for Buttons in Skills and Portfolio */
 .skills_tab_button, 
-.portofolio_tab_button {
+.portofolio_tab_button,
+.learning_tab_button {
     width: auto; /* Adjust width based on content */
     padding: 10px;
     margin: 5px;
@@ -416,31 +423,32 @@ button.infobox_tab_button.active {
 
 /* Active tab content */
 .skills_tab_scrollable.active, 
-.portofolio_tab_scrollable.active {
+.portofolio_tab_scrollable.active,
+.learning_tab_scrollable.active {
     display: block; /* Show only the active tab */
 }
 
-.skills_tab_scrollable ul, .portofolio_tab_scrollable ul {
+.skills_tab_scrollable ul, .portofolio_tab_scrollable ul, .learning_tab_scrollable ul {
     list-style-type: disc;
     margin-left: 1.5rem;
 }
 
-.skills_tab_scrollable p, .portofolio_tab_scrollable p {
+.skills_tab_scrollable p, .portofolio_tab_scrollable p, .learning_tab_scrollable p {
     margin-bottom: 1rem;
 }
 
-.skills_tab_scrollable strong, .portofolio_tab_scrollable strong {
+.skills_tab_scrollable strong, .portofolio_tab_scrollable strong, .learning_tab_scrollable strong {
     color: #FF3399;
     text-decoration: bold;
 }
 
-.skills_tab_scrollable  a, .portofolio_tab_scrollable a {
+.skills_tab_scrollable  a, .portofolio_tab_scrollable a, .learning_tab_scrollable a {
     text-indent: 1rem;
     margin-left: 1.5rem;
 }
 
 /* Skills tabs - retain hover color once clicked */
-button.skills_tab_button, button.portofolio_tab_button {
+button.skills_tab_button, button.portofolio_tab_button, button.learning_tab_button {
     background-color: #3F007E;
     color: #FFC000;
     padding: 0.5rem 1rem;
@@ -449,18 +457,18 @@ button.skills_tab_button, button.portofolio_tab_button {
     border: 0.2rem solid #FFC000;
 }
 
-button.skills_tab_button:hover, button.portofolio_tab_button:hover {
+button.skills_tab_button:hover, button.portofolio_tab_button:hover, button.learning_tab_button:hover {
     background-color: #FF3399;
 }
 
-button.skills_tab_button.active, button.portofolio_tab_button.active {
+button.skills_tab_button.active, button.portofolio_tab_button.active, button.learning_tab_button.active {
     background-color: #FF3399; /* Retain hover color after click */
     color: #FFC000;
     border-radius: 15px;
 }
 
 #editor a, #storytelling a, #bigdata a, #systemsbiology a, #datascience a, #lifescience a, #Biography a,
-#patents a, #codecademycareer a,  #codecademyskill a, #codecademyskill2 a, #codecademyprompt a {
+#patents a, #youtube a, #webdesign a, #codecademycareer a, #codecademycareerML a, #codecademyskill a, #codecademyskill2 a, #codecademyprompt a {
     text-decoration: underline;
     color:  #3F007E;
 }
@@ -641,4 +649,17 @@ img, video {
     .right_section {
         max-width: none; /* Remove the max-width constraint */
     }
+}
+
+/* === Fullscreen Background Video === */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+  pointer-events: none;
 }
