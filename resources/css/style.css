@@ -12,15 +12,16 @@
     font-weight: 900 !important;
 }
 
-body,html {
-    background-color: transparent; /* white */
+body, html {
+    background-color: transparent; /* changed from white */
+    background-image: none;
     max-width: 100vw;
     overflow-x: hidden;
     font-size: 16px;
     color: #070606;
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 60px; /* Adjust based on your navbar height */
-    scroll-padding-top: 60px; /* Adjust based on your header height */
+    padding-top: 60px;
+    scroll-padding-top: 60px;
 }
 
 h1 {
@@ -87,7 +88,7 @@ strong {
     color: #FF3399;
     font-style: bold;
     font-family: "Arial Black";
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 em {
@@ -555,8 +556,8 @@ h1, h2, h3, h4 {
     font-size: clamp(1rem, 2.5vw, 2rem); /* Adjusts between 1.5rem and 2rem based on viewport width */
 }
 
-p, ul, li {
-    font-size: clamp(0.5rem, 1.5vw, 1rem); /* Adjusts between 0.5rem and 1rem based on viewport width */
+p, ul, li, em {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 /* Responsive images and media */
@@ -662,4 +663,90 @@ img, video {
   z-index: -1;
   opacity: 0.3;
   pointer-events: none;
+  background-color: white; /* fallback if video fails */
 }
+
+/* === Display for small vertical screens (smartphones) ==*/
+@media screen and (max-width: 768px) {
+    .badge_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    }
+
+    .badge_left_column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: stretch;
+    align-items: center;
+    min-width: 150px;
+    max-width: 300px;
+    }
+
+  .logo_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex: 1;
+  }
+
+    .logo_left img,
+    .photo-DV-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex: 1;
+    }
+
+  .badge_bottom_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex: 1;
+  }
+
+  .photo-DV-portrait {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  .badge_links {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge_sociallinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+
+  /* Optional: ensure the left and right sections remain same height */
+  .logo_left, .badge_bottom_section {
+    min-height: 100vw;
+  }
+}
+
+
+
+
+
+
+
+
+

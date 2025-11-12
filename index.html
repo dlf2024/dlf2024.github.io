@@ -60,36 +60,42 @@
 
         <header class="container">
             <section class="badge_container">
+            <div class="badge_left_area">
                 <div class="logo_left">
-                    <img alt="Delphine Vincent full brand logo" role="presentation" loading="lazy" width=100% height=auto src="resources/images/DV_brand/brand_delphinevincent_new.png">
+                <img alt="Delphine Vincent full brand logo" loading="lazy" src="resources/images/DV_brand/brand_delphinevincent_new.png">
                 </div>
-                <div class="badge_bottom_section">
-                    <img class="photo-DV-portrait" alt="portrait photo of Delphine Vincent" loading="lazy" width=60% height=auto src="resources/images/DV_brand/photo_delphinevincent2.jpg">
-                    <section class="badge_links">
-                        <h2>Links</h2><br>
-                        <div class="badge_sociallinks">
-                            <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
-                                <img src="resources/images/logo_icons/logo_LinkedIn_initials.png" alt="LinkedIn Icon" width="20" height="20">
-                            </a>
-                            <a href="https://scholar.google.com.au/citations?hl=en&tzom=-600&user=ry5O9ukAAAAJ" target="_blank" rel="noreferrer">Google Scholar
-                                <img src="resources/images/logo_icons/logo_Google_Scholar.png" alt="Google Scholar Icon" width="20" height="20">
-                            </a>
-                            <a href="https://orcid.org/0000-0002-9083-015X" target="_blank" rel="noreferrer">ORCID
-                                <img src="resources/images/logo_icons/logo_orcid.png" alt="ORCID Icon" width="20" height="20">
-                            </a>
-                            <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
-                                <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" width="20" height="20">
-                            </a>
-                            <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">Tableau
-                                <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" width="20" height="20">
-                            </a>
-                            <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
-                                <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
-                            </a>
-                        </div>
-                    </section>
+                <div class="photo_container">
+                <img class="photo-DV-portrait" alt="portrait photo of Delphine Vincent" loading="lazy" src="resources/images/DV_brand/photo_delphinevincent2.jpg">
                 </div>
+            </div>
+
+            <div class="badge_links_area">
+                <section class="badge_links">
+                <h2>Links</h2><br>
+                <div class="badge_sociallinks">
+                    <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
+                    <img src="resources/images/logo_icons/logo_LinkedIn_initials.png" alt="LinkedIn Icon" width="20" height="20">
+                    </a>
+                    <a href="https://scholar.google.com.au/citations?hl=en&tzom=-600&user=ry5O9ukAAAAJ" target="_blank" rel="noreferrer">Google Scholar
+                    <img src="resources/images/logo_icons/logo_Google_Scholar.png" alt="Google Scholar Icon" width="20" height="20">
+                    </a>
+                    <a href="https://orcid.org/0000-0002-9083-015X" target="_blank" rel="noreferrer">ORCID
+                    <img src="resources/images/logo_icons/logo_orcid.png" alt="ORCID Icon" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub
+                    <img src="resources/images/logo_icons/logo_github-mark-white.png" alt="GitHub Icon" width="20" height="20">
+                    </a>
+                    <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">Tableau
+                    <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" width="20" height="20">
+                    </a>
+                    <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
+                    <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
+                    </a>
+                </div>
+                </section>
+            </div>
             </section>
+
 
             <section id="Biography" class="infobox_container">
                 <h2>Biography</h2>
@@ -1492,14 +1498,21 @@
 
         </footer>
 
-<!-- DLF Chatbot config + loader (add just before </body>) -->
-<script>
-  window.DLF_CHATBOT_CONFIG = {
-    apiBase: "https://dlf-website-bot-backend.onrender.com"
-  };
-</script>
-<script src="assets/js/chat-widget.js"></script>
+    <!-- DLF Chatbot config + loader (add just before </body>) -->
+    <script>
+    window.DLF_CHATBOT_CONFIG = {
+        apiBase: "https://dlf-website-bot-backend.onrender.com"
+    };
+    </script>
+    <script src="assets/js/chat-widget.js"></script>
 
+    <!-- transparent background to show animation-->
+    <script>
+    const video = document.querySelector(".background-video video");
+    video?.addEventListener('loadeddata', () => {
+        document.body.style.backgroundColor = 'transparent';
+    });
+    </script>
 
     </body>
 </html>
