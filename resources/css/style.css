@@ -189,11 +189,48 @@ header {
 
 .badge_container {
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center the logo horizontally */
-    width: 40%; /* left section */
-    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
 }
+
+@media (min-width: 768px) {
+    .badge_container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .logo_left {
+        flex: 0 0 200px;
+        margin-right: 40px;
+    }
+
+    .badge_bottom_section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photo-DV-portrait {
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .badge_links {
+        margin-top: 0;
+    }
+
+    .badge_sociallinks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 
 .logo_left {
     margin-bottom: 0; /* Space below the logo */
@@ -666,7 +703,7 @@ img, video {
   background-color: white; /* fallback if video fails */
 }
 
-/* === Display for small vertical screens (smartphones) ==*/
+/* === Responsive for small vertical screens (smartphones) ==*/
 @media screen and (max-width: 768px) {
     .badge_container {
     display: flex;
@@ -736,9 +773,188 @@ img, video {
     flex-grow: 1;
   }
 
+    .main-biography-container {
+    display: block; /* stacked by default for mobile */
+    padding: 0 20px;
+    }
+
+
   /* Optional: ensure the left and right sections remain same height */
   .logo_left, .badge_bottom_section {
     min-height: 100vw;
+  }
+}
+
+/* --- Responsive: side-by-side layout on wide screens --- */
+@media screen and (min-width: 1000px) {
+  .main-biography-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0 60px;
+  }
+
+  .badge_container {
+    flex: 0 0 300px; /* fixed width for sidebar */
+  }
+
+  .biography-content {
+    flex: 1;
+    max-width: 100%;
+  }
+}
+
+/* ====================
+   Restore horizontal layout on wide screens
+   ==================== */
+@media screen and (min-width: 1000px) {
+  .badge_biography_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px; /* spacing between left and right blocks */
+  }
+
+  .badge_left {
+    flex: 0 0 320px; /* fixed width for left panel */
+  }
+
+  .badge_right {
+    flex: 1; /* take remaining space */
+  }
+}
+
+/* --- Responsive: side-by-side layout on screens larger than 768px--- */
+@media (min-width: 768px) {
+  .bio-tab-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 40px;
+  }
+
+  .left_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .bio-content {
+    flex: 1;
+    max-width: 800px;
+  }
+}
+
+/* Always use large logo and portrait sizes unless on small screens */
+.logo_left img {
+  width: 280px;
+  height: auto;
+}
+
+.photo-DV-portrait {
+  width: 260px;
+  height: auto;
+}
+
+/* Optional spacing */
+.badge_container {
+  gap: 40px;
+}
+
+/* responsive for large screen */
+@media (min-width: 1200px) {
+  .badge_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .badge_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
+
+  .badge_left img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .badge_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+  }
+
+  .badge_right .badge_links {
+    width: 100%;
+  }
+
+  .badge_right h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .badge_sociallinks a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .badge_sociallinks img {
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+/* === WIDE SCREEN FIXES ONLY (min 1200px) === */
+@media (min-width: 1200px) {
+  /* Make photo, logo and badge links larger */
+  .photo-DV-portrait {
+    width: 300px !important;
+    height: auto !important;
+  }
+
+  .logo_left {
+    width: 260px !important;
+    height: auto !important;
+  }
+
+  .badge_links {
+    width: 180px !important;
+    height: auto !important;
+  }
+
+  /* Increase margin under logo */
+  .logo_left {
+    margin-bottom: 15px;
+  }
+
+  /* Increase spacing between links and photo */
+  .badge_links {
+    margin-top: 10px;
+  }
+
+  /* Ensure left section is tall enough */
+  .badge_container {
+    min-height: 700px;
   }
 }
 
