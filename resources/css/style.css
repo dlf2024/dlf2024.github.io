@@ -958,6 +958,10 @@ img, video {
   }
 }
 
+.bot-message span.dv-citation {
+    font-weight: 600;
+    color: #3F007E;
+}
 
 
 

@@ -1,6 +1,7 @@
 (function(){
   const cfg = window.DLF_CHATBOT_CONFIG || {};
   const API = (cfg.apiBase || "http://localhost:8001") + "/chat";
+  const API_RAG = (cfg.apiBase || "http://localhost:8001") + "/chat_rag";
   let sessionId = null;
 
   // === Quick actions: open site tabs without calling backend ===
@@ -152,14 +153,33 @@ const QUICK_ACTIONS = {
     addMsg(text, 'user');
     input.value='';
     try{
-      const res = await fetch(API, {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ message: text, session_id: sessionId })
+      // NEW RULE: If the message starts with "pub:" or "paper:" → use RAG endpoint
+      const isRAG = text.toLowerCase().startsWith("pub:") || 
+                    text.toLowerCase().startsWith("paper:") ||
+                    text.toLowerCase().includes("publication") ||
+                    text.toLowerCase().includes("research");
+
+      const endpoint = isRAG ? API_RAG : API;
+
+      // Send to correct backend
+      const res = await fetch(endpoint, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          message: text.replace(/^pub:\s*/i, ""),   // clean prefix if needed
+          session_id: sessionId
+        })
       });
+
       const data = await res.json();
       sessionId = data.session_id || sessionId;
+
+      // Show the reply
       addMsg(data.reply, 'bot');
-      addSuggestions(data.suggestions);
+
+      // Suggestions only for FAQ model
+      if (!isRAG) addSuggestions(data.suggestions);
+
     }catch(e){
       addMsg('Hmm, I could not reach the server. Please try again later.', 'bot');
     }
