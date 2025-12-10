@@ -251,7 +251,7 @@
 
                 <div id="datascience" class="infobox_tab_scrollable">
                     <h5>Data Scientist (2024-now)</h5><br>
-                    <p><br><strong>I have now become a data science machine learning (ML) specialist, as well as a front-end developper by undertaking the following certifications:</strong> <br>
+                    <p><br><strong>I have now become a data science machine learning (ML) specialist, and a front-end developper by undertaking the following certifications:</strong> <br>
                     <ul>
                         <li>1/ CodeCademy Career Path course <em>“Data Scientist - Analytics Specialist”</em>, covering SQL, Python 3, Tableau, Excel and GitHub (<a href="https://www.codecademy.com/learn/paths/data-analyst" target="_blank" rel="noreferrer">syllabus</a>). 
                         <br> I applied my data science and Python skills on the largest proteogenomics dataset to date and refine wheat genome annotation (DOI 10.3390/ijms25168614, more details in <a href="#bigdata" onclick="showPortofolioTab('bigdata', this)">"Big Data"</a>). <br>
@@ -430,7 +430,7 @@
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img class="stats-icons" alt="charts icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/LMskillsicons.png
+                        <img class="stats-icons" alt="charts icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/LMskillsicons.png
 ">
                     </div>
                 </div>                
@@ -1179,116 +1179,159 @@
                 </div>
             </div>
 
-            <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;">
-                <h5>Website design</h5> <br>
-                <div class="left_right" role="presentation">
-                    <div class="text-content">
-                    <p>
-                        I am currently designing the website for <em>Data Biome</em>, a startup developping probiotics for ruminants to reduce methane emissions and mitigate greenhouse gas impact. <br>
-                        The steps involved are described below. <br>
+            <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;"> 
+            <h5>Website design</h5><br>
+
+            <div class="left_right" role="presentation">
+                <div class="text-content">
+                <p>
+                    I designed and deployed the website for <em>Data Biome</em> (<a href="https://www.databiome.au/" target="_blank" rel="noreferrer"> URL</a>), a biotechnology startup developing probiotics for ruminants to reduce methane emissions and mitigate greenhouse gas impact.  
+                    This project covered the full pipeline from local development to WebCentral production hosting, including SMTP infrastructure for the contact form.
+                </p>
+
+                <ol>
+
+                    <li><strong>Project setup & structure</strong>
+                    <ul>
+                        <li>Created full local project structure with <code>index.html</code>, <code>style.css</code>, <code>reset.css</code>, <code>main.js</code>, and asset directories.</li>
+                        <li>Versioned ZIP deployments for incremental hosting uploads.</li>
+                        <li>Defined brand colour palette (Powder Blue <code>#B0E0E6</code>, Dodger Blue <code>#1E90FF</code>, Navy <code>#000080</code>, Dark Orange <code>#F54927</code>).</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Information architecture & layout</strong>
+                    <ul>
+                        <li>Designed full one-page layout: <em>Home</em>, <em>Projects</em>, <em>Science</em>, <em>Partners</em>, <em>People</em>, <em>Contact</em>.</li>
+                        <li>Built reusable responsive card system (image left, text right).</li>
+                        <li>Sticky, accessible top navigation with keyboard and focus support.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Branding & visual identity</strong>
+                    <ul>
+                        <li>Integrated custom logo, icons, and typographic identity.</li>
+                        <li>Implemented background imagery with contrast overlays for readability.</li>
+                        <li>WCAG-aware contrast and scalable typography across breakpoints.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Hero background animation (video engineering)</strong>
+                    <ul>
+                        <li>Full-width fixed MP4 background with layered z-index safety.</li>
+                        <li>Advanced FFmpeg processing via Python subprocess: slowing, mirroring, flipping, stacking (side-by-side, top–bottom, 2×2 grids).</li>
+                        <li>Web-optimised H.264 export (<code>-crf</code>, <code>-preset</code>, <code>+faststart</code>).</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Accessibility & UX</strong>
+                    <ul>
+                        <li>Semantic HTML5 landmarks and keyboard-navigable menus.</li>
+                        <li>Clear focus states and form validation feedback.</li>
+                        <li>Reduced-motion considerations for animated elements.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Contact form (secure SMTP infrastructure)</strong>
+                    <ul>
+                        <li>Client-side validation with honeypot bot protection.</li>
+                        <li>Server-side mail handling via <code>contact.php</code> and PHPMailer.</li>
+                        <li>SMTP relay configured through WebCentral mail servers.</li>
+                        <li>DNS authentication repaired (SPF + DMARC).</li>
+                        <li>End-to-end validation: browser → PHP → SMTP → inbox.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>WebCentral-compatible CSS engineering</strong>
+                    <ul>
+                        <li>Strict compatibility with WebCentral legacy CSS linter.</li>
+                        <li>Removed unsupported modern functions (<code>clamp</code>, <code>gap</code>, <code>color-mix</code>, logical shorthands).</li>
+                        <li>Implemented hex fallbacks before RGBA and classic layout properties.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Server setup (cPanel)</strong>
+                    <ul>
+                        <li>Created mailboxes (<code>info@</code>, <code>no-reply@</code>).</li>
+                        <li>Configured SMTP authentication and relay permissions.</li>
+                        <li>Staging environment under <code>/public_html/dev/</code> for private review.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Deployment & caching strategy</strong>
+                    <ul>
+                        <li>ZIP deployment via File Manager.</li>
+                        <li>Cache-buster versioning for CSS/JS files.</li>
+                        <li>Linux-safe path validation and case-sensitive testing.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>QA & cross-environment validation</strong>
+                    <ul>
+                        <li>Reconciled differences between VS Code Live Server and hosted WebCentral rendering.</li>
+                        <li>Mobile, tablet, desktop responsive validation.</li>
+                        <li>Form delivery verified via live inbox testing.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Production launch</strong>
+                    <ul>
+                        <li>Final deployment to <code>/public_html</code>.</li>
+                        <li>Live navigation, media, and form tested post-launch.</li>
+                        <li>Client handover for content updates and safe maintenance.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Ongoing maintenance</strong>
+                    <ul>
+                        <li>Monthly content updates and link checks.</li>
+                        <li>Form delivery health monitoring.</li>
+                        <li>Roadmap for future feature expansion.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Key challenges solved</strong>
+                    <ul>
+                        <li>Diagnosed and resolved silent SMTP delivery failures caused by outbound relay restrictions on shared hosting.</li>
+                        <li>Reconfigured secure mail delivery using provider-specific SMTP relay instead of generic mail host.</li>
+                        <li>Repaired domain-level email authentication (SPF + DMARC) to restore full mail deliverability.</li>
+                        <li>Debugged production-only issues masked during local development (SMTP, SSL, cache, linter constraints).</li>
+                        <li>Engineered around legacy WebCentral CSS limitations while preserving modern responsive behaviour.</li>
+                        <li>Stabilised contact-form infrastructure for production reliability under real-world security conditions.</li>
+                    </ul>
+                    </li>
+
+                    <li><strong>Tools & stack</strong>
+                    <ul>
+                        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (vanilla)</li>
+                        <li><strong>Media processing:</strong> FFmpeg (hero video animation, mirroring, stacking, compression)</li>
+                        <li><strong>Backend:</strong> PHP (contact form handler)</li>
+                        <li><strong>Email delivery:</strong> PHPMailer, SMTP authentication (SSL/TLS)</li>
+                        <li><strong>Hosting & deployment:</strong> WebCentral cPanel, File Manager, password-protected staging</li>
+                        <li><strong>Mail security:</strong> SPF, DMARC, authenticated SMTP relay</li>
+                        <li><strong>Workflow & QA:</strong> VS Code, browser dev tools, hard refresh & cache busting</li>
+                    </ul>
+                    </li>
+
+                    <p style="margin-top:1rem; font-style: italic;">
+                    This project delivered a fully responsive, production-ready scientific website with secure email handling, optimised media performance, 
+                    and a WebCentral-compliant deployment pipeline, providing Data Biome with a reliable digital foundation for public communication and future growth.
                     </p>
-                      <ol>
-                        <li><strong>Project setup & structure</strong>
-                        <ul>
-                            <li>Created repo & local project with <code>index.html</code>, <code>resources/css/style.css</code>, <code>resources/css/reset.css</code>, <code>resources/js/main.js</code>, <code>resources/images/</code>, <code>resources/files/</code>, <code>resources/videos/</code>.</li>
-                            <li>Defined colour palette (Powder Blue <code>#B0E0E6</code>, Dodger Blue <code>#1E90FF</code>, Navy <code>#000080</code>, Dark Orange <code>#F54927</code>).</li>
-                        </ul>
-                        </li>
 
-                        <li><strong>Information architecture & layout</strong>
-                        <ul>
-                            <li>Sections: <em>Home (hero)</em>, <em>Projects</em>, <em>Science</em>, <em>Partners</em>, <em>People</em>, <em>Contact</em>.</li>
-                            <li>Built reusable “card” layout: image left, text right; responsive stack on mobile.</li>
-                            <li>Sticky, accessible top navigation with clear focus states and keyboard support.</li>
-                        </ul>
-                        </li>
 
-                        <li><strong>Branding & visuals</strong>
-                        <ul>
-                            <li>Integrated revised logo options and hero typographic lockup.</li>
-                            <li>Section background imagery with subtle white overlay for legibility.</li>
-                            <li>Vision-impaired friendly contrast; scalable typography across breakpoints.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Hero background animation</strong>
-                        <ul>
-                            <li>Implemented full-width, fixed MP4 background with safe z-index layering.</li>
-                            <li>Produced animation variants via FFmpeg: slowed playback (<code>setpts</code>), mirrored/flipped (<code>hflip/vflip</code>), side-by-side (<code>hstack</code>), top–bottom (<code>vstack</code>), and 2×2 grid (<code>xstack</code>).</li>
-                            <li>Exported web-ready H.264 (<code>-crf</code>, <code>-preset</code>, <code>+faststart</code>), muted when appropriate.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Accessibility & UX</strong>
-                        <ul>
-                            <li>Semantic HTML5 landmarks; descriptive alt text; keyboard-navigable menus.</li>
-                            <li>Reduced-motion consideration for users with motion sensitivity.</li>
-                            <li>Anchor jump offsets for fixed header (modern browsers).</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Contact form</strong>
-                        <ul>
-                            <li>Accessible form with client-side validation and honeypot anti-spam field.</li>
-                            <li>Server-side handler (<code>contact.php</code>) and thank-you page with redirect.</li>
-                            <li>SMTP delivery (PHPMailer) via <code>no-reply@domain</code> for reliable mail.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>WebCentral-compatible CSS (legacy linter safe)</strong>
-                        <ul>
-                            <li>Avoided <code>clamp()</code>, <code>color-mix()</code>, <code>inset:</code>, <code>gap:</code> in production CSS.</li>
-                            <li>Replaced modern functions with media queries and margin patterns.</li>
-                            <li>Placed hex fallbacks before RGBA for backgrounds/borders; used classic properties in place of logical shorthands.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Server setup (WebCentral cPanel)</strong>
-                        <ul>
-                            <li>Created mailbox <code>no-reply@domain</code> (strong password; SMTP credentials captured).</li>
-                            <li>Prepared <code>public_html/dev/</code> staging folder; enabled password protection for private review.</li>
-                            <li>Uploaded site via File Manager: extracted ZIP to <code>dev</code> (then later to <code>public_html</code> for go-live).</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Deploy & cache strategy</strong>
-                        <ul>
-                            <li>Added cache-busters to CSS/JS links (e.g., <code>?v=YYYYMMDD</code>) to avoid stale assets.</li>
-                            <li>Verified paths are case-accurate (Linux hosting is case-sensitive).</li>
-                            <li>Cleared/invalidated caches and performed hard refresh / Incognito checks.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>QA & cross-browser testing</strong>
-                        <ul>
-                            <li>Compared local VS Code preview vs hosted dev; reconciled differences (validator warnings, path case, media loading).</li>
-                            <li>Checked responsive behaviour across mobile/tablet/desktop and common browsers.</li>
-                            <li>Validated form submission end-to-end (client → SMTP → inbox).</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Go-live</strong>
-                        <ul>
-                            <li>Backed up original <code>index.html</code>; deployed production bundle to <code>public_html</code>.</li>
-                            <li>Re-tested navigation, hero video, images, and contact form in production.</li>
-                            <li>Provided handover notes: editing content, adding images, and safe update workflow.</li>
-                        </ul>
-                        </li>
-
-                        <li><strong>Maintenance</strong>
-                        <ul>
-                            <li>Monthly care: minor content updates, link checks, form delivery verification.</li>
-                            <li>Versioning: increment cache-buster on each deploy; keep local and server copies in sync.</li>
-                            <li>Future-proofing: roadmap for blog/chatbot integration and additional project pages.</li>
-                        </ul>
-                        </li>
-                        </ol>
-                    </div>                    
-                    <div class="image-content">
-                        <img class="databiome-icons" alt="scientfic journal icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/databiomeicons.png">
-                    </div>
+                </ol>
                 </div>
-            </div>            
+
+                <div class="image-content">
+                <img class="databiome-icons"
+                    alt="scientific journal icons"
+                    loading="lazy"
+                    width="50%"
+                    height="auto"
+                    src="resources/images/logo_icons/databiomeicons.png">
+                </div>
+            </div>
+            </div>
+           
 
             <script>
                 // Function to handle skills tab active state
