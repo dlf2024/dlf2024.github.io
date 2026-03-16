@@ -195,6 +195,14 @@ header {
     text-align: center;
 }
 
+#datascience .project-summary {
+    margin-bottom: 1rem;
+}
+
+#lifescience .project-summary img {
+    margin-top: 1rem;
+}
+
 /* ===============================
    Project summaries inside ML/NLP portfolio tabs
    =============================== */
@@ -261,6 +269,17 @@ header {
     display: inline-block;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+    color: #3F007E;               /* dark purple = readable and elegant */
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #3F007E;
+    padding-bottom: 1px;
+    transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #FF3399;
+    border-bottom-color: #FF3399;
 }
 
 
@@ -395,7 +414,7 @@ button.infobox_tab_button:hover {
 
 button.infobox_tab_button.active {
     background-color:#FF3399; /* Retain hover color after click */
-    color: #FF3399;
+    color: #3F007E;
     border-radius: 15px;
 }
 
