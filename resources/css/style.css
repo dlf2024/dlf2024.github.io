@@ -26,7 +26,7 @@ body, html {
 
 h1 {
     font-size: 2rem;
-    font-style: bold;
+    font-weight: bold;
     background-color: #3F007E;
     color: #FF3399;
     padding: 0.5rem 1rem;
@@ -35,7 +35,7 @@ h1 {
 
 h2 {
     font-size: 1.75rem;
-    font-style: bold;
+    font-weight: bold;
     background-color: #3F007E;
     color: #FF3399;
     padding: 0.5rem 1rem;
@@ -47,7 +47,7 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
-    font-style: bold;
+    font-weight: bold;
     background-color: #3F007E;
     color: #FFC000;
     padding: 0.5rem 1rem;
@@ -57,14 +57,14 @@ h3 {
 
 h4 {
     font-size: 1.25rem;
-    font-style: bold;
+    font-weight: bold;
     color: #FFC000;
     text-align: center;
 }
 
 h5 {
     font-size: 1.25rem;
-    font-style: bold;
+    font-weight: bold;
     background-color: #3F007E;
     color: #FFC000;
     text-align: center;
@@ -86,7 +86,7 @@ li {
 
 strong {
     color: #FF3399;
-    font-style: bold;
+    font-weight: bold;
     font-family: "Arial Black";
     font-size: clamp(1rem, 2vw, 1.1rem);
 }
@@ -133,7 +133,7 @@ b {
     display: flex;
     justify-content: space-between;
     background-color: #FFC000;
-    padding: 0 auto;
+    padding: 0;
     border-radius: 15px;
     position: fixed; /* Fixes the navbar to the viewport */
     top: 0; /* Sticks the navbar to the top of the page */
@@ -152,7 +152,7 @@ b {
 /* Navbar - retain hover color once clicked */
 .navbar_index a {
     color:#3F007E;
-    font-style: bold;
+    font-weight: bold;
     padding: 0.5rem 1rem;
     align-content: safe center;
     font-family: "Arial Black";
@@ -194,6 +194,75 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+/* ===============================
+   Project summaries inside ML/NLP portfolio tabs
+   =============================== */
+
+.project-summary {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-left: 0.35rem solid #FF3399;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(63, 0, 126, 0.08);
+}
+
+.project-summary h4 {
+    color: #3F007E;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+.project-summary p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.project-summary ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-summary li {
+    margin-bottom: 0.4rem;
+}
+
+.project-summary strong {
+    color: #FF3399;
+}
+
+.project-summary a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    color: #3F007E;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.project-summary a:hover {
+    color: #FFC000;
+}
+
+.project-summary img {
+    display: block;
+    margin-top: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(63, 0, 126, 0.12);
+}
+
+.project-links {
+    margin-top: 1rem;
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 
 @media (min-width: 768px) {
     .badge_container {
@@ -420,7 +489,7 @@ button.infobox_tab_button.active {
 
 }
 
-.skills_tab, .portfolio_tab {
+.skills_tab, .portfolio_tab, .portofolio_tab {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -477,7 +546,7 @@ button.infobox_tab_button.active {
 
 .skills_tab_scrollable strong, .portofolio_tab_scrollable strong, .learning_tab_scrollable strong {
     color: #FF3399;
-    text-decoration: bold;
+    font-weight: bold;
 }
 
 .skills_tab_scrollable  a, .portofolio_tab_scrollable a, .learning_tab_scrollable a {
