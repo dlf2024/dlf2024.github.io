@@ -177,6 +177,69 @@ header {
     height: 40%;
 }
 
+.hero_business_card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+}
+
+.hero_lower_row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+}
+
+.hero_portrait_area {
+    flex: 1;
+}
+
+.hero_portrait_area .photo-DV-portrait {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    display: block;
+}
+
+.hero_links_area {
+    flex: 1;
+}
+
+.hero_links_area h2 {
+    color: #3F007E;
+    margin-bottom: 1rem;
+}
+
+.badge_sociallinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 1.2rem;
+}
+
+.badge_sociallinks a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0.75rem;
+    border-radius: 10px;
+    background-color: #E6CDFF;
+    text-decoration: none;
+    color: #3F007E;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.badge_sociallinks a:hover {
+    background-color: #FFC000;
+    color: #3F007E;
+}
+
+.badge_sociallinks img {
+    margin-left: 0.5rem;
+    object-fit: contain;
+}
+
 .logo_left img, 
 .logo_right img {
     display: block;
@@ -281,6 +344,80 @@ header {
     color: #FF3399;
     border-bottom-color: #FF3399;
 }
+
+.consulting-form {
+    margin-top: 1rem;
+}
+
+.consulting-form .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9rem;
+}
+
+.consulting-form label {
+    font-weight: bold;
+    color: #3F007E;
+    margin-bottom: 0.25rem;
+}
+
+.consulting-form input,
+.consulting-form select,
+.consulting-form textarea {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #C9B6E4;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #070606;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.consulting-form textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.consulting-form input:focus,
+.consulting-form select:focus,
+.consulting-form textarea:focus {
+    outline: none;
+    border-color: #FF3399;
+    box-shadow: 0 0 0 2px rgba(255, 51, 153, 0.15);
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-consent label {
+    font-weight: normal;
+    color: #3F007E;
+}
+
+.consulting-submit {
+    background-color: #3F007E;
+    color: #FFC000;
+    border: 0.2rem solid #FFC000;
+    border-radius: 15px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.consulting-submit:hover {
+    background-color: #FF3399;
+}
+
+#workwithme .project-summary {
+    margin-bottom: 1rem;
+}
+
 
 
 @media (min-width: 768px) {
@@ -451,7 +588,7 @@ button.infobox_tab_button.active {
     margin-top: 0.25rem;
 }
 
-#Skills, #Portofolio, #Learning {
+#Biography, #Skills, #Portofolio, #Learning {
     display: flex;
     flex-direction: row; /* Aligns content horizontally */
     justify-content: center; /* Centers the content horizontally */
@@ -463,25 +600,27 @@ button.infobox_tab_button.active {
     margin: 0 auto; /* Centers the section on the page */
 }
 
-#Skills h2, #Portofolio h2, #Learning h2 {
+#Biography h2, #Skills h2, #Portofolio h2, #Learning h2 {
     margin-bottom: 10px;
     width: 100%; /* Ensures the title takes up the full width */
     text-align: center; /* Centers the heading text */
 }
 
-#Skills a, #Portofolio a, #Learning a {
+#Biography a, #Skills a, #Portofolio a, #Learning a {
     color: initial; /* Default color for your links */
     background-color: initial;
     text-decoration: none; /* Remove underline by default */
     transition: color 0.3s ease; /* Smooth transition for color changes */
 }
 
-#Skills a:hover, #Portofolio a:hover, #Learning a:hover {
+#Biography a:hover, #Skills a:hover, #Portofolio a:hover, #Learning a:hover {
     color: #FFC000; /* Change color when hovered */
     background-color: initial; /* Reset any background color */
     text-decoration: none;
 }
 
+#Biography a:focus,
+#Biography a:active,
 #Skills a:focus,
 #Skills a:active,
 #Portofolio a:focus,
@@ -1051,10 +1190,233 @@ img, video {
     color: #3F007E;
 }
 
+/* =========================================
+   HERO SECTION OVERRIDE - NEW BUSINESS CARD LAYOUT
+   Put this at the VERY END of style.css
+   ========================================= */
+
+header.container {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    border-top: 0.2rem double #3F007E;
+    border-bottom: 0.2rem double #3F007E;
+}
+
+.badge_container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    min-height: unset !important;
+}
+
+.hero_business_card {
+    display: block;
+    width: 100%;
+}
+
+.hero_business_card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.hero_lower_row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+}
+
+.hero_portrait_area {
+    flex: 0 0 410px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.hero_portrait_area .photo-DV-portrait {
+    display: block;
+    width: 100% !important;
+    max-width: 410px !important;
+    height: auto !important;
+    border-radius: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero_links_area {
+    flex: 0 0 420px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.badge_links {
+    display: block !important;
+    width: 100% !important;
+    background-color: #3F007E !important;
+    border-radius: 16px !important;
+    padding: 1.25rem !important;
+    margin: 0 !important;
+}
+
+.hero_links_area h2,
+.badge_links h2 {
+    background: transparent !important;
+    border: none !important;
+    color: #FF3399 !important;
+    font-family: "Arial Black", Arial, Helvetica, sans-serif !important;
+    font-size: 1.35rem !important;
+    text-align: center !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+}
+
+.badge_sociallinks {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)) !important;
+    gap: 0.9rem 1rem !important;
+    width: 100% !important;
+}
+
+.badge_sociallinks a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    background-color: #E6CDFF !important;
+    color: #3F007E !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    padding: 0.75rem 0.9rem !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    min-height: 56px;
+}
+
+.badge_sociallinks a:hover {
+    background-color: #FFC000 !important;
+    color: #3F007E !important;
+}
+
+.badge_sociallinks img {
+    width: 22px !important;
+    height: 22px !important;
+    margin-left: 0 !important;
+    flex-shrink: 0;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    header.container {
+        width: 95%;
+        padding: 1rem 0;
+    }
+
+    .hero_lower_row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero_portrait_area,
+    .hero_links_area {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 420px !important;
+    }
+
+    .hero_portrait_area .photo-DV-portrait {
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+
+    .badge_sociallinks {
+        grid-template-columns: 1fr !important;
+    }
+}
 
 
+.infobox_tab_button h4 {
+    line-height: 1.15;
+    margin: 0;
+}
 
+.infobox_tab_button {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
+/* =========================================
+   BIOGRAPHY SECTION OVERRIDE
+   ========================================= */
 
+#Biography {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    width: 80% !important;
+    max-width: 80% !important;
+    margin: 2rem auto !important;
+    padding: 0 !important;
+    border-top: 0.2rem double #3F007E;
+    border-bottom: 0.2rem double #3F007E;
+}
 
+#Biography h2 {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+}
 
+#Biography .infobox_container {
+    width: 60% !important;
+    max-width: 60% !important;
+    margin: 0 auto !important;
+    padding: 1rem 0 !important;
+    box-sizing: border-box;
+}
+
+#Biography .infobox_tab_scrollable {
+    width: 60% !important;
+    max-width: 60% !important;
+    box-sizing: border-box;
+}
+
+/* biography buttons */
+.infobox_tab {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.infobox_tab_button {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.infobox_tab_button h4 {
+    line-height: 1.15;
+    margin: 0;
+}
