@@ -1393,10 +1393,14 @@ header.container {
     box-sizing: border-box;
 }
 
-#Biography .infobox_tab_scrollable {
+#Biography .infobox_container {
     width: 60% !important;
     max-width: 60% !important;
-    box-sizing: border-box;
+}
+
+#Biography .infobox_tab_scrollable {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 /* biography buttons */
@@ -1419,4 +1423,64 @@ header.container {
 .infobox_tab_button h4 {
     line-height: 1.15;
     margin: 0;
+}
+
+/* =========================================
+   MOBILE CONSISTENCY OVERRIDE:
+   Biography / Skills / Portfolio / Learning
+   ========================================= */
+@media (max-width: 900px) {
+    #Biography,
+    #Skills,
+    #Portofolio,
+    #Learning {
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 1rem auto !important;
+        padding: 0 !important;
+    }
+
+    #Biography .infobox_container,
+    #Biography .infobox,
+    #Biography .infobox_tab_content,
+    #Skills .skillbox_container,
+    #Portofolio .skillbox_container,
+    #Learning .skillbox_container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0.5rem 0 !important;
+        box-sizing: border-box;
+    }
+
+    #Biography .infobox_tab_scrollable,
+    .skills_tab_scrollable,
+    .portofolio_tab_scrollable,
+    .learning_tab_scrollable,
+    .infobox_tab_scrollable {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .skills_tab,
+    .portfolio_tab,
+    .portofolio_tab,
+    .learning_tab,
+    .infobox_tab {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+
+    .skills_tab_button,
+    .portofolio_tab_button,
+    .learning_tab_button,
+    .infobox_tab_button {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 !important;
+    }
 }
