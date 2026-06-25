@@ -408,7 +408,33 @@
                     </div>
 
                     <div class="project-summary">
-                        <h4>7/ <em>Automating Visual Storytelling with Python</em></h4>
+                        <h4>7/ AWS Educate: <em>Cloud Computing, AWS Infrastructure and AI/ML Foundations</em></h4>
+
+                        <p><strong>Training focus:</strong> Cloud-computing fundamentals, AWS infrastructure concepts, the AWS Management Console, storage, compute, networking, AI/ML foundations, and core AWS services.</p>
+
+                        <p><strong>Applied outcome:</strong> I am expanding my cloud-computing capability through a structured, self-directed AWS Educate pathway. This training strengthens my understanding of cloud-based environments relevant to data science, machine learning, bioinformatics, web deployment, scalable storage, compute resources, and reproducible analytical workflows.</p>
+
+                        <p>
+                            I have completed foundational AWS Educate training badges covering the AWS Management Console, Cloud Computing 101, Storage, Compute, and Networking. These courses introduced key concepts including AWS global infrastructure, shared responsibility, cost-awareness, Amazon S3, Amazon EC2, Amazon VPC, subnets, route tables, gateways, and cloud security fundamentals.
+                        </p>
+
+                        <p>
+                            I am continuing this training sequentially through the available AWS Educate courses, progressing from the <strong>Getting Started</strong> series to the <strong>AI and Machine Learning</strong> series, followed by <strong>Core Concepts</strong>. In parallel, I am using <strong>Amazon SageMaker Studio Lab</strong> and an <strong>AWS Free Tier account</strong> as hands-on practice environments.
+                        </p>
+
+                        <p><strong>Further details:</strong> More details are available in <a href="#awseducate" onclick="showLearningTab('awseducate', this)">"AWS Educate / Amazon Web Services"</a>.</p>
+
+                        <p class="project-links aws-bio-illustration">
+                            <img src="resources/images/logo_icons/awsproductsicons.png"
+                                alt="AWS product icons representing S3 storage, EC2 compute and VPC networking"
+                                loading="lazy"
+                                width="50%"
+                                height="auto">
+                        </p>
+                    </div>
+
+                    <div class="project-summary">
+                        <h4>8/ <em>Automating Visual Storytelling with Python</em></h4>
 
                         <p><strong>Creative workflow:</strong> Using Python and FFmpeg, I automate the creation of aesthetic photo montages with ambient sounds from my large collection of digital images.</p>
 
@@ -1114,6 +1140,9 @@
                         </p>
                         <ul>
                             <li><strong>Wheat science and proteogenomics</strong> <br>
+                                <a href="https://doi.org/10.64898/2026.06.17.733048" target="_blank" rel="noreferrer">
+                                    >> Community Resource: A Genome-Based Extension of Large-Scale Wheat Proteogenomics
+                                </a><br>
                                 <a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">
                                     >> Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations
                                 </a><br>
@@ -1312,9 +1341,21 @@
                             <br>
                             I produced, managed and analysed close to <em>8,000 files</em> representing <em>>1.2 Gb of data</em>. <br>
                             <br>
-                            I employed sophisticated methods of <em>statistical analyses, bioinformatics amd data mining</em> to generate meaningful biological insights. <br>
+                            I employed sophisticated methods of <em>statistical analyses, bioinformatics and data mining</em> to identify protein biomarkers of late-maturity alpha-amylase (LMA) and generate meaningful biological insights. <br>
+                            LMA-affected grains activated their primary metabolisms such as glycolysis and gluconeogenesis; TCA cycle, along with DNA- and RNA- binding mechanisms; and protein translation. <br>
+                            This logically transitioned to protein folding activities driven by chaperones and protein disulfide isomerase , as well as protein assembly via dimerisation and complexing. <br>
+                            The secondary metabolism was also mobilized with the upregulation of phytohormones and chemical and defence responses. 
+                            LMA further invoked cellular structures, including ribosomes, microtubules, and chromatin. <br>
+                            LMA expression greatly impacted grain storage proteins, as well as starch and other carbohydrates, with the upregulation of alpha-gliadins and starch metabolism, 
+                            whereas LMW glutenin, stachyose , sucrose , UDP-galactose , and UDP-glucose were downregulated. <br>
                             <br>
-                            <em>Proteins were then mapped onto the wheat genome</em> (version 2) which not only validated genes of high confidence, but also promoted genes of low confidence as well as detect novel genes. <br>
+                            <em>Proteins were then mapped onto the wheat genome</em> (IWGSC RefSeq v2.1) to provide experimental support for high-confidence (HC) gene models, strengthen the evidence for low-confidence (LC) gene models, 
+                            and identify proteogenomic signals relevant to genome-annotation refinement. <br>
+                            Two complementary peptide-to-genome mapping strategies were used: <br>
+                            1/ <strong>tBLASTn-based approach</strong>, in which peptide sequences were aligned directly against the wheat genome to detect sequence-level matches; <br>
+                            2/ <strong>GFF3 annotation-guided pipeline</strong>, in which peptide coordinates were reconstructed programmatically from existing gene, transcript, CDS, and protein annotations. <br>
+                            The second strategy enabled more precise genome-context mapping, including exon-aware placement of peptides, distinction between within-exon and intron-spanning evidence, 
+                            validation against translated genomic sequence, and export of browser-ready tracks for Apollo/JBrowse visualisation. This strategy validated 98% of gene models. <br>
                             <br>
                             Links to the <em>scientific publications</em> are provided below.<br>
                         </p>
@@ -1330,8 +1371,13 @@
                                 </a>
                             </li> <br>
                             <li><strong>Mapping the wheat proteins onto the genome</strong> <br>
+                                1/ tBLASTn-based alignment <br>
                                 <a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">
                                     >> Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations 
+                                </a> <br>
+                                2/ genome annotation-based alignment <br>
+                                <a href="https://doi.org/10.64898/2026.06.17.733048" target="_blank" rel="noreferrer">
+                                    >> Community Resource: A Genome-Based Extension of Large-Scale Wheat Proteogenomics 
                                 </a>
                             </li> <br>
                         </ul>
@@ -1850,6 +1896,11 @@
             <h2>Learning</h2>
             <!-- Learning Section -->
             <div class="learning_tab">
+                <button class="learning_tab_button" onclick="showLearningTab('awseducate', this)">
+                    <h4>AWS Educate / Amazon Web Services</h4>
+                </button>
+            </div> 
+            <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademycareer', this)">
                     <h4>CodeCademy Career Path - Data Science/Analytics</h4>
                 </button>
@@ -1875,6 +1926,103 @@
                 </button>
             </div>
 
+            <div id="awseducate" class="learning_tab_scrollable" style="display:none;">
+                <h5>AWS Educate / Amazon Web Services</h5> <br>
+
+                <p>
+                    I am currently expanding my cloud-computing capability through <strong>AWS Educate</strong>, with a structured, self-directed training pathway focused on cloud fundamentals, the AWS Management Console, storage, compute, networking, AI/ML, and core AWS concepts. 
+                    This learning complements my data science, machine learning, bioinformatics, web deployment, and reproducible analytical workflow experience by strengthening my understanding of cloud-based infrastructure and scalable analytical environments.
+                </p>
+
+                <div class="aws-learning-image-container">
+                    <img class="aws-learning-image" alt="AWS Educate training badges: Cloud Computing 101, Storage, Compute and Networking" loading="lazy" width=40% height=auto src="resources/images/logo_icons/awsbadgesicons.png">
+                </div>
+
+                <h6>Completed AWS Educate training badges</h6>
+
+                <div class="aws-course-grid">
+
+                    <article class="aws-course-card">
+                        <h6>Introduction to the AWS Management Console</h6>
+                        <p>
+                            Foundational training on secure access to AWS services through the browser-based AWS Management Console. The course covered console navigation, service discovery, customisation, account monitoring, AWS global infrastructure, payment models and service cost factors.
+                        </p>
+                        <ul>
+                            <li>Purpose and navigation of the AWS Management Console</li>
+                            <li>Finding, launching and managing AWS services</li>
+                            <li>AWS global infrastructure overview</li>
+                            <li>Payment models and cost-awareness concepts</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Introduction to Cloud 101</h6>
+                        <p>
+                            Foundational training in cloud computing concepts and AWS core services. The course introduced service and deployment models, AWS global infrastructure, the shared responsibility model, the AWS Well-Architected Framework and entry-level cloud career pathways.
+                        </p>
+                        <ul>
+                            <li>Cloud computing benefits and service models</li>
+                            <li>AWS global infrastructure and shared responsibility</li>
+                            <li>Well-Architected Framework principles</li>
+                            <li>Hands-on practice with AWS core services</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Storage</h6>
+                        <p>
+                            Foundational training in AWS storage services, with a focus on Amazon Simple Storage Service, Amazon S3. The course covered object storage concepts, storage classes, buckets, object management, security, cost optimisation and use cases including websites, backup, archive, IoT and big data analytics.
+                        </p>
+                        <ul>
+                            <li>AWS storage types and use cases</li>
+                            <li>Amazon S3 buckets, objects and storage classes</li>
+                            <li>Cost-saving and security configurations</li>
+                            <li>Using Amazon S3 to create a static website</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Compute</h6>
+                        <p>
+                            Foundational training in AWS compute services, with a focus on Amazon Elastic Compute Cloud, Amazon EC2. The course introduced compute options, instance families, workload requirements, storage choices, security configuration and practical EC2 instance launch and management.
+                        </p>
+                        <ul>
+                            <li>AWS compute types and workload considerations</li>
+                            <li>Amazon EC2 concepts and instance types</li>
+                            <li>Launching, configuring and managing EC2 instances</li>
+                            <li>Compute, storage and security configuration</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Networking</h6>
+                        <p>
+                            Foundational training in cloud networking, with a focus on Amazon Virtual Private Cloud, Amazon VPC. The course covered networking fundamentals, virtual private clouds, subnets, route tables, gateways, IP addressing, security groups and network access control lists.
+                        </p>
+                        <ul>
+                            <li>Networking fundamentals and Amazon VPC concepts</li>
+                            <li>Public and private subnet configuration</li>
+                            <li>Route tables, gateways and IP addressing</li>
+                            <li>VPC security using NACLs and security groups</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <div class="aws-learning-image-container">
+                    <img class="aws-learning-image" alt="AWS product icons for S3, EC2 and VPC" loading="lazy" width=40% height=auto src="resources/images/logo_icons/awsproductsicons.png">
+                </div>
+
+                <h6>Hands-on cloud practice</h6>
+
+                <p>
+                    In parallel with AWS Educate, I am using <strong>Amazon SageMaker Studio Lab</strong> and an <strong>AWS Free Tier account</strong> as hands-on practice environments to consolidate AWS cloud, AI/ML, compute, storage, networking and deployment concepts through practical self-directed exercises.
+                </p>
+
+                <p>
+                    My current learning pathway is sequential: completing the available <strong>Getting Started</strong> series first, then progressing to the <strong>AI and Machine Learning</strong> series, followed by the <strong>Core Concepts</strong> series. This training supports my broader objective of integrating cloud literacy with data science, machine learning, omics analytics, reproducible workflows and scientific web-resource development.
+                </p>
+            </div>
 
             <div id="codecademycareer" class="learning_tab_scrollable" style="display:none;">
                 <h5>CodeCademy Career Path - Data Science / Analytics</h5> <br>
@@ -2168,12 +2316,14 @@
         </section>
         
 
-        <div id="Home" class="navigation container">
-        <footer class="footer_content container">
-            <p><strong>Designed and created by Delphine Vincent </strong> </p><br>
-            <sub><b>  | Version 9: 16 March 2026 |  </b></sub><br>
-            <sub> Data Science & Machine Learning Consultant [ABN 74 267 801 710]</sub><br>
-            <sub>2024 © Copyright Delphine Vincent. All rights reserved. </sub>
+        <footer class="footer_content">
+            <div class="footer_text">
+                <p><strong>Designed and created by Delphine Vincent</strong></p>
+                <p><em>Version 10: 25 June 2026</em></p>
+                <p>Data Science &amp; Machine Learning Consultant [ABN 74 267 801 710]</p>
+                <p>2024 © Copyright Delphine Vincent. All rights reserved.</p>
+            </div>
+
             <div class="footer_sociallinks">
                 <a href="https://www.linkedin.com/in/delphine-vincent-01582752" target="_blank" rel="noreferrer">LinkedIn
                     <img src="resources/images/logo_icons/logo_LinkedIn_initials.png" alt="LinkedIn Icon" role="presentation" width="20" height="20">
@@ -2194,15 +2344,13 @@
                     <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
                 </a>
                 <a href="https://www.webofscience.com/wos/author/record/1481037" target="_blank" rel="noreferrer">Web of Science
-                    <img src="resources/images/logo_icons/logo_clavirate.png" alt="Clavirate Icon" role="presentation" width="20" height="20">
-                </a>                    
+                    <img src="resources/images/logo_icons/logo_clavirate.png" alt="Clarivate Icon" role="presentation" width="20" height="20">
+                </a>
                 <a href="https://www.scopus.com/authid/detail.uri?authorId=13409758500" target="_blank" rel="noreferrer">Scopus
                     <img src="resources/images/logo_icons/logo_scopus.png" alt="Scopus Icon" role="presentation" width="20" height="20">
                 </a>
             </div>
-
         </footer>
-        </div>
 
     <!-- DLF Chatbot config + loader (add just before </body>) -->
     <script>

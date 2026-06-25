@@ -732,6 +732,57 @@ button.skills_tab_button.active, button.portofolio_tab_button.active, button.lea
     border-radius: 15px;
 }
 
+/* AWS Educate learning section */
+
+.aws-learning-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 100%;
+}
+
+.aws-learning-image {
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    border-radius: 25px;
+}
+
+.aws-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.aws-course-card {
+    background-color: #ffffff;
+    border: 0.12rem solid #3F007E;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(63, 0, 126, 0.15);
+}
+
+.aws-course-card h6 {
+    color: #3F007E;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.aws-course-card p {
+    margin-bottom: 0.75rem;
+}
+
+.aws-course-card ul {
+    margin-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.aws-course-card li {
+    margin-bottom: 0.35rem;
+}
+
 #editor a, #storytelling a, #bigdata a, #systemsbiology a, #datascience a, #lifescience a, #Biography a,
 #patents a, #youtube a, #webdesign a, #codecademycareer a, #codecademycareerML a, #codecademyskill a, #codecademyskill2 a, #codecademyprompt a {
     text-decoration: underline;
@@ -771,31 +822,72 @@ button.skills_tab_button.active, button.portofolio_tab_button.active, button.lea
 }
 
 
+/* ===============================
+   Footer
+   =============================== */
+
 .footer_content {
-    padding: 1rem;
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
     background-color: #3F007E;
     color: #FFC000;
     text-align: center;
-    margin-bottom: 0;
+    border-top: 0.2rem double #3F007E;
+    border-radius: 0 0 15px 15px;
 }
 
-.footer_content div {
-    margin-top: 1.25rem;
+.footer_text {
+    display: block;
+    margin-bottom: 1.25rem;
 }
 
-.footer_content p {
-    margin-bottom: 0;
-}
-
-.footer_sociallinks {
-    margin: 0 auto;
+.footer_text p {
+    display: block;
+    margin: 0.25rem 0;
+    padding: 0;
+    line-height: 1.4;
     color: #FFC000;
 }
 
-.footer_sociallinks a {
-    display: inline-block;
-    margin: 0 .75rem;
+.footer_text strong {
     color: #FF3399;
+    font-family: "Arial Black", Arial, Helvetica, sans-serif;
+}
+
+.footer_text em {
+    color: #E6CDFF;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer_sociallinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    margin: 0 auto;
+}
+
+.footer_sociallinks a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #FF3399;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.footer_sociallinks a:hover {
+    color: #FFC000;
+}
+
+.footer_sociallinks img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 
@@ -1483,4 +1575,34 @@ header.container {
         max-width: 320px !important;
         margin: 0 !important;
     }
+
+    .aws-learning-image {
+    width: 100%;
+    border-radius: 15px;
+    }
+
+    .aws-course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aws-bio-illustration img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .footer_content {
+        width: 95%;
+        max-width: 95%;
+        padding: 1rem 0.75rem;
+    }
+
+    .footer_sociallinks {
+        gap: 0.6rem 1rem;
+    }
+
+    .footer_text p {
+        font-size: 0.9rem;
+    }
+
 }
