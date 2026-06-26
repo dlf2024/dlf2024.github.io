@@ -1,76 +1,60 @@
 (function(){
   const cfg = window.DLF_CHATBOT_CONFIG || {};
   const API = (cfg.apiBase || "http://localhost:8001") + "/chat";
-  const API_RAG = (cfg.apiBase || "http://localhost:8001") + "/chat_rag";
   let sessionId = null;
 
-  // === Quick actions: open site tabs without calling backend ===
-
-// Smoothly scroll a section into view (helper)
-function scrollToId(id) {
-  const el = document.querySelector(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// Open a Portfolio tab (uses your site's showPortofolioTab if present)
-function openPortfolioTab(tabId) {
-  // 1) scroll to the Portfolio section (your site uses "#Portofolio")
-  scrollToId('#Portofolio');
-
-  // 2) Prefer your existing tab API if available
-  if (typeof window.showPortofolioTab === 'function') {
-    // Pass a dummy element for the "this" param; your function only uses it for active-state styling
-    window.showPortofolioTab(tabId, document.createElement('button'));
-    return;
+  function scrollToId(id) {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // 3) Fallback: manually toggle visibility (matches your class names)
-  document.querySelectorAll('.portofolio_tab_scrollable').forEach(el => el.style.display = 'none');
-  const target = document.getElementById(tabId);
-  if (target) {
-    target.style.display = 'block';
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    console.warn('[DLF bot] Portfolio tab not found:', tabId);
-  }
-}
-
-// Open a Skills tab (uses your show'showSkillTab' if present)
-function openSkillsTab(tabId) {
-  scrollToId('#Skills');
-
-  if (typeof window.showSkillTab === 'function') {
-    // Pass a dummy element for the active class; your function expects (tabName, element)
-    window.showSkillTab(tabId, document.createElement('button'));
-    return;
+  function openPortfolioTab(tabId) {
+    scrollToId('#Portofolio');
+    if (typeof window.showPortofolioTab === 'function') {
+      window.showPortofolioTab(tabId, document.createElement('button'));
+      return;
+    }
+    document.querySelectorAll('.portofolio_tab_scrollable').forEach(el => el.style.display = 'none');
+    const target = document.getElementById(tabId);
+    if (target) target.style.display = 'block';
   }
 
-  // Fallback if function is missing
-  document.querySelectorAll('.skills_tab_scrollable').forEach(el => el.style.display = 'none');
-  const target = document.getElementById(tabId);
-  if (target) {
-    target.style.display = 'block';
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    console.warn('[DLF bot] Skills tab not found:', tabId);
+  function openSkillsTab(tabId) {
+    scrollToId('#Skills');
+    if (typeof window.showSkillTab === 'function') {
+      window.showSkillTab(tabId, document.createElement('button'));
+      return;
+    }
+    document.querySelectorAll('.skills_tab_scrollable').forEach(el => el.style.display = 'none');
+    const target = document.getElementById(tabId);
+    if (target) target.style.display = 'block';
   }
-}
 
-// Map the four buttons → your real tab IDs
-const QUICK_ACTIONS = {
-  "ML projects":    () => openPortfolioTab("ML"),          // <div id="ML" ...>       (Portfolio)
-  "Wheat Big Data": () => openPortfolioTab("bigdata"),     // <div id="bigdata" ...>  (Portfolio)
-  "Storytelling":   () => openSkillsTab("storytelling"),   // <div id="storytelling" ...> (Skills)
-  "Coding skills":  () => openSkillsTab("programming"),     // <div id="programming" ...>  (Skills)
-  "Biography":      () => scrollToId('#Biography')          // <div id="biography" ...>  (Biography)
-};
+  function openBioTab(tabId) {
+    scrollToId('#Biography');
+    if (typeof window.showBioTab === 'function') {
+      window.showBioTab(tabId, document.createElement('button'));
+      return;
+    }
+    document.querySelectorAll('.infobox_tab_scrollable').forEach(el => el.style.display = 'none');
+    const target = document.getElementById(tabId);
+    if (target) target.style.display = 'block';
+  }
 
+  const QUICK_ACTIONS = {
+    "Work with Me": () => openBioTab("workwithme"),
+    "ML projects": () => openPortfolioTab("ML"),
+    "Wheat Big Data": () => openPortfolioTab("bigdata"),
+    "Bioinformatics": () => openSkillsTab("bioinformatics"),
+    "Coding skills": () => openSkillsTab("programming"),
+    "Storytelling": () => openSkillsTab("storytelling"),
+    "Biography": () => scrollToId('#Biography')
+  };
 
-  // Styles (inline for easy drop-in)
   const style = document.createElement('style');
   style.textContent = `
-  .dlf-chat-launch {position:fixed; right:18px; bottom:18px; width:56px; height:56px; border-radius:50%; background:#3F007E; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 20px rgba(0,0,0,.2); font-weight:700;}
-  .dlf-chat {position:fixed; right:18px; bottom:86px; width:320px; max-height:60vh; background:#fff; border:1px solid #eee; border-radius:16px; box-shadow:0 12px 24px rgba(0,0,0,.18); display:none; flex-direction:column; overflow:hidden;}
+  .dlf-chat-launch {position:fixed; right:18px; bottom:18px; width:56px; height:56px; border-radius:50%; background:#3F007E; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 20px rgba(0,0,0,.2); font-weight:700; z-index:9999;}
+  .dlf-chat {position:fixed; right:18px; bottom:86px; width:min(340px, calc(100vw - 36px)); max-height:65vh; background:#fff; border:1px solid #eee; border-radius:16px; box-shadow:0 12px 24px rgba(0,0,0,.18); display:none; flex-direction:column; overflow:hidden; z-index:9999;}
   .dlf-chat.open {display:flex}
   .dlf-head {padding:10px 12px; background:#3F007E; color:#fff; font-size:15px;}
   .dlf-body {padding:10px; overflow:auto; flex:1}
@@ -85,24 +69,21 @@ const QUICK_ACTIONS = {
   `;
   document.head.appendChild(style);
 
-  // Bubble
   const bubble = document.createElement('div');
   bubble.className = 'dlf-chat-launch';
   bubble.title = 'Chat';
   bubble.textContent = '💬';
 
-  // Panel
   const panel = document.createElement('div');
   panel.className = 'dlf-chat';
   panel.innerHTML = `
     <div class="dlf-head">Chat with Delphine’s site bot</div>
     <div class="dlf-body"></div>
     <div class="dlf-input">
-      <input type="text" placeholder=""/>
+      <input type="text" placeholder="Ask about services, skills, projects..."/>
       <button>Send</button>
     </div>
   `;
-
 
   document.body.appendChild(bubble);
   document.body.appendChild(panel);
@@ -113,9 +94,9 @@ const QUICK_ACTIONS = {
 
   function addMsg(text, cls){
     const wrap = document.createElement('div');
-    wrap.className = 'dlf-msg ' + (cls||'');
+    wrap.className = 'dlf-msg ' + (cls || '');
     const b = document.createElement('div');
-    b.className = cls==='user' ? '' : 'dlf-bot';
+    b.className = cls === 'user' ? '' : 'dlf-bot';
     b.innerHTML = text;
     wrap.appendChild(b);
     body.appendChild(wrap);
@@ -132,7 +113,6 @@ const QUICK_ACTIONS = {
       btn.onclick = () => {
         const label = s.trim();
         if (QUICK_ACTIONS[label]) {
-          // Do the local action and add a tiny confirmation message
           QUICK_ACTIONS[label]();
           addMsg(`Opened: <em>${label}</em>`, 'bot');
         } else {
@@ -140,7 +120,6 @@ const QUICK_ACTIONS = {
           send();
         }
       };
-
       row.appendChild(btn);
     });
     body.appendChild(row);
@@ -151,50 +130,35 @@ const QUICK_ACTIONS = {
     const text = input.value.trim();
     if(!text) return;
     addMsg(text, 'user');
-    input.value='';
+    input.value = '';
+    addMsg('<em>Searching the site...</em>', 'bot');
+    const loadingNode = body.lastElementChild;
+
     try{
-      // NEW RULE: If the message starts with "pub:" or "paper:" → use RAG endpoint
-      const isRAG = text.toLowerCase().startsWith("pub:") || 
-                    text.toLowerCase().startsWith("paper:") ||
-                    text.toLowerCase().includes("publication") ||
-                    text.toLowerCase().includes("research");
-
-      const endpoint = isRAG ? API_RAG : API;
-
-      // Send to correct backend
-      const res = await fetch(endpoint, {
+      const res = await fetch(API, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({
-          message: text.replace(/^pub:\s*/i, ""),   // clean prefix if needed
-          session_id: sessionId
-        })
+        body: JSON.stringify({ message: text, session_id: sessionId })
       });
-
       const data = await res.json();
       sessionId = data.session_id || sessionId;
-
-      // Show the reply
-      addMsg(data.reply, 'bot');
-
-      // Suggestions only for FAQ model
-      if (!isRAG) addSuggestions(data.suggestions);
-
-    }catch(e){
+      if (loadingNode) loadingNode.remove();
+      addMsg(data.reply || 'I could not find a good answer. Try asking about services, skills, projects, publications, or resume.', 'bot');
+      addSuggestions(data.suggestions);
+    } catch(e) {
+      if (loadingNode) loadingNode.remove();
       addMsg('Hmm, I could not reach the server. Please try again later.', 'bot');
     }
   }
 
   sendBtn.onclick = send;
-  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') send(); });
+  input.addEventListener('keydown', (e) => { if(e.key === 'Enter') send(); });
 
-  bubble.onclick = ()=>{
+  bubble.onclick = () => {
     panel.classList.toggle('open');
-    if (panel.classList.contains('open') && body.childElementCount===0) {
-      addMsg('Hi! Use the buttons below for quick jumps or ask things like "What services do you offer"? Please be patient, depending on your query my answer might take a while to display... Thank you for interacting with me!', 'bot');
-      // Render your 4 quick actions as suggestions
+    if (panel.classList.contains('open') && body.childElementCount === 0) {
+      addMsg('Hi! I can help you find Delphine’s services, skills, portfolio projects, publications, resume, and Work with Me section.', 'bot');
       addSuggestions(Object.keys(QUICK_ACTIONS));
     }
   };
-
 })();
