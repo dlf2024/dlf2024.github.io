@@ -1606,3 +1606,44 @@ header.container {
     }
 
 }
+/* ===============================
+   Website-design portfolio projects
+   =============================== */
+
+#webdesign > p {
+    margin-bottom: 1.25rem;
+}
+
+#webdesign .web-project-summary {
+    overflow: hidden;
+}
+
+#webdesign .web-project-summary code {
+    background-color: rgba(230, 205, 255, 0.7);
+    color: #3F007E;
+    border-radius: 4px;
+    padding: 0.08rem 0.28rem;
+    font-size: 0.92em;
+}
+
+#webdesign .webdesign-project-image {
+    width: 100%;
+    max-width: 980px;
+    height: auto;
+    margin: 1rem auto 0;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    #webdesign .project-summary {
+        padding: 0.9rem 1rem;
+    }
+
+    #webdesign .project-summary ul {
+        margin-left: 1.15rem;
+    }
+
+    #webdesign .webdesign-project-image {
+        margin-top: 0.75rem;
+    }
+}

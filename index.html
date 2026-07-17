@@ -234,9 +234,19 @@
                                     <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" width="20" height="20">
                                 </a>
 
+                                <a href="https://findanexpert.unimelb.edu.au/profile/2000913-delphine-vincent" target="_blank" rel="noreferrer">
+                                    University of Melbourne
+                                    <img src="resources/images/logo_icons/logo_unimelb.png" alt="University of Melbourne Icon" width="20" height="20">
+                                </a>
+
                                 <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">
                                     YouTube
                                     <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" width="20" height="20">
+                                </a>
+
+                                <a href="https://www.tiktok.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">
+                                    TikTok
+                                    <img src="resources/images/logo_icons/logo_tiktok.jpg" alt="TikTok Icon" width="20" height="20">
                                 </a>
                             </div>
                         </section>
@@ -613,13 +623,16 @@
                     }
                 }
 
-                // Function to handle default active tab on page load
-                window.onload = function() {
-                    const firstBioButton = document.querySelector('.infobox_tab_button');
-                    if (firstBioButton) {
-                        firstBioButton.click();
+                // Function to handle default active tab on page load: Open the "Work with Me" biography tab by default
+                window.addEventListener('DOMContentLoaded', function () {
+                    const workWithMeButton = document.querySelector(
+                        '.infobox_tab_button[onclick*="workwithme"]'
+                    );
+
+                    if (workWithMeButton) {
+                        workWithMeButton.click();
                     }
-                };
+                });
             </script>
 
         </header>
@@ -647,430 +660,1934 @@
                     <h4>Data interpretation and Storytelling</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('editor', this)">
-                    <h4>Editor and Reviewer</h4>
+                    <h4>Author, Editor and Reviewer</h4>
                 </button>
             </div>
 
             <div id="computer" class="skills_tab_scrollable" style="display:none;">
-                <h5>Computer OS</h5> <br>
-                <p>I am proficient with <strong>MS Windows Office 365</strong> (Word, Excel, Powerpoint, Sharepoint, Teams, OneNote, Outlook, Power BI etc…) on PC.
-                    <br>
+                <h5>Computer Operating Systems and Microsoft 365</h5><br>
+
+                <p>
+                    I work primarily in a <strong>Microsoft Windows environment</strong> and am fully proficient with the 
+                    <strong>Microsoft 365 productivity and collaboration ecosystem</strong>. I use these tools to manage 
+                    analytical projects, prepare technical and scientific documents, communicate with collaborators, 
+                    organise project information, and deliver reports, presentations, dashboards, and shared resources.
                 </p>
-                <img class="office365-icons" alt="office 365 icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/Office365icons.png">
-                <p>I am familiar with <strong>Apple Mac OS system</strong>.</p>
+
+                <div class="project-summary">
+                    <h4>Microsoft Windows</h4>
+
+                    <p>
+                        I use Windows-based computers for data science, scientific computing, website development, 
+                        file management, cloud access, communication, and administrative work. My regular working 
+                        environment includes VS Code, JupyterLab, Python and Conda environments, GitHub Desktop, 
+                        web browsers, command-line tools, and specialist analytical software.
+                    </p>
+
+                    <ul>
+                        <li>Installation, configuration, and routine use of desktop software and analytical applications</li>
+                        <li>Management of local and cloud-synchronised files, folders, permissions, and project structures</li>
+                        <li>Use of Windows Terminal, Command Prompt, and PowerShell when required for development and automation</li>
+                        <li>Troubleshooting of common software, file-path, browser, dependency, and compatibility issues</li>
+                        <li>Organisation of reproducible project environments for data analysis, coding, reporting, and web development</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft Word</h4>
+
+                    <p>
+                        I use Word extensively to prepare and edit scientific manuscripts, technical reports, grant and 
+                        project documents, resumes, cover letters, reviewer responses, standard operating procedures, 
+                        website guidance, and client-facing documentation.
+                    </p>
+
+                    <ul>
+                        <li>Long-document formatting using headings, styles, tables, captions, references, and cross-references</li>
+                        <li>Collaborative editing with comments, Track Changes, and version comparison</li>
+                        <li>Preparation of publication-ready scientific and technical documents</li>
+                        <li>Conversion and quality checking of documents for PDF distribution</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft Excel</h4>
+
+                    <p>
+                        I use Excel for inspecting, cleaning, structuring, validating, summarising, and presenting 
+                        quantitative and categorical data. It is particularly useful for rapid quality control, metadata 
+                        review, tabular reporting, and communication with collaborators who require accessible data outputs.
+                    </p>
+
+                    <ul>
+                        <li>Data cleaning, filtering, sorting, validation, and conditional formatting</li>
+                        <li>Formulas, lookup functions, pivot tables, summary statistics, and chart creation</li>
+                        <li>Quality-control checks before and after Python, SQL, or statistical analysis</li>
+                        <li>Preparation of analysis-ready tables and supplementary data for scientific publications</li>
+                        <li>Export and exchange of CSV and spreadsheet files across analytical platforms</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft PowerPoint</h4>
+
+                    <p>
+                        I use PowerPoint to transform analytical and scientific results into clear visual narratives for 
+                        technical and non-technical audiences. My presentations include conference talks, lectures, client 
+                        reports, project summaries, workflow diagrams, and stakeholder briefings.
+                    </p>
+
+                    <ul>
+                        <li>Design of structured scientific and business presentations</li>
+                        <li>Integration of charts, tables, diagrams, screenshots, and publication-quality figures</li>
+                        <li>Development of clear visual storytelling around complex analytical results</li>
+                        <li>Preparation of reusable slide templates and presentation-ready project summaries</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft Power BI</h4>
+
+                    <p>
+                        I use Power BI to build interactive dashboards and visual reports that support exploratory analysis, 
+                        project monitoring, scientific interpretation, and communication of complex datasets.
+                    </p>
+
+                    <ul>
+                        <li>Import and transformation of structured datasets</li>
+                        <li>Creation of interactive charts, filters, slicers, and report pages</li>
+                        <li>Development of dashboards for proteomics, metabolomics, and research-project data</li>
+                        <li>Export of dashboards and figures for reports, presentations, and stakeholder review</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft Teams, Outlook and OneNote</h4>
+
+                    <p>
+                        I use Teams, Outlook, and OneNote to coordinate projects, communicate with collaborators and clients, 
+                        document decisions, organise meetings, and maintain accessible records of ongoing work.
+                    </p>
+
+                    <ul>
+                        <li><strong>Teams:</strong> online meetings, screen sharing, messaging, file collaboration, and project communication</li>
+                        <li><strong>Outlook:</strong> professional email, calendar management, meeting invitations, folders, and task coordination</li>
+                        <li><strong>OneNote:</strong> structured note-taking, meeting records, research notes, checklists, and project documentation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Microsoft SharePoint and OneDrive</h4>
+
+                    <p>
+                        I use SharePoint and OneDrive for cloud-based document storage, controlled file sharing, collaborative 
+                        editing, version management, and access to project resources across devices and organisations.
+                    </p>
+
+                    <ul>
+                        <li>Organisation of shared project folders and document libraries</li>
+                        <li>Cloud synchronisation and secure sharing of files with collaborators</li>
+                        <li>Collaborative editing of Word, Excel, and PowerPoint documents</li>
+                        <li>Management of document versions and centralised project resources</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="office365-icons"
+                        alt="Microsoft 365 applications used for documentation, data analysis, reporting, communication, collaboration, and cloud file management"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/Office365icons.png">
+                </p>
+
+                <div class="project-summary">
+                    <h4>Apple macOS</h4>
+
+                    <p>
+                        I am also familiar with <strong>Apple macOS</strong> and can work across Windows and Mac environments 
+                        when collaborating with research teams or using platform-specific scientific and analytical software.
+                    </p>
+
+                    <ul>
+                        <li>General navigation, file management, application use, and system settings</li>
+                        <li>Use of browser-based, cloud-based, and cross-platform analytical tools</li>
+                        <li>Exchange of documents, datasets, and code between Windows and macOS users</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> Windows • Microsoft 365 • Word • Excel • PowerPoint • Power BI • 
+                    Outlook • Teams • OneNote • SharePoint • OneDrive • Windows Terminal • PowerShell • macOS
+                </p>
             </div>
 
             <div id="programming" class="skills_tab_scrollable" style="display:none;">
-                <h5>Programming languages, IDE, cloud platforms and AI</h5> <br>
-                <p>I know the following <strong>coding languages</strong> and edit them using the <strong>code editors/IDE</strong> listed below:</p> <br>
-                <img class="programming-icons" alt="code program icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/programmingicons.png"> <br>
+                <h5>Programming Languages, Development Environments, Cloud Platforms and AI</h5><br>
+
                 <p>
-                    I posted most of my SQL, Python (Jupyter Notebooks) and HTML/CSS codes on <strong>GitHub</strong>. <br>
-                    Notably, you'll find Python programs to perfom in silico digestion of proteins, analyse protegogenomics data, mine publication metadata, and match individuals based on their attributes and lifestyle.
+                    I use a broad technical stack spanning <strong>Python, R, SQL, web development, machine learning, 
+                    natural language processing, automation, data visualisation, scientific computing, deployment, 
+                    and AI-assisted workflows</strong>. I select tools according to the analytical question, dataset, 
+                    deployment environment, and intended audience, with an emphasis on reproducibility, transparency, 
+                    and maintainable code.
                 </p>
+
+                <div class="project-summary">
+                    <h4>Python Programming</h4>
+
+                    <p>
+                        Python is my principal programming language for data science, machine learning, bioinformatics, 
+                        natural language processing, automation, scientific analysis, web backends, and multimedia processing. 
+                        I develop reproducible workflows in Jupyter Notebook and JupyterLab, and write modular scripts in VS Code.
+                    </p>
+
+                    <ul>
+                        <li>Data cleaning, restructuring, integration, validation, and exploratory data analysis</li>
+                        <li>Statistical analysis, feature engineering, predictive modelling, clustering, and model evaluation</li>
+                        <li>Natural language processing, document analysis, topic modelling, semantic similarity, and text classification</li>
+                        <li>Bioinformatics workflows including proteogenomics, sequence processing, in silico protein digestion, and annotation analysis</li>
+                        <li>Automated generation of figures, reports, videos, images, and browser-ready scientific resources</li>
+                        <li>Development of APIs, chatbot backends, interactive interfaces, and deployment-oriented applications</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Python Data Science and Scientific Computing Libraries</h4>
+
+                    <p>
+                        I use established Python libraries to build end-to-end analytical pipelines, from raw-data processing 
+                        through statistical modelling, machine learning, visualisation, reporting, and deployment.
+                    </p>
+
+                    <ul>
+                        <li><strong>Data manipulation:</strong> pandas, NumPy, SciPy, JSON, regular expressions, multiprocessing, and tqdm</li>
+                        <li><strong>Statistics:</strong> statsmodels and SciPy statistical functions</li>
+                        <li><strong>Machine learning:</strong> scikit-learn, XGBoost, LightGBM, TensorFlow, Keras, PyTorch, and MiniSom</li>
+                        <li><strong>Dimensionality reduction and clustering:</strong> UMAP, hierarchical clustering, k-means, HDBSCAN, and self-organising maps</li>
+                        <li><strong>Visualisation:</strong> Matplotlib, Plotly, Squarify, UpSet plots, PyViz, and WordCloud</li>
+                        <li><strong>Network analysis:</strong> NetworkX and graph-based analytical workflows</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Natural Language Processing and Document Analytics</h4>
+
+                    <p>
+                        I use Python-based NLP tools to structure, analyse, compare, and interpret large collections of free text, 
+                        scientific publications, website content, profile descriptions, and research documents.
+                    </p>
+
+                    <ul>
+                        <li><strong>Text processing:</strong> NLTK, spaCy, Gensim, regular expressions, and Beautiful Soup</li>
+                        <li><strong>Topic modelling:</strong> LDA, BERTopic, pyLDAvis, and clustering of text embeddings</li>
+                        <li><strong>Transformers and embeddings:</strong> Hugging Face Transformers and SentenceTransformers</li>
+                        <li><strong>Document extraction:</strong> PyMuPDF and GROBID for PDF and scientific-document processing</li>
+                        <li><strong>Similarity and fuzzy matching:</strong> cosine similarity and RapidFuzz</li>
+                        <li><strong>Web retrieval and automation:</strong> Beautiful Soup and Selenium</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Image, Audio and Video Automation</h4>
+
+                    <p>
+                        I use Python to automate multimedia processing for scientific communication, website assets, and creative 
+                        visual-storytelling projects.
+                    </p>
+
+                    <ul>
+                        <li><strong>Image processing:</strong> Pillow, scikit-image, ImageIO, and OpenCV</li>
+                        <li><strong>Audio processing:</strong> Librosa, Pydub, MIDI tools, and text-to-speech workflows</li>
+                        <li><strong>Video processing:</strong> MoviePy, OpenCV, FFmpeg, and Python subprocess automation</li>
+                        <li>Batch production of image montages, transitions, overlays, compressed video, ambient audio, and narrated media</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>R Programming and Statistical Analysis</h4>
+
+                    <p>
+                        I use R and RStudio for statistical analysis, data transformation, biological data analysis, and 
+                        publication-quality visualisation, particularly when working with established scientific and 
+                        biostatistical workflows.
+                    </p>
+
+                    <ul>
+                        <li><strong>Data wrangling:</strong> tidyverse, readr, tidyr, and dplyr</li>
+                        <li><strong>Visualisation:</strong> ggplot2 and related graphical packages</li>
+                        <li><strong>Bioinformatics:</strong> Bioconductor packages for omics and biological-data analysis</li>
+                        <li>Statistical testing, multivariate analysis, exploratory analysis, and reproducible reporting</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>SQL and Relational Databases</h4>
+
+                    <p>
+                        I use SQL to query, filter, join, aggregate, and restructure relational data. I work with SQLite and 
+                        SQLiteStudio for local database development, testing, and analysis, and integrate SQL outputs with 
+                        Python, Excel, dashboards, and reporting workflows.
+                    </p>
+
+                    <ul>
+                        <li>Creation and querying of relational tables</li>
+                        <li>Filtering, grouping, joins, subqueries, aggregation, and data-quality checks</li>
+                        <li>Preparation of structured datasets for statistical analysis and machine learning</li>
+                        <li>Integration of database outputs with Python, R, Excel, Tableau, and Power BI</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Web Development</h4>
+
+                    <p>
+                        I develop and maintain websites using <strong>HTML, CSS, and JavaScript</strong>, and also work with 
+                        WordPress and Elementor for content-managed websites. My work covers design, responsive layout, 
+                        accessibility, interactive components, forms, deployment, maintenance, and client handover.
+                    </p>
+
+                    <ul>
+                        <li>Hand-coded responsive websites using HTML5, CSS3, and vanilla JavaScript</li>
+                        <li>Interactive navigation, tabs, forms, cards, media, and accessible page structures</li>
+                        <li>WordPress and Elementor page editing, service-page creation, menu updates, and post publishing</li>
+                        <li>Deployment through GitHub Pages, cPanel, WebCentral, and hosted web services</li>
+                        <li>Website testing, content maintenance, link checking, and browser troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>APIs, Chatbots and Interactive Applications</h4>
+
+                    <p>
+                        I develop lightweight applications and interfaces that make analytical results and website information 
+                        easier to access. This includes Python APIs, retrieval-based chatbots, and interactive user interfaces.
+                    </p>
+
+                    <ul>
+                        <li><strong>FastAPI:</strong> development of secure Python endpoints for website chatbot requests</li>
+                        <li><strong>Pydantic:</strong> structured input and output validation for API requests</li>
+                        <li><strong>Gradio:</strong> development of interactive interfaces for machine learning and recommendation workflows</li>
+                        <li><strong>Retrieval systems:</strong> rule-based intent recognition, fuzzy FAQ matching, TF-IDF retrieval, and semantic search</li>
+                        <li><strong>Frontend integration:</strong> connection of JavaScript widgets to separately deployed Python backends</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Development Environments and Reproducible Workflows</h4>
+
+                    <p>
+                        I use a combination of notebook, IDE, command-line, and environment-management tools to create, test, 
+                        document, and maintain reproducible analytical and web-development projects.
+                    </p>
+
+                    <ul>
+                        <li><strong>Jupyter Notebook and JupyterLab:</strong> exploratory analysis, documented workflows, figures, and reports</li>
+                        <li><strong>VS Code:</strong> Python, HTML, CSS, JavaScript, JSON, and configuration-file development</li>
+                        <li><strong>Anaconda Navigator and Conda:</strong> environment and dependency management</li>
+                        <li><strong>IPython:</strong> interactive Python development and debugging</li>
+                        <li><strong>Bash and Git Bash:</strong> command-line file handling, automation, Git operations, and project management</li>
+                        <li><strong>Docker:</strong> foundational use of containerised environments for portable and reproducible applications</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Git, GitHub and Version Control</h4>
+
+                    <p>
+                        I use Git and GitHub to manage code versions, document analytical workflows, publish project resources, 
+                        deploy websites, and make code, reports, figures, and selected datasets openly accessible.
+                    </p>
+
+                    <ul>
+                        <li>Creation and maintenance of structured repositories</li>
+                        <li>Version tracking, commits, branch-aware workflows, and change documentation</li>
+                        <li>Publication of Jupyter notebooks, Python scripts, reports, figures, and data resources</li>
+                        <li>GitHub Pages deployment for static websites</li>
+                        <li>Coordination of linked website and backend repositories</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Hosting, Cloud and Deployment Platforms</h4>
+
+                    <p>
+                        I deploy and maintain analytical and web resources across static hosting, managed application hosting, 
+                        shared web hosting, and cloud-learning environments.
+                    </p>
+
+                    <ul>
+                        <li><strong>GitHub Pages:</strong> deployment and maintenance of static HTML, CSS, and JavaScript websites</li>
+                        <li><strong>Render:</strong> deployment and monitoring of Python FastAPI backends</li>
+                        <li><strong>WebCentral and cPanel:</strong> website deployment, file management, staging, domains, email, and PHP configuration</li>
+                        <li><strong>AWS:</strong> developing practical knowledge of storage, compute, networking, databases, security, serverless services, and cloud operations through AWS Educate and hands-on practice</li>
+                        <li><strong>Amazon SageMaker Studio Lab:</strong> cloud-based notebook experimentation for Python and machine learning</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Generative AI and AI-Assisted Workflows</h4>
+
+                    <p>
+                        I use generative AI tools as structured assistants within coding, scientific, analytical, writing, 
+                        troubleshooting, and web-development workflows. I retain responsibility for validating code, checking 
+                        factual accuracy, reviewing outputs, protecting confidential information, and ensuring that final 
+                        deliverables remain technically sound and fit for purpose.
+                    </p>
+
+                    <ul>
+                        <li><strong>ChatGPT:</strong> code development, debugging, analytical planning, scientific editing, and workflow refinement</li>
+                        <li><strong>Microsoft Copilot:</strong> AI-assisted productivity, drafting, and technical support</li>
+                        <li><strong>LM Studio:</strong> local execution of language models for privacy-sensitive or confidential tasks</li>
+                        <li>Prompt engineering, iterative refinement, output validation, and human-in-the-loop quality control</li>
+                        <li>Use of AI to accelerate work without replacing domain expertise, statistical judgement, or scientific interpretation</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="programming-icons"
+                        alt="Programming languages, Python and R libraries, development environments, databases, web technologies, hosting platforms, version-control tools, and artificial intelligence applications used in analytical and development projects"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/programmingicons.png">
+                </p>
+
+                <p>
+                    Most of my Python, SQL, R, HTML, CSS, and JavaScript projects are documented through 
+                    <strong>GitHub repositories</strong>. These include programs and notebooks for proteogenomics, multi-omics 
+                    integration, metabolomics, biomarker discovery, machine learning, NLP, publication mining, recommendation 
+                    systems, in silico protein digestion, website development, chatbot retrieval, and multimedia automation.
+                </p>
+
                 <p class="project-links">
                     <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">
-                        Link to my GitHub repository containing codes, datasets, and reports.
+                        Explore my GitHub repositories, source code, datasets, notebooks, and analytical reports
                     </a>
+                </p>
+
+                <p>
+                    <strong>Technical highlights:</strong> Python • pandas • NumPy • SciPy • scikit-learn • TensorFlow • 
+                    PyTorch • XGBoost • NLP • Hugging Face • BERTopic • FastAPI • R • Bioconductor • SQL • SQLite • 
+                    HTML5 • CSS3 • JavaScript • WordPress • Elementor • JupyterLab • VS Code • Conda • Git • GitHub • 
+                    GitHub Pages • Render • WebCentral • cPanel • AWS • Docker • ChatGPT • Copilot • LM Studio
                 </p>
             </div>
 
-            <div id="statistics" class="skills_tab_scrollable" style="display:none;">                 
-                <h5>Statistical Analyses, ML and NLP</h5><br>
+            <div id="statistics" class="skills_tab_scrollable" style="display:none;">
+                <h5>Statistical Analyses, Machine Learning and Natural Language Processing</h5><br>
 
-                <div class="left_right" role="presentation">
+                <p>
+                    I design and implement <strong>statistical, machine learning, and natural language processing workflows</strong>
+                    for biological, experimental, behavioural, textual, and complex multidimensional datasets. My work spans the
+                    full analytical lifecycle, from defining the research question and retrieving data through data preparation,
+                    modelling, validation, interpretation, visualisation, and reporting.
+                </p>
 
-                    <div class="text-content">
-                        <p>I perform a wide range of <em>statistical analyses</em> using industry-standard tools such as Genedata Expressionist Analyst, SAS, R, JMP, Statistica, and Python, delivering rigorous, reproducible, and interpretable insights across biological, experimental, and complex multidimensional datasets.</p>
+                <p>
+                    I combine statistical rigour with domain knowledge and reproducible coding practices to ensure that analytical
+                    outputs are accurate, interpretable, and relevant to the scientific or business question being addressed.
+                </p>
 
-                        <ul><strong>descriptive statistics & exploratory data analysis</strong><br>
-                            <li>summary statistics (means, medians, variances, quartiles, standard deviations, standard errors)</li>
-                            <li>distribution analysis (histograms, density plots, QQ plots, skewness inspection)</li>
-                            <li>data quality checks, outlier detection, and missing value exploration</li>
-                            <li>visual exploration using box plots, scatterplots, violin plots, heat maps, volcano plots, treemaps, and correlation matrices</li>
-                            <li>identification of hidden patterns, trends, and anomalies prior to formal modelling</li><br>
-                        </ul>
+                <div class="project-summary">
+                    <h4>Analytical Workflow Design</h4>
 
-                        <ul><strong>univariate inference & statistical testing</strong><br>
-                            <li>correlation analysis and association testing</li>
-                            <li>linear regression and general trend modelling</li>
-                            <li>analysis of variance (ANOVA)</li>
-                            <li>t-tests and non-parametric alternatives when assumptions are not met</li>
-                            <li>effect size estimation and multiple-testing aware interpretation</li><br>
-                        </ul>
+                    <p>
+                        I begin by translating a research, technical, or business question into a structured analytical plan.
+                        This includes identifying the appropriate data, defining variables and outcomes, selecting suitable
+                        statistical or machine learning methods, and establishing validation and reporting criteria.
+                    </p>
 
-                        <ul><strong>multivariate analysis & structure discovery</strong><br>
-                            <li>principal component analysis (PCA)</li>
-                            <li>partial least squares (PLS)</li>
-                            <li>hierarchical clustering analysis (HCA)</li>
-                            <li>k-means clustering</li>
-                            <li>self-organising maps (SOM)</li>
-                            <li>UMAP and other dimensionality reduction methods for pattern discovery and visual interpretation</li><br>
-                        </ul>
+                    <ul>
+                        <li>Clarification of objectives, hypotheses, response variables, predictors, and decision criteria</li>
+                        <li>Assessment of dataset structure, sample size, experimental design, and potential sources of bias</li>
+                        <li>Selection of appropriate statistical, machine learning, or NLP methods</li>
+                        <li>Definition of reproducible preprocessing, modelling, validation, and interpretation steps</li>
+                        <li>Alignment of analytical outputs with scientific, operational, publication, or stakeholder needs</li>
+                    </ul>
+                </div>
 
-                        <ul><strong>data preprocessing, normalisation & quality control</strong><br>
-                            <li>normalisation and scaling (log, Pareto, Z-score, quantile, Yeo–Johnson)</li>
-                            <li>batch effect detection and correction</li>
-                            <li>QC-based filtering, drift monitoring, and noise reduction</li>
-                            <li>feature selection, variance filtering, and transformation of skewed variables</li>
-                            <li>preparation of robust, modelling-ready datasets from noisy experimental or observational data</li>
-                        </ul>
-                        <br>
+                <div class="project-summary">
+                    <h4>Data Retrieval, Integration and Preparation</h4>
 
-                        <p>I design and implement a wide range of <em>Machine Learning (ML) and Natural Language Processing (NLP) workflows</em> using Python within a reproducible Conda and Jupyter Notebook environment. My work spans supervised, unsupervised, and deep learning approaches, with strong emphasis on feature engineering, interpretability, validation, and deployment-oriented outputs.</p>
+                    <p>
+                        I retrieve, combine, clean, and restructure data from spreadsheets, databases, public repositories,
+                        scientific instruments, websites, APIs, and text documents. I prepare robust analysis-ready datasets
+                        while preserving metadata, provenance, and reproducibility.
+                    </p>
 
-                        <ul><strong>supervised machine learning</strong><br>
-                            <li>linear and logistic regression</li>
-                            <li>regularised models (Lasso, Ridge, Elastic Net)</li>
-                            <li>support vector machines (SVM)</li>
-                            <li>decision trees and random forests</li>
-                            <li>gradient boosting methods (XGBoost, LightGBM, CatBoost)</li>
-                            <li>k-nearest neighbours (k-NN)</li>
-                            <li>naïve Bayes classifiers</li>
-                            <li>ensemble and stacked models for improved predictive performance</li>
-                            <li>classification, regression, ranking, prioritisation, and predictive scoring</li><br>
-                        </ul>
+                    <ul>
+                        <li>Import and integration of CSV, Excel, SQL, JSON, tabular, biological, and text-based datasets</li>
+                        <li>Variable harmonisation, identifier matching, reshaping, merging, and metadata reconciliation</li>
+                        <li>Detection and correction of duplicated, inconsistent, malformed, or missing records</li>
+                        <li>Data-type validation, unit standardisation, date parsing, and categorical encoding</li>
+                        <li>Preparation of transparent data dictionaries and reproducible preprocessing workflows</li>
+                    </ul>
+                </div>
 
-                        <ul><strong>unsupervised machine learning</strong><br>
-                            <li>k-means clustering</li>
-                            <li>hierarchical clustering analysis (HCA)</li>
-                            <li>self-organising maps (SOM)</li>
-                            <li>density-based clustering (DBSCAN, HDBSCAN)</li>
-                            <li>dimensionality reduction (PCA, UMAP, t-SNE)</li>
-                            <li>topic modelling and latent structure detection (LDA, NMF, BERTopic)</li>
-                            <li>similarity-based matching, grouping, and anomaly detection</li><br>
-                        </ul>
+                <div class="project-summary">
+                    <h4>Data Quality Control and Preprocessing</h4>
 
-                        <ul><strong>deep learning, embeddings & NLP</strong><br>
-                            <li>multi-layer perceptron (MLP) neural networks</li>
-                            <li>recurrent neural networks (LSTM, GRU)</li>
-                            <li>transformer-based models (BERT, DistilBERT)</li>
-                            <li>tokenisation, lemmatisation, TF-IDF, and feature extraction from free text</li>
-                            <li>sentence embeddings, semantic similarity, and document clustering</li>
-                            <li>text classification, topic extraction, corpus structuring, and keyword analysis</li>
-                            <li>integration of textual and structured features into unified analytical pipelines</li><br>
-                        </ul>
+                    <p>
+                        I evaluate data quality before modelling and apply transformations appropriate to the dataset,
+                        analytical method, and experimental context.
+                    </p>
 
-                        <ul><strong>model evaluation, interpretation & delivery</strong><br>
-                            <li>cross-validation, threshold tuning, and hyperparameter optimisation</li>
-                            <li>evaluation using accuracy, precision, recall, F1-score, AUC, RMSE, MAE, R², silhouette, and related metrics</li>
-                            <li>feature importance analysis, coefficient interpretation, and explainable outputs</li>
-                            <li>delivery of reproducible code, publication-ready figures, dashboards, reports, and interactive interfaces</li>
-                            <li>deployment-oriented thinking from research question to actionable output</li>
-                        </ul>
+                    <ul>
+                        <li>Missing-value exploration, imputation assessment, and completeness profiling</li>
+                        <li>Outlier detection using statistical, distance-based, density-based, and model-based methods</li>
+                        <li>Normalisation and scaling using log, Z-score, Pareto, quantile, robust, and Yeo–Johnson transformations</li>
+                        <li>Batch-effect detection, drift assessment, variance filtering, and noise reduction</li>
+                        <li>Feature engineering, encoding, dimensionality reduction, and creation of modelling-ready variables</li>
+                        <li>Quality-control checks before and after each major processing step</li>
+                    </ul>
+                </div>
 
-                    </div>
-                        <div class="image-content">
-                            <img class="stats-icons" alt="statistical workflow illustration" loading="lazy" width="20%" height="50%" src="resources/images/logo_icons/LMskillsicons.png">
-                        </div>
-                </div>                
+                <div class="project-summary">
+                    <h4>Descriptive Statistics and Exploratory Data Analysis</h4>
+
+                    <p>
+                        I use descriptive statistics and exploratory visualisation to understand data distributions,
+                        identify trends and anomalies, assess relationships, and guide subsequent modelling decisions.
+                    </p>
+
+                    <ul>
+                        <li>Summary statistics including mean, median, variance, quartiles, standard deviation, and standard error</li>
+                        <li>Distribution analysis using histograms, density plots, box plots, violin plots, and QQ plots</li>
+                        <li>Inspection of skewness, heteroscedasticity, multimodality, and extreme values</li>
+                        <li>Correlation matrices, scatterplots, pair plots, heat maps, treemaps, and volcano plots</li>
+                        <li>Group-wise comparison, stratification, temporal analysis, and pattern discovery</li>
+                        <li>Identification of candidate variables, confounders, interactions, and modelling constraints</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Statistical Testing and Inference</h4>
+
+                    <p>
+                        I apply univariate and multivariate statistical methods to test hypotheses, estimate effects,
+                        compare groups, and quantify relationships while accounting for assumptions and multiple testing.
+                    </p>
+
+                    <ul>
+                        <li>Correlation and association analysis</li>
+                        <li>Linear regression and general trend modelling</li>
+                        <li>Analysis of variance, including one-way, multi-factor, and interaction-based ANOVA</li>
+                        <li>Parametric and non-parametric group comparisons</li>
+                        <li>Effect-size estimation, confidence intervals, and uncertainty-aware interpretation</li>
+                        <li>Multiple-testing correction and false-discovery-rate control</li>
+                        <li>Assessment of assumptions, residuals, variance structure, and model adequacy</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Multivariate Analysis and Structure Discovery</h4>
+
+                    <p>
+                        I use multivariate methods to reduce dimensionality, detect hidden structure, compare samples,
+                        identify correlated features, and reveal dominant sources of variation.
+                    </p>
+
+                    <ul>
+                        <li>Principal component analysis</li>
+                        <li>Partial least squares and related supervised projection methods</li>
+                        <li>Linear discriminant analysis</li>
+                        <li>Hierarchical clustering analysis</li>
+                        <li>k-means clustering and self-organising maps</li>
+                        <li>UMAP and t-SNE for nonlinear dimensionality reduction</li>
+                        <li>Cluster validation, stability assessment, and biological or operational interpretation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Supervised Machine Learning</h4>
+
+                    <p>
+                        I develop supervised models for classification, regression, ranking, prioritisation, and prediction.
+                        Model choice is guided by dataset size, feature structure, interpretability requirements, and the
+                        intended use of the output.
+                    </p>
+
+                    <ul>
+                        <li>Linear and logistic regression</li>
+                        <li>Regularised models including Lasso, Ridge, and Elastic Net</li>
+                        <li>Support vector machines</li>
+                        <li>Decision trees and Random Forest models</li>
+                        <li>Gradient boosting using XGBoost, LightGBM, and related methods</li>
+                        <li>k-nearest neighbours and naïve Bayes classifiers</li>
+                        <li>Multi-layer perceptrons and other neural-network models</li>
+                        <li>Ensemble and stacked models for improved robustness and predictive performance</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Unsupervised Learning and Anomaly Detection</h4>
+
+                    <p>
+                        I use unsupervised learning to identify naturally occurring groups, latent structure, unusual observations,
+                        and complex relationships when a predefined response variable is unavailable.
+                    </p>
+
+                    <ul>
+                        <li>k-means and hierarchical clustering</li>
+                        <li>Self-organising maps</li>
+                        <li>Density-based clustering using DBSCAN and HDBSCAN</li>
+                        <li>Dimensionality reduction using PCA, UMAP, and t-SNE</li>
+                        <li>Isolation Forest and related anomaly-detection approaches</li>
+                        <li>Similarity-based grouping and nearest-neighbour analysis</li>
+                        <li>Cluster profiling, validation, and interpretation of latent sample groups</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Natural Language Processing</h4>
+
+                    <p>
+                        I design NLP workflows for scientific documents, publication metadata, website content, profile descriptions,
+                        witness reports, free-text survey fields, and other unstructured text collections.
+                    </p>
+
+                    <ul>
+                        <li>Text cleaning, tokenisation, stop-word removal, stemming, and lemmatisation</li>
+                        <li>Regular-expression extraction and rule-based text parsing</li>
+                        <li>Bag-of-words and TF-IDF feature generation</li>
+                        <li>Keyword analysis, phrase extraction, and corpus profiling</li>
+                        <li>Topic modelling using LDA, NMF, and BERTopic</li>
+                        <li>Sentence embeddings, semantic similarity, and document clustering</li>
+                        <li>Text classification, prioritisation, retrieval, and recommendation workflows</li>
+                        <li>Integration of textual and structured variables within unified machine learning pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Deep Learning, Transformers and Embeddings</h4>
+
+                    <p>
+                        I use deep-learning and transformer-based methods when dataset size, complexity, and project objectives
+                        justify their use, while maintaining a focus on model validation and interpretability.
+                    </p>
+
+                    <ul>
+                        <li>Multi-layer perceptron neural networks</li>
+                        <li>Recurrent neural networks including LSTM and GRU architectures</li>
+                        <li>Transformer-based models including BERT and DistilBERT</li>
+                        <li>Hugging Face models and pipelines</li>
+                        <li>Sentence-transformer embeddings for semantic comparison and retrieval</li>
+                        <li>Transfer learning and fine-tuning where appropriate</li>
+                        <li>Comparison of deep-learning outputs with simpler statistical and machine learning baselines</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Feature Selection and Biomarker Discovery</h4>
+
+                    <p>
+                        A substantial part of my work involves identifying variables, peptides, proteins, metabolites, genes,
+                        or text-derived features that contribute most strongly to group separation, prediction, or biological interpretation.
+                    </p>
+
+                    <ul>
+                        <li>Variance filtering, correlation-based screening, and statistical significance testing</li>
+                        <li>Effect-size ranking and consistency-based selection rules</li>
+                        <li>Model coefficients and regularisation-based feature selection</li>
+                        <li>Random Forest and gradient-boosting feature importance</li>
+                        <li>Recursive feature elimination and cross-validated subset selection</li>
+                        <li>Integration of statistical, machine learning, and domain-based evidence</li>
+                        <li>Prioritisation of interpretable biomarkers for validation and reporting</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Model Validation and Performance Evaluation</h4>
+
+                    <p>
+                        I evaluate models using methods appropriate to the analytical question and data structure, with particular
+                        attention to data leakage, overfitting, class imbalance, grouped samples, and generalisability.
+                    </p>
+
+                    <ul>
+                        <li>Train, validation, and test splitting</li>
+                        <li>k-fold, stratified, repeated, and grouped cross-validation</li>
+                        <li>Hyperparameter optimisation and threshold tuning</li>
+                        <li>Evaluation using accuracy, precision, recall, specificity, F1-score, and AUC</li>
+                        <li>Regression evaluation using R², RMSE, MAE, residuals, and calibration behaviour</li>
+                        <li>Clustering evaluation using silhouette score, stability, and structural coherence</li>
+                        <li>Confusion matrices, residual diagnostics, learning curves, and error analysis</li>
+                        <li>Comparison with baseline and simpler reference models</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Interpretability and Scientific Reasoning</h4>
+
+                    <p>
+                        I place strong emphasis on understanding why a model produces a result rather than reporting predictive
+                        performance alone. I combine model outputs with statistical evidence, domain knowledge, pathway information,
+                        and biological or operational context.
+                    </p>
+
+                    <ul>
+                        <li>Interpretation of coefficients, effect sizes, residuals, and feature importance</li>
+                        <li>Comparison of model outputs across methods and validation folds</li>
+                        <li>Assessment of whether identified relationships are plausible, stable, and actionable</li>
+                        <li>Integration with bioinformatics, pathway, network, and literature evidence</li>
+                        <li>Clear distinction between association, prediction, and causal interpretation</li>
+                        <li>Translation of complex outputs into testable hypotheses and decision-oriented conclusions</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Reporting, Visualisation and Delivery</h4>
+
+                    <p>
+                        I deliver analytical work in formats suited to technical specialists, researchers, clients, reviewers,
+                        and non-technical stakeholders.
+                    </p>
+
+                    <ul>
+                        <li>Reproducible Python and R notebooks and scripts</li>
+                        <li>Cleaned datasets, feature tables, model outputs, and quality-control summaries</li>
+                        <li>Publication-ready figures, tables, supplementary files, and statistical reports</li>
+                        <li>Interactive Tableau, Power BI, or prototype application outputs</li>
+                        <li>Technical slide decks, executive summaries, and interpretation-focused reports</li>
+                        <li>GitHub repositories containing code, documentation, figures, and selected datasets</li>
+                        <li>Clear recommendations, limitations, and proposed next steps</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Software and Analytical Environments</h4>
+
+                    <p>
+                        I use both specialised statistical software and open-source programming environments, selecting the
+                        most appropriate combination for each project.
+                    </p>
+
+                    <ul>
+                        <li><strong>Python:</strong> pandas, NumPy, SciPy, statsmodels, scikit-learn, XGBoost, LightGBM, TensorFlow, PyTorch, and NLP libraries</li>
+                        <li><strong>R:</strong> tidyverse, ggplot2, Bioconductor, and statistical packages</li>
+                        <li><strong>Specialist software:</strong> Genedata Expressionist Analyst, SAS, JMP, and Statistica</li>
+                        <li><strong>Development environments:</strong> Jupyter Notebook, JupyterLab, VS Code, Anaconda, and Conda environments</li>
+                        <li><strong>Reporting and visualisation:</strong> Matplotlib, Plotly, Tableau, Power BI, Excel, and PowerPoint</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="stats-icons"
+                        alt="End-to-end analytical workflow from defining the research question through data retrieval, data handling, statistical analysis, machine learning modelling, analytics, interpretation, and reporting"
+                        loading="lazy"
+                        width="50%"
+                        height="50%"
+                        src="resources/images/logo_icons/LMskillsicons.png">
+                </p>
+
+                <p>
+                    <strong>Technical highlights:</strong> exploratory data analysis • statistical inference • ANOVA • regression •
+                    PCA • LDA • clustering • Random Forest • XGBoost • support vector machines • neural networks • NLP • TF-IDF •
+                    topic modelling • transformers • embeddings • feature selection • biomarker discovery • cross-validation •
+                    model interpretation • reproducible reporting
+                </p>
             </div>
 
             <div id="bioinformatics" class="skills_tab_scrollable" style="display:none;">
-                <h5>Bioinformatics and Data Mining</h5> <br>
-                <p>Below are listed some of the <strong>bioinformatics</strong> and <strong>data mining</strong> tools I have used:</p>
-                <img class="bioinformatics-icons" alt="bioinformatics tools icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/bioinformaticsicons.png">
+                <h5>Bioinformatics and Data Mining</h5><br>
+
+                <p>
+                    I have more than two decades of experience applying <strong>bioinformatics, biological databases, 
+                    sequence analysis, pathway analysis, network biology, proteomics, metabolomics, and genome-browser tools</strong> 
+                    to interpret complex life-science datasets. My work spans plant science, microbiology, dairy science, 
+                    medicinal cannabis, wheat proteogenomics, multi-omics integration, biomarker discovery, and scientific data mining.
+                </p>
+
+                <p>
+                    I use these resources to move from raw experimental outputs to biologically meaningful conclusions by combining 
+                    sequence evidence, functional annotation, structural information, pathways, molecular interactions, genome context, 
+                    and published biological knowledge.
+                </p>
+
+                <div class="project-summary">
+                    <h4>Sequence Analysis and Genome Annotation</h4>
+
+                    <p>
+                        I use sequence-analysis and genome-annotation tools to identify proteins and genes, compare sequences, 
+                        validate peptide mappings, inspect gene models, and investigate genome structure.
+                    </p>
+
+                    <ul>
+                        <li><strong>NCBI BLAST:</strong> protein and nucleotide similarity searches, sequence identification, and comparative analysis</li>
+                        <li><strong>BioEdit:</strong> sequence inspection, editing, alignment review, and preparation of sequence datasets</li>
+                        <li><strong>Ensembl and Ensembl Plants:</strong> gene, transcript, protein, chromosome, and comparative-genomics information</li>
+                        <li><strong>Gramene:</strong> plant genome, gene, pathway, and comparative-genomics resources</li>
+                        <li><strong>TAIR:</strong> Arabidopsis gene annotation, locus information, mutant evidence, expression data, and functional interpretation</li>
+                        <li><strong>PMN:</strong> plant metabolic pathways, enzymes, metabolites, and pathway-level interpretation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Genome Browsers and Proteogenomics</h4>
+
+                    <p>
+                        I use genome browsers to visualise experimental evidence in genomic context, inspect gene structures, 
+                        compare annotations, and evaluate peptide support for coding regions and transcript isoforms.
+                    </p>
+
+                    <ul>
+                        <li><strong>JBrowse and Apollo/JBrowse:</strong> visualisation of peptide-to-genome mappings, exon structure, transcript isoforms, and annotation evidence</li>
+                        <li><strong>Integrated Genome Browser:</strong> inspection of genomic tracks and aligned biological features</li>
+                        <li><strong>GFF3-based workflows:</strong> programmatic reconstruction of peptide coordinates from genes, transcripts, CDS features, and protein annotations</li>
+                        <li><strong>BED track generation:</strong> preparation of browser-ready BED6 and BED12 files for genome visualisation</li>
+                        <li><strong>Translation validation:</strong> confirmation that projected genomic coordinates reproduce the expected peptide sequence</li>
+                    </ul>
+
+                    <p>
+                        In my recent wheat proteogenomics work, I developed a genome-guided pipeline to project peptide evidence 
+                        onto the wheat reference genome, distinguish within-exon from exon-spanning peptides, validate translated 
+                        genomic sequence, and generate Apollo/JBrowse tracks for annotation review.
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Protein Identification, Annotation and Structure</h4>
+
+                    <p>
+                        I use protein databases and structural resources to identify proteins, retrieve curated annotations, 
+                        evaluate domain and functional information, and investigate experimentally determined or predicted structures.
+                    </p>
+
+                    <ul>
+                        <li><strong>UniProtKB:</strong> protein names, functions, domains, subcellular localisation, catalytic activity, and cross-references</li>
+                        <li><strong>ExPASy:</strong> protein sequence analysis, physicochemical properties, proteomics resources, and functional annotation</li>
+                        <li><strong>PDBe and RCSB PDB:</strong> experimentally determined protein structures, ligands, domains, and structural context</li>
+                        <li><strong>AlphaFold Protein Structure Database:</strong> predicted protein structures and structural interpretation of poorly characterised proteins</li>
+                        <li><strong>EMBL-EBI resources:</strong> integrated sequence, protein, structure, pathway, and functional databases</li>
+                        <li><strong>Mercator4:</strong> assignment of plant proteins and genes to functional categories for pathway-level interpretation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Gene Ontology and Functional Enrichment</h4>
+
+                    <p>
+                        I use Gene Ontology and enrichment-analysis tools to determine which molecular functions, biological 
+                        processes, cellular components, and pathways are over-represented among selected genes or proteins.
+                    </p>
+
+                    <ul>
+                        <li><strong>Gene Ontology and AmiGO:</strong> controlled biological terminology, gene annotations, and ontology exploration</li>
+                        <li><strong>ShinyGO:</strong> functional enrichment, pathway analysis, gene characteristics, and network visualisation</li>
+                        <li><strong>AgriGO:</strong> Gene Ontology enrichment analysis for plant datasets</li>
+                        <li><strong>REVIGO:</strong> reduction and visualisation of redundant Gene Ontology terms</li>
+                        <li><strong>Pathway Tools:</strong> pathway reconstruction, genome-scale metabolic interpretation, and organism-specific pathway databases</li>
+                    </ul>
+
+                    <p>
+                        I routinely integrate enrichment results with experimental direction, effect size, clustering patterns, 
+                        protein interactions, and domain knowledge rather than relying on enrichment scores alone.
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Pathway and Multi-Omics Integration</h4>
+
+                    <p>
+                        I use pathway databases and multi-omics platforms to connect genes, proteins, and metabolites into 
+                        coherent biological processes and to compare responses across molecular layers.
+                    </p>
+
+                    <ul>
+                        <li><strong>KEGG:</strong> metabolic pathways, signalling pathways, genes, enzymes, compounds, and pathway maps</li>
+                        <li><strong>Reactome:</strong> curated pathways, reactions, molecular events, and pathway enrichment</li>
+                        <li><strong>BioCyc:</strong> organism-specific pathways, metabolic networks, reactions, enzymes, and metabolites</li>
+                        <li><strong>PaintOmics:</strong> integration and visualisation of transcriptomics, proteomics, and metabolomics data on pathways</li>
+                        <li><strong>MetaboAnalyst:</strong> metabolomics preprocessing, statistical analysis, biomarker exploration, enrichment, and pathway analysis</li>
+                    </ul>
+
+                    <p>
+                        In recent multi-omics projects, I integrated transcriptomic, proteomic, metabolomic, and phenotypic data 
+                        to identify biomarkers, classify response profiles, assess genetic rescue, and construct interpretable 
+                        models of biological regulation.
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Protein Interaction and Network Biology</h4>
+
+                    <p>
+                        I use interaction databases and network-visualisation platforms to identify functional modules, interaction 
+                        partners, central proteins, enriched biological processes, and candidate mechanisms.
+                    </p>
+
+                    <ul>
+                        <li><strong>STRING:</strong> known and predicted protein-protein interactions, functional associations, and enrichment analysis</li>
+                        <li><strong>Cytoscape:</strong> construction, styling, filtering, annotation, and interpretation of biological networks</li>
+                        <li>Integration of interaction evidence with differential abundance, biomarker rankings, pathway membership, and functional annotation</li>
+                        <li>Identification of connected modules, hub proteins, and candidate regulatory relationships</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Proteomics and Peptide-Centric Resources</h4>
+
+                    <p>
+                        I use proteomics databases and software to identify proteins and peptides, inspect peptide evidence, 
+                        validate protein assignments, compare datasets, and support biological interpretation.
+                    </p>
+
+                    <ul>
+                        <li><strong>PeptideAtlas:</strong> peptide observations, proteomics evidence, and peptide-to-protein mapping</li>
+                        <li><strong>Human Protein Atlas:</strong> tissue expression, cellular localisation, protein expression, and pathology-related information</li>
+                        <li><strong>Trans-Proteomic Pipeline:</strong> processing and statistical validation of mass-spectrometry-based proteomics data</li>
+                        <li><strong>ProteoWizard:</strong> conversion, inspection, and processing of mass-spectrometry data formats</li>
+                        <li><strong>Galaxy:</strong> reproducible, browser-based analysis workflows and data processing</li>
+                        <li><strong>MassIVE, ProteomeXchange, and PRIDE:</strong> discovery, retrieval, deposition, and reuse of public proteomics datasets</li>
+                    </ul>
+
+                    <p>
+                        My proteomics work includes protein identification, peptide filtering, quantitative analysis, biomarker 
+                        discovery, proteogenomics, public-data reuse, and preparation of large datasets for reproducible analysis.
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Metabolite and Chemical Annotation</h4>
+
+                    <p>
+                        I use metabolite and chemical databases to identify compounds, retrieve molecular properties, investigate 
+                        biochemical roles, and connect metabolomics features with pathways and published evidence.
+                    </p>
+
+                    <ul>
+                        <li><strong>HMDB:</strong> human metabolites, biochemical properties, pathways, spectra, and disease associations</li>
+                        <li><strong>PubChem:</strong> chemical structures, identifiers, molecular properties, synonyms, and bioactivity information</li>
+                        <li><strong>KEGG Compound and BioCyc:</strong> metabolite participation in biochemical pathways and reactions</li>
+                        <li><strong>MetaboAnalyst:</strong> metabolite annotation, statistical analysis, enrichment, and pathway interpretation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Phylogenetics and Evolutionary Analysis</h4>
+
+                    <p>
+                        I use evolutionary and phylogenetic tools to compare sequences, examine relatedness, and support 
+                        interpretation of gene and protein families.
+                    </p>
+
+                    <ul>
+                        <li><strong>MEGA:</strong> multiple-sequence analysis, phylogenetic tree construction, evolutionary comparison, and visualisation</li>
+                        <li>Comparison of orthologues, paralogues, conserved regions, and sequence divergence</li>
+                        <li>Integration of evolutionary evidence with protein function and biological context</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Data Mining and Evidence Integration</h4>
+
+                    <p>
+                        My bioinformatics approach combines database searching with computational analysis and critical biological 
+                        interpretation. I cross-check information across multiple resources because annotations, identifiers, pathway 
+                        assignments, and interaction evidence can differ between databases.
+                    </p>
+
+                    <ul>
+                        <li>Identifier mapping across genes, transcripts, proteins, peptides, metabolites, and database accessions</li>
+                        <li>Manual and programmatic retrieval of annotations from public biological resources</li>
+                        <li>Integration of experimental results with sequence, structure, pathway, interaction, and literature evidence</li>
+                        <li>Filtering of low-confidence, redundant, obsolete, or unsupported annotations</li>
+                        <li>Development of reproducible Python workflows for large-scale biological data mining</li>
+                        <li>Translation of complex bioinformatics outputs into testable biological hypotheses and clear scientific narratives</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="bioinformatics-icons"
+                        alt="Bioinformatics databases and tools used for sequence analysis, genome browsing, protein annotation, structure prediction, pathway analysis, metabolomics, proteomics, interaction networks, and biological data mining"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/bioinformaticsicons.png">
+                </p>
+
+                <p>
+                    <strong>Technical highlights:</strong> BLAST • JBrowse • Apollo • GFF3 • BED tracks • Ensembl Plants • 
+                    Gramene • TAIR • UniProtKB • ExPASy • PDBe • RCSB PDB • AlphaFold • Gene Ontology • ShinyGO • AgriGO • 
+                    REVIGO • KEGG • Reactome • BioCyc • PaintOmics • STRING • Cytoscape • MetaboAnalyst • PeptideAtlas • 
+                    ProteoWizard • Trans-Proteomic Pipeline • HMDB • PubChem • MEGA • multi-omics integration • proteogenomics
+                </p>
             </div>
+
             <div id="visualisation" class="skills_tab_scrollable" style="display:none;">
-                <h5>Data Visualisation</h5> <br>
-                <div class="left_right" role="presentation">
-                    <div class="text-content">
-                        <p>Throughout my career, I've created many <strong>visualisations</strong> to describe categorical and quantitative data:</p>
-                        <ul><strong>distribution</strong><br>
-                            <li>one variable:</li>
-                                <ul>
-                                    <li>histogram</li>
-                                    <li>box and wisker plot</li>
-                                    <li>density plot</li>
-                                    <li>violin plot</li>
-                                </ul>
-                            <li>two variables:</li>
-                                <ul>
-                                    <li>scatterplot</li>
-                                    <li>stacked histogram</li>
-                                    <li>pyramid plot</li>
-                                </ul> 
-                            <li>text data:</li>
-                                <ul>
-                                    <li>wordcloud</li>
-                                </ul><br>                    
-                        </ul>
-                        <ul><strong>relationship</strong><br>
-                            <li>two variables:</li>
-                                <ul>
-                                    <li>scatterplot</li>
-                                    <li>heatmap</li>
-                                    <li>volcano plot</li>
-                                </ul> 
-                            <li>three or more variables:</li>
-                                <ul>
-                                    <li>scatter bubble plot</li>
-                                    <li>chord diagram</li>
-                                    <li>network diagram</li>
-                                    <li>pair grid plot</li> <br>
-                                </ul> 
-                        </ul>
-                        <ul><strong>comparison</strong><br>
-                            <li>static</li>
-                                <ul>
-                                    <li>pie chart</li>
-                                    <li>donut chart</li>
-                                    <li>waterfall chart</li>
-                                    <li>stacked bar chart</li>
-                                    <li>tree map</li>
-                                    <li>Venn diagram</li>
-                                </ul>
-                            <li>change over time</li>
-                            <ul>
-                                <li>stacked bar chart</li>
-                                <li>stacked area chart</li>
-                                <li>100% stacked bar/area chart</li><br>
-                            </ul>
-                        </ul>
-                        <ul><strong>composition</strong><br>
-                            <li>among items</li>
-                                <ul>
-                                    <li>few categories</li>
-                                        <ul>
-                                            <li>vertical bar chart</li>
-                                            <li>horizontal bar chart</li>
-                                        </ul>
-                                    <li>many categories</li>
-                                    <ul>
-                                        <li>pair plots</li>
-                                        <li>heatmap</li>
-                                    </ul>
-                                </ul>
-                            <li>over time</li>
-                            <ul>
-                                <li>cyclical data</li>
-                                    <ul>
-                                        <li>circular area chart</li>
-                                    </ul>
-                                <li>non cyclical data</li>
-                                <ul>
-                                    <li>line chart</li>
-                                    <li>Gantt chart</li>
-                                </ul>
-                                <li>few categories</li>
-                                    <ul>
-                                        <li>vertical bar chart</li>
-                                    </ul>
-                                <li>many categories</li>
-                                    <ul>
-                                        <li></li>
-                                        <li>line chart</li><br>
-                                    </ul>
-                            </ul>
-                        </ul>
-                        <ul><strong>geographic</strong><br>
-                            <li>map using latitude and longitude</li>
-                        </ul>
-                    </div>
-                    <div class="image-content">
-                        <img class="visualisation-icons" alt="data visualisation icons" loading="lazy" width=100% height=auto src="resources/images/logo_icons/visualisationicons.png">
-                    </div>
+                <h5>Data Visualisation</h5><br>
+
+                <p>
+                    I create <strong>clear, accurate, and publication-ready visualisations</strong> to explore data, reveal patterns,
+                    compare groups, communicate uncertainty, and translate complex analytical results into accessible insights.
+                    My visualisation work spans scientific research, machine learning, bioinformatics, dashboards, technical reports,
+                    conference presentations, websites, and stakeholder communication.
+                </p>
+
+                <p>
+                    I select chart types according to the structure of the data and the message that needs to be communicated,
+                    rather than applying a single visual style to every problem. My workflow includes exploratory plotting,
+                    iterative refinement, accessibility checks, annotation, and preparation of final outputs for screen, print,
+                    publication, or interactive use.
+                </p>
+
+                <div class="project-summary">
+                    <h4>Visualisation Strategy and Chart Selection</h4>
+
+                    <p>
+                        I begin by defining the purpose of the visualisation: exploration, comparison, explanation, monitoring,
+                        publication, or decision support. I then select the chart type, level of detail, annotation, and format
+                        best suited to the audience and analytical objective.
+                    </p>
+
+                    <ul>
+                        <li>Match chart type to variable type, dimensionality, sample size, and analytical question</li>
+                        <li>Distinguish exploratory graphics from presentation-ready explanatory figures</li>
+                        <li>Prioritise clarity, proportional representation, legibility, and meaningful visual hierarchy</li>
+                        <li>Avoid unnecessary decoration, misleading scales, overcrowding, and unsupported interpretation</li>
+                        <li>Adapt figures for scientific, technical, executive, educational, and public audiences</li>
+                    </ul>
                 </div>
+
+                <div class="project-summary">
+                    <h4>Distribution and Data Quality Visualisation</h4>
+
+                    <p>
+                        I use distribution plots to understand the shape, spread, central tendency, variability, skewness,
+                        multimodality, outliers, and quality of numerical data before formal modelling.
+                    </p>
+
+                    <ul>
+                        <li>Histograms and density plots for frequency and distribution shape</li>
+                        <li>Box-and-whisker plots for medians, quartiles, spread, and outlier inspection</li>
+                        <li>Violin plots for comparing full distributions across groups</li>
+                        <li>QQ plots for checking normality and distributional assumptions</li>
+                        <li>Ridgeline plots for comparing multiple distributions</li>
+                        <li>Strip plots, swarm plots, and jittered points for displaying individual observations</li>
+                        <li>Missing-data maps and quality-control summaries</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Relationships, Associations and Correlations</h4>
+
+                    <p>
+                        I create visualisations that reveal relationships between variables, highlight trends, identify
+                        associations, and expose unusual or influential observations.
+                    </p>
+
+                    <ul>
+                        <li>Scatterplots with regression lines, confidence intervals, and group overlays</li>
+                        <li>Bubble plots for displaying three or more variables simultaneously</li>
+                        <li>Correlation matrices and clustered heat maps</li>
+                        <li>Pair plots and pair grids for multivariable relationship screening</li>
+                        <li>Hexbin and density plots for large or overlapping point clouds</li>
+                        <li>Volcano plots for displaying effect size and statistical significance</li>
+                        <li>Residual and diagnostic plots for model assessment</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Group Comparison and Statistical Results</h4>
+
+                    <p>
+                        I use comparative plots to show differences between categories, experimental conditions,
+                        treatments, genotypes, clusters, or model outputs.
+                    </p>
+
+                    <ul>
+                        <li>Vertical and horizontal bar charts</li>
+                        <li>Grouped, stacked, and 100% stacked bar charts</li>
+                        <li>Dot plots, lollipop plots, and Cleveland-style comparisons</li>
+                        <li>Box plots, violin plots, and raincloud-style comparisons</li>
+                        <li>Forest plots for effect sizes and confidence intervals</li>
+                        <li>Waterfall charts for sequential gains, losses, or contributions</li>
+                        <li>Slope charts and dumbbell plots for paired or before-and-after comparisons</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Composition and Part-to-Whole Relationships</h4>
+
+                    <p>
+                        I visualise how individual categories contribute to a total while ensuring that proportions remain
+                        easy to compare and interpret.
+                    </p>
+
+                    <ul>
+                        <li>Stacked and 100% stacked bar charts</li>
+                        <li>Stacked area charts for changing composition over time</li>
+                        <li>Treemaps for hierarchical part-to-whole relationships</li>
+                        <li>Pie and donut charts for limited numbers of clearly distinct categories</li>
+                        <li>Marimekko-style and mosaic plots where appropriate</li>
+                        <li>UpSet plots and Venn diagrams for set overlap and intersection analysis</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Time-Series and Longitudinal Visualisation</h4>
+
+                    <p>
+                        I use temporal graphics to display trends, cycles, interventions, transitions, and changes over time.
+                    </p>
+
+                    <ul>
+                        <li>Line charts for continuous temporal trends</li>
+                        <li>Multi-series line charts with clear grouping and annotation</li>
+                        <li>Area and stacked-area charts for cumulative or compositional change</li>
+                        <li>Rolling averages, smoothing, and confidence bands</li>
+                        <li>Event and intervention markers</li>
+                        <li>Gantt charts for project plans, workflows, and timelines</li>
+                        <li>Circular or radial plots for cyclical patterns and genomic layouts</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Multivariate and High-Dimensional Data</h4>
+
+                    <p>
+                        I visualise complex multidimensional datasets using projection, clustering, matrix, and network-based
+                        representations that help reveal latent structure and sample relationships.
+                    </p>
+
+                    <ul>
+                        <li>PCA, LDA, UMAP, and t-SNE score plots</li>
+                        <li>Clustered heat maps with row and column annotation</li>
+                        <li>Self-organising map visualisations</li>
+                        <li>Parallel-coordinate plots</li>
+                        <li>Scatterplot matrices and pair grids</li>
+                        <li>Chord diagrams and Sankey diagrams for flows and relationships</li>
+                        <li>Network diagrams for biological interactions, pathways, and connectivity</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Machine Learning and Model Evaluation Graphics</h4>
+
+                    <p>
+                        I create model-focused visualisations to assess predictive performance, compare algorithms,
+                        explain errors, and communicate the factors driving predictions.
+                    </p>
+
+                    <ul>
+                        <li>Confusion matrices</li>
+                        <li>ROC and precision-recall curves</li>
+                        <li>Calibration plots</li>
+                        <li>Observed-versus-predicted plots</li>
+                        <li>Residual distributions and diagnostic plots</li>
+                        <li>Feature-importance and coefficient plots</li>
+                        <li>Learning curves and cross-validation summaries</li>
+                        <li>Cluster-quality, silhouette, and anomaly-score plots</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Genomics, Proteomics and Bioinformatics Visualisation</h4>
+
+                    <p>
+                        I create specialised scientific graphics for omics, genome annotation, biomarker discovery,
+                        pathway interpretation, and molecular interaction studies.
+                    </p>
+
+                    <ul>
+                        <li>Genome-browser tracks and peptide-to-genome evidence views</li>
+                        <li>Circular chromosome and genome-wide coverage plots</li>
+                        <li>Volcano plots, heat maps, and expression-profile plots</li>
+                        <li>Pathway diagrams and enrichment visualisations</li>
+                        <li>Protein-interaction and gene-regulatory networks</li>
+                        <li>Multi-omics integration figures</li>
+                        <li>Biomarker-ranking and feature-selection plots</li>
+                        <li>Publication schematics and analytical workflow diagrams</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Text and Natural Language Processing Visualisation</h4>
+
+                    <p>
+                        I visualise patterns in textual data to summarise language use, themes, semantic structure,
+                        and relationships within document collections.
+                    </p>
+
+                    <ul>
+                        <li>Word clouds for high-level term summaries</li>
+                        <li>Keyword and phrase-frequency charts</li>
+                        <li>Topic-distribution plots</li>
+                        <li>pyLDAvis interactive topic exploration</li>
+                        <li>Document and sentence-embedding projections</li>
+                        <li>Semantic-cluster maps</li>
+                        <li>Temporal topic-trend visualisation</li>
+                        <li>Co-occurrence and concept networks</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Geospatial Visualisation</h4>
+
+                    <p>
+                        I use geographic visualisation to examine spatial distributions, regional trends, hotspots,
+                        and relationships between location-based variables.
+                    </p>
+
+                    <ul>
+                        <li>Latitude-and-longitude point maps</li>
+                        <li>Bubble and proportional-symbol maps</li>
+                        <li>Choropleth maps</li>
+                        <li>Density and hotspot maps</li>
+                        <li>Regional aggregation and comparison</li>
+                        <li>Integration of geographic metadata with temporal, categorical, or predictive outputs</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Interactive Dashboards and Analytical Interfaces</h4>
+
+                    <p>
+                        I develop interactive dashboards that allow users to filter, compare, and explore data without
+                        needing to interact directly with the underlying code.
+                    </p>
+
+                    <ul>
+                        <li><strong>Power BI:</strong> interactive reports, slicers, dashboards, and stakeholder-facing summaries</li>
+                        <li><strong>Tableau:</strong> exploratory dashboards, geographic views, filters, and public-facing visual analytics</li>
+                        <li><strong>Plotly:</strong> interactive Python charts with hover, zoom, and selection functionality</li>
+                        <li><strong>Gradio:</strong> prototype interfaces for machine learning and recommendation outputs</li>
+                        <li>Export of dashboard views for reports, presentations, and publication support</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Publication-Ready Figures and Scientific Storytelling</h4>
+
+                    <p>
+                        I prepare figures for manuscripts, reports, presentations, and supplementary materials with careful
+                        attention to consistency, resolution, annotation, and readability.
+                    </p>
+
+                    <ul>
+                        <li>Multi-panel figure assembly and consistent labelling</li>
+                        <li>Clear legends, axis titles, captions, units, and statistical annotations</li>
+                        <li>Vector and high-resolution raster export</li>
+                        <li>Journal-compliant figure sizing and formatting</li>
+                        <li>Accessible palettes and sufficient contrast</li>
+                        <li>Visual consistency across figures, tables, reports, and slide decks</li>
+                        <li>Integration of analytical results into coherent visual narratives</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Tools and Visualisation Environments</h4>
+
+                    <p>
+                        I use a combination of coding, dashboard, and office-based tools depending on the complexity,
+                        interactivity, publication requirements, and intended audience.
+                    </p>
+
+                    <ul>
+                        <li><strong>Python:</strong> Matplotlib, Seaborn, Plotly, Squarify, PyViz, NetworkX, WordCloud, and specialist plotting libraries</li>
+                        <li><strong>R:</strong> ggplot2 and related visualisation packages</li>
+                        <li><strong>Dashboards:</strong> Tableau and Power BI</li>
+                        <li><strong>Office tools:</strong> Excel and PowerPoint for accessible reporting and presentation outputs</li>
+                        <li><strong>Web delivery:</strong> HTML, CSS, JavaScript, and embedded interactive content</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="visualisation-icons"
+                        alt="Examples of charts and visualisation tools used for distributions, comparisons, relationships, time series, multivariate analysis, geographic data, machine learning, and scientific reporting"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/visualisationicons.png">
+                </p>
+
+                <p>
+                    <strong>Technical highlights:</strong> Matplotlib • Seaborn • Plotly • ggplot2 • Tableau • Power BI • Excel •
+                    histograms • box plots • violin plots • heat maps • volcano plots • PCA • UMAP • networks • Sankey diagrams •
+                    dashboards • geospatial maps • model diagnostics • publication-ready figures • scientific storytelling
+                </p>
             </div>
+
             <div id="storytelling" class="skills_tab_scrollable" style="display:none;">
-                <h5>Data Representation, Interpretation, and Storytelling</h5> <br>
-                <div class="left_right" role="presentation">
-                    <div class="text-content">
-                        <p>
-                            Being a published author having co-authored ~40 peer-reviewed scientific article, I've amply demonstrated my data interpretation, dashboards and storytelling skills. <br> 
-                            <br>
-                            I've presented my results at many conferences and stakeholders.
-                        </p><br>
-                        <ul>
-                            <li><strong>Data Representation and Interpretation</strong></li><br>
-                                <ul>
-                                    <li>Analyze large datasets to identify trends, patterns and outliers</li>
-                                    <li>Apply statistical methods to derive meaningful insights</li>
-                                    <li>Utilize tools like Tableau, Power BI, Python, R or Excel to visualize data and generate relevant charts</li>
-                                    <li>Design interactive and user-friendly dashboards</li>
-                                    <li>Translate raw data into actionable business strategies</li><br>    
-                                </ul>
-                            <li><strong>Storytelling</strong></li><br>
-                                <ul>
-                                    <li>Craft compelling narratives using data insights</li>
-                                    <li>Present findings to both technical and non-technical audiences</li>
-                                    <li>Use visuals and data to support strategic decision-making</li><br>
-                                </ul> <br>
-                            <li><strong>Selection of presentations</strong></li><br>
-                                <ul>
-                                    <li>Scientific conference talks: <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-12-02.pdf" target="_blank" rel="noreferrer">
-                                            >> Finding the LMA needle in the wheat haystack proteome
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-02-04.pdf" target="_blank" rel="noreferrer">
-                                            >> Mining the wheat grain proteome
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2019-12-13.pdf" target="_blank" rel="noreferrer">
-                                            >> Proteomics tools for medicinal cannabis
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2020-05-01.pdf" target="_blank" rel="noreferrer">
-                                            >> The power of 3 for shotgun proteomics: proteases, databases and search engines
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2018-03-10.pdf" target="_blank" rel="noreferrer">
-                                            >> Milk Top Down Proteomics
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2013-11-11.pdf" target="_blank" rel="noreferrer">
-                                            >> MALDI Biotyper: an alternative to identify microorganisms
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2017-11-10.pdf" target="_blank" rel="noreferrer">
-                                            >> Proteomics rocks my world
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2011-03-18.pdf" target="_blank" rel="noreferrer">
-                                            >> Stagonospora nodorum effector mode-of-action in wheat
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2009-11-25.pdf" target="_blank" rel="noreferrer">
-                                            >> Fungal secretomes: not so secret anymore!
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2007-03-27.pdf" target="_blank" rel="noreferrer">
-                                            >> Apprendre a faire du vin aux USA (in French)
-                                        </a> <br>
-                                    </li><br>
+                <h5>Data Representation, Interpretation, and Storytelling</h5><br>
 
-                                    <li>Scientific conference posters: <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2023-01-20.pdf" target="_blank" rel="noreferrer">
-                                            >> Finding the LMA needle in the wheat haystack proteome
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-10-10.pdf" target="_blank" rel="noreferrer">
-                                            >> Top-down, middle-down and bottom-up proteomics analysis of medicinal cannabis
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-02-05.pdf" target="_blank" rel="noreferrer">
-                                            >> Optimisation of protein extraction from medicinal cannabis mature buds for shotgun bottom-up proteomics
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2018-02-05.pdf" target="_blank" rel="noreferrer">
-                                            >> Top-down proteomics investigation of age gelation mechanisms in genetically selected milks
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-02-05.pdf" target="_blank" rel="noreferrer">
-                                            >> Analysis of milk intact proteins using LC-MS
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-07-20.pdf" target="_blank" rel="noreferrer">
-                                            >> Bottom-up and tyop-down analysis of milk proteins unsing LC-MS/MS
-                                        </a> <br>  
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2011-03-20.pdf" target="_blank" rel="noreferrer">
-                                            >> A proteomics approach to dissect SnToxA effector mode-of-action
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2009-07-20.pdf" target="_blank" rel="noreferrer">
-                                            >> The secretome of the free-living mycelium from the ectomycorrhizal basidiomycete Laccaria bicolor
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-03-14.pdf" target="_blank" rel="noreferrer">
-                                            >> High Resolution Analysis of Fungal Secretomes
-                                        </a> <br>
-                                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-01-07.pdf" target="_blank" rel="noreferrer">
-                                            >> A proteomic study of water deficit-responsive proteins in poplar roots
-                                        </a> <br>
-                                        <a href="resources/presentations/" target="_blank" rel="noreferrer">
-                                            
-                                        </a> <br>                                       
-                                    </li><br>
+                <p>
+                    I transform complex scientific, analytical, and technical results into <strong>clear, accurate, and engaging narratives</strong>
+                    for researchers, clients, reviewers, stakeholders, students, and non-technical audiences. My work combines data interpretation,
+                    visual design, scientific reasoning, and structured communication to ensure that results are not only correct, but also meaningful,
+                    memorable, and useful for decision-making.
+                </p>
 
+                <p>
+                    As an author of approximately 40 peer-reviewed scientific publications, an experienced conference presenter, journal reviewer,
+                    editor, consultant, and data scientist, I have extensive experience communicating complex findings through manuscripts,
+                    reports, dashboards, presentations, posters, lectures, websites, and publication-ready figures.
+                </p>
 
-                                    <li>Scientific lectures: <br>
-                                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2019-05-22.pdf" target="_blank" rel="noreferrer">
-                                            >> Analysis of peptides and proteins using MS-based proteomics
-                                        </a> <br>
-                                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2008-10-06.pdf" target="_blank" rel="noreferrer">
-                                            >> Proteomique quantitative: electrophorese bidimensionelle (in French)
-                                        </a> <br>
-                                    </li><br>
-                                    <li>Tableau Public Dashboards: <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/OKcupid_date-a-scientist_dlf2024/ML" target="_blank" rel="noreferrer">
-                                            >> Analysis of a dating app dataset with machine learning modeling
-                                        </a> <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications" target="_blank" rel="noreferrer">
-                                            >> Analysis of the metadata from 120,000 scientific articles
-                                        </a> <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Airplane_Wildlife_Strikes_dlf2024/DashboardSpecies" target="_blank" rel="noreferrer">
-                                            >> Analysis of collisions between wildlife and airplanes in the US
-                                        </a> <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Tree_Census_NYC_2015_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
-                                            >> Analysis of tree census data and incomes from New York area
-                                        </a> <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Volcanic-eruptions_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
-                                            >> Analysis of worldwide volcanic eruptions
-                                        </a> <br>
-                                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Rotten-tomatoes_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
-                                            >> Analysis of Rotten Tomatoes reviews
-                                        </a> <br>
-                                    </li> <br>
+                <div class="project-summary">
+                    <h4>From Data to Meaning</h4>
 
-                                    <li>Power BI Dashboards: <br>
-                                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_safflower-study_2023-12-07.pdf" target="_blank" rel="noreferrer">
-                                            >> Dashboards to support safflower study data analysis (DOI: 10.3390/biom14040414)
-                                        </a> <br>
-                                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_wheat-study_2022-11-18.pdf" target="_blank" rel="noreferrer">
-                                            >> Dashboards to support wheat study data analysis (DOI: 10.1093/gigascience/giad084)
-                                        </a> <br>
-                                    </li>
-                                </ul><br>
-                        </ul>
-                    </div>                
-                    <div class="image-content">
-                        <img class="storytelling-icons" alt="dashboards icons" loading="lazy" width=auto height=100% src="resources/images/logo_icons/storytellingicons.png">
-                    </div>
+                    <p>
+                        I interpret analytical results in the context of the original research or business question, ensuring that statistical
+                        significance, biological relevance, practical importance, uncertainty, and limitations are considered together.
+                    </p>
+
+                    <ul>
+                        <li>Identify dominant trends, patterns, associations, anomalies, and sources of variability</li>
+                        <li>Distinguish meaningful signals from noise, artefacts, and technically driven effects</li>
+                        <li>Relate model outputs to the experimental design and broader scientific context</li>
+                        <li>Evaluate whether observed patterns are plausible, reproducible, and actionable</li>
+                        <li>Translate quantitative results into clear interpretations and testable hypotheses</li>
+                        <li>Separate association, prediction, inference, and causation in the final narrative</li>
+                    </ul>
                 </div>
+
+                <div class="project-summary">
+                    <h4>Scientific and Analytical Reasoning</h4>
+
+                    <p>
+                        My interpretation process integrates statistical outputs with domain expertise, biological databases, published literature,
+                        pathway information, model diagnostics, and experimental context.
+                    </p>
+
+                    <ul>
+                        <li>Compare results across statistical, machine learning, and bioinformatics methods</li>
+                        <li>Assess consistency across datasets, experimental groups, replicates, and validation procedures</li>
+                        <li>Investigate unexpected findings rather than automatically excluding them</li>
+                        <li>Use complementary evidence to strengthen or challenge an interpretation</li>
+                        <li>Identify limitations, confounding factors, uncertainty, and alternative explanations</li>
+                        <li>Develop coherent mechanistic or operational interpretations grounded in available evidence</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Structuring a Clear Narrative</h4>
+
+                    <p>
+                        I organise results into a logical sequence that guides the audience from the original question to the evidence,
+                        interpretation, conclusion, and recommended next steps.
+                    </p>
+
+                    <ul>
+                        <li>Define the central message before selecting figures or writing detailed results</li>
+                        <li>Structure content around question, evidence, interpretation, and outcome</li>
+                        <li>Prioritise the most important findings and remove unnecessary detail</li>
+                        <li>Use headings, signposting, summaries, and transitions to maintain narrative flow</li>
+                        <li>Connect individual analyses into a coherent overall story</li>
+                        <li>Conclude with practical implications, limitations, and future directions</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Data Representation</h4>
+
+                    <p>
+                        I select visual formats that accurately represent the data while supporting rapid understanding. Depending on the audience
+                        and objective, I use charts, dashboards, diagrams, workflows, infographics, tables, or schematic models.
+                    </p>
+
+                    <ul>
+                        <li>Charts for distributions, comparisons, relationships, trends, and model performance</li>
+                        <li>Dashboards for interactive exploration and stakeholder reporting</li>
+                        <li>Heat maps, networks, pathway diagrams, and genome tracks for scientific interpretation</li>
+                        <li>Workflow diagrams for explaining analytical methods and project structure</li>
+                        <li>Conceptual models for summarising biological mechanisms or analytical conclusions</li>
+                        <li>Tables for precise numerical comparison and detailed supporting information</li>
+                        <li>Infographics for communicating complex information to broad audiences</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Scientific Figures and Conceptual Models</h4>
+
+                    <p>
+                        I create publication-ready scientific graphics that combine experimental results, molecular mechanisms, biological pathways,
+                        structural information, and explanatory annotation.
+                    </p>
+
+                    <ul>
+                        <li>Biological pathway and mode-of-action diagrams</li>
+                        <li>Multi-omics integration schematics</li>
+                        <li>Gene, protein, metabolite, and pathway relationship models</li>
+                        <li>Proteogenomics and genome-annotation workflow diagrams</li>
+                        <li>Plant, microbial, and molecular interaction illustrations</li>
+                        <li>Graphical abstracts and summary figures</li>
+                        <li>Multi-panel figures combining plots, diagrams, annotations, and interpretation</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Interactive Dashboards</h4>
+
+                    <p>
+                        I design dashboards that allow users to explore large or complex datasets through filters, comparisons, maps,
+                        summaries, and interactive visual elements.
+                    </p>
+
+                    <ul>
+                        <li><strong>Tableau:</strong> public-facing dashboards, exploratory analysis, geographic views, filters, and interactive comparisons</li>
+                        <li><strong>Power BI:</strong> project dashboards, scientific reporting, stakeholder summaries, and analytical monitoring</li>
+                        <li><strong>Python and Plotly:</strong> interactive charts, hover information, zooming, selection, and dynamic outputs</li>
+                        <li>Clear visual hierarchy, accessible labelling, and audience-appropriate levels of detail</li>
+                        <li>Export of dashboard findings into reports, presentations, and publication figures</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Writing for Scientific and Technical Audiences</h4>
+
+                    <p>
+                        I prepare structured scientific and technical documents that communicate methods, results, interpretations,
+                        limitations, and conclusions with precision.
+                    </p>
+
+                    <ul>
+                        <li>Peer-reviewed manuscripts and technical notes</li>
+                        <li>Results and discussion sections</li>
+                        <li>Abstracts, graphical summaries, and plain-language summaries</li>
+                        <li>Reviewer responses and revision documents</li>
+                        <li>Technical reports and analytical deliverables</li>
+                        <li>Grant, project, and experimental-method documentation</li>
+                        <li>Supplementary tables, figure legends, and reproducibility statements</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Communication for Non-Technical Audiences</h4>
+
+                    <p>
+                        I adapt technical content for clients, managers, collaborators, students, and general audiences without sacrificing accuracy.
+                    </p>
+
+                    <ul>
+                        <li>Replace unnecessary jargon with clear, audience-appropriate language</li>
+                        <li>Explain methods through examples, analogies, diagrams, and concise summaries</li>
+                        <li>Focus on implications, risks, opportunities, and recommended actions</li>
+                        <li>Separate essential findings from supporting technical detail</li>
+                        <li>Provide layered explanations so readers can choose the level of detail they need</li>
+                        <li>Communicate uncertainty and limitations transparently</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Conference Presentations and Seminars</h4>
+
+                    <p>
+                        I have presented research findings at scientific conferences, seminars, stakeholder meetings, and professional events.
+                        My presentations combine strong visual structure with a clear spoken narrative and audience-focused interpretation.
+                    </p>
+
+                    <ul>
+                        <li>Design of scientific conference talks and invited seminars</li>
+                        <li>Preparation of presentation slides, speaker notes, and visual summaries</li>
+                        <li>Communication of proteomics, metabolomics, bioinformatics, plant science, dairy science, and data science results</li>
+                        <li>Adaptation of content to specialist, interdisciplinary, and non-specialist audiences</li>
+                        <li>Presentation of methods, findings, limitations, implications, and future directions</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-12-02.pdf" target="_blank" rel="noreferrer">
+                            Finding the LMA needle in the wheat haystack proteome
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2022-02-04.pdf" target="_blank" rel="noreferrer">
+                            Mining the wheat grain proteome
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2020-05-01.pdf" target="_blank" rel="noreferrer">
+                            The power of three for shotgun proteomics
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2019-12-13.pdf" target="_blank" rel="noreferrer">
+                            Proteomics tools for medicinal cannabis
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2018-03-10.pdf" target="_blank" rel="noreferrer">
+                            Milk top-down proteomics
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2017-11-10.pdf" target="_blank" rel="noreferrer">
+                            Proteomics rocks my world
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2013-11-11.pdf" target="_blank" rel="noreferrer">
+                            MALDI Biotyper: an alternative for identifying microorganisms
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2011-03-18.pdf" target="_blank" rel="noreferrer">
+                            <em>Stagonospora nodorum</em> effector mode of action in wheat
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2009-11-25.pdf" target="_blank" rel="noreferrer">
+                            Fungal secretomes: not so secret anymore
+                        </a>
+
+                        <a href="resources/presentations/Conference_seminar_Delphine-Vincent_2007-03-27.pdf" target="_blank" rel="noreferrer">
+                            Apprendre à faire du vin aux États-Unis
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Scientific Posters</h4>
+
+                    <p>
+                        I design scientific posters that present a complete research story within a limited visual space, using concise text,
+                        clearly ordered sections, high-quality figures, and prominent conclusions.
+                    </p>
+
+                    <ul>
+                        <li>Logical reading order from context and objective to results and conclusions</li>
+                        <li>Integration of data plots, photographs, diagrams, tables, and key messages</li>
+                        <li>Concise language suited to rapid conference viewing</li>
+                        <li>Consistent colour, typography, spacing, and visual hierarchy</li>
+                        <li>High-resolution preparation for print and digital distribution</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2023-01-20.pdf" target="_blank" rel="noreferrer">
+                            Finding the LMA needle in the wheat haystack proteome
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-10-10.pdf" target="_blank" rel="noreferrer">
+                            Top-down, middle-down and bottom-up proteomics of medicinal cannabis
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2019-02-05.pdf" target="_blank" rel="noreferrer">
+                            Optimisation of protein extraction from medicinal cannabis
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2018-02-05.pdf" target="_blank" rel="noreferrer">
+                            Top-down proteomics investigation of age gelation in milk
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-02-05.pdf" target="_blank" rel="noreferrer">
+                            Analysis of intact major milk proteins using LC-MS
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2015-07-20.pdf" target="_blank" rel="noreferrer">
+                            Bottom-up and top-down analysis of milk proteins using LC-MS/MS
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2011-03-20.pdf" target="_blank" rel="noreferrer">
+                            A proteomics approach to dissect SnToxA mode of action
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2009-07-20.pdf" target="_blank" rel="noreferrer">
+                            The secretome of <em>Laccaria bicolor</em>
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-03-14.pdf" target="_blank" rel="noreferrer">
+                            High-resolution analysis of fungal secretomes
+                        </a>
+
+                        <a href="resources/presentations/Conference_poster_Delphine-Vincent_2008-01-07.pdf" target="_blank" rel="noreferrer">
+                            Water-deficit-responsive proteins in poplar roots
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Teaching and Scientific Lectures</h4>
+
+                    <p>
+                        I prepare lectures and educational materials that explain scientific principles, analytical methods,
+                        and experimental workflows in a structured and visually accessible manner.
+                    </p>
+
+                    <ul>
+                        <li>Progressive explanation from foundational concepts to advanced applications</li>
+                        <li>Use of diagrams, workflows, examples, and annotated data</li>
+                        <li>Adaptation to different levels of scientific and technical knowledge</li>
+                        <li>Integration of theory, experimental practice, data analysis, and interpretation</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2019-05-22.pdf" target="_blank" rel="noreferrer">
+                            Analysis of peptides and proteins using mass-spectrometry-based proteomics
+                        </a>
+
+                        <a href="resources/presentations/Lecture_Proteomics_Delphine-Vincent_2008-10-06.pdf" target="_blank" rel="noreferrer">
+                            Protéomique quantitative : électrophorèse bidimensionnelle
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Tableau Public Dashboards</h4>
+
+                    <p>
+                        I use Tableau to create interactive visual stories from scientific, social, geographic, and public datasets.
+                        These dashboards allow users to explore trends, filters, categories, maps, and model outputs directly.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/OKcupid_date-a-scientist_dlf2024/ML" target="_blank" rel="noreferrer">
+                            Dating-app profiles, NLP, and machine learning
+                        </a>
+
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications" target="_blank" rel="noreferrer">
+                            Metadata from approximately 120,000 scientific publications
+                        </a>
+
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Airplane_Wildlife_Strikes_dlf2024/DashboardSpecies" target="_blank" rel="noreferrer">
+                            Wildlife strikes involving aircraft in the United States
+                        </a>
+
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Tree_Census_NYC_2015_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                            Tree census and household income in New York
+                        </a>
+
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Volcanic-eruptions_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                            Worldwide volcanic eruptions
+                        </a>
+
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/Rotten-tomatoes_dlf2024/FinalDashboard" target="_blank" rel="noreferrer">
+                            Rotten Tomatoes films, genres, studios, and audience scores
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Power BI Scientific Dashboards</h4>
+
+                    <p>
+                        I use Power BI to support scientific project analysis, explore large datasets, compare experimental conditions,
+                        and communicate major findings through interactive and exportable reports.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_safflower-study_2023-12-07.pdf" target="_blank" rel="noreferrer">
+                            Safflower proteomics and metabolomics dashboards
+                        </a>
+
+                        <a href="resources/presentations/Delphine-Vincent_PowerBI_pdf-export_wheat-study_2022-11-18.pdf" target="_blank" rel="noreferrer">
+                            Large-scale wheat proteomics dashboards
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Client, Stakeholder and Project Reporting</h4>
+
+                    <p>
+                        I prepare reports and presentations that help collaborators and clients understand what was done,
+                        what the results mean, how confident the conclusions are, and what should happen next.
+                    </p>
+
+                    <ul>
+                        <li>Executive summaries and key findings</li>
+                        <li>Methods written at an appropriate technical level</li>
+                        <li>Annotated charts, tables, diagrams, and model outputs</li>
+                        <li>Interpretation of practical and scientific implications</li>
+                        <li>Clear presentation of uncertainty, risks, assumptions, and limitations</li>
+                        <li>Prioritised recommendations and next-step options</li>
+                        <li>Delivery in Word, PDF, PowerPoint, dashboard, website, or notebook formats</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Tools and Communication Environments</h4>
+
+                    <p>
+                        I use a broad combination of analytical, visual, writing, and presentation tools to produce outputs suited
+                        to each audience and delivery format.
+                    </p>
+
+                    <ul>
+                        <li><strong>Analysis and figures:</strong> Python, R, Matplotlib, Seaborn, Plotly, ggplot2, and Excel</li>
+                        <li><strong>Dashboards:</strong> Tableau and Power BI</li>
+                        <li><strong>Documents:</strong> Word, PowerPoint, PDF, and Jupyter Notebook</li>
+                        <li><strong>Scientific schematics:</strong> diagramming, image editing, and custom graphical assembly</li>
+                        <li><strong>Web communication:</strong> HTML, CSS, JavaScript, WordPress, and GitHub Pages</li>
+                        <li><strong>Versioned delivery:</strong> GitHub repositories, reports, supplementary files, and presentation archives</li>
+                    </ul>
+                </div>
+
+                <p class="project-links">
+                    <img class="storytelling-icons"
+                        alt="Examples of dashboards, scientific figures, biological models, publication graphics, and visual storytelling outputs created for data analysis and scientific communication"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/storytellingicons.png">
+                </p>
+
+                <p>
+                    <strong>Technical highlights:</strong> data interpretation • scientific reasoning • visual storytelling •
+                    Tableau • Power BI • Python • R • dashboards • manuscripts • conference talks • posters • lectures •
+                    graphical abstracts • biological schematics • stakeholder reporting • publication-ready figures
+                </p>
             </div>
+
             <div id="editor" class="skills_tab_scrollable" style="display:none;">
-                <h5>Editor and Reviewer</h5> <br>
-                <div class="left_right" role="presentation">
-                    <div class="text-content">
-                    <p>I have created and edited several Special Issues and Research Topics:</p>
+                <h5>Author, Editor and Reviewer</h5><br>
+
+                <p>
+                    I have extensive experience across the complete scientific-publication lifecycle as an
+                    <strong>author, guest editor, and peer reviewer</strong>. I have co-authored approximately
+                    40 peer-reviewed publications and contributed to manuscripts spanning plant science,
+                    proteomics, metabolomics, bioinformatics, dairy science, microbiology, and data analytics.
+                </p>
+
+                <p>
+                    My publication work includes experimental and analytical design, data interpretation,
+                    manuscript preparation, figure and table development, journal selection, responses to reviewers,
+                    revision, and final publication. I also contribute to scientific quality assurance through
+                    journal reviewing and editorial leadership.
+                </p>
+
+                <div class="project-summary">
+                    <h4>Scientific Authorship</h4>
+
+                    <p>
+                        I write and revise scientific manuscripts that translate complex experimental and analytical
+                        work into clear, structured, and defensible scientific narratives.
+                    </p>
+
                     <ul>
-                        <li>In <strong>Frontiers and Plant Science</strong> journal:<br>
-                            <a href="http://journal.frontiersin.org/researchtopic/3337/how-can-secretomics-help-unravel-the-secrets-of-plant-microbe-interactions" target="_blank" rel="noreferrer">
-                                How can secretomics help unravel the secrets of plant-microbe interactions?
-                            </a> <br>
-                            <a href="https://www.frontiersin.org/research-topics/8846/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions" target="_blank" rel="noreferrer">
-                                Secretomics: More Secrets to Unravel on Plant-Fungus Interactions, Volume I
-                            </a> <br>
-                            <a href="https://www.frontiersin.org/research-topics/26463/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions-volume-ii" target="_blank" rel="noreferrer">
-                                Secretomics: More Secrets to Unravel on Plant-Fungus Interactions, Volume II
-                            </a> 
-                        </li> <br>
-                        <li>In <strong>Proteomes</strong> journal: <br>
-                            <a href="https://www.mdpi.com/journal/proteomes/special_issues/proteomics_technologies" target="_blank" rel="noreferrer">
-                                Proteomics: Technologies and Their Applications
-                            </a>
-                        </li> <br>
-                        <li>In <strong>Biomolecules</strong> journal: <br>
-                            <a href="https://www.mdpi.com/journal/biomolecules/special_issues/plant_adaptation_secretomics" target="_blank" rel="noreferrer">
-                                Plant Adaptation to Their Biotic and Abiotic Environment Through the Lens of Secretomics
-                            </a> <br>
-                            <a href="https://www.mdpi.com/journal/biomolecules/special_issues/67L276P516" target="_blank" rel="noreferrer">
-                                Sowing the seed to ensure the future of plant proteomics: Commemorative Issue in Honor of Dr. Dominique Job (1947-2022)
-                            </a> <br>
-                        </li> <br>
-                        <li>In <strong>International Journal of Molecular Sciences</strong>: <br>
-                            <a href="https://www.mdpi.com/journal/ijms/special_issues/Mol_Plant_Au" target="_blank" rel="noreferrer">
-                                State-of-the-Art Molecular Plant Sciences in Australia
-                            </a>
-                        </li> <br>
+                        <li>Development of manuscript structure, central argument, and publication strategy</li>
+                        <li>Writing and revision of abstracts, introductions, methods, results, discussions, and conclusions</li>
+                        <li>Integration of statistical, bioinformatics, machine learning, and biological interpretation</li>
+                        <li>Preparation of figures, tables, supplementary files, graphical summaries, and figure legends</li>
+                        <li>Clear reporting of experimental design, analytical workflows, validation, limitations, and reproducibility</li>
+                        <li>Adaptation of manuscripts to journal scope, formatting requirements, and readership</li>
+                        <li>Coordination of co-author input and consolidation of multiple rounds of revision</li>
                     </ul>
-                    <br>
-                    <p>During my life science career, I've been a reviewer for the following scientific journals:</p>
-                    <ul>
-                        <li>since 2006  <em>Proteomics; Electrophoresis</em></li>
-                        <li>since 2008	<em>New Phytologist; Annals of Forest Science</em></li>
-                        <li>since 2009	<em>Journal of Proteome Research; Plant, Cell and Environment</em></li>
-                        <li>since 2011	<em>Biotechnology and Molecular Biology Reviews; Journal of Agricultural and Food Chemistry</em></li>
-                        <li>since 2014	<em>Frontiers in Plant Science</em></li>
-                        <li>since 2015	<em>Animal Production Science; BMC Microbiology; PLoS ONE</em></li>
-                        <li>since 2016	<em>Annals of botany; Talanta</em></li>
-                        <li>since 2017	<em>Journal of Microbiology</em></li>
-                        <li>since 2018	<em>BethamScience; BMC Plant Biology</em></li>
-                        <li>since 2019	<em>Molecules; Proteomes; International Journal of Molecular Sciences</em></li>
-                        <li>since 2020	<em>Biomolecules; Scientific Reports; Pathogens; Food Research International; Plants</em></li>
-                        <li>since 2021	<em>Cells</em></li>
-                        <li>since 2022	<em>Foods</em></li> <br>
-                    </ul>
-                    </div>                
-                    <div class="image-content">
-                        <img class="editor-icons" alt="scientfic journal icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/editoricons.png">
-                    </div>
                 </div>
+
+                <div class="project-summary">
+                    <h4>Manuscript Revision and Reviewer Responses</h4>
+
+                    <p>
+                        I have substantial experience revising manuscripts following peer review and preparing
+                        detailed, evidence-based responses to editors and reviewers.
+                    </p>
+
+                    <ul>
+                        <li>Systematic assessment of reviewer comments and editorial requirements</li>
+                        <li>Prioritisation of major scientific, analytical, and reporting revisions</li>
+                        <li>Preparation of point-by-point response documents</li>
+                        <li>Revision of text, analyses, figures, tables, supplementary files, and methods</li>
+                        <li>Clear explanation of changes, retained decisions, and scientific justification</li>
+                        <li>Consistency checking across the manuscript, figures, tables, data, and supplementary material</li>
+                        <li>Final quality control before resubmission</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Publication Planning and Journal Submission</h4>
+
+                    <p>
+                        I support the strategic and practical aspects of scientific publication, from identifying
+                        suitable journals to preparing submission materials.
+                    </p>
+
+                    <ul>
+                        <li>Assessment of journal scope, audience, reputation, article type, and methodological fit</li>
+                        <li>Preparation of cover letters and statements of significance</li>
+                        <li>Development of concise titles, keywords, highlights, and graphical summaries</li>
+                        <li>Review of authorship, contribution statements, acknowledgements, and data-availability statements</li>
+                        <li>Preparation and checking of supplementary information</li>
+                        <li>Adaptation of references, word counts, figures, and formatting to journal guidelines</li>
+                        <li>Support for preprint, repository, and open-data deposition where appropriate</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="https://scholar.google.com.au/citations?hl=en&tzom=-600&user=ry5O9ukAAAAJ"
+                            target="_blank"
+                            rel="noreferrer">
+                            View my publications and citation record on Google Scholar
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Journal highlights:</strong> Nature Communication • Journal of Proteome Research • Scientific Reports • GigaScience • Plant Physiology • Molecular Plant Pathology • New Phytologist
+                         • Journal of Dairy Science • Food Chemistry • Biomolecules • Proteomes • IJMS • PLOS ONE • Proteomics • Frontiers in plant science • Frontiers in genetics  • Plant, cell &amp; environment
+                          • Functional &amp; integrative genomics • Journal of experimental botany • Phytochemistry • NFS Journal
+                    </p>
+                </div>
+                
+                <p class="project-links">
+                    <img class="author-icons"
+                        alt="Representative scientific journals in which I have published peer-reviewed research"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/authoricons.png">
+                </p>
+                
+
+                <div class="project-summary">
+                    <h4>Editorial Leadership</h4>
+
+                    <p>
+                        I have acted as a guest editor and Research Topic editor for multiple scientific journals,
+                        helping define thematic scope, attract relevant submissions, coordinate peer review, and
+                        support publication of coherent collections.
+                    </p>
+
+                    <ul>
+                        <li>Development of Special Issue and Research Topic concepts</li>
+                        <li>Definition of scientific scope, aims, and target contributors</li>
+                        <li>Invitation and coordination of contributing authors</li>
+                        <li>Assessment of manuscript suitability and scientific relevance</li>
+                        <li>Selection and coordination of expert reviewers</li>
+                        <li>Evaluation of revisions and editorial recommendations</li>
+                        <li>Contribution to introductory editorials and thematic synthesis</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Edited Research Topics and Special Issues</h4>
+
+                    <p><strong>Frontiers in Plant Science</strong></p>
+
+                    <p class="project-links">
+                        <a href="http://journal.frontiersin.org/researchtopic/3337/how-can-secretomics-help-unravel-the-secrets-of-plant-microbe-interactions"
+                            target="_blank"
+                            rel="noreferrer">
+                            How Can Secretomics Help Unravel the Secrets of Plant–Microbe Interactions?
+                        </a>
+
+                        <a href="https://www.frontiersin.org/research-topics/8846/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions"
+                            target="_blank"
+                            rel="noreferrer">
+                            Secretomics: More Secrets to Unravel on Plant–Fungus Interactions, Volume I
+                        </a>
+
+                        <a href="https://www.frontiersin.org/research-topics/26463/secretomics-more-secrets-to-unravel-on-plant-fungus-interactions-volume-ii"
+                            target="_blank"
+                            rel="noreferrer">
+                            Secretomics: More Secrets to Unravel on Plant–Fungus Interactions, Volume II
+                        </a>
+                    </p>
+
+                    <p><strong>Proteomes</strong></p>
+
+                    <p class="project-links">
+                        <a href="https://www.mdpi.com/journal/proteomes/special_issues/proteomics_technologies"
+                            target="_blank"
+                            rel="noreferrer">
+                            Proteomics: Technologies and Their Applications
+                        </a>
+                    </p>
+
+                    <p><strong>Biomolecules</strong></p>
+
+                    <p class="project-links">
+                        <a href="https://www.mdpi.com/journal/biomolecules/special_issues/plant_adaptation_secretomics"
+                            target="_blank"
+                            rel="noreferrer">
+                            Plant Adaptation to Their Biotic and Abiotic Environment Through the Lens of Secretomics
+                        </a>
+
+                        <a href="https://www.mdpi.com/journal/biomolecules/special_issues/67L276P516"
+                            target="_blank"
+                            rel="noreferrer">
+                            Sowing the Seed to Ensure the Future of Plant Proteomics:
+                            Commemorative Issue in Honour of Dr Dominique Job
+                        </a>
+                    </p>
+
+                    <p><strong>International Journal of Molecular Sciences</strong></p>
+
+                    <p class="project-links">
+                        <a href="https://www.mdpi.com/journal/ijms/special_issues/Mol_Plant_Au"
+                            target="_blank"
+                            rel="noreferrer">
+                            State-of-the-Art Molecular Plant Sciences in Australia
+                        </a>
+                    </p>
+                </div>
+
+                <p class="project-links">
+                    <img class="editor-icons"
+                        alt="Scientific journals for which I have served as guest editor or Research Topic editor"
+                        loading="lazy"
+                        width="100%"
+                        height="auto"
+                        src="resources/images/logo_icons/editoricons.png">
+                </p>
+
+                <div class="project-summary">
+                    <h4>Peer Review</h4>
+
+                    <p>
+                        I have reviewed manuscripts for scientific journals since 2006. My reviews assess scientific
+                        validity, methodological rigour, analytical appropriateness, interpretation, novelty,
+                        reproducibility, and clarity of presentation.
+                    </p>
+
+                    <ul>
+                        <li>Evaluation of experimental design, sample size, controls, and methodological suitability</li>
+                        <li>Assessment of statistical analyses, bioinformatics, machine learning, and data interpretation</li>
+                        <li>Verification that conclusions are supported by the evidence presented</li>
+                        <li>Identification of missing controls, unclear methods, unsupported claims, and reporting inconsistencies</li>
+                        <li>Assessment of figures, tables, supplementary information, and data availability</li>
+                        <li>Constructive recommendations to improve scientific quality and readability</li>
+                        <li>Clear distinction between essential revisions and optional improvements</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Journals Reviewed For</h4>
+
+                    <ul>
+                        <li><strong>Since 2006:</strong> <em>Proteomics; Electrophoresis</em></li>
+                        <li><strong>Since 2008:</strong> <em>New Phytologist; Annals of Forest Science</em></li>
+                        <li><strong>Since 2009:</strong> <em>Journal of Proteome Research; Plant, Cell &amp; Environment</em></li>
+                        <li><strong>Since 2011:</strong> <em>Biotechnology and Molecular Biology Reviews; Journal of Agricultural and Food Chemistry</em></li>
+                        <li><strong>Since 2014:</strong> <em>Frontiers in Plant Science</em></li>
+                        <li><strong>Since 2015:</strong> <em>Animal Production Science; BMC Microbiology; PLOS ONE</em></li>
+                        <li><strong>Since 2016:</strong> <em>Annals of Botany; Talanta</em></li>
+                        <li><strong>Since 2017:</strong> <em>Journal of Microbiology</em></li>
+                        <li><strong>Since 2018:</strong> <em>Bentham Science journals; BMC Plant Biology</em></li>
+                        <li><strong>Since 2019:</strong> <em>Molecules; Proteomes; International Journal of Molecular Sciences</em></li>
+                        <li><strong>Since 2020:</strong> <em>Biomolecules; Scientific Reports; Pathogens; Food Research International; Plants</em></li>
+                        <li><strong>Since 2021:</strong> <em>Cells</em></li>
+                        <li><strong>Since 2022:</strong> <em>Foods</em></li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Editorial and Review Principles</h4>
+
+                    <p>
+                        I approach authorship, editing, and peer review with a consistent emphasis on scientific integrity,
+                        transparency, fairness, and constructive communication.
+                    </p>
+
+                    <ul>
+                        <li>Evidence-based and methodologically rigorous assessment</li>
+                        <li>Respectful, specific, and actionable feedback</li>
+                        <li>Confidential handling of unpublished research</li>
+                        <li>Recognition of disciplinary and methodological context</li>
+                        <li>Attention to reproducibility, data transparency, and reporting standards</li>
+                        <li>Balanced evaluation of novelty, limitations, and practical contribution</li>
+                        <li>Support for clearer and stronger science rather than criticism alone</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Scientific Writing and Publication Tools</h4>
+
+                    <ul>
+                        <li><strong>Writing and revision:</strong> Microsoft Word, Track Changes, comments, and document comparison</li>
+                        <li><strong>References:</strong> reference managers, journal databases, DOI records, and publication metadata</li>
+                        <li><strong>Figures and tables:</strong> Python, R, Excel, Power BI, Tableau, and PowerPoint</li>
+                        <li><strong>Collaboration:</strong> Teams, SharePoint, OneDrive, email, and shared document workflows</li>
+                        <li><strong>Repositories:</strong> GitHub, bioRxiv, Zenodo, MassIVE, ProteomeXchange, and other discipline-specific resources</li>
+                        <li><strong>Author profiles:</strong> Google Scholar, ORCID, Scopus, Web of Science, and institutional profiles</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> scientific authorship • manuscript preparation • journal submission •
+                    peer review • guest editing • Special Issues • Research Topics • reviewer responses • publication strategy •
+                    scientific integrity • technical editing • figure and table preparation • Google Scholar • ORCID
+                </p>
             </div>
 
             <script>            
@@ -1714,158 +3231,105 @@
                 </div>
             </div>
 
-            <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;"> 
-            <h5>Website design</h5><br>
-
-            <div class="left_right" role="presentation">
-                <div class="text-content">
+           <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;"> 
+                <h5>Website design</h5><br>
                 <p>
-                    I designed and deployed the website for <em>Data Biome</em> (<a href="https://www.databiome.au/" target="_blank" rel="noreferrer"> URL</a>), a biotechnology startup developing probiotics for ruminants to reduce methane emissions and mitigate greenhouse gas impact.  
-                    This project covered the full pipeline from local development to WebCentral production hosting, including SMTP infrastructure for the contact form.
+                    This section showcases website projects that I have designed, built, maintained, or substantially improved. My work ranges from hand-coded static websites and chatbot integration to WordPress/Elementor administration, content architecture, production deployment, technical troubleshooting, and ongoing client support.
                 </p>
 
-                <ol>
+                <div class="project-summary web-project-summary">
+                    <h4>Professional Website and Integrated Portfolio Chatbot</h4>
 
-                    <li><strong>Project setup & structure</strong>
+                    <p><strong>Objective:</strong> Build and maintain a distinctive professional website that presents my scientific career, data science capabilities, portfolio, publications, training, and consulting services in a clear, interactive, and visually recognisable format.</p>
+
+                    <p><strong>Website:</strong> <a href="https://dlf2024.github.io/" target="_blank" rel="noreferrer">dlf2024.github.io</a></p>
+
+                    <p><strong>Methods:</strong> Designed and coded the website from the ground up using HTML5, CSS3, and vanilla JavaScript; implemented responsive tabbed sections, reusable content components, custom graphics, structured metadata, accessible navigation, and GitHub Pages deployment. I also developed and connected a Python chatbot hosted separately on Render.</p>
+
                     <ul>
-                        <li>Created full local project structure with <code>index.html</code>, <code>style.css</code>, <code>reset.css</code>, <code>main.js</code>, and asset directories.</li>
-                        <li>Versioned ZIP deployments for incremental hosting uploads.</li>
-                        <li>Defined brand colour palette (Powder Blue <code>#B0E0E6</code>, Dodger Blue <code>#1E90FF</code>, Navy <code>#000080</code>, Dark Orange <code>#F54927</code>).</li>
+                        <li>Created a complete one-page professional website with dedicated sections for <strong>Biography, Skills, Portfolio, Learning, Certificates, Resume, and Publications</strong>.</li>
+                        <li>Developed a cohesive visual identity using a custom colour palette, branded illustrations, responsive cards, tabbed content panels, and mobile-specific layout adjustments.</li>
+                        <li>Implemented interactive JavaScript navigation for nested portfolio, biography, skills, and learning content without requiring a web framework.</li>
+                        <li>Added search-engine and social-sharing metadata, including descriptive page titles, Open Graph tags, Twitter metadata, and structured content to improve discoverability and presentation.</li>
+                        <li>Integrated downloadable, date-versioned resume and publication resources and established a repeatable maintenance workflow for updating website assets and links.</li>
+                        <li>Built a lightweight <strong>Python chatbot</strong> that indexes a curated snapshot of the website, applies TF-IDF-based semantic retrieval, and returns concise answers with direct links to relevant website sections and documents.</li>
+                        <li>Separated the chatbot into its own GitHub repository and Render backend, with a documented synchronisation and redeployment checklist whenever the website snapshot, resume, or publications file changes.</li>
+                        <li>Continuously test the website across desktop and mobile layouts, refine readability and navigation, and update content as new projects, publications, qualifications, and consulting activities are completed.</li>
                     </ul>
-                    </li>
 
-                    <li><strong>Information architecture & layout</strong>
-                    <ul>
-                        <li>Designed full one-page layout: <em>Home</em>, <em>Projects</em>, <em>Science</em>, <em>Partners</em>, <em>People</em>, <em>Contact</em>.</li>
-                        <li>Built reusable responsive card system (image left, text right).</li>
-                        <li>Sticky, accessible top navigation with keyboard and focus support.</li>
-                    </ul>
-                    </li>
+                    <p><strong>Technical highlights:</strong> HTML5 • CSS3 • JavaScript • responsive design • GitHub Pages • Git/GitHub • SEO metadata • Python • FastAPI backend • rule-based intent recognition • fuzzy FAQ matching • TF-IDF retrieval • Render deployment</p>
 
-                    <li><strong>Branding & visual identity</strong>
-                    <ul>
-                        <li>Integrated custom logo, icons, and typographic identity.</li>
-                        <li>Implemented background imagery with contrast overlays for readability.</li>
-                        <li>WCAG-aware contrast and scalable typography across breakpoints.</li>
-                    </ul>
-                    </li>
+                    <p><strong>Status:</strong> Live and under continuous development</p>
 
-                    <li><strong>Hero background animation (video engineering)</strong>
-                    <ul>
-                        <li>Full-width fixed MP4 background with layered z-index safety.</li>
-                        <li>Advanced FFmpeg processing via Python subprocess: slowing, mirroring, flipping, stacking (side-by-side, top–bottom, 2×2 grids).</li>
-                        <li>Web-optimised H.264 export (<code>-crf</code>, <code>-preset</code>, <code>+faststart</code>).</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Accessibility & UX</strong>
-                    <ul>
-                        <li>Semantic HTML5 landmarks and keyboard-navigable menus.</li>
-                        <li>Clear focus states and form validation feedback.</li>
-                        <li>Reduced-motion considerations for animated elements.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Contact form (secure SMTP infrastructure)</strong>
-                    <ul>
-                        <li>Client-side validation with honeypot bot protection.</li>
-                        <li>Server-side mail handling via <code>contact.php</code> and PHPMailer.</li>
-                        <li>SMTP relay configured through WebCentral mail servers.</li>
-                        <li>DNS authentication repaired (SPF + DMARC).</li>
-                        <li>End-to-end validation: browser → PHP → SMTP → inbox.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>WebCentral-compatible CSS engineering</strong>
-                    <ul>
-                        <li>Strict compatibility with WebCentral legacy CSS linter.</li>
-                        <li>Removed unsupported modern functions (<code>clamp</code>, <code>gap</code>, <code>color-mix</code>, logical shorthands).</li>
-                        <li>Implemented hex fallbacks before RGBA and classic layout properties.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Server setup (cPanel)</strong>
-                    <ul>
-                        <li>Created mailboxes (<code>info@</code>, <code>no-reply@</code>).</li>
-                        <li>Configured SMTP authentication and relay permissions.</li>
-                        <li>Staging environment under <code>/public_html/dev/</code> for private review.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Deployment & caching strategy</strong>
-                    <ul>
-                        <li>ZIP deployment via File Manager.</li>
-                        <li>Cache-buster versioning for CSS/JS files.</li>
-                        <li>Linux-safe path validation and case-sensitive testing.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>QA & cross-environment validation</strong>
-                    <ul>
-                        <li>Reconciled differences between VS Code Live Server and hosted WebCentral rendering.</li>
-                        <li>Mobile, tablet, desktop responsive validation.</li>
-                        <li>Form delivery verified via live inbox testing.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Production launch</strong>
-                    <ul>
-                        <li>Final deployment to <code>/public_html</code>.</li>
-                        <li>Live navigation, media, and form tested post-launch.</li>
-                        <li>Client handover for content updates and safe maintenance.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Ongoing maintenance</strong>
-                    <ul>
-                        <li>Monthly content updates and link checks.</li>
-                        <li>Form delivery health monitoring.</li>
-                        <li>Roadmap for future feature expansion.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Key challenges solved</strong>
-                    <ul>
-                        <li>Diagnosed and resolved silent SMTP delivery failures caused by outbound relay restrictions on shared hosting.</li>
-                        <li>Reconfigured secure mail delivery using provider-specific SMTP relay instead of generic mail host.</li>
-                        <li>Repaired domain-level email authentication (SPF + DMARC) to restore full mail deliverability.</li>
-                        <li>Debugged production-only issues masked during local development (SMTP, SSL, cache, linter constraints).</li>
-                        <li>Engineered around legacy WebCentral CSS limitations while preserving modern responsive behaviour.</li>
-                        <li>Stabilised contact-form infrastructure for production reliability under real-world security conditions.</li>
-                    </ul>
-                    </li>
-
-                    <li><strong>Tools & stack</strong>
-                    <ul>
-                        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (vanilla)</li>
-                        <li><strong>Media processing:</strong> FFmpeg (hero video animation, mirroring, stacking, compression)</li>
-                        <li><strong>Backend:</strong> PHP (contact form handler)</li>
-                        <li><strong>Email delivery:</strong> PHPMailer, SMTP authentication (SSL/TLS)</li>
-                        <li><strong>Hosting & deployment:</strong> WebCentral cPanel, File Manager, password-protected staging</li>
-                        <li><strong>Mail security:</strong> SPF, DMARC, authenticated SMTP relay</li>
-                        <li><strong>Workflow & QA:</strong> VS Code, browser dev tools, hard refresh & cache busting</li>
-                    </ul>
-                    </li>
-
-                    <p style="margin-top:1rem; font-style: italic;">
-                    This project delivered a fully responsive, production-ready scientific website with secure email handling, optimised media performance, 
-                    and a WebCentral-compliant deployment pipeline, providing Data Biome with a reliable digital foundation for public communication and future growth.
+                    <p class="project-links">
+                        <a href="https://dlf2024.github.io/" target="_blank" rel="noreferrer">Visit website</a>
+                        <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub profile</a>
+                        <img class="webdesign-project-image" alt="Overview of Delphine Vincent's professional website and integrated chatbot" loading="lazy" width="100%" height="auto" src="resources/images/logo_icons/mywebsiteicons.png">
                     </p>
-
-
-                </ol>
                 </div>
 
-                <div class="image-content">
-                <img class="databiome-icons"
-                    alt="scientific journal icons"
-                    loading="lazy"
-                    width="70%"
-                    height="auto"
-                    src="resources/images/logo_icons/databiomeicons.png">
+                <div class="project-summary web-project-summary">
+                    <h4>Ori Scientific Website Administration and Content Development</h4>
+
+                    <p><strong>Objective:</strong> Improve and maintain the public website of Ori Scientific, an Australian food research and development company, while supporting clearer service communication, easier navigation, and a consistent professional presentation.</p>
+
+                    <p><strong>Website:</strong> <a href="https://www.oriscientific.au/" target="_blank" rel="noreferrer">oriscientific.au</a></p>
+
+                    <p><strong>Methods:</strong> Conducted a content and usability audit, then implemented updates through WordPress and Elementor. Work includes page editing, template reuse, menu administration, service architecture, post creation, brand-consistent visual updates, and preparation of repeatable maintenance procedures.</p>
+
+                    <ul>
+                        <li>Reviewed the existing website and provided prioritised recommendations covering wording, consistency, navigation, content gaps, visual presentation, and future social-media integration.</li>
+                        <li>Revised key homepage, About, Contact, and service content to communicate Ori Scientific's analytical testing, product development, pilot-scale processing, research, and regulatory capabilities more clearly.</li>
+                        <li>Created new service content for <strong>Pilot Plant Laboratory</strong> and <strong>Research Permits, Import Approvals and Accreditations</strong>.</li>
+                        <li>Built new Elementor pages by reusing and adapting the established Research and Development template, preserving the site's structure and visual identity.</li>
+                        <li>Added the new services to the main <strong>Our Services</strong> dropdown menu and to the quick-access navigation on the services page.</li>
+                        <li>Created and published a new <strong>News &amp; Updates</strong> post, including category assignment, excerpt, featured image, permalink review, and front-end validation.</li>
+                        <li>Applied consistent brand colours, iconography, headings, calls to action, and page hierarchy across newly developed content.</li>
+                        <li>Documented repeatable procedures for creating service pages, updating dropdown menus, and publishing future news posts so that ongoing maintenance remains efficient and reliable.</li>
+                        <li>Provide continuing webmaster support for content updates, quality assurance, website maintenance, and future LinkedIn/Facebook communication.</li>
+                    </ul>
+
+                    <p><strong>Technical highlights:</strong> WordPress • Elementor • page templates • responsive content editing • information architecture • menu administration • blog publishing • brand consistency • webmaster documentation</p>
+
+                    <p><strong>Status:</strong> Active client project and ongoing maintenance</p>
+
+                    <p class="project-links">
+                        <a href="https://www.oriscientific.au/" target="_blank" rel="noreferrer">Visit website</a>
+                        <img class="webdesign-project-image" alt="Overview of Ori Scientific website content and service-page updates" loading="lazy" width="100%" height="auto" src="resources/images/logo_icons/oriscientificicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary web-project-summary">
+                    <h4>Data Biome Website Design, Deployment and Secure Contact Infrastructure</h4>
+
+                    <p><strong>Objective:</strong> Design and deploy a production-ready website for Data Biome, a biotechnology startup developing probiotics for ruminants to reduce methane emissions and mitigate greenhouse-gas impact.</p>
+
+                    <p><strong>Website:</strong> <a href="https://www.databiome.au/" target="_blank" rel="noreferrer">databiome.au</a></p>
+
+                    <p><strong>Methods:</strong> Built the full website locally using HTML5, CSS3, vanilla JavaScript, PHP, and custom media assets, then deployed it to WebCentral hosting through cPanel. The project also included secure contact-form delivery, domain email authentication, responsive testing, and production troubleshooting.</p>
+
+                    <ul>
+                        <li>Created the complete project structure, brand palette, one-page information architecture, reusable responsive cards, and sticky accessible navigation.</li>
+                        <li>Integrated custom visual assets and a full-width animated hero background, processed and compressed with FFmpeg for web delivery.</li>
+                        <li>Implemented semantic HTML, keyboard-accessible navigation, visible focus states, form validation, bot protection, and reduced-motion considerations.</li>
+                        <li>Developed the contact workflow using <code>contact.php</code>, PHPMailer, authenticated SMTP, and end-to-end browser-to-inbox testing.</li>
+                        <li>Diagnosed and resolved production-only email failures by configuring the hosting provider's SMTP relay and repairing SPF and DMARC records.</li>
+                        <li>Adapted the CSS to WebCentral's legacy linter by replacing unsupported modern features while retaining responsive behaviour.</li>
+                        <li>Established a password-protected staging area, versioned ZIP deployments, cache-busting conventions, and post-launch quality checks.</li>
+                        <li>Completed production launch, client handover, and an ongoing maintenance plan covering content, links, form health, and future feature development.</li>
+                    </ul>
+
+                    <p><strong>Technical highlights:</strong> HTML5 • CSS3 • JavaScript • PHP • PHPMailer • SMTP • SPF/DMARC • FFmpeg • WebCentral cPanel • responsive QA</p>
+
+                    <p><strong>Status:</strong> Live production website with ongoing maintenance support</p>
+
+                    <p class="project-links">
+                        <a href="https://www.databiome.au/" target="_blank" rel="noreferrer">Visit website</a>
+                        <img class="webdesign-project-image" alt="Overview of the Data Biome biotechnology website" loading="lazy" width="100%" height="auto" src="resources/images/logo_icons/databiomeicons.png">
+                    </p>
                 </div>
             </div>
-            </div>
+
            
 
             <script>
@@ -2007,6 +3471,58 @@
                         </ul>
                     </article>
 
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Databases</h6>
+                        <p>
+                            Foundational training in cloud database, with a focus on Amazon Relational Database Services, Amazon RDS. The course covered database fundamentals, the key elements of Amazon RDS and configuration.
+                        </p>
+                        <ul>
+                            <li>Relational and nonrelational databases concepts</li>
+                            <li>AWS database services</li>
+                            <li>Features and configuration of Amazon RDS</li>
+                            <li>SQL commands to read and write to the database</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Cloud Operations</h6>
+                        <p>
+                            Foundational training in cloud operations tools, with a focus on key elements of the AWS Well-Architected Framework, cost management tools, AWS cloud operations services, and their configuration.
+                        </p>
+                        <ul>
+                            <li>Cloud operation fundamental concepts</li>
+                            <li>Amazon Well-Architected Framework</li>
+                            <li>AWS cost management tools</li>
+                            <li>AWS cloud operations services</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Security</h6>
+                        <p>
+                            Foundational training in operating secure cloud operations, with a focus on Identity and Access Management (IAM) service. The course covered key concepts and features of IAM, security policies, set up users, groups, and roles, apply permissions, and review credentials.
+                        </p>
+                        <ul>
+                            <li>Security fundamental concepts</li>
+                            <li>AWS IAM features, benefits, and use cases</li>
+                            <li>Create and configure IAM user, groups, and roles</li>
+                            <li>IAM policies and multi-factor authentication (MFA) setup</li>
+                        </ul>
+                    </article>
+
+                    <article class="aws-course-card">
+                        <h6>Getting Started with Serverless</h6>
+                        <p>
+                            Foundational training in serverless computing, with a focus on AWS lambda service. The course explained the benefits of serverless services and how to use serverless services to decouple architectures.
+                        </p>
+                        <ul>
+                            <li>Microservices and Serverless concepts</li>
+                            <li>Event-driven architectures</li>
+                            <li>Features and benefits of AWS Lambda functions</li>
+                            <li>Configuration and monitoring of AWS Lambda functions</li>
+                        </ul>
+                    </article>                    
+                    
                 </div>
 
                 <div class="aws-learning-image-container">
@@ -2020,7 +3536,7 @@
                 </p>
 
                 <p>
-                    My current learning pathway is sequential: completing the available <strong>Getting Started</strong> series first, then progressing to the <strong>AI and Machine Learning</strong> series, followed by the <strong>Core Concepts</strong> series. This training supports my broader objective of integrating cloud literacy with data science, machine learning, omics analytics, reproducible workflows and scientific web-resource development.
+                    My current learning pathway is sequential: after having completed all the available <strong>Getting Started</strong> series first, I'm progressing to the <strong>AI and Machine Learning</strong> series. I'll ultimately tackle the <strong>Core Concepts</strong> series. This training supports my broader objective of integrating cloud literacy with data science, machine learning, omics analytics, reproducible workflows and scientific web-resource development.
                 </p>
             </div>
 
@@ -2319,7 +3835,7 @@
         <footer class="footer_content">
             <div class="footer_text">
                 <p><strong>Designed and created by Delphine Vincent</strong></p>
-                <p><em>Version 10: 25 June 2026</em></p>
+                <p><em>Version 1.11: 17 July 2026</em></p>
                 <p>Data Science &amp; Machine Learning Consultant [ABN 74 267 801 710]</p>
                 <p>2024 © Copyright Delphine Vincent. All rights reserved.</p>
             </div>
@@ -2340,15 +3856,21 @@
                 <a href="https://public.tableau.com/app/profile/delphine.vincent" target="_blank" rel="noreferrer">Tableau
                     <img src="resources/images/logo_icons/logo_Tableau.jpeg" alt="Tableau Icon" role="presentation" width="20" height="20">
                 </a>
-                <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
-                    <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" role="presentation" width="20" height="20">
-                </a>
                 <a href="https://www.webofscience.com/wos/author/record/1481037" target="_blank" rel="noreferrer">Web of Science
                     <img src="resources/images/logo_icons/logo_clavirate.png" alt="Clarivate Icon" role="presentation" width="20" height="20">
                 </a>
                 <a href="https://www.scopus.com/authid/detail.uri?authorId=13409758500" target="_blank" rel="noreferrer">Scopus
                     <img src="resources/images/logo_icons/logo_scopus.png" alt="Scopus Icon" role="presentation" width="20" height="20">
                 </a>
+                <a href="https://findanexpert.unimelb.edu.au/profile/2000913-delphine-vincent" target="_blank" rel="noreferrer">University of Melbourne
+                    <img src="resources/images/logo_icons/logo_unimelb.png" alt="University of Melbourne Icon" width="20" height="20">
+                </a>
+                <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube
+                    <img src="resources/images/logo_icons/logo_youtube.png" alt="YouTube Icon" width="20" height="20">
+                </a>
+                <a href="https://www.tiktok.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">TikTok
+                    <img src="resources/images/logo_icons/logo_tiktok.jpg" alt="TikTok Icon" width="20" height="20">
+                </a>                
             </div>
         </footer>
 
