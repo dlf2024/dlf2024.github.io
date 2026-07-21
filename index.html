@@ -132,6 +132,639 @@
     </head>
 
     <body>
+            
+    <!-- Full-screen image viewer -->
+    <div id="image-lightbox"
+        class="image-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-label="Expanded image viewer">
+
+        <div class="image-lightbox-toolbar">
+            <button type="button"
+                id="image-lightbox-zoom-out"
+                class="image-lightbox-control"
+                aria-label="Zoom out">
+                −
+            </button>
+
+            <button type="button"
+                id="image-lightbox-reset"
+                class="image-lightbox-control image-lightbox-reset"
+                aria-label="Reset image zoom">
+                100%
+            </button>
+
+            <button type="button"
+                id="image-lightbox-zoom-in"
+                class="image-lightbox-control"
+                aria-label="Zoom in">
+                +
+            </button>
+
+            <button type="button"
+                id="image-lightbox-close"
+                class="image-lightbox-control image-lightbox-close"
+                aria-label="Close expanded image">
+                ×
+            </button>
+        </div>
+
+        <div id="image-lightbox-viewport" class="image-lightbox-viewport">
+            <img id="image-lightbox-image"
+                class="image-lightbox-image"
+                src=""
+                alt="">
+        </div>
+    </div>
+    
+    <script>
+        /* =========================================
+        FULL-SCREEN IMAGE VIEWER
+        ========================================= */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = document.getElementById('image-lightbox');
+            const viewport = document.getElementById('image-lightbox-viewport');
+            const lightboxImage = document.getElementById('image-lightbox-image');
+
+            const closeButton = document.getElementById('image-lightbox-close');
+            const zoomInButton = document.getElementById('image-lightbox-zoom-in');
+            const zoomOutButton = document.getElementById('image-lightbox-zoom-out');
+            const resetButton = document.getElementById('image-lightbox-reset');
+
+            /*
+            Images treated as expandable illustrations.
+
+            This intentionally excludes:
+            - navigation icons;
+            - social-media icons;
+            - the portrait;
+            - the main business card.
+
+            Add data-no-zoom="true" to any illustration that
+            should not open in the viewer.
+            */
+            const zoomableImages = document.querySelectorAll(`
+                .project-summary img,
+                .project-links > img,
+                .aws-learning-image,
+                .aws-bio-illustration img,
+                .webdesign-project-image
+            `);
+
+            let scale = 1;
+            let savedScrollPosition = 0;
+            let imageThatOpenedViewer = null;
+            let lastTapTime = 0;
+
+            const minimumScale = 1;
+            const maximumScale = 4;
+            const scaleStep = 0.25;
+
+            function updateImageScale() {
+                lightboxImage.style.transform = `scale(${scale})`;
+                resetButton.textContent = `${Math.round(scale * 100)}%`;
+
+                lightboxImage.classList.toggle(
+                    'is-enlarged',
+                    scale > minimumScale
+                );
+            }
+
+            function resetImageViewer() {
+                scale = minimumScale;
+                viewport.scrollTop = 0;
+                viewport.scrollLeft = 0;
+                updateImageScale();
+            }
+
+            function openImageViewer(sourceImage) {
+                if (!sourceImage || sourceImage.dataset.noZoom === 'true') {
+                    return;
+                }
+
+                imageThatOpenedViewer = sourceImage;
+                savedScrollPosition = window.scrollY;
+
+                /*
+                currentSrc supports responsive <picture> and srcset images.
+                */
+                lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
+                lightboxImage.alt = sourceImage.alt || 'Expanded illustration';
+
+                resetImageViewer();
+
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+
+                /*
+                Lock the page while preserving its exact scroll position.
+                */
+                document.body.classList.add('lightbox-open');
+                document.body.style.top = `-${savedScrollPosition}px`;
+
+                closeButton.focus();
+            }
+
+            function closeImageViewer() {
+                if (!lightbox.classList.contains('is-open')) {
+                    return;
+                }
+
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+
+                lightboxImage.src = '';
+                lightboxImage.alt = '';
+
+                document.body.classList.remove('lightbox-open');
+                document.body.style.top = '';
+
+                window.scrollTo({
+                    top: savedScrollPosition,
+                    left: 0,
+                    behavior: 'auto'
+                });
+
+                if (imageThatOpenedViewer) {
+                    imageThatOpenedViewer.focus({
+                        preventScroll: true
+                    });
+                }
+
+                imageThatOpenedViewer = null;
+            }
+
+            function zoomIn() {
+                scale = Math.min(
+                    maximumScale,
+                    Number((scale + scaleStep).toFixed(2))
+                );
+
+                updateImageScale();
+            }
+
+            function zoomOut() {
+                scale = Math.max(
+                    minimumScale,
+                    Number((scale - scaleStep).toFixed(2))
+                );
+
+                updateImageScale();
+            }
+
+            zoomableImages.forEach(function (image) {
+                if (image.dataset.noZoom === 'true') {
+                    return;
+                }
+
+                image.classList.add('zoomable-image');
+                image.setAttribute('tabindex', '0');
+                image.setAttribute('role', 'button');
+
+                const originalLabel = image.alt
+                    ? `Expand image: ${image.alt}`
+                    : 'Expand image';
+
+                image.setAttribute('aria-label', originalLabel);
+
+                image.addEventListener('click', function () {
+                    openImageViewer(image);
+                });
+
+                image.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openImageViewer(image);
+                    }
+                });
+            });
+
+            closeButton.addEventListener('click', closeImageViewer);
+            zoomInButton.addEventListener('click', zoomIn);
+            zoomOutButton.addEventListener('click', zoomOut);
+            resetButton.addEventListener('click', resetImageViewer);
+
+            /*
+            Close only when the background itself is selected.
+            Clicking the image or toolbar does not close it.
+            */
+            lightbox.addEventListener('click', function (event) {
+                if (
+                    event.target === lightbox ||
+                    event.target === viewport
+                ) {
+                    closeImageViewer();
+                }
+            });
+
+            /*
+            Double-click on computers, or double-tap on touchscreens,
+            toggles between normal size and 200%.
+            */
+            lightboxImage.addEventListener('dblclick', function (event) {
+                event.preventDefault();
+
+                scale = scale > minimumScale ? minimumScale : 2;
+                updateImageScale();
+            });
+
+            lightboxImage.addEventListener(
+                'touchend',
+                function () {
+                    const currentTime = Date.now();
+                    const tapDifference = currentTime - lastTapTime;
+
+                    if (tapDifference > 0 && tapDifference < 300) {
+                        scale = scale > minimumScale ? minimumScale : 2;
+                        updateImageScale();
+                    }
+
+                    lastTapTime = currentTime;
+                },
+                {
+                    passive: true
+                }
+            );
+
+            /*
+            Mouse-wheel zoom for desktop and laptop users.
+            */
+            viewport.addEventListener(
+                'wheel',
+                function (event) {
+                    if (!lightbox.classList.contains('is-open')) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    if (event.deltaY < 0) {
+                        zoomIn();
+                    } else {
+                        zoomOut();
+                    }
+                },
+                {
+                    passive: false
+                }
+            );
+
+            document.addEventListener('keydown', function (event) {
+                if (!lightbox.classList.contains('is-open')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    closeImageViewer();
+                }
+
+                if (event.key === '+' || event.key === '=') {
+                    zoomIn();
+                }
+
+                if (event.key === '-') {
+                    zoomOut();
+                }
+
+                if (event.key === '0') {
+                    resetImageViewer();
+                }
+            });
+
+            /*
+            Re-centre and recalculate the available viewport when
+            a phone or tablet changes orientation.
+            */
+            function handleViewerResize() {
+                if (!lightbox.classList.contains('is-open')) {
+                    return;
+                }
+
+                viewport.scrollTop = 0;
+                viewport.scrollLeft = 0;
+            }
+
+            window.addEventListener('resize', handleViewerResize);
+            window.addEventListener('orientationchange', handleViewerResize);
+        });
+    </script>    
+
+    <script>
+        /* =========================================
+        RESPONSIVE TAB / MOBILE ACCORDION SYSTEM
+        ========================================= */
+
+        const mobileTabBreakpoint = 900;
+        const tabPanelPlaceholders = new Map();
+
+        /*
+        Records each panel's original position.
+
+        This allows a panel moved below its mobile button
+        to return to its normal desktop position when the
+        screen becomes wider or the device rotates.
+        */
+        function registerTabPanelPlaceholders() {
+            const tabPanels = document.querySelectorAll(`
+                .infobox_tab_scrollable,
+                .skills_tab_scrollable,
+                .portofolio_tab_scrollable,
+                .learning_tab_scrollable
+            `);
+
+            tabPanels.forEach(function (panel) {
+                if (tabPanelPlaceholders.has(panel.id)) {
+                    return;
+                }
+
+                const placeholder = document.createComment(
+                    `Original position for tab panel: ${panel.id}`
+                );
+
+                panel.parentNode.insertBefore(placeholder, panel);
+
+                tabPanelPlaceholders.set(panel.id, placeholder);
+            });
+        }
+
+        function restoreTabPanelToOriginalPosition(panel) {
+            const placeholder = tabPanelPlaceholders.get(panel.id);
+
+            if (!placeholder || !placeholder.parentNode) {
+                return;
+            }
+
+            placeholder.parentNode.insertBefore(
+                panel,
+                placeholder.nextSibling
+            );
+
+            panel.classList.remove('mobile-inline-tab-panel');
+        }
+
+        function findTabButton(buttonSelector, tabName) {
+            const buttons = document.querySelectorAll(buttonSelector);
+
+            for (const button of buttons) {
+                const onclickValue = button.getAttribute('onclick') || '';
+
+                if (
+                    onclickValue.includes(`'${tabName}'`) ||
+                    onclickValue.includes(`"${tabName}"`)
+                ) {
+                    return button;
+                }
+            }
+
+            return null;
+        }
+
+        function placePanelBelowButton(panel, button, tabType) {
+            if (
+                !panel ||
+                !button ||
+                window.innerWidth > mobileTabBreakpoint
+            ) {
+                return;
+            }
+
+            panel.classList.add('mobile-inline-tab-panel');
+
+            /*
+            Portfolio buttons each have their own wrapper:
+                <div class="portofolio_tab">
+                    <button>...</button>
+                </div>
+
+            Therefore, the panel is placed after that wrapper.
+            */
+            if (tabType === 'portfolio') {
+                const portfolioButtonWrapper = button.closest(
+                    '.portofolio_tab'
+                );
+
+                if (portfolioButtonWrapper) {
+                    portfolioButtonWrapper.insertAdjacentElement(
+                        'afterend',
+                        panel
+                    );
+
+                    return;
+                }
+            }
+
+            /*
+            Biography, Skills, and Learning buttons may share
+            a flex container. Inserting after the chosen button,
+            combined with flex-basis: 100%, places the panel on
+            the next row immediately underneath it.
+            */
+            button.insertAdjacentElement('afterend', panel);
+        }
+
+        function scrollSelectedTabIntoView(button) {
+            if (
+                !button ||
+                window.innerWidth > mobileTabBreakpoint
+            ) {
+                return;
+            }
+
+            /*
+            Wait until the browser has completed the DOM move
+            and recalculated the layout.
+            */
+            requestAnimationFrame(function () {
+                button.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest'
+                });
+
+                /*
+                Offset for the fixed navigation bar.
+                */
+                window.setTimeout(function () {
+                    window.scrollBy({
+                        top: -75,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            });
+        }
+
+        function showResponsiveTab(options) {
+            const {
+                tabName,
+                suppliedElement,
+                panelSelector,
+                buttonSelector,
+                tabType,
+                shouldScroll = true
+            } = options;
+
+            const selectedPanel = document.getElementById(tabName);
+
+            if (!selectedPanel) {
+                console.warn(`Tab panel not found: ${tabName}`);
+                return;
+            }
+
+            /*
+            Internal links sometimes call the function using
+            "this", where "this" is an <a> rather than the
+            actual tab button. Resolve the correct button by
+            its onclick value.
+            */
+            let selectedButton = null;
+
+            if (
+                suppliedElement &&
+                suppliedElement.matches &&
+                suppliedElement.matches(buttonSelector)
+            ) {
+                selectedButton = suppliedElement;
+            } else {
+                selectedButton = findTabButton(
+                    buttonSelector,
+                    tabName
+                );
+            }
+
+            /*
+            Return all related panels to their original location
+            before determining the new placement.
+            */
+            document.querySelectorAll(panelSelector).forEach(function (panel) {
+                restoreTabPanelToOriginalPosition(panel);
+
+                panel.style.display = 'none';
+                panel.classList.remove('active');
+                panel.setAttribute('aria-hidden', 'true');
+            });
+
+            document.querySelectorAll(buttonSelector).forEach(function (button) {
+                button.classList.remove('active');
+                button.setAttribute('aria-selected', 'false');
+            });
+
+            selectedPanel.style.display = 'block';
+            selectedPanel.classList.add('active');
+            selectedPanel.setAttribute('aria-hidden', 'false');
+
+            if (selectedButton) {
+                selectedButton.classList.add('active');
+                selectedButton.setAttribute('aria-selected', 'true');
+
+                placePanelBelowButton(
+                    selectedPanel,
+                    selectedButton,
+                    tabType
+                );
+
+                if (shouldScroll) {
+                    scrollSelectedTabIntoView(selectedButton);
+                }
+            }
+        }
+
+        function showBioTab(tabName, element, shouldScroll = true) {
+            showResponsiveTab({
+                tabName: tabName,
+                suppliedElement: element,
+                panelSelector: '.infobox_tab_scrollable',
+                buttonSelector: '.infobox_tab_button',
+                tabType: 'biography',
+                shouldScroll: shouldScroll
+            });
+        }
+
+        function showSkillTab(tabName, element) {
+            showResponsiveTab({
+                tabName: tabName,
+                suppliedElement: element,
+                panelSelector: '.skills_tab_scrollable',
+                buttonSelector: '.skills_tab_button',
+                tabType: 'skills'
+            });
+        }
+
+        function showPortofolioTab(tabName, element) {
+            showResponsiveTab({
+                tabName: tabName,
+                suppliedElement: element,
+                panelSelector: '.portofolio_tab_scrollable',
+                buttonSelector: '.portofolio_tab_button',
+                tabType: 'portfolio'
+            });
+        }
+
+        function showLearningTab(tabName, element) {
+            showResponsiveTab({
+                tabName: tabName,
+                suppliedElement: element,
+                panelSelector: '.learning_tab_scrollable',
+                buttonSelector: '.learning_tab_button',
+                tabType: 'learning'
+            });
+        }
+
+        /*
+        Restore mobile-moved panels when the viewport changes
+        from mobile/tablet to desktop size.
+        */
+        function restorePanelsForCurrentScreenSize() {
+            if (window.innerWidth <= mobileTabBreakpoint) {
+                return;
+            }
+
+            document.querySelectorAll(`
+                .infobox_tab_scrollable,
+                .skills_tab_scrollable,
+                .portofolio_tab_scrollable,
+                .learning_tab_scrollable
+            `).forEach(function (panel) {
+                restoreTabPanelToOriginalPosition(panel);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            registerTabPanelPlaceholders();
+
+            /*
+            Retain your existing default Biography choice.
+            */
+            const workWithMeButton = findTabButton(
+                '.infobox_tab_button',
+                'workwithme'
+            );
+
+            if (workWithMeButton) {
+                showBioTab('workwithme', workWithMeButton, false);
+            }
+        });
+
+        window.addEventListener(
+            'resize',
+            restorePanelsForCurrentScreenSize
+        );
+
+        window.addEventListener(
+            'orientationchange',
+            function () {
+                window.setTimeout(
+                    restorePanelsForCurrentScreenSize,
+                    150
+                );
+            }
+        );
+    </script>
+
+
         <video autoplay muted loop playsinline id="background-video">
         <source src="resources/videos/animated-background-1_diff_4x2_grid.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -188,6 +821,7 @@
                     <!-- Left: portrait -->
                     <div class="hero_portrait_area">
                         <img class="photo-DV-portrait"
+                            data-no-zoom="true"
                             alt="portrait photo of Delphine Vincent"
                             loading="lazy"
                             src="resources/images/DV_brand/photo_delphinevincent2.jpg">
@@ -450,7 +1084,7 @@
 
                         <p><strong>Applied outcome:</strong> These automated visual stories are published on <a href="https://www.youtube.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">YouTube</a> and <a href="https://www.tiktok.com/@60_seconds_of_calm" target="_blank" rel="noreferrer">TikTok</a> as part of my creative project.</p>
 
-                        <p><strong>Further details:</strong> More details are available <a href="#youtube" onclick="showLearningTab('youtube', this)">here</a>.</p>
+                        <p><strong>Further details:</strong> More details are available <a href="#youtube" onclick="showPortofolioTab('youtube', this)">here</a>.</p>
 
                         <p class="project-links">
                             <img src="resources/images/logo_icons/youtubebannericons.png" alt="YouTube banner" role="presentation" width="100%" height="auto">
@@ -601,41 +1235,6 @@
 
             </section>
 
-            <script>
-                // Biography tab button active state
-                function showBioTab(tabName, element) {
-                    // Hide all biography content sections
-                    document.querySelectorAll('.infobox_tab_scrollable').forEach(tab => {
-                        tab.style.display = 'none';
-                    });
-
-                    // Remove 'active' class from all buttons
-                    document.querySelectorAll('.infobox_tab_button').forEach(button => {
-                        button.classList.remove('active');
-                    });
-
-                    // Show the selected tab content
-                    document.getElementById(tabName).style.display = 'block';
-
-                    // Add 'active' class to the clicked button
-                    if (element) {
-                        element.classList.add('active');
-                    }
-                }
-
-                // Function to handle default active tab on page load: Open the "Work with Me" biography tab by default
-                window.addEventListener('DOMContentLoaded', function () {
-                    const workWithMeButton = document.querySelector(
-                        '.infobox_tab_button[onclick*="workwithme"]'
-                    );
-
-                    if (workWithMeButton) {
-                        workWithMeButton.click();
-                    }
-                });
-            </script>
-
-        </header>
 
         <section id="Skills" class="skillbox_container">
             <h2>Skills</h2>
@@ -2590,27 +3189,6 @@
                 </p>
             </div>
 
-            <script>            
-                // Function to handle skills tab active state
-                function showSkillTab(tabName, element) {
-                    // Hide all skills tab content
-                    document.querySelectorAll('.skills_tab_scrollable').forEach(tab => {
-                        tab.style.display = 'none'; // Hide all tabs
-                    });
-
-                    // Remove 'active' class from all buttons
-                    document.querySelectorAll('.skills_tab_button').forEach(button => {
-                        button.classList.remove('active');
-                    });
-
-                    // Show the selected tab content
-                    document.getElementById(tabName).style.display = 'block';
-
-                    // Add 'active' class to the clicked button
-                    element.classList.add('active');
-                }
-            </script>
-
         </section>
 
         <section id="Portofolio" class="container">
@@ -4357,29 +4935,6 @@
                 </div>
             </div>
 
-           
-
-            <script>
-                // Function to handle skills tab active state
-                function showPortofolioTab(tabName, element) {
-                    // Hide all portfolio tab content
-                    document.querySelectorAll('.portofolio_tab_scrollable').forEach(tab => {
-                        tab.style.display = 'none'; // Hide all tabs
-                    });
-
-                    // Remove 'active' class from all buttons
-                    document.querySelectorAll('.portofolio_tab_button').forEach(button => {
-                        button.classList.remove('active');
-                    });
-
-                    // Show the selected tab content
-                    document.getElementById(tabName).style.display = 'block';
-
-                    // Add 'active' class to the clicked button
-                    element.classList.add('active');
-                }
-            </script>
-
        </section>
 
 
@@ -4819,28 +5374,6 @@
                     <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademyprompticons.png"> <br>
                 </p> <br>
             </div>
-
-
-            <script>
-                // Function to handle skills tab active state
-                function showLearningTab(tabName, element) {
-                    // Hide all portfolio tab content
-                    document.querySelectorAll('.learning_tab_scrollable').forEach(tab => {
-                        tab.style.display = 'none'; // Hide all tabs
-                    });
-
-                    // Remove 'active' class from all buttons
-                    document.querySelectorAll('.learning_tab_button').forEach(button => {
-                        button.classList.remove('active');
-                    });
-
-                    // Show the selected tab content
-                    document.getElementById(tabName).style.display = 'block';
-
-                    // Add 'active' class to the clicked button
-                    element.classList.add('active');
-                }
-            </script>
 
        </section>
 

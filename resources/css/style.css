@@ -1647,3 +1647,262 @@ header.container {
         margin-top: 0.75rem;
     }
 }
+
+/* =========================================
+   FULL-SCREEN IMAGE VIEWER
+   ========================================= */
+
+/* Illustrations that can be expanded */
+.project-summary img,
+.project-links > img,
+.aws-learning-image,
+.aws-bio-illustration img,
+.webdesign-project-image {
+    cursor: zoom-in;
+}
+
+/* Optional visual indication for keyboard users */
+.project-summary img:focus-visible,
+.project-links > img:focus-visible,
+.aws-learning-image:focus-visible,
+.aws-bio-illustration img:focus-visible,
+.webdesign-project-image:focus-visible {
+    outline: 0.25rem solid #FF3399;
+    outline-offset: 0.25rem;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: none;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    background-color: rgba(0, 0, 0, 0.94);
+    overscroll-behavior: contain;
+}
+
+.image-lightbox.is-open {
+    display: flex;
+}
+
+.image-lightbox-toolbar {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+
+    flex: 0 0 auto;
+    min-height: 4rem;
+    padding: 0.6rem 1rem;
+
+    background-color: rgba(0, 0, 0, 0.72);
+}
+
+.image-lightbox-control {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.75rem;
+
+    border: 0.12rem solid #FFC000;
+    border-radius: 10px;
+
+    background-color: #3F007E;
+    color: #FFC000;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.image-lightbox-control:hover,
+.image-lightbox-control:focus-visible {
+    background-color: #FF3399;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.image-lightbox-reset {
+    min-width: 4.75rem;
+    font-size: 0.95rem;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    right: 1rem;
+
+    font-size: 1.6rem;
+}
+
+.image-lightbox-viewport {
+    flex: 1 1 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 0;
+    padding: 1rem;
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+
+    /*
+       Allows browser pinch gestures while retaining
+       vertical and horizontal movement when enlarged.
+    */
+    touch-action: pan-x pan-y pinch-zoom;
+}
+
+.image-lightbox-image {
+    display: block;
+
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100dvh - 6rem);
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    transform-origin: center center;
+
+    border-radius: 8px;
+    box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.18);
+
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transition: transform 0.15s ease;
+}
+
+.image-lightbox-image.is-enlarged {
+    cursor: zoom-out;
+}
+
+/* Prevent the page behind the viewer from scrolling */
+body.lightbox-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Smaller toolbar on narrow phones */
+@media (max-width: 600px) {
+    .image-lightbox-toolbar {
+        justify-content: flex-start;
+        min-height: 3.7rem;
+        padding-left: 0.75rem;
+        padding-right: 4.25rem;
+    }
+
+    .image-lightbox-control {
+        min-width: 2.55rem;
+        min-height: 2.55rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .image-lightbox-close {
+        right: 0.65rem;
+    }
+
+    .image-lightbox-viewport {
+        padding: 0.5rem;
+    }
+
+    .image-lightbox-image {
+        max-width: calc(100vw - 1rem);
+        max-height: calc(100dvh - 5rem);
+    }
+}
+
+/* Landscape phones and tablets */
+@media (orientation: landscape) and (max-height: 600px) {
+    .image-lightbox-toolbar {
+        min-height: 3.25rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .image-lightbox-control {
+        min-width: 2.35rem;
+        min-height: 2.35rem;
+    }
+
+    .image-lightbox-image {
+        max-height: calc(100dvh - 4rem);
+    }
+}
+
+/* =========================================
+   MOBILE TAB CONTENT POSITIONING
+   ========================================= */
+
+/*
+   Applied by JavaScript when a selected panel is moved
+   directly below its button on mobile or tablet screens.
+*/
+.mobile-inline-tab-panel {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
+
+    scroll-margin-top: 5rem;
+}
+
+/*
+   Content panels should use page scrolling on phones,
+   rather than a second, short internal scrollbar.
+*/
+@media (max-width: 900px) {
+    .skills_tab_scrollable,
+    .portofolio_tab_scrollable,
+    .learning_tab_scrollable {
+        max-height: none !important;
+        height: auto !important;
+
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+    }
+
+    /*
+       Biography panels can also expand naturally on mobile.
+    */
+    .infobox_tab_scrollable {
+        max-height: none !important;
+        height: auto !important;
+
+        overflow-y: visible !important;
+        overflow-x: hidden !important;
+    }
+
+    /*
+       A moved panel becomes a complete new row within
+       a wrapping button container.
+    */
+    .skills_tab > .mobile-inline-tab-panel,
+    .learning_tab > .mobile-inline-tab-panel,
+    .infobox_tab > .mobile-inline-tab-panel {
+        flex-basis: 100% !important;
+    }
+}
