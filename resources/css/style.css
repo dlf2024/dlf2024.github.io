@@ -1771,6 +1771,17 @@ header.container {
     touch-action: pan-x pan-y pinch-zoom;
 }
 
+/*
+   When enlarged, anchor the image to the top-left corner.
+
+   This ensures that the transformed left and top edges remain
+   inside the viewport's scrollable area.
+*/
+.image-lightbox-viewport.has-enlarged-image {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .image-lightbox-image {
     display: block;
 
@@ -1781,7 +1792,7 @@ header.container {
     height: auto;
 
     object-fit: contain;
-    transform-origin: center center;
+    transform-origin: top left;
 
     border-radius: 8px;
     box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.18);

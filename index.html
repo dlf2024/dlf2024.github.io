@@ -224,20 +224,28 @@
             const scaleStep = 0.25;
 
             function updateImageScale() {
+                const isEnlarged = scale > minimumScale;
+
                 lightboxImage.style.transform = `scale(${scale})`;
                 resetButton.textContent = `${Math.round(scale * 100)}%`;
 
                 lightboxImage.classList.toggle(
                     'is-enlarged',
-                    scale > minimumScale
+                    isEnlarged
+                );
+
+                viewport.classList.toggle(
+                    'has-enlarged-image',
+                    isEnlarged
                 );
             }
 
             function resetImageViewer() {
                 scale = minimumScale;
+                updateImageScale();
+
                 viewport.scrollTop = 0;
                 viewport.scrollLeft = 0;
-                updateImageScale();
             }
 
             function openImageViewer(sourceImage) {
@@ -1247,20 +1255,23 @@
                     <h4>Programming</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('statistics', this)">
-                    <h4>Statistical Analyses, ML and NLP</h4>
+                    <h4>Statistical Analyses, ML & NLP</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('bioinformatics', this)">
-                    <h4>Bioinformatics and Data Mining</h4>
+                    <h4>Bioinformatics & Data Mining</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('visualisation', this)">
                     <h4>Data Visualisation</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('storytelling', this)">
-                    <h4>Data interpretation and Storytelling</h4>
+                    <h4>Data interpretation & Storytelling</h4>
                 </button>
                 <button class="skills_tab_button" onclick="showSkillTab('editor', this)">
-                    <h4>Author, Editor and Reviewer</h4>
+                    <h4>Author, Editor & Reviewer</h4>
                 </button>
+                <button class="skills_tab_button" onclick="showSkillTab('aiworkflows', this)">
+                    <h4>AI & Prompt engineer</h4>
+                </button>                
             </div>
 
             <div id="computer" class="skills_tab_scrollable" style="display:none;">
@@ -3189,6 +3200,295 @@
                 </p>
             </div>
 
+            <div id="aiworkflows" class="skills_tab_scrollable" style="display:none;">
+                <h5>AI-Assisted Professional Workflows and Prompt Engineering</h5><br>
+
+                <p>
+                    I use generative artificial intelligence as a structured professional assistant across
+                    scientific research, data analysis, machine learning, coding, website development,
+                    technical writing, project documentation, and client communication.
+                </p>
+
+                <p>
+                    My approach combines <strong>prompt engineering, domain expertise, iterative refinement,
+                    source verification, and human quality control</strong>. I use AI to accelerate complex
+                    work while retaining responsibility for the accuracy, interpretation, confidentiality,
+                    and suitability of every final output.
+                </p>
+
+                <div class="project-summary">
+                    <h4>Prompt Engineering</h4>
+
+                    <p>
+                        I design prompts that provide sufficient context, define the task precisely,
+                        establish constraints, identify the intended audience, and specify the required
+                        format and level of detail.
+                    </p>
+
+                    <ul>
+                        <li>Set the project context, purpose, audience, and expected outcome</li>
+                        <li>Provide relevant text, code, files, results, screenshots, or background information</li>
+                        <li>Define terminology, factual constraints, exclusions, and assumptions</li>
+                        <li>Use zero-shot, one-shot, and few-shot prompting where appropriate</li>
+                        <li>Break complex assignments into smaller, sequential subtasks</li>
+                        <li>Request structured outputs such as code blocks, tables, reports, checklists, or replacement HTML</li>
+                        <li>Refine prompts iteratively after reviewing each response</li>
+                        <li>Validate final outputs against source material and project requirements</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="ai-workflow-icons"
+                            alt="Prompt-engineering workflow from project context and source material to artificial intelligence assistance, human review and validated output"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/AIprompticons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Working with ChatGPT</h4>
+
+                    <p>
+                        I use ChatGPT as an interactive assistant for complex professional projects,
+                        particularly when tasks require a combination of scientific knowledge,
+                        analytical reasoning, coding, editing, troubleshooting, and structured communication.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Scientific writing:</strong>
+                            revise manuscripts, abstracts, methods, results, discussions, figure legends,
+                            cover letters, contribution statements, and responses to reviewers
+                        </li>
+                        <li>
+                            <strong>Data analysis:</strong>
+                            plan analytical workflows, assess assumptions, interpret outputs, compare methods,
+                            and translate statistical or machine-learning results into clear conclusions
+                        </li>
+                        <li>
+                            <strong>Python development:</strong>
+                            write, debug, refactor, document, and validate code for data processing,
+                            machine learning, bioinformatics, visualisation, and automation
+                        </li>
+                        <li>
+                            <strong>Web development:</strong>
+                            revise HTML, CSS, and JavaScript; troubleshoot responsive layouts;
+                            improve accessibility; and develop interactive website components
+                        </li>
+                        <li>
+                            <strong>Bioinformatics:</strong>
+                            clarify computational pipelines, audit processing steps, interpret outputs,
+                            and improve descriptions of large-scale proteomics and proteogenomics workflows
+                        </li>
+                        <li>
+                            <strong>Professional communication:</strong>
+                            draft emails, reports, website content, client recommendations,
+                            application documents, and technical guidance
+                        </li>
+                        <li>
+                            <strong>Project documentation:</strong>
+                            create maintenance procedures, checklists, implementation guides,
+                            handover instructions, and reproducible workflows
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>My Interaction Workflow with ChatGPT</h4>
+
+                    <p>
+                        For substantial projects, I use a collaborative and iterative workflow rather than
+                        relying on a single prompt.
+                    </p>
+
+                    <ul>
+                        <li>Explain the broader project and the purpose of the current task</li>
+                        <li>Provide the original material and all relevant evidence</li>
+                        <li>State what must remain unchanged and what needs improvement</li>
+                        <li>Specify the desired tone, length, structure, and output format</li>
+                        <li>Address one clearly bounded problem at a time</li>
+                        <li>Review the response for factual, scientific, technical, and stylistic accuracy</li>
+                        <li>Correct assumptions or clarify requirements when necessary</li>
+                        <li>Request a complete final version after individual decisions are resolved</li>
+                        <li>Test generated code or website changes in the appropriate environment</li>
+                        <li>Retain final responsibility for all professional deliverables</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="ai-collaboration-icons"
+                            alt="Iterative professional collaboration with ChatGPT involving a project brief, draft response, feedback, revision, testing and final validated result"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/AIchatgpticons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Using Google Gemini</h4>
+
+                    <p>
+                        I also use <strong>Google Gemini</strong> as an alternative AI assistant for
+                        drafting, comparison, brainstorming, summarisation, technical explanation,
+                        and independent review of selected outputs.
+                    </p>
+
+                    <ul>
+                        <li>Compare alternative explanations or proposed approaches</li>
+                        <li>Generate additional wording or structural options</li>
+                        <li>Review whether an initial response has overlooked important considerations</li>
+                        <li>Explore alternative coding, analytical, or communication strategies</li>
+                        <li>Cross-check AI-generated suggestions rather than relying on a single system</li>
+                        <li>Select and refine the output best supported by evidence and project requirements</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Local AI with LM Studio</h4>
+
+                    <p>
+                        For confidential or privacy-sensitive work, I use <strong>LM Studio</strong>
+                        to run a language model locally on my computer rather than sending project
+                        material to a cloud-hosted AI service.
+                    </p>
+
+                    <p>
+                        My current local model is <strong>Gemma 4 E4B</strong>, which can be run through
+                        LM Studio as an on-device language model. This provides a private environment
+                        for tasks involving unpublished documents, confidential assessments, internal
+                        reports, sensitive client material, or other information that should remain
+                        on the local computer. :contentReference[oaicite:0]{index=0}
+                    </p>
+
+                    <ul>
+                        <li>Run prompts and model inference locally</li>
+                        <li>Keep source documents and prompts on the computer</li>
+                        <li>Review confidential scientific or technical documents</li>
+                        <li>Draft preliminary summaries, comments, and structured assessments</li>
+                        <li>Break long documents into manageable sections for local processing</li>
+                        <li>Use carefully designed prompts to request consistent evaluation criteria</li>
+                        <li>Manually verify outputs because smaller local models may have capability limitations</li>
+                        <li>Transfer only approved, non-confidential conclusions into external workflows</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="local-ai-icons"
+                            alt="Privacy-focused local artificial intelligence workflow using confidential documents, LM Studio and the Gemma 4 E4B language model on a local computer"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/Ailmstudioicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Scientific and Analytical Projects</h4>
+
+                    <p>
+                        My scientific prompts combine project context with experimental design,
+                        numerical results, analytical assumptions, manuscript requirements, and
+                        supporting source material.
+                    </p>
+
+                    <ul>
+                        <li>Clarify the scientific question and study design</li>
+                        <li>Provide exact counts, model results, validation criteria, and terminology</li>
+                        <li>Distinguish observations from interpretation and speculation</li>
+                        <li>Prevent unsupported claims and invented references</li>
+                        <li>Check consistency between text, figures, tables, and supplementary files</li>
+                        <li>Adapt writing to journal scope, article type, and word limits</li>
+                        <li>Preserve scientific meaning while improving clarity and structure</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Coding and Technical Work</h4>
+
+                    <p>
+                        For coding tasks, I provide the existing script or code block, describe the
+                        expected behaviour, identify the error or limitation, and specify the required
+                        inputs and outputs.
+                    </p>
+
+                    <ul>
+                        <li>Provide complete error messages and tracebacks</li>
+                        <li>Preserve existing filenames, paths, column names, and workflow conventions</li>
+                        <li>Request full replacement code when partial edits may create integration errors</li>
+                        <li>Define expected validation checks and output files</li>
+                        <li>Run the revised code and report the resulting behaviour</li>
+                        <li>Compare outputs with known counts or quality-control criteria</li>
+                        <li>Iteratively refine the solution until the workflow completes correctly</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Website Development</h4>
+
+                    <p>
+                        For website tasks, I provide the relevant HTML, CSS, JavaScript, screenshots,
+                        and a precise description of the required desktop and mobile behaviour.
+                    </p>
+
+                    <ul>
+                        <li>Request copy-and-paste-ready replacement code</li>
+                        <li>Preserve existing IDs, classes, image paths, and naming conventions</li>
+                        <li>Describe the current problem and the expected user experience</li>
+                        <li>Test changes on desktop, mobile, and different device orientations</li>
+                        <li>Review navigation, accessibility, responsiveness, and content visibility</li>
+                        <li>Confirm whether changes also require chatbot indexing or backend updates</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Human Review and Quality Assurance</h4>
+
+                    <p>
+                        I do not treat AI-generated output as automatically correct. Every response is
+                        reviewed in relation to the original evidence, professional context, and intended use.
+                    </p>
+
+                    <ul>
+                        <li>Verify scientific statements against source data and publications</li>
+                        <li>Test generated code before adoption</li>
+                        <li>Check calculations, labels, counts, filenames, and outputs</li>
+                        <li>Review wording for accuracy, tone, and unsupported overstatement</li>
+                        <li>Reject suggestions that conflict with evidence or project constraints</li>
+                        <li>Compare alternative AI responses when additional review is valuable</li>
+                        <li>Maintain version-controlled files and documented decisions</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        These AI-assisted workflows improve efficiency while preserving the scientific
+                        judgement, technical oversight, confidentiality, and critical reasoning required
+                        for high-quality professional work.
+                    </p>
+
+                    <ul>
+                        <li>Accelerate drafting, analysis, coding, troubleshooting, and documentation</li>
+                        <li>Structure complex multidisciplinary projects</li>
+                        <li>Improve consistency across repeated workflows</li>
+                        <li>Explore alternative solutions rapidly</li>
+                        <li>Translate technical material for different audiences</li>
+                        <li>Protect confidential information through local AI when required</li>
+                        <li>Maintain human responsibility for all final decisions and outputs</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> prompt engineering • generative AI •
+                    ChatGPT • Google Gemini • LM Studio • Gemma 4 E4B • local language models •
+                    privacy-aware AI • zero-shot prompting • one-shot prompting • few-shot prompting •
+                    iterative refinement • task decomposition • scientific editing • data analysis •
+                    Python development • machine learning • website development • human-in-the-loop review •
+                    quality assurance
+                </p>
+            </div>
+
         </section>
 
         <section id="Portofolio" class="container">
@@ -3206,7 +3506,7 @@
             </div>
             <div class="portofolio_tab">
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('ML', this)">
-                    <h4>Machine Learning and NLP</h4>
+                    <h4>Machine Learning & NLP</h4>
                 </button>
             </div>
             <div class="portofolio_tab">
@@ -3221,7 +3521,7 @@
             </div>
             <div class="portofolio_tab">
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('webdesign', this)">
-                    <h4>Website design</h4>
+                    <h4>Website design & chatbot</h4>
                 </button>
             </div>
 
@@ -4276,7 +4576,7 @@
 
                     <p><strong>Technical highlights:</strong> Python • metabolomics • feature selection • clustering • Random Forest • biomarker discovery • pathway analysis • Side tool: in silico protein digestion</p>
 
-                    <p><strong>Status:</strong> Article in preparation</p>
+                    <p><strong>Status:</strong> Article submitted</p>
 
                     <p class="project-links">
                         <a href="https://github.com/dlf2024/Python_EDA_ML_camel-mil-fermentation-metabolomics/blob/main/notebooks/Lh-camel-milk-fermentation-metabolomics_dlf2024.pdf" target="_blank" rel="noreferrer">Final report</a>
@@ -4307,7 +4607,7 @@
 
                     <p><strong>Technical highlights:</strong> Python • XGBoost • regression modelling • residual scoring • assay comparison • feature interpretation</p>
 
-                    <p><strong>Status:</strong> Article under review</p>
+                    <p><strong>Status:</strong> Article accepted for publication in Scientific Reports</p>
 
                     <p class="project-links">
                         <a href="https://github.com/dlf2024/Python_ML_antioxidant-assays_standards/blob/main/notebooks/ML_antioxidant-assays_standards_dlf2024.pdf" target="_blank" rel="noreferrer">Final report</a>
@@ -4837,13 +5137,13 @@
             </div>
 
            <div id="webdesign" class="portofolio_tab_scrollable" style="display:none;"> 
-                <h5>Website design and maintenance</h5><br>
+                <h5>Website Design, Development and Integrated Chatbot</h5><br>
                 <p>
                     This section showcases website projects that I have designed, built, maintained, or substantially improved. My work ranges from hand-coded static websites and chatbot integration to WordPress/Elementor administration, content architecture, production deployment, technical troubleshooting, and ongoing client support.
                 </p>
 
-                <div class="project-summary web-project-summary">
-                    <h4>Professional Website and Integrated Portfolio Chatbot</h4>
+                <div class="project-summary web-project-summary"> 
+                    <h4>Professional Website and Integrated Chatbot</h4>
 
                     <p><strong>Objective:</strong> Build and maintain a distinctive professional website that presents my scientific career, data science capabilities, portfolio, publications, training, and consulting services in a clear, interactive, and visually recognisable format.</p>
 
@@ -4855,6 +5155,9 @@
                         <li>Created a complete one-page professional website with dedicated sections for <strong>Biography, Skills, Portfolio, Learning, Certificates, Resume, and Publications</strong>.</li>
                         <li>Developed a cohesive visual identity using a custom colour palette, branded illustrations, responsive cards, tabbed content panels, and mobile-specific layout adjustments.</li>
                         <li>Implemented interactive JavaScript navigation for nested portfolio, biography, skills, and learning content without requiring a web framework.</li>
+                        <li>Improved the mobile viewing experience by repositioning selected tab content directly beneath its corresponding button and removing nested internal scrolling on smaller screens.</li>
+                        <li>Added a full-screen image viewer with zoom, horizontal and vertical panning, reset and close controls, keyboard access, and responsive behaviour across desktop, mobile, and device orientation changes.</li>
+                        <li>Refined the viewer so enlarged images can be explored across their complete width and height, including previously inaccessible left-side content.</li>
                         <li>Added search-engine and social-sharing metadata, including descriptive page titles, Open Graph tags, Twitter metadata, and structured content to improve discoverability and presentation.</li>
                         <li>Integrated downloadable, date-versioned resume and publication resources and established a repeatable maintenance workflow for updating website assets and links.</li>
                         <li>Built a lightweight <strong>Python chatbot</strong> that indexes a curated snapshot of the website, applies TF-IDF-based semantic retrieval, and returns concise answers with direct links to relevant website sections and documents.</li>
@@ -4862,14 +5165,19 @@
                         <li>Continuously test the website across desktop and mobile layouts, refine readability and navigation, and update content as new projects, publications, qualifications, and consulting activities are completed.</li>
                     </ul>
 
-                    <p><strong>Technical highlights:</strong> HTML5 • CSS3 • JavaScript • responsive design • GitHub Pages • Git/GitHub • SEO metadata • Python • FastAPI backend • rule-based intent recognition • fuzzy FAQ matching • TF-IDF retrieval • Render deployment</p>
+                    <p><strong>Technical highlights:</strong> HTML5 • CSS3 • JavaScript • responsive design • mobile tab positioning • full-screen image viewer • image zoom and panning • accessibility • GitHub Pages • Git/GitHub • SEO metadata • Python • FastAPI backend • rule-based intent recognition • fuzzy FAQ matching • TF-IDF retrieval • Render deployment</p>
 
                     <p><strong>Status:</strong> Live and under continuous development</p>
 
                     <p class="project-links">
                         <a href="https://dlf2024.github.io/" target="_blank" rel="noreferrer">Visit website</a>
                         <a href="https://github.com/dlf2024" target="_blank" rel="noreferrer">GitHub profile</a>
-                        <img class="webdesign-project-image" alt="Overview of Delphine Vincent's professional website and integrated chatbot" loading="lazy" width="100%" height="auto" src="resources/images/logo_icons/mywebsiteicons.png">
+                        <img class="webdesign-project-image"
+                            alt="Overview of Delphine Vincent's professional website and integrated chatbot"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/mywebsiteicons.png">
                     </p>
                 </div>
 
@@ -4943,436 +5251,2273 @@
             <!-- Learning Section -->
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('awseducate', this)">
-                    <h4>AWS Educate / Amazon Web Services</h4>
+                    <h4>AWS Educate</h4>
                 </button>
             </div> 
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademycareer', this)">
-                    <h4>CodeCademy Career Path - Data Science/Analytics</h4>
+                    <h4>Data Science/Analytics</h4>
                 </button>
             </div>
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademycareerML', this)">
-                    <h4>CodeCademy Career Path - Data Science/Machine Learning</h4>
+                    <h4>Data Science/Machine Learning</h4>
                 </button>
             </div>
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademyskill', this)">
-                    <h4>CodeCademy Skill Path - Build a website</h4>
+                    <h4>Build a website</h4>
                 </button>
             </div>
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademyskill2', this)">
-                    <h4>CodeCademy Skill Path - Build a chatbot in Python</h4>
+                    <h4>Build a chatbot</h4>
                 </button>
             </div>
             <div class="learning_tab">
                 <button class="learning_tab_button" onclick="showLearningTab('codecademyprompt', this)">
-                    <h4>CodeCademy Course - Learn Prompt Engineering</h4>
+                    <h4>Prompt Engineering</h4>
                 </button>
             </div>
 
             <div id="awseducate" class="learning_tab_scrollable" style="display:none;">
-                <h5>AWS Educate / Amazon Web Services</h5> <br>
+                <h5>AWS Educate and Amazon Web Services</h5><br>
 
                 <p>
-                    I am currently expanding my cloud-computing capability through <strong>AWS Educate</strong>, with a structured, self-directed training pathway focused on cloud fundamentals, the AWS Management Console, storage, compute, networking, AI/ML, and core AWS concepts. 
-                    This learning complements my data science, machine learning, bioinformatics, web deployment, and reproducible analytical workflow experience by strengthening my understanding of cloud-based infrastructure and scalable analytical environments.
-                </p>
-
-                <div class="aws-learning-image-container">
-                    <img class="aws-learning-image" alt="AWS Educate training badges: Cloud Computing 101, Storage, Compute and Networking" loading="lazy" width=40% height=auto src="resources/images/logo_icons/awsbadgesicons.png">
-                </div>
-
-                <h6>Completed AWS Educate training badges</h6>
-
-                <div class="aws-course-grid">
-
-                    <article class="aws-course-card">
-                        <h6>Introduction to the AWS Management Console</h6>
-                        <p>
-                            Foundational training on secure access to AWS services through the browser-based AWS Management Console. The course covered console navigation, service discovery, customisation, account monitoring, AWS global infrastructure, payment models and service cost factors.
-                        </p>
-                        <ul>
-                            <li>Purpose and navigation of the AWS Management Console</li>
-                            <li>Finding, launching and managing AWS services</li>
-                            <li>AWS global infrastructure overview</li>
-                            <li>Payment models and cost-awareness concepts</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Introduction to Cloud 101</h6>
-                        <p>
-                            Foundational training in cloud computing concepts and AWS core services. The course introduced service and deployment models, AWS global infrastructure, the shared responsibility model, the AWS Well-Architected Framework and entry-level cloud career pathways.
-                        </p>
-                        <ul>
-                            <li>Cloud computing benefits and service models</li>
-                            <li>AWS global infrastructure and shared responsibility</li>
-                            <li>Well-Architected Framework principles</li>
-                            <li>Hands-on practice with AWS core services</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Storage</h6>
-                        <p>
-                            Foundational training in AWS storage services, with a focus on Amazon Simple Storage Service, Amazon S3. The course covered object storage concepts, storage classes, buckets, object management, security, cost optimisation and use cases including websites, backup, archive, IoT and big data analytics.
-                        </p>
-                        <ul>
-                            <li>AWS storage types and use cases</li>
-                            <li>Amazon S3 buckets, objects and storage classes</li>
-                            <li>Cost-saving and security configurations</li>
-                            <li>Using Amazon S3 to create a static website</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Compute</h6>
-                        <p>
-                            Foundational training in AWS compute services, with a focus on Amazon Elastic Compute Cloud, Amazon EC2. The course introduced compute options, instance families, workload requirements, storage choices, security configuration and practical EC2 instance launch and management.
-                        </p>
-                        <ul>
-                            <li>AWS compute types and workload considerations</li>
-                            <li>Amazon EC2 concepts and instance types</li>
-                            <li>Launching, configuring and managing EC2 instances</li>
-                            <li>Compute, storage and security configuration</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Networking</h6>
-                        <p>
-                            Foundational training in cloud networking, with a focus on Amazon Virtual Private Cloud, Amazon VPC. The course covered networking fundamentals, virtual private clouds, subnets, route tables, gateways, IP addressing, security groups and network access control lists.
-                        </p>
-                        <ul>
-                            <li>Networking fundamentals and Amazon VPC concepts</li>
-                            <li>Public and private subnet configuration</li>
-                            <li>Route tables, gateways and IP addressing</li>
-                            <li>VPC security using NACLs and security groups</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Databases</h6>
-                        <p>
-                            Foundational training in cloud database, with a focus on Amazon Relational Database Services, Amazon RDS. The course covered database fundamentals, the key elements of Amazon RDS and configuration.
-                        </p>
-                        <ul>
-                            <li>Relational and nonrelational databases concepts</li>
-                            <li>AWS database services</li>
-                            <li>Features and configuration of Amazon RDS</li>
-                            <li>SQL commands to read and write to the database</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Cloud Operations</h6>
-                        <p>
-                            Foundational training in cloud operations tools, with a focus on key elements of the AWS Well-Architected Framework, cost management tools, AWS cloud operations services, and their configuration.
-                        </p>
-                        <ul>
-                            <li>Cloud operation fundamental concepts</li>
-                            <li>Amazon Well-Architected Framework</li>
-                            <li>AWS cost management tools</li>
-                            <li>AWS cloud operations services</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Security</h6>
-                        <p>
-                            Foundational training in operating secure cloud operations, with a focus on Identity and Access Management (IAM) service. The course covered key concepts and features of IAM, security policies, set up users, groups, and roles, apply permissions, and review credentials.
-                        </p>
-                        <ul>
-                            <li>Security fundamental concepts</li>
-                            <li>AWS IAM features, benefits, and use cases</li>
-                            <li>Create and configure IAM user, groups, and roles</li>
-                            <li>IAM policies and multi-factor authentication (MFA) setup</li>
-                        </ul>
-                    </article>
-
-                    <article class="aws-course-card">
-                        <h6>Getting Started with Serverless</h6>
-                        <p>
-                            Foundational training in serverless computing, with a focus on AWS lambda service. The course explained the benefits of serverless services and how to use serverless services to decouple architectures.
-                        </p>
-                        <ul>
-                            <li>Microservices and Serverless concepts</li>
-                            <li>Event-driven architectures</li>
-                            <li>Features and benefits of AWS Lambda functions</li>
-                            <li>Configuration and monitoring of AWS Lambda functions</li>
-                        </ul>
-                    </article>                    
-                    
-                </div>
-
-                <div class="aws-learning-image-container">
-                    <img class="aws-learning-image" alt="AWS product icons for S3, EC2 and VPC" loading="lazy" width=40% height=auto src="resources/images/logo_icons/awsproductsicons.png">
-                </div>
-
-                <h6>Hands-on cloud practice</h6>
-
-                <p>
-                    In parallel with AWS Educate, I am using <strong>Amazon SageMaker Studio Lab</strong> and an <strong>AWS Free Tier account</strong> as hands-on practice environments to consolidate AWS cloud, AI/ML, compute, storage, networking and deployment concepts through practical self-directed exercises.
+                    I am expanding my cloud-computing capability through
+                    <strong>AWS Educate</strong>, using a structured, self-directed learning pathway
+                    covering cloud fundamentals, the AWS Management Console, storage, compute,
+                    networking, databases, cloud operations, security, serverless computing,
+                    artificial intelligence, machine learning, and core AWS concepts.
                 </p>
 
                 <p>
-                    My current learning pathway is sequential: after having completed all the available <strong>Getting Started</strong> series first, I'm progressing to the <strong>AI and Machine Learning</strong> series. I'll ultimately tackle the <strong>Core Concepts</strong> series. This training supports my broader objective of integrating cloud literacy with data science, machine learning, omics analytics, reproducible workflows and scientific web-resource development.
+                    This training complements my experience in data science, machine learning,
+                    bioinformatics, web deployment, and reproducible analytical workflows by
+                    strengthening my understanding of cloud infrastructure, scalable computing,
+                    managed services, secure resource configuration, and cloud-based analytical
+                    environments.
+                </p>
+
+                <div class="project-summary">
+                    <h4>AWS Educate Learning Pathway</h4>
+
+                    <p><strong>Objective:</strong>
+                        Build a practical foundation in Amazon Web Services and understand how
+                        cloud-based storage, compute, networking, databases, security, and deployment
+                        services can support modern data-science and scientific-computing workflows.
+                    </p>
+
+                    <ul>
+                        <li>Develop cloud-computing literacy through structured AWS Educate courses</li>
+                        <li>Understand the purpose and configuration of major AWS services</li>
+                        <li>Strengthen awareness of cloud security, costs, scalability, and reliability</li>
+                        <li>Explore cloud environments relevant to machine learning and data analytics</li>
+                        <li>Connect AWS concepts with bioinformatics, omics, web deployment, and reproducible research</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="aws-learning-image"
+                            alt="AWS Educate training badges covering cloud computing, storage, compute, networking, databases, cloud operations, security, and serverless computing"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/awsbadgesicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Introduction to the AWS Management Console</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Secure browser-based access to AWS services through the AWS Management Console.
+                    </p>
+
+                    <p>
+                        This course introduced console navigation, service discovery, dashboard
+                        customisation, account monitoring, AWS global infrastructure, payment models,
+                        and the factors influencing service costs.
+                    </p>
+
+                    <ul>
+                        <li>Purpose and navigation of the AWS Management Console</li>
+                        <li>Finding, launching, and managing AWS services</li>
+                        <li>AWS global infrastructure overview</li>
+                        <li>Account monitoring and service customisation</li>
+                        <li>Payment models and cost-awareness concepts</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Introduction to Cloud 101</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Core cloud-computing concepts and foundational AWS services.
+                    </p>
+
+                    <p>
+                        The course introduced cloud service and deployment models, AWS global
+                        infrastructure, the shared responsibility model, the AWS Well-Architected
+                        Framework, and entry-level cloud career pathways.
+                    </p>
+
+                    <ul>
+                        <li>Benefits and characteristics of cloud computing</li>
+                        <li>Cloud service and deployment models</li>
+                        <li>AWS global infrastructure</li>
+                        <li>AWS shared responsibility model</li>
+                        <li>AWS Well-Architected Framework principles</li>
+                        <li>Hands-on practice with selected AWS core services</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Storage</h4>
+
+                    <p><strong>Training focus:</strong>
+                        AWS storage services, with particular emphasis on Amazon Simple Storage Service,
+                        or Amazon S3.
+                    </p>
+
+                    <p>
+                        The course covered object-storage concepts, buckets, objects, storage classes,
+                        permissions, security, cost optimisation, and use cases including static websites,
+                        backup, archival storage, Internet of Things applications, and big-data analytics.
+                    </p>
+
+                    <ul>
+                        <li>AWS storage types and their use cases</li>
+                        <li>Amazon S3 buckets, objects, and storage classes</li>
+                        <li>Object management and access configuration</li>
+                        <li>Security and cost-optimisation settings</li>
+                        <li>Using Amazon S3 to host a static website</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Compute</h4>
+
+                    <p><strong>Training focus:</strong>
+                        AWS compute services, with particular emphasis on Amazon Elastic Compute Cloud,
+                        or Amazon EC2.
+                    </p>
+
+                    <p>
+                        The course introduced compute options, instance families, workload requirements,
+                        storage choices, security settings, and the practical launch and management of
+                        EC2 instances.
+                    </p>
+
+                    <ul>
+                        <li>AWS compute types and workload considerations</li>
+                        <li>Amazon EC2 concepts and instance families</li>
+                        <li>Selection of instance types according to workload needs</li>
+                        <li>Launching, configuring, and managing EC2 instances</li>
+                        <li>Compute, storage, and security configuration</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Networking</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Cloud-networking fundamentals, with particular emphasis on Amazon Virtual
+                        Private Cloud, or Amazon VPC.
+                    </p>
+
+                    <p>
+                        The course covered virtual private clouds, public and private subnets,
+                        route tables, gateways, IP addressing, security groups, and network access
+                        control lists.
+                    </p>
+
+                    <ul>
+                        <li>Networking fundamentals and Amazon VPC concepts</li>
+                        <li>Public and private subnet configuration</li>
+                        <li>Route tables and gateway configuration</li>
+                        <li>IP addressing within a virtual network</li>
+                        <li>VPC security using security groups and network ACLs</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Databases</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Cloud-database fundamentals, with particular emphasis on Amazon Relational
+                        Database Service, or Amazon RDS.
+                    </p>
+
+                    <p>
+                        The course introduced relational and non-relational database concepts,
+                        AWS database services, the key features of Amazon RDS, database configuration,
+                        and the use of SQL to read and write data.
+                    </p>
+
+                    <ul>
+                        <li>Relational and non-relational database concepts</li>
+                        <li>Overview of AWS database services</li>
+                        <li>Amazon RDS features and use cases</li>
+                        <li>Configuration of a managed relational database</li>
+                        <li>Use of SQL commands to read and write data</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Cloud Operations</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Cloud-operations principles, service monitoring, cost management, and
+                        operational best practice.
+                    </p>
+
+                    <p>
+                        The course introduced key elements of the AWS Well-Architected Framework,
+                        AWS cost-management tools, cloud-operations services, and their configuration.
+                    </p>
+
+                    <ul>
+                        <li>Cloud-operations fundamentals</li>
+                        <li>AWS Well-Architected Framework</li>
+                        <li>AWS cost-management tools</li>
+                        <li>Cloud monitoring and operational services</li>
+                        <li>Configuration of selected cloud-operations resources</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Security</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Secure cloud operations, with particular emphasis on AWS Identity and Access
+                        Management, or IAM.
+                    </p>
+
+                    <p>
+                        The course covered IAM concepts and features, users, groups, roles, permissions,
+                        security policies, credential review, and multi-factor authentication.
+                    </p>
+
+                    <ul>
+                        <li>Cloud-security fundamentals</li>
+                        <li>AWS IAM features, benefits, and use cases</li>
+                        <li>Creation and configuration of IAM users, groups, and roles</li>
+                        <li>Application of IAM policies and permissions</li>
+                        <li>Credential review and multi-factor authentication setup</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Getting Started with Serverless</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Serverless computing, event-driven architecture, and AWS Lambda.
+                    </p>
+
+                    <p>
+                        The course explained the benefits of serverless services, the role of
+                        microservices, event-driven design, architectural decoupling, and the
+                        configuration and monitoring of AWS Lambda functions.
+                    </p>
+
+                    <ul>
+                        <li>Microservices and serverless-computing concepts</li>
+                        <li>Event-driven architectures</li>
+                        <li>Benefits and use cases of AWS Lambda</li>
+                        <li>Creation and configuration of Lambda functions</li>
+                        <li>Monitoring serverless functions</li>
+                        <li>Use of serverless services to decouple application components</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Connecting AWS Services</h4>
+
+                    <p>
+                        The training has helped me understand how individual AWS services can be
+                        combined within a broader cloud architecture rather than used in isolation.
+                    </p>
+
+                    <ul>
+                        <li><strong>Amazon S3:</strong> object storage, static websites, backup, and data repositories</li>
+                        <li><strong>Amazon EC2:</strong> configurable cloud-based computing capacity</li>
+                        <li><strong>Amazon VPC:</strong> isolated networking environments and controlled connectivity</li>
+                        <li><strong>Amazon RDS:</strong> managed relational databases</li>
+                        <li><strong>AWS IAM:</strong> users, roles, permissions, and access control</li>
+                        <li><strong>AWS Lambda:</strong> serverless and event-driven processing</li>
+                        <li><strong>Cloud operations:</strong> monitoring, cost awareness, and architectural best practice</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="aws-learning-image"
+                            alt="AWS service icons representing Amazon S3 storage, Amazon EC2 compute, and Amazon VPC networking"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/awsproductsicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Hands-On Cloud Practice</h4>
+
+                    <p>
+                        In parallel with AWS Educate, I use
+                        <strong>Amazon SageMaker Studio Lab</strong> and an
+                        <strong>AWS Free Tier account</strong> as practical learning environments.
+                    </p>
+
+                    <ul>
+                        <li>Explore cloud-based notebook environments for Python and machine learning</li>
+                        <li>Practise navigating AWS services and configuration interfaces</li>
+                        <li>Consolidate concepts in storage, compute, networking, databases, and security</li>
+                        <li>Develop familiarity with cloud-resource creation and management</li>
+                        <li>Connect theoretical course material with self-directed practical exercises</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Current and Planned Progression</h4>
+
+                    <p>
+                        I completed the available <strong>Getting Started</strong> courses first and
+                        am progressing through the <strong>Artificial Intelligence and Machine Learning</strong>
+                        series. I plan to continue with the <strong>Core Concepts</strong> series.
+                    </p>
+
+                    <p>
+                        This sequential pathway supports my broader objective of integrating cloud
+                        literacy with data science, machine learning, bioinformatics, omics analytics,
+                        reproducible workflows, and scientific web-resource development.
+                    </p>
+
+                    <ul>
+                        <li>Completed foundational AWS Management Console training</li>
+                        <li>Completed the available Getting Started courses</li>
+                        <li>Progressing to AI and machine learning training</li>
+                        <li>Planning subsequent Core Concepts training</li>
+                        <li>Applying knowledge through SageMaker Studio Lab and AWS Free Tier practice</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Relevance to My Professional Work</h4>
+
+                    <ul>
+                        <li>Cloud storage for large scientific and analytical datasets</li>
+                        <li>Scalable compute for data science, machine learning, and bioinformatics</li>
+                        <li>Managed databases for structured analytical data</li>
+                        <li>Secure access control for cloud resources and collaborative environments</li>
+                        <li>Cloud deployment of websites, APIs, analytical tools, and scientific resources</li>
+                        <li>Serverless processing for event-driven and lightweight automation workflows</li>
+                        <li>Cost-aware and reproducible design of cloud-based projects</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> AWS Educate • AWS Management Console •
+                    cloud computing • Amazon S3 • Amazon EC2 • Amazon VPC • Amazon RDS • AWS IAM •
+                    AWS Lambda • serverless computing • cloud operations • cloud security •
+                    SQL • SageMaker Studio Lab • AWS Free Tier • scalable analytics •
+                    machine learning • web deployment
                 </p>
             </div>
 
             <div id="codecademycareer" class="learning_tab_scrollable" style="display:none;">
-                <h5>CodeCademy Career Path - Data Science / Analytics</h5> <br>
+                <h5>CodeCademy Career Path — Data Science and Analytics</h5><br>
+
                 <p>
-                    The syllabus of the <em>CodeCademy Career Path course “Data Scientist - Analytics Specialist”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/data-analyst" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
-                    This long thorough course involved theory, practical, exams, and multiple projects. I was able to learn SQL, Python 3, and Tableau as well as revise my knowledge on statistical analyses and data visualisation. <br>
-                    I was able to apply my newly acquired Python skills to analysis the largest proteogenomics dataset to date (<a href="https://www.mdpi.com/1422-0067/25/16/8614" target="_blank" rel="noreferrer">DOI: 10.3390/ijms25168614 </a>). <br>
-                    All the projects of the CodeCademy course were guided except for the last one which could be anything I wanted. <br>
-                    For the <strong>final portofolio</strong>, I chose to analyse the <em>metadata of 120,000 scientific articles</em> (dataset retrieved from Kaggle) to understand publication trends and topics of interest. <br>
-                    <img class="codecademy-icons" alt="workflow icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/codecademycareer1icons.png">
+                    I completed the <strong>CodeCademy Career Path: Data Scientist — Analytics Specialist</strong>,
+                    a comprehensive programme combining theory, practical exercises, assessments, and guided projects.
                 </p>
-                <ul>
-                    <li><strong>1. Hypotheses</strong> <br>
-                        <ul>
-                            <li>Publication rate over time</li>
-                            <li>Successful publishers and favored journals</li>
-                            <li>Prolific authors</li>
-                            <li>Number of citations and length of title over time</li>
-                            <li>Preferred publication types</li>
-                            <li>Languages used</li>
-                            <li>Most popular subjects</li>
-                            <img class="codecademy-icons" alt="brainstorming icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademycareer2icons.png">
-                        </ul><br>
-                    </li>
-                        <a href="https://github.com/dlf2024/Python_Tableau_scientific_papers_metadata" target="_blank" rel="noreferrer">
-                            Link to GitHub repository containing the raw and clean datasets, as well as the Jupyter notebook with detailed Python code
-                        </a> <br>
-                        <ul>
-                    <li><strong>2. Data handling and analysis</strong> <br>
-                            <li>Tools used: Excel, Python, Tableau</li>
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademycareer7icons.png">
-                            <li>Data assessment helped decide which variables to keep, what needed transformation, and the existence of missing values.</li>
-                            <li>Data wrangling and cleaning involved coercing dates, renaming headers into meanigful names, replacing missing values, transforming article titles and creating new numerical variables for data analsyis.</li>
-                            <li>Exploratory Data Analysis (EDA) included line charts, wordclouds, bubble plots, bar and pie charts, treemaps, scatterplots, histograms and box and wisker plots.</li>   <br>   
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=80% height=auto src="resources/images/logo_icons/codecademycareer3icons.png">        
-                        </ul>
-                    </li> <br>
-                    <li><strong>3. Data visualisation, interpretation and storytelling using Tableau and Powerpoint</strong> <br>
-                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications" target="_blank" rel="noreferrer">
-                            Link to Tableau Public dashboard and data analysis
-                        </a> <br>
-                        <a href="resources/presentations/CodeCademy_final_portofolio_report_Delphine-Vincent_2024-08-05.pdf" target="_blank" rel="noreferrer">
-                            Report on my process, analysis and observations
-                        </a> <br>
-                            <img class="codecademy-icons" alt="dashboard and report cover screenshots" loading="lazy" width=60% height=auto src="resources/images/logo_icons/codecademycareer4icons.png"> <br>
-                    </li> <br>
-                    <li><strong>4. Conclusions</strong> <br>
-                        <ul>
-                            <li>Yearly rate of publication gradually increases from the 60’s onward to reach 2,500 publications per year in the mid-90’s. </li>
-                            <li>2007 featured many more publications than other years. Is it a dataset bias or did something happen to explain such spike?</li>
-                            <li>Most publications are journal article (94%,) followed by proceeding articles (3%), and book chapters (2%)</li>
-                            <li>The popularity and longevity of journals vary immensely</li>
-                            <li>Most successful publishers host a larger number of journals</li>
-                            <li>Publications are overwhelmingly written in English</li>
-                            <li>The number of citations as well as the title length are both on the rise</li>
-                            <li>The most popular subjects deal with social sciences, computer science, electrical and general engineering as well as chemistry</li>
-                            <li>Some subjects are long-lasting while others are short-lived or emerging</li>
-                            <img class="codecademy-icons" alt="data interpretation icons" loading="lazy" width=15% height=auto src="resources/images/logo_icons/codecademycareer5icons.png">
-                        </ul><br>
-                    </li>
-                    <li><strong>5. Future directions</strong> <br>
-                        <ul>
-                            <li>Create more sophisticated visualization (e.g. Sankey or chord diagrams) to better explore relationship across variables</li>
-                            <li>Refine the text-mining models using other LNP methods</li>
-                            <li>Fetch more metadata (co-authors, keywords, geographic data,...)</li>
-                            <img class="codecademy-icons" alt="following up icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademycareer6icons.png">
-                        </ul><br>
-                    </li>
-                </ul>
+
+                <p>
+                    The course strengthened my skills in <strong>SQL, Python 3, Tableau, statistical analysis,
+                    data visualisation, exploratory data analysis, and analytical storytelling</strong>.
+                    It also provided a structured framework for moving from raw data to clear, evidence-based conclusions.
+                </p>
+
+                <p class="project-links">
+                    <a href="https://www.codecademy.com/learn/paths/data-analyst"
+                        target="_blank"
+                        rel="noreferrer">
+                        View the CodeCademy course syllabus
+                    </a>
+                </p>
+
+                <div class="project-summary">
+                    <h4>Learning Outcomes</h4>
+
+                    <p><strong>Training focus:</strong>
+                        End-to-end data analysis using SQL, Python, Excel, Tableau, statistical methods,
+                        exploratory analysis, data visualisation, and reporting.
+                    </p>
+
+                    <ul>
+                        <li>Query and manipulate structured data using SQL</li>
+                        <li>Clean, transform, analyse, and visualise data using Python</li>
+                        <li>Apply descriptive and inferential statistical methods</li>
+                        <li>Build exploratory and presentation-ready visualisations</li>
+                        <li>Create interactive dashboards using Tableau</li>
+                        <li>Communicate analytical findings through structured reports and presentations</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Workflow representing the CodeCademy Data Scientist Analytics Specialist learning pathway"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer1icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Application to Large-Scale Wheat Proteogenomics</h4>
+
+                    <p>
+                        I applied the Python and data-analysis skills developed through this training
+                        to the analysis of a large wheat proteogenomics dataset.
+                    </p>
+
+                    <p>
+                        This work involved large-scale data handling, peptide and protein processing,
+                        exploratory analysis, visualisation, biological interpretation, and development
+                        of reproducible analytical workflows.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://www.mdpi.com/1422-0067/25/16/8614"
+                            target="_blank"
+                            rel="noreferrer">
+                            Community Resource: Large-Scale Proteogenomics to Refine Wheat Genome Annotations
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Final Portfolio Project</h4>
+
+                    <p><strong>Project:</strong>
+                        Analysis of metadata from approximately 120,000 scientific publications.
+                    </p>
+
+                    <p>
+                        The final CodeCademy portfolio project was open-ended, allowing me to select
+                        a dataset and define my own analytical questions. I chose a Kaggle dataset
+                        containing metadata from scientific publications to investigate publication
+                        activity, journals, publishers, authors, citation patterns, publication types,
+                        languages, and research subjects.
+                    </p>
+
+                    <ul>
+                        <li>Define analytical hypotheses and research questions</li>
+                        <li>Assess the quality and structure of the source dataset</li>
+                        <li>Clean and transform publication metadata</li>
+                        <li>Perform exploratory data analysis using Python</li>
+                        <li>Create an interactive Tableau dashboard</li>
+                        <li>Prepare a written analytical report and presentation-ready outputs</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>1. Analytical Questions and Hypotheses</h4>
+
+                    <p>
+                        I began by defining a set of questions to guide data cleaning,
+                        feature engineering, exploratory analysis, and visualisation.
+                    </p>
+
+                    <ul>
+                        <li>How did publication rates change over time?</li>
+                        <li>Which publishers and journals were most strongly represented?</li>
+                        <li>Which authors appeared most frequently?</li>
+                        <li>How did citation numbers change over time?</li>
+                        <li>Did article-title length change over time?</li>
+                        <li>Which publication types were most common?</li>
+                        <li>Which languages were used most frequently?</li>
+                        <li>Which research subjects were dominant, persistent, declining, or emerging?</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Brainstorming and hypothesis-development icons for the scientific-publication metadata project"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer2icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>2. Data Assessment and Preparation</h4>
+
+                    <p><strong>Tools:</strong>
+                        Excel, Python, pandas, Jupyter Notebook, and Tableau.
+                    </p>
+
+                    <p>
+                        Initial data assessment helped determine which variables were informative,
+                        which fields required transformation, and where missing, inconsistent,
+                        or poorly formatted values were present.
+                    </p>
+
+                    <ul>
+                        <li>Reviewed dataset dimensions, column types, completeness, and value distributions</li>
+                        <li>Selected variables relevant to the project questions</li>
+                        <li>Converted and standardised date fields</li>
+                        <li>Renamed columns using clearer and more meaningful labels</li>
+                        <li>Investigated and handled missing values</li>
+                        <li>Cleaned and transformed article titles</li>
+                        <li>Created new numerical and categorical variables for analysis</li>
+                        <li>Prepared cleaned outputs for Python and Tableau</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="https://github.com/dlf2024/Python_Tableau_scientific_papers_metadata"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the GitHub repository, raw and cleaned datasets, and Jupyter notebook
+                        </a>
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Data-analysis tools and charts used for publication-metadata processing"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer7icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>3. Exploratory Data Analysis</h4>
+
+                    <p>
+                        Exploratory analysis was used to identify long-term trends, dominant categories,
+                        unusual observations, relationships between variables, and potential dataset biases.
+                    </p>
+
+                    <ul>
+                        <li>Line charts for publication and citation trends over time</li>
+                        <li>Bar charts for journals, publishers, authors, languages, and publication types</li>
+                        <li>Bubble plots for multivariable comparisons</li>
+                        <li>Pie charts and treemaps for category composition</li>
+                        <li>Scatterplots for relationships between numerical variables</li>
+                        <li>Histograms and box-and-whisker plots for distributions and outliers</li>
+                        <li>Word clouds and text summaries for publication-title content</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Exploratory data-analysis charts generated from scientific-publication metadata"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer3icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>4. Tableau Dashboard and Analytical Report</h4>
+
+                    <p>
+                        I transformed the cleaned and analysed dataset into an interactive Tableau
+                        dashboard that allows users to explore publication trends, categories,
+                        publishers, journals, authors, citation behaviour, and research subjects.
+                    </p>
+
+                    <p>
+                        I also prepared a structured report describing the analytical process,
+                        visualisations, observations, limitations, and proposed future directions.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/scientific_papers_metadata_dlf2024/Dashboard_publications"
+                            target="_blank"
+                            rel="noreferrer">
+                            Explore the Tableau Public dashboard
+                        </a>
+
+                        <a href="resources/presentations/CodeCademy_final_portofolio_report_Delphine-Vincent_2024-08-05.pdf"
+                            target="_blank"
+                            rel="noreferrer">
+                            Read the project report
+                        </a>
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Screenshots of the Tableau dashboard and final scientific-publication metadata report"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer4icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>5. Main Findings</h4>
+
+                    <ul>
+                        <li>Annual publication numbers generally increased from the 1960s onward.</li>
+                        <li>The dataset reached approximately 2,500 publications per year by the mid-1990s.</li>
+                        <li>Publication numbers were unusually high in 2007, suggesting either a genuine event or a dataset-related bias requiring further investigation.</li>
+                        <li>Journal articles represented approximately 94% of the records.</li>
+                        <li>Proceedings articles represented approximately 3%, and book chapters approximately 2%.</li>
+                        <li>The representation and longevity of journals varied substantially.</li>
+                        <li>Large publishers tended to host a greater number of journals.</li>
+                        <li>English was overwhelmingly the dominant publication language.</li>
+                        <li>Both citation counts and title length showed increasing trends over time.</li>
+                        <li>Frequently represented subjects included social sciences, computer science, electrical engineering, general engineering, and chemistry.</li>
+                        <li>Some research subjects persisted over long periods, whereas others appeared to be emerging or short-lived.</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Data-interpretation icons representing conclusions from the publication-metadata analysis"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer5icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>6. Limitations and Interpretation</h4>
+
+                    <p>
+                        The project provided valuable insight into the structure of the dataset,
+                        but the results must be interpreted in the context of its source, coverage,
+                        metadata quality, and possible sampling bias.
+                    </p>
+
+                    <ul>
+                        <li>The dataset may not represent the complete scientific literature.</li>
+                        <li>Uneven coverage across years may affect apparent publication trends.</li>
+                        <li>The 2007 publication spike requires further validation.</li>
+                        <li>Missing or inconsistent metadata may affect author, journal, and subject summaries.</li>
+                        <li>Citation numbers may be influenced by publication age and database coverage.</li>
+                        <li>Subject labels may overlap or vary in specificity.</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>7. Future Directions</h4>
+
+                    <ul>
+                        <li>Create Sankey or chord diagrams to explore relationships between publishers, journals, subjects, and publication types</li>
+                        <li>Apply more advanced NLP methods to publication titles</li>
+                        <li>Compare alternative topic-modelling approaches</li>
+                        <li>Retrieve richer metadata including co-authors, keywords, affiliations, and geographic information</li>
+                        <li>Build co-authorship and publication-network visualisations</li>
+                        <li>Investigate temporal changes in research topics in greater detail</li>
+                        <li>Assess and correct potential dataset biases where possible</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Future-development icons for extending the scientific-publication metadata project"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademycareer6icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        This project demonstrated my ability to independently define an analytical problem
+                        and deliver a complete workflow from raw data to interpretable outputs.
+                    </p>
+
+                    <ul>
+                        <li>Formulate analytical questions and hypotheses</li>
+                        <li>Assess and clean a large real-world dataset</li>
+                        <li>Perform reproducible exploratory data analysis in Python</li>
+                        <li>Integrate numerical, categorical, temporal, and textual variables</li>
+                        <li>Create interactive Tableau dashboards</li>
+                        <li>Translate complex findings into a clear analytical narrative</li>
+                        <li>Document code, data, limitations, and conclusions transparently</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • data science • analytics •
+                    Python • pandas • Jupyter Notebook • SQL • Excel • Tableau • exploratory data analysis •
+                    data cleaning • feature engineering • text analysis • word clouds • publication metadata •
+                    dashboard development • analytical reporting • GitHub • data storytelling
+                </p>
             </div>
 
             <div id="codecademycareerML" class="learning_tab_scrollable" style="display:none;">
-                <h5>CodeCademy Career Path - Data Science / Machine Learning</h5> <br>
+                <h5>CodeCademy Career Path — Data Science and Machine Learning</h5><br>
+
                 <p>
-                    The syllabus of the <em>CodeCademy Career Path course “Data Scientist - Machine Learning Specialist”</em> is listed here (<a href="https://www.codecademy.com/career-journey/data-scientist-ml" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
-                    This long thorough course involved theory, practical, exams, and multiple projects. I learned about Machine Learning algorithms via a foundation of math, stats, and programming (Python). 
-                    The course covered supervised and unsupervised learning algorithms to solve classification and regression problems. Such algorithms were Ensemble methods, SVMs, Recommender Systems, Naive Bayes, Deep Learning and Neural Networks.<br>
-                    For the <strong>final portofolio</strong>, I was tasked to analyse a dataset from <em>OK-Cupid Date-a-Scientist app</em> and apply ML algorithms in any way I saw fit. <br>
-                    I chose to develop an unsupervised ML model that would identify individuals with similar features so that the app can suggest relevant matches. <br>
-                    The results will then be displayed via an interactive interface. <br>
-                    <img class="codecademy-icons" alt="brainstorming icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/okcupid1icons.png">
+                    I completed the <strong>CodeCademy Career Path: Data Scientist — Machine Learning Specialist</strong>,
+                    a comprehensive programme combining mathematical foundations, statistics, Python programming,
+                    machine learning theory, practical exercises, assessments, and applied projects.
                 </p>
-                <ul>
-                    <li><strong>1. Study design</strong> <br>
-                        <ul>
-                            <li>Context</li>
-                            <p>The dating app dataset provided by CodeCademy does not include a single feature to predict individual closeness. <br>
-                            I must resort to unsupervised methods to structure the data and then find close matches. </p> 
-                            <li>Rationale</li>
-                            <p>I performed exploratory data analysis (EDA) to inspect the data, Natural Language Processing (NLP) to process textual features, and machine learning (ML) models eliminate noise and identify hidden patterns to group individuals based on feature similarities, and ultimately determine potential matches between grouped individuals</p> 
-                            <li>Tools</li>
-                            <p>Icons of programs used are listed below.</p> 
-                            <img class="codecademy-icons" alt="brainstorming icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/okcupid2icons.png">
-                        </ul><br>
-                    </li>
-                    <li><strong>2. Data handling, encoding and distribution using Python</strong> <br>
-                        <a href="https://github.com/dlf2024/Python_OKCupid_date-a-scientist" target="_blank" rel="noreferrer">
-                            Link to GitHub repository containing the cleaned and encoded dataset, as well as the Jupyter notebook with detailed Python code
-                        </a> <br>
-                        <ul>
-                            <li>Data inspection and visualisation helped determine data types, cleaning steps, and the existence of missing values, erroneous values and outliers.</li>
-                            <li>Data wrangling and cleaning involved filtering and normalising numerical variables, encoding categorical ordinal and nominal features, and processing textual features using NLP methods for data analsyis.</li>
-                            <li>Plotting the data distributions as histograms, pie charts, treemaps, wordclouds, heatmaps and bar plots helps summarise the features and reveal the main trends. </li> 
-                            <li>From those main trends can be inferred which types of individuals (archetypes) are interested in using the dating app.</li>  <br>   
-                            <img class="codecademy-icons" alt="data charts" loading="lazy" width=40% height=auto src="resources/images/logo_icons/okcupid3icons.png">        
-                        </ul>
-                    </li> <br>
-                    <li><strong>3. Data analysis, machine learning, and data visualisation using Python</strong> <br>
-                        <ul>
-                            <li>Correlation matrix reveals no collinearity and associations between fetaures useful for NAs imputation.</li>
-                            <li>Conctenation and classification of textual features using Latent Dirichlet Allocation (LDA) with optimised parameters outlines 30 main themes.</li>
-                            <li>Features are weihgted according to their relevance for matching individuals.</li>
-                            <li>Row selection is based on a completeness score reflecting the frequency of NAs across all weighted features.</li>
-                            <li>Identification and elimination of outliers to reduce noise using Isolation Forest and optimised parameters.</li>
-                            <li>Grouping of individuals to decomplexify data using HDBSCAN clustering with optimised parameters and UMAP plot shows a structure of the data into 5 unven groups.</li>
-                            <li>Pair-matching of individuals within HDBSCAN clusters using Cosine similarity scores is achieved at a F1 score of 90%. </li>
-                            <li>An interactive interface using Gradio was developped to display up to 20 closest matches per matched individual.</li>
-                            <img class="codecademy-icons" alt="dashboard and report cover screenshots" loading="lazy" width=40% height=auto src="resources/images/logo_icons/okcupid4icons.png"> <br>
-                        </ul>
-                    </li> <br>
-                    <li><strong>4. Interpretation and storytelling using Tableau and Powerpoint</strong> <br>
-                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/OKcupid_date-a-scientist_dlf2024/ML" target="_blank" rel="noreferrer">
-                            Link to Tableau Public dashboard and data analysis
-                        </a> <br>
-                        <a href="resources/presentations/CodeCademy_final_portofolio_ML_report_Delphine-Vincent_2025-03-12.pdf" target="_blank" rel="noreferrer">
-                            Report on my process, analysis and observations
-                        </a> <br>
-                            <img class="codecademy-icons" alt="dashboard and report cover screenshots" loading="lazy" width=60% height=auto src="resources/images/logo_icons/okcupid5icons.png"> <br>
-                    </li> <br>
-                    <li><strong>5. Conclusions</strong> <br>
-                        <ul>
-                            <li>EDA revealed the archetypical dating app user. </li>
-                            <li>Several ML models were implemented to categorise textual features (LDA), eliminate outliers (Isolation Forest), structure the data (HDBSCAN clustering) and pair the most similar individuals (cosine).</li>
-                            <li>Visualisation of the closest matches using heatmap, worcloud, and interactive tables help outline the general trends of selected individuals.</li>
-                            <img class="codecademy-icons" alt="data interpretation icons" loading="lazy" width=40% height=auto src="resources/images/logo_icons/okcupid6icons.png">
-                        </ul><br>
-                    </li>
-                    <li><strong>6. Future directions</strong> <br>
-                        <ul>
-                            <p>Things that could be done differently:</p>
-                            <li>Different encoding of the features (e.g. agglomerate some variable labels to decrease granularity).</li>
-                            <li>No weighting of the variables (no bias) or different weighting strategy.</li>
-                            <li>No row selection, instead testing different NA imputation methods (mean, KNN,…).</li>
-                            <li>No outlier elimination, instead analyse them and associate them to features</li>
-                            <li>Use UMAP projections as predictive features in cosine model for improved granularity</li>
-                            <li>Retrieve GPS data of the town for geographical mapping to then including geographical proximity to the model.</li>
-                            <li>No combination of the 10 essay variables prior to NLP modeling.</li>
-                            <li>For NLP analysis, compare LDA method to BERT modeling which incorporates context as well.</li>
-                            <li>Test model with new users (fictional or retrieved from public repository).</li>
-                            <li>Further develop the Gradio interface to search for traits (e.g. “wants more kids”) rather than profile id.</li>
-                            <img class="codecademy-icons" alt="following up icons" loading="lazy" width=5% height=auto src="resources/images/logo_icons/okcupid7icons.png">
-                        </ul><br>
-                    </li>
-                </ul>
+
+                <p>
+                    The course covered both <strong>supervised and unsupervised learning</strong> for classification,
+                    regression, clustering, recommendation, anomaly detection, and pattern discovery. Topics included
+                    ensemble methods, support vector machines, recommender systems, naïve Bayes, deep learning,
+                    neural networks, model evaluation, and feature engineering.
+                </p>
+
+                <p class="project-links">
+                    <a href="https://www.codecademy.com/career-journey/data-scientist-ml"
+                        target="_blank"
+                        rel="noreferrer">
+                        View the CodeCademy course syllabus
+                    </a>
+                </p>
+
+                <div class="project-summary">
+                    <h4>Learning Outcomes</h4>
+
+                    <p><strong>Training focus:</strong>
+                        End-to-end machine learning using Python, with emphasis on data preparation,
+                        modelling, validation, interpretation, and deployment-oriented thinking.
+                    </p>
+
+                    <ul>
+                        <li>Apply supervised learning to classification and regression problems</li>
+                        <li>Use unsupervised learning for clustering, latent structure, and anomaly detection</li>
+                        <li>Develop recommender and similarity-based systems</li>
+                        <li>Engineer, encode, transform, and weight model features</li>
+                        <li>Optimise model parameters and compare alternative methods</li>
+                        <li>Evaluate performance using suitable validation metrics</li>
+                        <li>Interpret model outputs and communicate findings clearly</li>
+                        <li>Build interactive interfaces for model results</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Brainstorming and machine-learning workflow for the OKCupid final portfolio project"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid1icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Final Portfolio Project</h4>
+
+                    <p><strong>Project:</strong>
+                        Unsupervised matching of similar users from an OKCupid Date-a-Scientist dataset.
+                    </p>
+
+                    <p>
+                        The final portfolio project required analysis of a dating-app dataset and the application
+                        of machine learning in a self-defined way. Because the dataset did not contain a single
+                        target variable representing compatibility or closeness, I designed an
+                        <strong>unsupervised recommendation workflow</strong>.
+                    </p>
+
+                    <p>
+                        The objective was to structure the user-profile data, reduce noise, identify groups of
+                        broadly similar individuals, and calculate pairwise similarity within those groups so that
+                        the application could suggest relevant matches.
+                    </p>
+
+                    <ul>
+                        <li>Inspect and clean mixed numerical, categorical, and textual data</li>
+                        <li>Use NLP to represent user essays and profile descriptions</li>
+                        <li>Identify and remove anomalous records</li>
+                        <li>Cluster users into groups with similar profile characteristics</li>
+                        <li>Rank potential matches using cosine similarity</li>
+                        <li>Display recommendations through an interactive Gradio interface</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>1. Study Design</h4>
+
+                    <p><strong>Context:</strong>
+                        The dataset did not contain a predefined outcome representing compatibility,
+                        match quality, or interpersonal closeness.
+                    </p>
+
+                    <p>
+                        This ruled out a conventional supervised target-prediction approach and required
+                        an unsupervised strategy to organise the profiles and identify similarities.
+                    </p>
+
+                    <p><strong>Rationale:</strong>
+                        I combined exploratory data analysis, natural language processing, anomaly detection,
+                        dimensionality reduction, clustering, and pairwise similarity to create a structured
+                        recommendation pipeline.
+                    </p>
+
+                    <ul>
+                        <li>Use exploratory analysis to understand the user population and feature distributions</li>
+                        <li>Process textual profile information using NLP</li>
+                        <li>Reduce noise and exclude highly atypical profiles</li>
+                        <li>Identify latent groups within the user population</li>
+                        <li>Calculate similarity within clusters to generate candidate matches</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Software and analytical tools used for the OKCupid machine-learning project"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid2icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>2. Data Inspection and Cleaning</h4>
+
+                    <p>
+                        The dataset contained numerical, categorical, ordinal, nominal, and free-text variables,
+                        as well as missing values, inconsistent entries, outliers, and varying levels of profile completeness.
+                    </p>
+
+                    <ul>
+                        <li>Inspected column types, value ranges, missingness, and category distributions</li>
+                        <li>Identified erroneous, inconsistent, and implausible values</li>
+                        <li>Filtered and normalised numerical variables</li>
+                        <li>Encoded ordinal and nominal categorical variables</li>
+                        <li>Processed free-text profile essays using NLP methods</li>
+                        <li>Created a completeness score reflecting missingness across weighted features</li>
+                        <li>Selected sufficiently complete rows for modelling</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <a href="https://github.com/dlf2024/Python_OKCupid_date-a-scientist"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the GitHub repository, cleaned and encoded dataset, and Jupyter notebook
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>3. Exploratory Data Analysis</h4>
+
+                    <p>
+                        Exploratory analysis was used to understand the composition of the user population,
+                        identify dominant profile characteristics, evaluate missingness, and reveal broad user archetypes.
+                    </p>
+
+                    <ul>
+                        <li>Histograms for numerical-variable distributions</li>
+                        <li>Pie charts and bar charts for categorical summaries</li>
+                        <li>Treemaps for hierarchical category representation</li>
+                        <li>Word clouds for textual-profile summaries</li>
+                        <li>Heat maps for associations and profile comparison</li>
+                        <li>Identification of common behavioural, demographic, and lifestyle patterns</li>
+                        <li>Interpretation of the dominant archetypes represented in the dataset</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Exploratory data-analysis charts generated from the OKCupid user-profile dataset"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid3icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>4. Text Processing and Topic Modelling</h4>
+
+                    <p>
+                        The dataset included ten essay-style profile fields containing free text.
+                        These fields were combined and analysed using
+                        <strong>Latent Dirichlet Allocation</strong>.
+                    </p>
+
+                    <ul>
+                        <li>Cleaned and concatenated profile essays</li>
+                        <li>Converted text into a modelling-ready representation</li>
+                        <li>Optimised LDA parameters</li>
+                        <li>Identified 30 main topics across the profile corpus</li>
+                        <li>Used topic outputs as structured features for downstream modelling</li>
+                        <li>Reduced the dimensional complexity of the raw text fields</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>5. Feature Weighting and Profile Completeness</h4>
+
+                    <p>
+                        Features were weighted according to their perceived relevance to matching,
+                        allowing more important profile characteristics to contribute more strongly
+                        to similarity calculations.
+                    </p>
+
+                    <ul>
+                        <li>Assigned relative importance to selected features</li>
+                        <li>Combined numerical, categorical, and topic-derived variables</li>
+                        <li>Calculated a row-level completeness score</li>
+                        <li>Prioritised profiles with sufficient information for reliable comparison</li>
+                        <li>Reduced the influence of sparse and poorly documented profiles</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>6. Correlation Analysis and Missing-Value Support</h4>
+
+                    <p>
+                        A correlation matrix was used to examine relationships between variables,
+                        identify potential redundancy, and support missing-value decisions.
+                    </p>
+
+                    <ul>
+                        <li>Assessed relationships between numerical and encoded variables</li>
+                        <li>Confirmed the absence of severe collinearity</li>
+                        <li>Identified associations potentially useful for imputation</li>
+                        <li>Evaluated whether strongly related variables carried redundant information</li>
+                        <li>Supported downstream feature-selection and preprocessing decisions</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>7. Anomaly Detection</h4>
+
+                    <p>
+                        I used <strong>Isolation Forest</strong> with optimised parameters to detect
+                        and remove atypical observations that could introduce noise into clustering
+                        and matching.
+                    </p>
+
+                    <ul>
+                        <li>Calculated anomaly scores for user profiles</li>
+                        <li>Optimised Isolation Forest parameters</li>
+                        <li>Identified unusually structured or extreme profiles</li>
+                        <li>Reduced noise before dimensionality reduction and clustering</li>
+                        <li>Improved the coherence of the remaining modelling dataset</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>8. Dimensionality Reduction and Clustering</h4>
+
+                    <p>
+                        I used <strong>UMAP</strong> to visualise the high-dimensional profile space and
+                        <strong>HDBSCAN</strong> to identify naturally occurring groups of users.
+                    </p>
+
+                    <ul>
+                        <li>Reduced high-dimensional data into a lower-dimensional representation</li>
+                        <li>Optimised HDBSCAN clustering parameters</li>
+                        <li>Identified five uneven user groups</li>
+                        <li>Visualised the cluster structure using UMAP</li>
+                        <li>Used cluster membership to constrain subsequent matching</li>
+                        <li>Reduced the complexity of all-against-all profile comparison</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>9. Similarity-Based Matching</h4>
+
+                    <p>
+                        Potential matches were identified within HDBSCAN clusters using
+                        <strong>cosine similarity</strong>.
+                    </p>
+
+                    <ul>
+                        <li>Calculated pairwise similarity between profiles within each cluster</li>
+                        <li>Ranked candidate matches from most to least similar</li>
+                        <li>Limited comparison to broadly compatible profile groups</li>
+                        <li>Generated up to 20 closest matches per selected user</li>
+                        <li>Evaluated matching performance using an F1 score</li>
+                        <li>Achieved an F1 score of 90% under the project evaluation framework</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Machine-learning workflow for topic modelling, anomaly detection, clustering, and similarity-based matching"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid4icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>10. Interactive Gradio Interface</h4>
+
+                    <p>
+                        I developed an interactive <strong>Gradio</strong> interface to make the matching
+                        results easier to explore.
+                    </p>
+
+                    <ul>
+                        <li>Select a user profile by identifier</li>
+                        <li>Retrieve up to 20 closest matches</li>
+                        <li>Display ranked similarity results</li>
+                        <li>Compare selected profile characteristics</li>
+                        <li>Present model outputs without requiring direct interaction with the notebook code</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>11. Tableau Dashboard and Project Report</h4>
+
+                    <p>
+                        I used Tableau and PowerPoint to communicate the structure of the dataset,
+                        main user archetypes, modelling workflow, cluster behaviour, matching results,
+                        limitations, and future-development options.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://public.tableau.com/app/profile/delphine.vincent/viz/OKcupid_date-a-scientist_dlf2024/ML"
+                            target="_blank"
+                            rel="noreferrer">
+                            Explore the Tableau Public dashboard
+                        </a>
+
+                        <a href="resources/presentations/CodeCademy_final_portofolio_ML_report_Delphine-Vincent_2025-03-12.pdf"
+                            target="_blank"
+                            rel="noreferrer">
+                            Read the project report
+                        </a>
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Screenshots of the Tableau dashboard and final OKCupid machine-learning report"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid5icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>12. Main Findings</h4>
+
+                    <ul>
+                        <li>Exploratory analysis revealed several dominant user archetypes within the dataset.</li>
+                        <li>LDA converted unstructured profile essays into 30 interpretable topic features.</li>
+                        <li>Isolation Forest reduced noise by identifying atypical profiles.</li>
+                        <li>HDBSCAN identified five uneven clusters within the user population.</li>
+                        <li>Cosine similarity enabled ranked matching between users within clusters.</li>
+                        <li>The matching workflow achieved an F1 score of 90% under the selected evaluation approach.</li>
+                        <li>Heat maps, word clouds, and interactive tables helped interpret individual profiles and candidate matches.</li>
+                        <li>The Gradio interface made model outputs accessible without requiring programming knowledge.</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Data-interpretation graphics summarising the OKCupid machine-learning results"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid6icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>13. Limitations</h4>
+
+                    <ul>
+                        <li>No ground-truth compatibility variable was available.</li>
+                        <li>Feature weighting introduced subjective modelling choices.</li>
+                        <li>Profile completeness influenced which rows were retained.</li>
+                        <li>Outlier removal may have excluded valid but uncommon profiles.</li>
+                        <li>User essays were concatenated before topic modelling, reducing distinction between individual essay types.</li>
+                        <li>Geographic proximity was not incorporated into the matching model.</li>
+                        <li>Model validation was constrained by the absence of real match outcomes.</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>14. Future Directions</h4>
+
+                    <ul>
+                        <li>Reduce categorical granularity by combining similar labels</li>
+                        <li>Compare weighted and unweighted feature representations</li>
+                        <li>Test alternative feature-weighting strategies</li>
+                        <li>Retain all rows and compare multiple imputation approaches</li>
+                        <li>Evaluate mean, k-nearest-neighbour, and model-based imputation</li>
+                        <li>Analyse outliers rather than automatically excluding them</li>
+                        <li>Use UMAP projections as additional matching features</li>
+                        <li>Retrieve geographic coordinates for towns and include location proximity</li>
+                        <li>Model the ten essay variables separately rather than concatenating them</li>
+                        <li>Compare LDA with contextual transformer approaches such as BERT</li>
+                        <li>Test the workflow with new fictional or publicly available user profiles</li>
+                        <li>Extend the Gradio interface to search by desired traits rather than profile identifier</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Future-development icon for extending the OKCupid recommendation workflow"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/okcupid7icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        This project demonstrated my ability to design and implement a complete
+                        unsupervised machine-learning and recommendation workflow using mixed
+                        structured and unstructured data.
+                    </p>
+
+                    <ul>
+                        <li>Define a modelling strategy when no target variable is available</li>
+                        <li>Integrate EDA, NLP, anomaly detection, clustering, and similarity modelling</li>
+                        <li>Handle numerical, categorical, ordinal, and textual profile features</li>
+                        <li>Optimise several models within one analytical pipeline</li>
+                        <li>Develop an interpretable recommendation system</li>
+                        <li>Create an interactive interface for non-technical users</li>
+                        <li>Communicate methods, limitations, and findings through dashboards and reporting</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • machine learning • Python •
+                    pandas • scikit-learn • exploratory data analysis • NLP • LDA • feature engineering •
+                    missing-value analysis • Isolation Forest • anomaly detection • UMAP • HDBSCAN •
+                    clustering • cosine similarity • recommender systems • F1 score • Gradio •
+                    Tableau • GitHub • data storytelling
+                </p>
             </div>
 
-
             <div id="codecademyskill" class="learning_tab_scrollable" style="display:none;">
-                <h5>CodeCademy Skill Path - Build a website</h5> <br>
+                <h5>CodeCademy Skill Path — Build a Website</h5><br>
+
                 <p>
-                    The syllabus of the <em>CodeCademy Career Skill course “Build a website with HTML, CSS and GitHub pages”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
-                    <br>
-                    Having completed this short course, I set out to create <strong>my professional website</strong> (the one you're browsing!). <br>
-                    <br>
-                    I took this opportunity to create <em>my brand</em>. I opted for a simple and clear design with vivid contrasting colors. I display my full name in the header and my initials in the browser tab (favicon).<br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=20% height=auto src="resources/images/logo_icons/codecademyskill1icons.png"> <br>
-                    I used the Visual Studio (VS) Code IDE with the Live Server extension to create, edit, test and debug the <em>Hypertext Markup Language (HTML), javascript (JS), Cascading Style Sheet (CSS) codes</em>. <br>
-                    When statisfied with the result, I <em>published my website using GitHub</em> desktop. <br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademyskill2icons.png"> <br>
-                    The <em>navigation bar</em> allows for quick access to the various website sections. It stays on top and is transparent so it doesn't obscure what lays under it. It also toggles for small screens. <br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=80% height=auto src="resources/images/logo_icons/codecademyskill3icons.png"> <br>
-                    Sections are <em>scrollable</em> to minimise vertical layout. Hidden contents visible via <em>clickable tabs</em> allow for a succinct yet <em>interactive display</em>. <br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyskill4icons.png"> <br>
-                    Clickable items (tabs, URLs) <em>change color</em> for better interactivity. Documents can easily be accessed and open in a new tab.<br>
-                    I've added lots of images to make it more enticing and to better showcase my skills. I used <em>flexbox</em> to optimise element positioning.<br>
-                    I've included images description via <em>ARIA</em> alt attribute and presentation role to make my website accessible to <em>visually-impaired users</em>.<br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=50% height=auto src="resources/images/logo_icons/codecademyskill5icons.png"> <br>
-                    The <em>responsive design</em> should maintain readability and visual appeal across all devices, and screen sizes. <br>
-                    I keep on <em>updating my website</em> so that viewers can keep track of my latest skills, projects, and publication. <br>
-                    I hope you'll find my website user-friendly and informative!
-                </p> <br>
+                    I completed the <strong>CodeCademy Skill Path: Build a Website with HTML, CSS and GitHub Pages</strong>,
+                    a practical course covering website structure, styling, responsive design, development workflows,
+                    and publication through GitHub Pages.
+                </p>
+
+                <p>
+                    After completing the course, I applied these skills by designing, coding, testing,
+                    and publishing <strong>my professional website</strong>—the website you are currently browsing.
+                </p>
+
+                <p class="project-links">
+                    <a href="https://www.codecademy.com/learn/paths/learn-how-to-build-websites"
+                        target="_blank"
+                        rel="noreferrer">
+                        View the CodeCademy course syllabus
+                    </a>
+                </p>
+
+                <div class="project-summary">
+                    <h4>Learning Outcomes</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Build and publish a responsive website using HTML, CSS, JavaScript,
+                        GitHub, and GitHub Pages.
+                    </p>
+
+                    <ul>
+                        <li>Structure web pages using semantic HTML</li>
+                        <li>Style layouts, typography, colour, spacing, and media using CSS</li>
+                        <li>Use Flexbox and responsive rules to support different screen sizes</li>
+                        <li>Add interactive behaviour using JavaScript</li>
+                        <li>Test and debug web pages locally</li>
+                        <li>Use Git and GitHub for version control</li>
+                        <li>Publish a static website through GitHub Pages</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="HTML, CSS and JavaScript technologies used to build the professional website"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill1icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Website Project</h4>
+
+                    <p>
+                        I used the course as the foundation for creating a complete professional website
+                        presenting my biography, technical skills, scientific background, data-science projects,
+                        learning activities, publications, resume, and consulting services.
+                    </p>
+
+                    <ul>
+                        <li>Planned the information architecture and navigation structure</li>
+                        <li>Organised content into Biography, Skills, Portfolio, Learning, and Certificates sections</li>
+                        <li>Created interactive tab-based content to manage long sections</li>
+                        <li>Integrated images, downloadable documents, external profiles, and project links</li>
+                        <li>Developed responsive layouts for desktop, tablet, and mobile use</li>
+                        <li>Published and maintained the website through GitHub Pages</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Brand and Visual Identity</h4>
+
+                    <p>
+                        I used the website project to develop a personal visual identity based on a
+                        simple, high-contrast design with vivid colours and recognisable branding.
+                    </p>
+
+                    <ul>
+                        <li>Created a business-card-style header displaying my full name</li>
+                        <li>Developed a favicon using my initials</li>
+                        <li>Applied a consistent purple, pink, yellow, and light-violet colour palette</li>
+                        <li>Used recurring card, border, heading, and button styles throughout the site</li>
+                        <li>Maintained visual consistency across the website, downloadable documents, and profile imagery</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Personal website brand and visual identity elements"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill2icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Development Environment</h4>
+
+                    <p>
+                        I developed the website using <strong>Visual Studio Code</strong> with the
+                        Live Server extension, allowing me to edit, preview, test, and debug the site locally.
+                    </p>
+
+                    <ul>
+                        <li><strong>HTML:</strong> page structure, semantic sections, links, forms, images, and media</li>
+                        <li><strong>CSS:</strong> layout, colours, typography, responsive design, and interactive states</li>
+                        <li><strong>JavaScript:</strong> navigation, tab switching, mobile behaviour, and image viewing</li>
+                        <li><strong>Live Server:</strong> local browser preview during development</li>
+                        <li><strong>Browser developer tools:</strong> inspection, responsive testing, and debugging</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Version Control and Publication</h4>
+
+                    <p>
+                        Once changes were tested locally, I used GitHub Desktop and GitHub Pages
+                        to manage versions and publish the website.
+                    </p>
+
+                    <ul>
+                        <li>Maintained the website files in a structured GitHub repository</li>
+                        <li>Tracked changes through commits</li>
+                        <li>Reviewed modifications before pushing updates</li>
+                        <li>Published the static website through GitHub Pages</li>
+                        <li>Maintained linked website and chatbot-backend repositories where required</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Visual Studio Code, GitHub and GitHub Pages workflow used to develop and publish the website"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill2icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Navigation System</h4>
+
+                    <p>
+                        The website includes a fixed navigation bar that provides direct access to the main sections.
+                    </p>
+
+                    <ul>
+                        <li>Remains visible at the top of the page while scrolling</li>
+                        <li>Uses partial transparency so underlying content remains visible</li>
+                        <li>Highlights selected or hovered links through colour changes</li>
+                        <li>Collapses into a toggle menu on smaller screens</li>
+                        <li>Provides direct access to the resume and publication list</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Responsive fixed navigation bar used on the professional website"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill3icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Interactive Tabbed Content</h4>
+
+                    <p>
+                        Long sections are divided into selectable tabs so that users can focus on one topic
+                        at a time without being presented with an excessively long initial page.
+                    </p>
+
+                    <ul>
+                        <li>Hidden content panels are revealed through clickable buttons</li>
+                        <li>Selected buttons remain visually highlighted</li>
+                        <li>On smaller screens, selected content appears directly beneath its corresponding button</li>
+                        <li>Long desktop sections remain scrollable within their content panels</li>
+                        <li>Internal links can open relevant Biography, Skills, Portfolio, or Learning subsections</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Interactive tabbed sections used to display website content"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill4icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Responsive Design</h4>
+
+                    <p>
+                        The website uses responsive CSS rules to maintain readability and visual balance
+                        across desktop monitors, tablets, and smartphones.
+                    </p>
+
+                    <ul>
+                        <li>Flexible section widths and containers</li>
+                        <li>Responsive images and media</li>
+                        <li>Reflowing navigation and social links</li>
+                        <li>Stacked mobile layouts for complex sections</li>
+                        <li>Adaptive typography using relative and clamped font sizes</li>
+                        <li>Orientation-aware behaviour on phones and tablets</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Images and Full-Screen Viewing</h4>
+
+                    <p>
+                        Images are used throughout the website to improve visual communication and demonstrate
+                        my scientific, analytical, technical, and creative work.
+                    </p>
+
+                    <ul>
+                        <li>Illustrative images accompany major skills and project sections</li>
+                        <li>Images resize responsively within their containers</li>
+                        <li>Users can open selected images in a full-screen viewer</li>
+                        <li>Images can be zoomed and panned horizontally and vertically</li>
+                        <li>The viewer adapts when a phone or tablet changes orientation</li>
+                        <li>Closing the viewer returns users to their original position on the page</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Links and Downloadable Resources</h4>
+
+                    <p>
+                        The website provides direct access to publications, presentations, dashboards,
+                        source-code repositories, professional profiles, and downloadable documents.
+                    </p>
+
+                    <ul>
+                        <li>External resources open in new browser tabs</li>
+                        <li>Links change colour on hover, focus, or selection</li>
+                        <li>Resume and publication files are accessible from the main navigation</li>
+                        <li>Project cards include links to GitHub, Tableau, articles, reports, and presentations</li>
+                        <li>Internal links connect related information across the website</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Accessibility</h4>
+
+                    <p>
+                        I incorporated accessibility features to improve navigation and interpretation
+                        for users with different needs and input methods.
+                    </p>
+
+                    <ul>
+                        <li>Meaningful alternative text for informative images</li>
+                        <li>Presentation roles where images are decorative</li>
+                        <li>Keyboard access to expandable images</li>
+                        <li>ARIA labels for image-viewer controls</li>
+                        <li>Visible focus states for interactive elements</li>
+                        <li>High-contrast colours for headings, buttons, and links</li>
+                        <li>Responsive layouts supporting zoom and small screens</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Accessibility, responsive design and interactive website features"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyskill5icons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Ongoing Website Maintenance</h4>
+
+                    <p>
+                        The website is an actively maintained professional resource rather than a static course exercise.
+                    </p>
+
+                    <ul>
+                        <li>Update skills, projects, publications, training, and professional roles</li>
+                        <li>Improve design and mobile usability based on testing</li>
+                        <li>Review and correct links, filenames, and downloadable resources</li>
+                        <li>Synchronise relevant content changes with the website chatbot backend</li>
+                        <li>Test deployment after updates</li>
+                        <li>Use versioned releases and dated files where appropriate</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        This project demonstrated my ability to move from introductory web-development training
+                        to the design, deployment, maintenance, and continuous improvement of a complete
+                        professional website.
+                    </p>
+
+                    <ul>
+                        <li>Translate content requirements into an organised website structure</li>
+                        <li>Develop responsive pages using HTML, CSS, and JavaScript</li>
+                        <li>Create interactive and accessible components</li>
+                        <li>Manage version control and deployment through GitHub</li>
+                        <li>Test website behaviour across devices and screen sizes</li>
+                        <li>Maintain linked front-end and backend resources</li>
+                        <li>Use the website as an evolving professional communication platform</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • HTML5 • CSS3 • JavaScript •
+                    responsive web design • Flexbox • Visual Studio Code • Live Server • Git •
+                    GitHub Desktop • GitHub Pages • semantic HTML • accessibility • ARIA •
+                    mobile navigation • interactive tabs • image lightbox • version control •
+                    website maintenance
+                </p>
             </div>
 
             <div id="codecademyskill2" class="learning_tab_scrollable" style="display:none;">
-                <h5>CodeCademy Skill Path - Build a chatbot in Python</h5> <br>
-                <p>
-                    The syllabus of the <em>CodeCademy Career Skill course “Build a chatbot in Python”</em> is listed here (<a href="https://www.codecademy.com/learn/paths/build-chatbots-with-python" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
-                    <br>
-                    The topics covered are:<br>
-                    <ul>
-                        <li>Rule-Based Chatbots</li>
-                        <li>Retrieval-Based Chatbots</li>
-                        <li>Deep Learning and Generative Chatbots</li>
-                    </ul><br>
-                    The course includes Python, Natural Language Processing (NLP), Data Science, Machine Learning (ML), and Artificial Intelligence (AI).<br>
-                    <br>
-                    Projects completed in this course are:<br>
-                    <ul>
-                        <li>Various chatbots (<a href="https://github.com/dlf2024/Python_chatbots/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>)</li>
-                        <li>Machine translation (<a href="https://github.com/dlf2024/Python_chatbot_machine-translation/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>)</li>
-                        <li>Twitter (<a href="https://github.com/dlf2024/Python_chatbot_twitter/tree/main/notebooks" target="_blank" rel="noreferrer">GitHub</a>)</li>
-                    </ul><br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademychatbotsicons.png"> <br>
+                <h5>CodeCademy Skill Path — Build a Chatbot in Python</h5><br>
 
-                    My capstone project is to <strong>develop a chatbot for my professional website</strong>.<br>
-                    The various steps include: 
+                <p>
+                    I completed the <strong>CodeCademy Skill Path: Build a Chatbot in Python</strong>,
+                    a practical course combining Python programming, natural language processing,
+                    data science, machine learning, and artificial intelligence.
+                </p>
+
+                <p>
+                    The course introduced several chatbot architectures, from deterministic rule-based
+                    systems to retrieval-based approaches and more advanced generative models.
+                </p>
+
+                <p class="project-links">
+                    <a href="https://www.codecademy.com/learn/paths/build-chatbots-with-python"
+                        target="_blank"
+                        rel="noreferrer">
+                        View the CodeCademy course syllabus
+                    </a>
+                </p>
+
+                <div class="project-summary">
+                    <h4>Learning Outcomes</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Design and implement chatbot systems using Python, NLP, machine learning,
+                        retrieval methods, and conversational logic.
+                    </p>
+
                     <ul>
-                    <li>Develop a <em>custom Python backend</em> using <em>FastAPI</em> and deployed it on <em>Render</em> to handle chat requests securely and efficiently.</li>
-                    <li>Integrate a <em>JavaScript chat widget</em> into this GitHub Pages site for seamless, real-time interaction with visitors.</li>
-                    <li>Implement <em>multi-stage intent recognition</em>:
-                        <ul>
-                        <li><em>Rule-based patterns</em> for navigation and commands,</li>
-                        <li><em>Fuzzy string matching</em> with RapidFuzz to interpret typos and informal phrasing, and</li>
-                        <li><em>FAQ retrieval</em> from a structured <code>faqs.json</code> file for content-specific answers.</li>
-                        </ul>
-                    </li>
-                    <li>Add a lightweight <em>TF-IDF semantic search engine</em> that indexes the main sections of the website (Biography, Skills, Portfolio, Certificates) and provides concise, content-aware answers with direct “Read more” links.</li>
-                    <li>Create an <em>admin /reindex endpoint</em> to hot-reload FAQ data and rebuild the TF-IDF site index without redeploying the app.</li>
-                    <li>Design a <em>privacy-first contact workflow</em> that masks any personal information and invites genuine leads to connect via the embedded CV link.</li>
-                    <li>Configure <em>automatic deployment and updates</em> through GitHub commits and Render auto-builds, ensuring continuous delivery of improvements.</li>
-                    <li>Structure a clean, modular codebase ready to evolve toward <em>retrieval-augmented generation</em> (RAG) or <em>LLM-powered dialogue</em> in the future.</li>
+                        <li>Understand the differences between rule-based, retrieval-based, and generative chatbots</li>
+                        <li>Build pattern-matching and intent-recognition workflows</li>
+                        <li>Process and compare text using NLP techniques</li>
+                        <li>Retrieve relevant answers from structured knowledge sources</li>
+                        <li>Apply machine learning to conversational and text-based problems</li>
+                        <li>Design chatbot responses and fallback behaviour</li>
+                        <li>Connect a chatbot interface to a Python backend</li>
+                        <li>Consider privacy, deployment, maintenance, and future extensibility</li>
                     </ul>
 
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Python, natural language processing, machine learning and chatbot technologies"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademychatbotsicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Chatbot Architectures Covered</h4>
+
+                    <ul>
+                        <li>
+                            <strong>Rule-based chatbots:</strong>
+                            use predefined patterns, keywords, commands, and decision rules
+                        </li>
+                        <li>
+                            <strong>Retrieval-based chatbots:</strong>
+                            select the most relevant response from a structured collection of answers
+                        </li>
+                        <li>
+                            <strong>Deep-learning and generative chatbots:</strong>
+                            use trained neural models to generate or predict conversational responses
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Course Projects</h4>
+
                     <p>
-                    The chatbot you see here now combines <em>rule-based logic</em>, <em>fuzzy matching</em>, and <em>semantic retrieval</em> to provide context-aware responses. <br>
-                    Future enhancements will include conversational memory, dynamic topic expansion, and integration with generative AI models for richer, adaptive dialogue. <br>
-                    
-                    You'll find my chatbot widget at the bottom right corner of my website. Look for the icon below, click on it and try a query like "What is your okcupid project about?".
-                    </p><br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=10% height=auto src="resources/images/logo_icons/chatbotsicons.png"> <br>
-                </p> <br>
+                        The course included several guided projects covering conversational systems,
+                        language processing, and text-based machine learning.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://github.com/dlf2024/Python_chatbots/tree/main/notebooks"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the chatbot notebooks on GitHub
+                        </a>
+
+                        <a href="https://github.com/dlf2024/Python_chatbot_machine-translation/tree/main/notebooks"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the machine-translation notebooks on GitHub
+                        </a>
+
+                        <a href="https://github.com/dlf2024/Python_chatbot_twitter/tree/main/notebooks"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the Twitter text-analysis notebooks on GitHub
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Capstone Project</h4>
+
+                    <p><strong>Project:</strong>
+                        Development of a closed-domain chatbot for my professional website.
+                    </p>
+
+                    <p>
+                        I used the course as the foundation for designing and deploying a custom chatbot
+                        that helps visitors navigate my website and retrieve concise information about
+                        my biography, skills, portfolio, learning activities, publications, and professional experience.
+                    </p>
+
+                    <ul>
+                        <li>Develop a custom Python backend</li>
+                        <li>Integrate a browser-based JavaScript chat widget</li>
+                        <li>Recognise navigation requests and frequently asked questions</li>
+                        <li>Handle spelling errors and informal wording</li>
+                        <li>Retrieve relevant content from the website</li>
+                        <li>Provide direct links to related sections and documents</li>
+                        <li>Deploy and maintain the chatbot independently from the static website</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>1. Python Backend and FastAPI</h4>
+
+                    <p>
+                        I developed a custom backend using <strong>Python</strong> and
+                        <strong>FastAPI</strong> to receive chatbot requests, validate inputs,
+                        process user queries, and return structured responses.
+                    </p>
+
+                    <ul>
+                        <li>Created API endpoints for chatbot requests</li>
+                        <li>Used structured request and response models</li>
+                        <li>Separated the chatbot logic from the static website frontend</li>
+                        <li>Implemented error handling and fallback responses</li>
+                        <li>Designed the codebase so individual retrieval components could be updated independently</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>2. Render Deployment</h4>
+
+                    <p>
+                        The FastAPI backend is deployed on <strong>Render</strong>, allowing the
+                        GitHub Pages website to communicate with a separately hosted Python application.
+                    </p>
+
+                    <ul>
+                        <li>Connected the backend repository to Render</li>
+                        <li>Configured automatic builds from GitHub commits</li>
+                        <li>Hosted the chatbot API independently from the website</li>
+                        <li>Monitored deployment status following backend updates</li>
+                        <li>Tested the deployed endpoint after each significant change</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>3. JavaScript Chat Widget</h4>
+
+                    <p>
+                        I integrated a custom JavaScript chat widget into the professional website
+                        so visitors can interact with the chatbot directly from any section of the page.
+                    </p>
+
+                    <ul>
+                        <li>Expandable chatbot launcher positioned at the bottom-right corner</li>
+                        <li>Text-input field for visitor questions</li>
+                        <li>Asynchronous communication with the FastAPI backend</li>
+                        <li>Display of user and chatbot messages within the widget</li>
+                        <li>Clickable links to relevant website sections and documents</li>
+                        <li>Graceful handling of slow responses or backend errors</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>4. Multi-Stage Intent Recognition</h4>
+
+                    <p>
+                        The chatbot uses several complementary methods rather than relying on a single
+                        matching strategy.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Rule-based patterns:</strong>
+                            recognise direct commands, navigation requests, greetings, and common question types
+                        </li>
+                        <li>
+                            <strong>Fuzzy string matching:</strong>
+                            uses RapidFuzz to interpret spelling mistakes, partial matches, and informal phrasing
+                        </li>
+                        <li>
+                            <strong>FAQ retrieval:</strong>
+                            searches a structured <code>faqs.json</code> file for predefined answers
+                        </li>
+                        <li>
+                            <strong>Website-content retrieval:</strong>
+                            searches indexed website sections when no direct FAQ answer is available
+                        </li>
+                        <li>
+                            <strong>Fallback handling:</strong>
+                            provides a useful response when no sufficiently relevant match is found
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>5. Structured FAQ Knowledge Base</h4>
+
+                    <p>
+                        Frequently asked questions are stored in a structured
+                        <code>faqs.json</code> file so that common queries can be answered consistently.
+                    </p>
+
+                    <ul>
+                        <li>Questions and answers stored separately from the main application logic</li>
+                        <li>Support for multiple phrasings of similar questions</li>
+                        <li>Direct links to relevant website sections where appropriate</li>
+                        <li>Easy maintenance without rewriting the entire backend</li>
+                        <li>Reusable content for navigation, professional information, and project summaries</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>6. TF-IDF Website Retrieval</h4>
+
+                    <p>
+                        I added a lightweight <strong>TF-IDF retrieval system</strong> that indexes
+                        the main website sections and identifies the content most relevant to a visitor’s query.
+                    </p>
+
+                    <ul>
+                        <li>Indexing of Biography, Skills, Portfolio, Learning, and related website content</li>
+                        <li>Conversion of website text into TF-IDF vectors</li>
+                        <li>Similarity comparison between user queries and indexed content</li>
+                        <li>Selection of the most relevant section or passage</li>
+                        <li>Generation of concise answers based on retrieved website content</li>
+                        <li>Inclusion of direct “Read more” links for further detail</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>7. Website Snapshot</h4>
+
+                    <p>
+                        The backend maintains a local HTML snapshot of the professional website so
+                        that the chatbot can index website content without repeatedly loading the live site.
+                    </p>
+
+                    <ul>
+                        <li>Website content copied into a backend snapshot file</li>
+                        <li>Text extracted from the relevant HTML sections</li>
+                        <li>Navigation, interface controls, and non-content elements excluded where possible</li>
+                        <li>Snapshot updated when substantive website content changes</li>
+                        <li>Purely visual or interaction-only website changes do not require reindexing</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>8. Reindexing and Hot Reloading</h4>
+
+                    <p>
+                        I created an administrative <code>/reindex</code> endpoint that allows the
+                        chatbot knowledge resources to be refreshed without rebuilding the full application.
+                    </p>
+
+                    <ul>
+                        <li>Reload the structured FAQ data</li>
+                        <li>Re-extract content from the website snapshot</li>
+                        <li>Rebuild the TF-IDF index</li>
+                        <li>Apply content updates without changing the frontend widget</li>
+                        <li>Reduce maintenance time when website information changes</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>9. Navigation and Content-Aware Responses</h4>
+
+                    <p>
+                        The chatbot is designed to provide both concise answers and practical navigation support.
+                    </p>
+
+                    <ul>
+                        <li>Answer questions about my background, skills, and projects</li>
+                        <li>Direct users to relevant Biography, Skills, Portfolio, or Learning subsections</li>
+                        <li>Provide links to my resume and publication list</li>
+                        <li>Help visitors locate project repositories, dashboards, and reports</li>
+                        <li>Recognise common project names and technical terms</li>
+                        <li>Return contextual “Read more” links when additional detail is available</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>10. Privacy-First Contact Workflow</h4>
+
+                    <p>
+                        I designed the chatbot to avoid collecting or reproducing unnecessary personal information.
+                    </p>
+
+                    <ul>
+                        <li>Mask personal information where relevant</li>
+                        <li>Avoid exposing private contact details through chatbot responses</li>
+                        <li>Direct genuine professional enquiries to approved website contact pathways</li>
+                        <li>Provide access to professional information through the embedded resume link</li>
+                        <li>Keep the chatbot focused on public, website-based content</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>11. Automated Deployment Workflow</h4>
+
+                    <p>
+                        The chatbot uses a linked GitHub and Render workflow for version control,
+                        deployment, and maintenance.
+                    </p>
+
+                    <ul>
+                        <li>Backend code maintained in a dedicated GitHub repository</li>
+                        <li>Changes committed and pushed using GitHub Desktop</li>
+                        <li>Render automatically rebuilds the backend following relevant commits</li>
+                        <li>Deployment status checked through the Render dashboard</li>
+                        <li>Live chatbot endpoint tested following deployment</li>
+                        <li>Website and backend repositories updated together when content dependencies change</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>12. Modular Code Structure</h4>
+
+                    <p>
+                        The backend was structured so that retrieval, FAQ handling, intent recognition,
+                        indexing, and response generation could be maintained as separate components.
+                    </p>
+
+                    <ul>
+                        <li>Clear separation of configuration, retrieval, and API logic</li>
+                        <li>Reusable functions for matching and ranking responses</li>
+                        <li>Independent FAQ and website-content resources</li>
+                        <li>Maintainable deployment configuration</li>
+                        <li>Architecture that can support future retrieval or generative components</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Current Chatbot Capabilities</h4>
+
+                    <p>
+                        The website chatbot currently combines deterministic and retrieval-based methods
+                        to provide context-aware responses grounded in the website content.
+                    </p>
+
+                    <ul>
+                        <li>Rule-based navigation and command handling</li>
+                        <li>Fuzzy matching for spelling and phrasing variation</li>
+                        <li>Structured FAQ retrieval</li>
+                        <li>TF-IDF website-content retrieval</li>
+                        <li>Direct links to relevant website sections</li>
+                        <li>Backend reindexing without full redeployment</li>
+                        <li>Independent frontend and backend deployment</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Try the Chatbot</h4>
+
+                    <p>
+                        The chatbot widget is located in the bottom-right corner of this website.
+                        Open the widget and try a question such as:
+                    </p>
+
+                    <ul>
+                        <li>“What is your OKCupid project about?”</li>
+                        <li>“What machine learning skills do you have?”</li>
+                        <li>“Tell me about your wheat proteogenomics work.”</li>
+                        <li>“Where can I find your resume?”</li>
+                        <li>“What consulting services do you offer?”</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Chatbot icon used to open the professional website assistant"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/chatbotsicons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Potential Future Development</h4>
+
+                    <ul>
+                        <li>Add conversational context across multiple messages</li>
+                        <li>Improve topic recognition and query reformulation</li>
+                        <li>Expand the indexed website content dynamically</li>
+                        <li>Evaluate embedding-based retrieval</li>
+                        <li>Develop a retrieval-augmented generation workflow</li>
+                        <li>Integrate an appropriate language model for richer responses</li>
+                        <li>Retain source grounding and direct links to website content</li>
+                        <li>Continue prioritising privacy, transparency, and maintainability</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        This project demonstrates my ability to move from guided chatbot training
+                        to the design, deployment, maintenance, and continuous improvement of a
+                        complete web-integrated conversational application.
+                    </p>
+
+                    <ul>
+                        <li>Design a closed-domain chatbot around a defined knowledge source</li>
+                        <li>Combine rules, fuzzy matching, FAQ retrieval, and document retrieval</li>
+                        <li>Develop and deploy a FastAPI backend</li>
+                        <li>Integrate a JavaScript frontend with a remote Python service</li>
+                        <li>Maintain linked website and backend repositories</li>
+                        <li>Implement reindexing and automated deployment workflows</li>
+                        <li>Build a modular foundation for future RAG or LLM development</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • Python • FastAPI •
+                    JavaScript • chatbot development • natural language processing •
+                    rule-based systems • retrieval-based chatbots • RapidFuzz • fuzzy matching •
+                    JSON • FAQ retrieval • TF-IDF • cosine similarity • website indexing •
+                    Render • GitHub • API deployment • reindexing • privacy-aware design •
+                    retrieval-augmented generation
+                </p>
             </div>
 
 
             <div id="codecademyprompt" class="learning_tab_scrollable" style="display:none;">
-                <h5>CodeCademy Certification - Learn Prompt Engineering</h5> <br>
+                <h5>CodeCademy Certification — Learn Prompt Engineering</h5><br>
+
                 <p>
-                    The syllabus of the <em>CodeCademy course “Learn Promt Engineering”</em> is listed here (<a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering" target="_blank" rel="noreferrer">CodeCademy</a>). <br>
-                    <br>
-                    The topics covered are:</p>
-                    <li>Setting the Context</li>
-                    <li>Zero-Shot Prompting</li>
-                    <li>One-Shot Prompting</li>
-                    <li>Few-Shot Prompting</li>
-                    <li>Chain-of-Thought (Cot)</li>
-                    <li>Break Complex Tasks into Subtasks</li>
-                    <li>Retrieval Augmented Generation (RAG)</li><br>
-                    I've learned how to use effective prompt engineering techniques to ensure a <em>productive interaction with generative AI systems</em>.<br>
-                    I've been introduced to <em>Retrieval-Augmented Generation (RAG)</em> and how to use it for processing custom data with generative AI. <br>
-                    <br>
-                    <img class="codecademy-icons" alt="coding language icons" loading="lazy" width=30% height=auto src="resources/images/logo_icons/codecademyprompticons.png"> <br>
-                </p> <br>
+                    I completed the <strong>CodeCademy course: Learn Prompt Engineering</strong>,
+                    which introduced practical techniques for communicating effectively with generative
+                    artificial intelligence systems.
+                </p>
+
+                <p>
+                    The course strengthened my ability to provide clear context, define constraints,
+                    structure complex requests, refine outputs iteratively, and use generative AI as a
+                    productive assistant within analytical, scientific, technical, and creative workflows.
+                </p>
+
+                <p class="project-links">
+                    <a href="https://www.codecademy.com/enrolled/courses/learn-prompt-engineering"
+                        target="_blank"
+                        rel="noreferrer">
+                        View the CodeCademy course syllabus
+                    </a>
+                </p>
+
+                <div class="project-summary">
+                    <h4>Learning Outcomes</h4>
+
+                    <p><strong>Training focus:</strong>
+                        Design prompts that give generative AI systems sufficient context, clear instructions,
+                        appropriate examples, and well-defined output requirements.
+                    </p>
+
+                    <ul>
+                        <li>Set context and define the role of the AI system</li>
+                        <li>State objectives, constraints, assumptions, and expected outputs clearly</li>
+                        <li>Use zero-shot, one-shot, and few-shot prompting</li>
+                        <li>Break complex tasks into smaller, manageable subtasks</li>
+                        <li>Use examples to guide tone, structure, formatting, and reasoning</li>
+                        <li>Iteratively refine prompts based on the quality of previous outputs</li>
+                        <li>Introduce external information through retrieval-augmented generation</li>
+                        <li>Evaluate AI-generated outputs for accuracy, relevance, and completeness</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Prompt-engineering concepts for interacting effectively with generative artificial intelligence systems"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/codecademyprompticons.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Setting the Context</h4>
+
+                    <p>
+                        Effective prompting begins by giving the AI system enough background to understand
+                        the task, audience, subject area, and intended outcome.
+                    </p>
+
+                    <ul>
+                        <li>Describe the project and its broader purpose</li>
+                        <li>Identify the intended audience</li>
+                        <li>Provide relevant technical or scientific background</li>
+                        <li>Define the desired tone and level of detail</li>
+                        <li>Explain which information should be prioritised or excluded</li>
+                        <li>Specify whether the task involves writing, analysis, coding, editing, or planning</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Zero-Shot Prompting</h4>
+
+                    <p>
+                        Zero-shot prompting asks the AI system to complete a task using only the
+                        instruction and context provided, without supplying a worked example.
+                    </p>
+
+                    <ul>
+                        <li>Useful for familiar and clearly defined tasks</li>
+                        <li>Requires precise wording and explicit constraints</li>
+                        <li>Suitable for summarisation, rewriting, classification, and straightforward coding tasks</li>
+                        <li>Works best when the expected output format is clearly specified</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>One-Shot and Few-Shot Prompting</h4>
+
+                    <p>
+                        One-shot and few-shot prompting provide one or more examples to demonstrate
+                        the desired style, structure, terminology, or decision pattern.
+                    </p>
+
+                    <ul>
+                        <li>Provide examples of preferred wording or formatting</li>
+                        <li>Show how categories or labels should be applied</li>
+                        <li>Demonstrate the expected level of technical detail</li>
+                        <li>Improve consistency across repeated outputs</li>
+                        <li>Guide the AI when instructions alone may be ambiguous</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Breaking Complex Tasks into Subtasks</h4>
+
+                    <p>
+                        Large or multidisciplinary tasks are more reliable when divided into a clear
+                        sequence of smaller steps.
+                    </p>
+
+                    <ul>
+                        <li>Separate planning from implementation</li>
+                        <li>Review data structure before developing code</li>
+                        <li>Address manuscript sections or reviewer comments individually</li>
+                        <li>Test one analytical step before extending the workflow</li>
+                        <li>Separate content editing from formatting and presentation</li>
+                        <li>Validate intermediate results before producing final conclusions</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Iterative Prompt Refinement</h4>
+
+                    <p>
+                        Prompt engineering is an iterative process. I frequently refine an initial
+                        request after reviewing the first response, clarifying requirements, correcting
+                        assumptions, or adding missing constraints.
+                    </p>
+
+                    <ul>
+                        <li>Identify which part of an output is incomplete or inaccurate</li>
+                        <li>Preserve useful material while revising only the necessary section</li>
+                        <li>Add examples when the requested style is not sufficiently clear</li>
+                        <li>Specify terminology that must be retained or avoided</li>
+                        <li>Request full replacement code when partial amendments would be difficult to integrate</li>
+                        <li>Repeat validation after each substantial revision</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Retrieval-Augmented Generation</h4>
+
+                    <p>
+                        The course introduced <strong>retrieval-augmented generation</strong>, or RAG,
+                        in which relevant information is retrieved from a defined knowledge source and
+                        supplied to a generative model before a response is produced.
+                    </p>
+
+                    <ul>
+                        <li>Ground responses in custom documents or datasets</li>
+                        <li>Retrieve only the information relevant to the current query</li>
+                        <li>Reduce reliance on unsupported model knowledge</li>
+                        <li>Connect generative AI with websites, reports, FAQs, databases, or document collections</li>
+                        <li>Improve traceability by linking responses to source material</li>
+                        <li>Support closed-domain assistants and knowledge-based chatbots</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>How I Use Prompt Engineering in Professional Projects</h4>
+
+                    <p>
+                        I use structured prompts to collaborate with generative AI, particularly ChatGPT,
+                        across scientific, analytical, coding, web-development, and professional-communication
+                        projects. I provide the relevant context, source material, constraints, and expected
+                        output, then review and refine the result rather than accepting it uncritically.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Scientific manuscripts:</strong>
+                            revise abstracts, methods, results, discussions, figure legends, contribution
+                            statements, cover letters, and responses to reviewers
+                        </li>
+
+                        <li>
+                            <strong>Data analysis:</strong>
+                            plan analytical workflows, inspect assumptions, interpret model outputs,
+                            compare alternative methods, and translate technical results into clear conclusions
+                        </li>
+
+                        <li>
+                            <strong>Python development:</strong>
+                            write, debug, refactor, and document code for data cleaning, statistical analysis,
+                            machine learning, bioinformatics, automation, and visualisation
+                        </li>
+
+                        <li>
+                            <strong>Website development:</strong>
+                            revise HTML, CSS, and JavaScript; improve responsive behaviour; troubleshoot
+                            interactive components; and structure new professional content
+                        </li>
+
+                        <li>
+                            <strong>Machine learning projects:</strong>
+                            refine experimental design, feature engineering, model validation,
+                            interpretation, reporting, and reproducibility
+                        </li>
+
+                        <li>
+                            <strong>Bioinformatics and proteogenomics:</strong>
+                            clarify computational workflows, audit data-processing steps, interpret outputs,
+                            and improve scientific descriptions of large-scale analyses
+                        </li>
+
+                        <li>
+                            <strong>Professional applications:</strong>
+                            tailor resumes, cover letters, selection responses, profile summaries,
+                            and skills statements to specific roles
+                        </li>
+
+                        <li>
+                            <strong>Client communication:</strong>
+                            draft emails, website recommendations, technical guidance, article feedback,
+                            and concise summaries for collaborators and stakeholders
+                        </li>
+
+                        <li>
+                            <strong>Project documentation:</strong>
+                            create checklists, implementation guides, maintenance instructions,
+                            standardised workflows, and handover documents
+                        </li>
+
+                        <li>
+                            <strong>Creative and multimedia work:</strong>
+                            develop concepts, captions, descriptions, visual-storytelling workflows,
+                            and automation plans
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>My Prompting Workflow</h4>
+
+                    <p>
+                        For complex professional tasks, I generally use a structured, multi-step workflow.
+                    </p>
+
+                    <ul>
+                        <li>Provide the project context and explain the purpose of the task</li>
+                        <li>Supply the relevant text, code, files, results, or screenshots</li>
+                        <li>State factual constraints and information that must not be invented</li>
+                        <li>Define the audience, tone, length, and desired format</li>
+                        <li>Ask for one clearly bounded task at a time</li>
+                        <li>Review the first output against the original evidence</li>
+                        <li>Correct misunderstandings and refine individual sections</li>
+                        <li>Request a complete final version once all decisions are settled</li>
+                        <li>Test code or website changes in the appropriate environment</li>
+                        <li>Retain responsibility for the final scientific, technical, and professional output</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Code Development</h4>
+
+                    <p>
+                        When working on code, I provide the existing script, the intended behaviour,
+                        relevant inputs and outputs, and the exact error or limitation that needs to be addressed.
+                    </p>
+
+                    <ul>
+                        <li>Request full replacement code when integration accuracy is important</li>
+                        <li>Preserve existing filenames, column names, paths, and workflow conventions</li>
+                        <li>Describe expected outputs and validation checks</li>
+                        <li>Provide error messages and traceback information</li>
+                        <li>Test revised code and report the resulting behaviour</li>
+                        <li>Iteratively correct issues until the workflow completes successfully</li>
+                        <li>Compare final outputs with known counts, assumptions, or quality-control criteria</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Scientific Editing</h4>
+
+                    <p>
+                        For scientific writing, I provide the original text, the study context,
+                        the underlying results, reviewer comments, and any journal-specific constraints.
+                    </p>
+
+                    <ul>
+                        <li>Preserve scientific meaning while improving clarity</li>
+                        <li>Avoid unsupported claims and invented references</li>
+                        <li>Maintain consistency with figures, tables, and supplementary files</li>
+                        <li>Distinguish established results from interpretation or speculation</li>
+                        <li>Adapt wording to journal scope and article type</li>
+                        <li>Reduce repetition while retaining necessary methodological detail</li>
+                        <li>Check terminology and numerical consistency across sections</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Prompting for Website Development</h4>
+
+                    <p>
+                        For website work, I provide the existing HTML or CSS block and describe the
+                        visual or functional change required.
+                    </p>
+
+                    <ul>
+                        <li>Request copy-and-paste-ready replacement blocks</li>
+                        <li>Preserve existing IDs, classes, paths, and naming conventions</li>
+                        <li>Explain expected desktop and mobile behaviour</li>
+                        <li>Use screenshots to demonstrate layout problems</li>
+                        <li>Test changes across screen sizes and device orientations</li>
+                        <li>Review accessibility, navigation, responsive behaviour, and content visibility</li>
+                        <li>Confirm whether changes affect linked backend or chatbot resources</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Human Review and Quality Control</h4>
+
+                    <p>
+                        I use generative AI as an assistant rather than an autonomous decision-maker.
+                        I remain responsible for checking the accuracy, suitability, and integrity of
+                        every final output.
+                    </p>
+
+                    <ul>
+                        <li>Verify scientific statements against source data and publications</li>
+                        <li>Run and test generated code before adopting it</li>
+                        <li>Check calculations, counts, labels, and file outputs</li>
+                        <li>Review language for tone, accuracy, and unintended overstatement</li>
+                        <li>Confirm that confidential information is handled appropriately</li>
+                        <li>Reject suggestions that conflict with evidence or project requirements</li>
+                        <li>Document important decisions and maintain version-controlled files</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Privacy and Confidentiality</h4>
+
+                    <p>
+                        Prompt design also requires careful consideration of privacy and data sensitivity.
+                        I adapt the workflow according to the confidentiality of the material.
+                    </p>
+
+                    <ul>
+                        <li>Avoid sharing unnecessary personal or confidential information</li>
+                        <li>Remove or mask identifiers where appropriate</li>
+                        <li>Use public or approved source material for external tools</li>
+                        <li>Use local language-model environments for privacy-sensitive tasks where feasible</li>
+                        <li>Separate confidential source documents from public-facing outputs</li>
+                        <li>Review generated text before external distribution</li>
+                    </ul>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        Prompt engineering strengthens my ability to use generative AI productively
+                        while retaining scientific judgement, technical oversight, and responsibility
+                        for final decisions.
+                    </p>
+
+                    <ul>
+                        <li>Accelerate drafting, coding, troubleshooting, and documentation</li>
+                        <li>Structure complex multidisciplinary tasks</li>
+                        <li>Improve consistency across repeated professional workflows</li>
+                        <li>Translate between technical and non-technical communication</li>
+                        <li>Develop grounded chatbot and retrieval workflows</li>
+                        <li>Support iterative problem-solving without replacing domain expertise</li>
+                        <li>Maintain human review, evidence checking, and quality control</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • prompt engineering •
+                    generative artificial intelligence • context setting • zero-shot prompting •
+                    one-shot prompting • few-shot prompting • task decomposition • iterative refinement •
+                    retrieval-augmented generation • ChatGPT • scientific editing • Python development •
+                    data analysis • machine learning • website development • human-in-the-loop validation •
+                    privacy-aware AI workflows
+                </p>
             </div>
 
        </section>
@@ -5395,7 +7540,7 @@
         <footer class="footer_content">
             <div class="footer_text">
                 <p><strong>Designed and created by Delphine Vincent</strong></p>
-                <p><em>Version 1.11: 17 July 2026</em></p>
+                <p><em>Version 1.12: 22 July 2026</em></p>
                 <p>Data Science &amp; Machine Learning Consultant [ABN 74 267 801 710]</p>
                 <p>2024 © Copyright Delphine Vincent. All rights reserved.</p>
             </div>
