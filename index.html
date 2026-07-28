@@ -788,8 +788,8 @@
                     <a href="/#Portofolio">Portfolio</a>
                     <a href="/#Learning">Learning</a>
                     <a href="/#Certificates">Certificates-Diploma</a>
-                    <a href="resources/files/Delphine-Vincent_resume_2026-06-25.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-                    <a href="resources/files/Delphine-Vincent_publications_2026-06-25.csv" target="_blank" rel="noopener noreferrer">Publications</a>
+                    <a href="resources/files/Delphine-Vincent_resume_2026-07-28.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                    <a href="resources/files/Delphine-Vincent_publications_2026-07-28.csv" target="_blank" rel="noopener noreferrer">Publications</a>
                 </div>
             </nav>
         </div>
@@ -3567,6 +3567,117 @@
                 </div>
 
                 <div class="project-summary">
+                    <h4>Phenolic-Compound Interactions and Machine-Learning Assessment of Antioxidant Assays</h4>
+
+                    <p>
+                        This study combined food chemistry, antioxidant-assay analysis, statistical modelling,
+                        and machine learning to evaluate how mixtures of phenolic compounds behave across
+                        commonly used total antioxidant capacity methods. Rather than assuming that the
+                        response of a mixture equals the sum of its individual components, the study examined
+                        assay- and composition-dependent departures from expected additive behaviour.
+                    </p>
+
+                    <p><strong>Objective:</strong>
+                        Assess the accuracy and consistency of four antioxidant assays and develop a transparent
+                        analytical framework for identifying phenolic-compound mixtures whose measured responses
+                        deviate from model-predicted additive behaviour.
+                    </p>
+
+                    <p><strong>Experimental system:</strong>
+                        Defined phenolic standards and binary mixtures were evaluated using the
+                        <strong>ABTS, DPPH, FRAP, and Total Phenolic Content (TPC)</strong> assays.
+                        Replicate-level measurements from CB1–CB5 mixture groups were analysed while preserving
+                        the relationship between technical replicates from the same experimental condition.
+                    </p>
+
+                    <p><strong>Analytical approach:</strong>
+                        Assay-specific exploratory analysis was combined with Linear Regression, Random Forest,
+                        and tuned XGBoost regression models. Grouped cross-validation and an independent grouped
+                        test set were used to prevent information leakage between related replicates. Deviations
+                        between observed and model-predicted gallic acid equivalent values were then used to
+                        classify mixture responses operationally as additive, positively deviating, or negatively
+                        deviating.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Designed the dry-lab analytical strategy and developed the reproducible
+                            machine-learning workflow used to evaluate antioxidant-standard mixtures.
+                        </li>
+                        <li>
+                            Compared <strong>Linear Regression, Random Forest, and tuned XGBoost</strong>
+                            models using grouped validation procedures that preserved experimental independence.
+                        </li>
+                        <li>
+                            Identified tuned XGBoost as the strongest predictive model, providing the best overall
+                            balance of explained variance and prediction error.
+                        </li>
+                        <li>
+                            Developed a <strong>residual-based interaction framework</strong> to detect mixture
+                            responses that departed positively or negatively from model-predicted values.
+                        </li>
+                        <li>
+                            Demonstrated that apparent additive and non-additive behaviour depended on both
+                            <strong>mixture composition and assay chemistry</strong>.
+                        </li>
+                        <li>
+                            Showed that antioxidant-capacity measurements cannot always be interpreted as simple,
+                            directly comparable estimates of biochemical activity across assay systems.
+                        </li>
+                        <li>
+                            Applied rigorous model validation, interpretation, visualisation, and reporting to
+                            distinguish predictive evidence from mechanistic claims.
+                        </li>
+                        <li>
+                            Produced the Python analysis, statistical and machine-learning outputs,
+                            publication figures, tables, and reproducible supporting resources.
+                        </li>
+                    </ul>
+
+                    <p><strong>Scientific significance:</strong>
+                        The study provides a reproducible framework for assessing whether antioxidant-mixture
+                        measurements conform to expected response patterns. It highlights the importance of assay
+                        chemistry, mixture composition, grouped model validation, and cautious interpretation when
+                        evaluating apparent synergy or antagonism. The model-derived interaction classes represent
+                        analytical indicators for further investigation rather than direct proof of biochemical
+                        mechanisms.
+                    </p>
+
+                    <p><strong>Status:</strong> Published in <em>Scientific Reports</em> on 22 July 2026.</p>
+
+                    <p class="project-links">
+                        <a href="https://www.nature.com/articles/s41598-026-63770-y"
+                            target="_blank"
+                            rel="noreferrer">
+                            Assessing the Accuracy of Total Antioxidant Capacity Methods Using Machine Learning Approaches
+                        </a>
+
+                        <a href="https://github.com/dlf2024/Python_ML_antioxidant-assays_standards/blob/main/notebooks/ML_antioxidant-assays_standards_dlf2024.ipynb"
+                            target="_blank"
+                            rel="noreferrer">
+                            Python Code and Jupyter Notebook
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Technical highlights:</strong> phenolic compounds • antioxidant capacity •
+                        ABTS • DPPH • FRAP • Total Phenolic Content • food chemistry • experimental design •
+                        grouped cross-validation • Linear Regression • Random Forest • XGBoost •
+                        residual-based classification • additive and non-additive responses •
+                        reproducible machine learning
+                    </p>
+
+                    <p class="project-links">
+                        <img class="metabolomics-icons"
+                            alt="Machine-learning assessment of phenolic-compound mixtures across antioxidant assays, including predictive modelling and classification of additive and non-additive responses"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/portfoliosystemsantioxidantsicons.png">
+                    </p>
+                </div>                
+
+                <div class="project-summary">
                     <h4>Wheat Proteomics, Proteogenomics and Grain Biology</h4>
 
                     <p>
@@ -3673,6 +3784,15 @@
                         <strong>Technical highlights:</strong> proteomics • metabolomics • multi-omics integration •
                         developmental biology • Power BI • pathway interpretation
                     </p>
+
+                    <p class="project-links">
+                        <img class="metabolomics-icons"
+                            alt="Safflower study"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/portfoliosystemssafflowericons.png">
+                    </p>                    
                 </div>
 
                 <div class="project-summary">
@@ -4103,6 +4223,15 @@
                         <strong>Technical highlights:</strong> untargeted metabolomics • central nervous system •
                         mouse model • multivariate analysis • pathway interpretation
                     </p>
+
+                    <p class="project-links">
+                        <img class="metabolomics-icons"
+                            alt="Safflower study"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/portfoliosystemsergotamineicons.png">
+                    </p>                     
                 </div>
 
                 <div class="project-summary">
@@ -4414,6 +4543,8 @@
                         extensively supported low-confidence genes that may be candidates for future reclassification.
                     </p>
 
+                    <p><strong>Status:</strong> Article under revision in Journal or Proteome Research</p>
+
                     <p class="project-links">
                         <a href="https://doi.org/10.64898/2026.06.17.733048"
                             target="_blank"
@@ -4590,7 +4721,7 @@
                 <div class="project-summary">
                     <h4>Machine Learning Modelling of Synergy and Antagonism of Phenolic Compounds Using Antioxidant Assays</h4>
 
-                    <p><strong>Objective:</strong> Develop a machine learning framework to quantify synergistic and antagonistic interactions between phenolic compounds across multiple antioxidant assays, using observed-versus-predicted absorbance behaviour to reveal non-additive biochemical effects.</p>
+                    <p><strong>Objective:</strong> Develop a machine learning framework to identify mixture responses showing positive or negative deviations from model-predicted additive behaviour between phenolic compounds across multiple antioxidant assays, using observed-versus-predicted absorbance behaviour to reveal non-additive biochemical effects.</p>
 
                     <p><strong>Dataset:</strong> Experimental antioxidant dataset comprising individual standards and binary mixtures (CB1–CB5) tested across multiple assay systems, with absorbance measurements collected for pure compounds and combinations under controlled concentrations.</p>
 
@@ -4607,12 +4738,12 @@
 
                     <p><strong>Technical highlights:</strong> Python • XGBoost • regression modelling • residual scoring • assay comparison • feature interpretation</p>
 
-                    <p><strong>Status:</strong> Article accepted for publication in Scientific Reports</p>
+                    <p><strong>Status:</strong> Article published in Scientific Reports</p>
 
                     <p class="project-links">
-                        <a href="https://github.com/dlf2024/Python_ML_antioxidant-assays_standards/blob/main/notebooks/ML_antioxidant-assays_standards_dlf2024.pdf" target="_blank" rel="noreferrer">Final report</a>
+                        <a href="https://www.nature.com/articles/s41598-026-63770-y" target="_blank" rel="noreferrer">Publication</a>
                         <a href="https://github.com/dlf2024/Python_ML_antioxidant-assays_standards/blob/main/notebooks/ML_antioxidant-assays_standards_dlf2024.ipynb" target="_blank" rel="noreferrer">Python code and Jupyter notebook</a>
-                        <img class="codecademy-icons" alt="antioxidant assay study overview" loading="lazy" width=100% height=auto src="resources/images/logo_icons/portfolio_ML-NLP_antioxidants1.png">
+                        <img class="codecademy-icons" alt="antioxidant assay study overview" loading="lazy" width=100% height=auto src="resources/images/logo_icons/portfoliosystemsantioxidantsicons.png">
                     </p>
                 </div>
 
