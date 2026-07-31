@@ -129,6 +129,19 @@
         gtag('config', 'G-94QSJ33DHQ');
         </script>
 
+        <!-- News and insights () -->
+        <meta property="og:title"
+            content="From experiments to prediction: a machine-learning framework for discovering synergy in complex mixtures">
+
+        <meta property="og:description"
+            content="News article describing a reproducible machine-learning framework for predicting synergistic, additive and antagonistic interactions in complex mixtures.">
+
+        <meta property="og:image"
+            content="https://dlf2024.github.io/resources/images/news/phenolic-mixtures-graphical-summary.png">
+
+        <meta property="og:type"
+            content="article"> 
+
     </head>
 
     <body>
@@ -458,6 +471,7 @@
             window.addEventListener('resize', handleViewerResize);
             window.addEventListener('orientationchange', handleViewerResize);
         });
+       
     </script>    
 
     <script>
@@ -721,6 +735,111 @@
             });
         }
 
+        /* =========================================
+        DEEP LINKS TO CONTENT INSIDE TABS
+        ========================================= */
+
+        function openDeepLinkFromHash() {
+            const hash = window.location.hash;
+
+            if (!hash || hash.length < 2) {
+                return;
+            }
+
+            const targetId = decodeURIComponent(hash.substring(1));
+            const target = document.getElementById(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            /*
+            Determine whether the target is located inside one
+            of the tabbed sections.
+            */
+            const portfolioPanel = target.closest(
+                '.portofolio_tab_scrollable'
+            );
+
+            const skillsPanel = target.closest(
+                '.skills_tab_scrollable'
+            );
+
+            const biographyPanel = target.closest(
+                '.infobox_tab_scrollable'
+            );
+
+            const learningPanel = target.closest(
+                '.learning_tab_scrollable'
+            );
+
+            if (portfolioPanel) {
+                const button = findTabButton(
+                    '.portofolio_tab_button',
+                    portfolioPanel.id
+                );
+
+                showPortofolioTab(
+                    portfolioPanel.id,
+                    button
+                );
+            } else if (skillsPanel) {
+                const button = findTabButton(
+                    '.skills_tab_button',
+                    skillsPanel.id
+                );
+
+                showSkillTab(
+                    skillsPanel.id,
+                    button
+                );
+            } else if (biographyPanel) {
+                const button = findTabButton(
+                    '.infobox_tab_button',
+                    biographyPanel.id
+                );
+
+                showBioTab(
+                    biographyPanel.id,
+                    button,
+                    false
+                );
+            } else if (learningPanel) {
+                const button = findTabButton(
+                    '.learning_tab_button',
+                    learningPanel.id
+                );
+
+                showLearningTab(
+                    learningPanel.id,
+                    button
+                );
+            }
+
+            /*
+            Wait for the hidden panel to open and, on mobile,
+            move beneath its corresponding button.
+            */
+            window.setTimeout(function () {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest'
+                });
+
+                /*
+                Offset for the fixed navigation bar.
+                */
+                window.setTimeout(function () {
+                    window.scrollBy({
+                        top: -75,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            }, 250);
+        }        
+
         /*
         Restore mobile-moved panels when the viewport changes
         from mobile/tablet to desktop size.
@@ -744,7 +863,8 @@
             registerTabPanelPlaceholders();
 
             /*
-            Retain your existing default Biography choice.
+            Retain the existing default Biography choice when
+            the URL does not point to content inside another tab.
             */
             const workWithMeButton = findTabButton(
                 '.infobox_tab_button',
@@ -752,24 +872,25 @@
             );
 
             if (workWithMeButton) {
-                showBioTab('workwithme', workWithMeButton, false);
+                showBioTab(
+                    'workwithme',
+                    workWithMeButton,
+                    false
+                );
             }
+
+            /*
+            Open the relevant tab and scroll to the requested
+            subsection when the page loads with a URL fragment.
+            */
+            openDeepLinkFromHash();
         });
 
         window.addEventListener(
-            'resize',
-            restorePanelsForCurrentScreenSize
-        );
+            'hashchange',
+            openDeepLinkFromHash
+        );  
 
-        window.addEventListener(
-            'orientationchange',
-            function () {
-                window.setTimeout(
-                    restorePanelsForCurrentScreenSize,
-                    150
-                );
-            }
-        );
     </script>
 
 
@@ -786,6 +907,7 @@
                     <a href="#Biography">Biography</a>
                     <a href="/#Skills">Skills</a>
                     <a href="/#Portofolio">Portfolio</a>
+                    <a href="/#News">News</a>
                     <a href="/#Learning">Learning</a>
                     <a href="/#Certificates">Certificates-Diploma</a>
                     <a href="resources/files/Delphine-Vincent_resume_2026-07-28.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -908,6 +1030,9 @@
             </section>
         </header>
 
+        <!-- ====================================================================== -->
+        <!-- Biography                                                              -->
+        <!-- ====================================================================== -->         
 
             <section id="Biography" class="infobox_container">
                 <h2>Biography</h2>
@@ -1253,6 +1378,9 @@
 
             </section>
 
+        <!-- ====================================================================== -->
+        <!-- Skills                                                                 -->
+        <!-- ====================================================================== -->             
 
         <section id="Skills" class="skillbox_container">
             <h2>Skills</h2>
@@ -3501,6 +3629,11 @@
 
         </section>
 
+        <!-- ====================================================================== -->
+        <!-- Portfolio                                                              -->
+        <!-- ====================================================================== --> 
+
+
         <section id="Portofolio" class="container">
             <h2>Portfolio</h2>
             <!-- Portofolio Section -->
@@ -3533,8 +3666,7 @@
                 <button class="portofolio_tab_button" onclick="showPortofolioTab('webdesign', this)">
                     <h4>Website design & chatbot</h4>
                 </button>
-            </div>
-
+            </div>           
 
             <div id="systemsbiology" class="portofolio_tab_scrollable" style="display:none;">
                 <h5>Systems Biology and Post-Genomics Projects</h5><br>
@@ -3555,7 +3687,7 @@
                     interactions, dairy systems, and mammalian metabolomics.
                 </p>
 
-                <div class="project-summary">
+                <div class="project-summary" id="systems-biology">
                     <h4>Systems-Biology and Post-Genomics Approach</h4>
 
                     <p>
@@ -4359,7 +4491,7 @@
                     statistical analyses, bioinformatics, and custom Python workflows.
                 </p>
 
-                <div class="project-summary">
+                <div class="project-summary" id="wheat-proteogenomics">
                     <h4>Project Overview</h4>
 
                     <p>
@@ -4721,7 +4853,7 @@
                     This section showcases selected machine learning and natural language processing projects spanning multi-omics, metabolomics, bibliometrics, anomaly detection, recommendation systems, and scientific career analytics. Each project combines reproducible Python workflows with interpretable visual outputs and, where relevant, publication-oriented reporting.
                 </p>
 
-                <div class="project-summary">
+                <div class="project-summary" id="fnrl-mode-of-action">
                     <h4>FNRL Mode-of-Action in <em>Arabidopsis</em> Roots: an Integrated Multi-Omics, Machine Learning and Bioinformatics Study</h4>
 
                     <p><strong>Objective:</strong> Investigate the function of the root-specific <em>FNRL</em> gene in <em>Arabidopsis thaliana</em> by integrating phenotyping with transcriptomics, proteomics, metabolomics, machine learning, and bioinformatics. The study compared wild type plants, two independent loss-of-function mutants, and a GFP-complemented line to uncover molecular pathways associated with FNRL regulation.</p>
@@ -4750,7 +4882,7 @@
                     </p>
                 </div>
                 
-                <div class="project-summary">
+                <div class="project-summary" id="camel-milk-fermentation-lh-metabolomics">
                     <h4>Machine Learning Reveals Synergistic Effects of <em>Lactobacillus helveticus</em> in Camel Milk Fermentation Using Metabolomics</h4>
 
                     <p><strong>Objective:</strong> Develop a computational biomarker discovery pipeline to isolate metabolites specifically associated with <em>Lactobacillus helveticus</em> fermentation in camel milk, and determine whether co-culture with <em>L. bulgaricus</em> or <em>S. thermophilus</em> induces synergistic or antagonistic metabolic effects.</p>
@@ -4782,7 +4914,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="phenolics-mixtures">
                     <h4>Machine Learning Modelling of Synergy and Antagonism of Phenolic Compounds Using Antioxidant Assays</h4>
 
                     <p><strong>Objective:</strong> Develop a machine learning framework to identify mixture responses showing positive or negative deviations from model-predicted additive behaviour between phenolic compounds across multiple antioxidant assays, using observed-versus-predicted absorbance behaviour to reveal non-additive biochemical effects.</p>
@@ -4811,7 +4943,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="bread-wheat-genotype-classification">
                     <h4>Bread Protein Biomarker Discovery Assisted by Machine Learning</h4>
 
                     <p><strong>Objective:</strong> Identify peptide biomarkers associated with wheat genotype groups and flour-quality protein expression, using statistical learning and machine learning to support biomarker-assisted selection in bread wheat.</p>
@@ -4840,7 +4972,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="career-roadmap">
                     <h4>Career Trajectory Mapping From My Scientific Publications Using NLP, Machine Learning and Analytics</h4>
 
                     <p><strong>Objective:</strong> Develop a reproducible NLP and machine learning framework to analyse the thematic evolution of a scientific career through publication metadata, abstracts, keywords, and semantic content, with the goal of identifying major research phases, transitions, and future directions.</p>
@@ -4869,7 +5001,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="nuforc">
                     <h4>Aliens, Algorithms & Anomalies: Visualising the NUFORC UFO Sightings</h4>
 
                     <p><strong>Objective:</strong> Develop a machine learning and NLP framework to analyse large-scale UFO sighting reports, identify reporting patterns, classify anomalous events, and prioritise cases with high investigative value.</p>
@@ -4899,7 +5031,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="okcupid">
                     <h4>Decoding Love with Data: Matchmaking in a Dating App</h4>
 
                     <p><strong>Objective:</strong> Develop a machine learning and NLP framework to identify compatible matches between dating profiles by combining structured demographic features, personal preferences, and free-text self-descriptions.</p>
@@ -4929,7 +5061,7 @@
                     </p>
                 </div>
 
-                <div class="project-summary">
+                <div class="project-summary" id="publications-landscape">
                     <h4>Mapping the Landscape of Scientific Publications</h4>
 
                     <p><strong>Objective:</strong> Explore large-scale scientific publication metadata to identify bibliometric trends, publication patterns, dominant research topics, and long-term shifts in disciplinary focus.</p>
@@ -5103,7 +5235,7 @@
                     immersive visual pause.
                 </p>
 
-                <div class="project-summary">
+                <div class="project-summary" id="youtube-montages">
                     <h4>60 Seconds of Calm</h4>
 
                     <p><strong>Objective:</strong>
@@ -5337,7 +5469,7 @@
                     This section showcases website projects that I have designed, built, maintained, or substantially improved. My work ranges from hand-coded static websites and chatbot integration to WordPress/Elementor administration, content architecture, production deployment, technical troubleshooting, and ongoing client support.
                 </p>
 
-                <div class="project-summary web-project-summary"> 
+                <div class="project-summary web-project-summary" id="website-development"> 
                     <h4>Professional Website and Integrated Chatbot</h4>
 
                     <p><strong>Objective:</strong> Build and maintain a distinctive professional website that presents my scientific career, data science capabilities, portfolio, publications, training, and consulting services in a clear, interactive, and visually recognisable format.</p>
@@ -5448,8 +5580,97 @@
                 </div>
             </div>
 
-       </section>
+        </section>
 
+        <!-- ====================================================================== -->
+        <!-- News & Insights                                                        -->
+        <!-- ====================================================================== -->
+
+        <section id="News" class="container news-container">
+
+            <h2>News & Insights</h2>
+
+            <p class="news-introduction">
+                Publications, completed projects, technical insights and updates from my work
+                across artificial intelligence, data science, machine learning,
+                bioinformatics, scientific research and digital development.
+            </p>
+
+            <div class="news-card">
+
+                <div class="news-meta">
+                    <span class="news-category">Publication</span>
+                    <span class="news-date">July 2026</span>
+                </div>
+
+                <h3>
+                    From experiments to prediction:
+                    a machine-learning framework for discovering synergy
+                    in complex mixtures
+                </h3>
+
+                <img src="resources/images/news/phenolic-mixtures-graphical-summary.png"
+                    alt="Graphical summary of the machine-learning framework for predicting synergistic, additive and antagonistic interactions in complex mixtures."
+                    class="news-image">
+
+                <p>
+                    Machine learning can do more than classify samples or predict numerical
+                    outcomes. It can also help determine whether compounds in a mixture
+                    behave as expected—or interact in ways that produce synergistic or
+                    antagonistic responses.
+                </p>
+
+                <p>
+                    Our latest publication in <em>Scientific Reports</em> uses phenolic
+                    antioxidants as a model system to develop a reproducible analytical
+                    framework capable of identifying non-additive behaviour in complex
+                    mixtures.
+                </p>
+
+                <p>
+                    Although demonstrated using antioxidant assays, the computational
+                    workflow is broadly applicable wherever combinations of compounds can
+                    be experimentally measured and modelled, providing a general framework
+                    for discovering synergistic, additive and antagonistic interactions.
+                </p>
+
+                <div class="news-buttons">
+
+                    <a href="news/News_2026-07-31.pdf"
+                    class="button-small"
+                    target="_blank"
+                    rel="noopener">
+                        Read News Item →
+                    </a>
+
+                    <a href="#phenolics-mixtures"
+                    class="button-small">
+                        Related Portfolio Project →
+                    </a>
+
+                    <a href="https://www.nature.com/articles/s41598-026-63770-y"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button-small">
+                        Scientific Reports Publication →
+                    </a>
+
+                    <a href="https://github.com/dlf2024/Python_ML_antioxidant-assays_standards"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button-small">
+                        GitHub repository →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================================================== -->
+        <!-- Learning                                                               -->
+        <!-- ====================================================================== -->        
 
         <section id="Learning" class="container">
             <h2>Learning</h2>
@@ -7755,6 +7976,9 @@
 
        </section>
 
+        <!-- ====================================================================== -->
+        <!-- Certificates                                                           -->
+        <!-- ====================================================================== -->       
 
         <section id="Certificates" class="container">
             <h2>Certificates and Diploma</h2>
@@ -7768,7 +7992,10 @@
             <a href="resources/files/Delphine Vincent_SoT_LTA_diploma_2020-08-20.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Advanced Lateral Thinking</a>
             <a href="resources/files/Delphine Vincent_SoT_LTMaster_diploma_2022-11-21.pdf" target="_blank" rel="noopener noreferrer">School of Thinking - Master Lateral Thinking</a>        
         </section>
-        
+
+        <!-- ====================================================================== -->
+        <!-- Footer                                                                 -->
+        <!-- ====================================================================== -->        
 
         <footer class="footer_content">
             <div class="footer_text">
