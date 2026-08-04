@@ -1143,7 +1143,7 @@
                     <div class="project-summary">
                         <h4>3/ CodeCademy Career Path: <em>Data Scientist - Natural Language Processing</em></h4>
 
-                        <p><strong>Training focus:</strong>Extract meaning from text, create chatbots, and build neural networks using SQL and Python (<a href="https://www.codecademy.com/career-journey/data-scientist-ml" target="_blank" rel="noreferrer">syllabus</a>).</p>
+                        <p><strong>Training focus:</strong> Extract meaning from text, create chatbots, and build neural networks using SQL and Python (<a href="https://www.codecademy.com/career-journey/data-scientist-ml" target="_blank" rel="noreferrer">syllabus</a>).</p>
 
                         <p><strong>Applied outcome:</strong> I subsequently applied these skills to generate a roadmap of my career from all the scientific articles and reports I co-authored.</p>
 
@@ -6945,6 +6945,394 @@
                             src="resources/images/logo_icons/learningnlp1.png">
                     </p>
                 </div>
+
+                <div class="project-summary">
+                    <h4>Final Portfolio Project</h4>
+
+                    <p><strong>Project:</strong>
+                        Scientific Career Roadmap Derived from NLP, Machine Learning,
+                        and Publication Analytics.
+                    </p>
+
+                    <p>
+                        For my final portfolio project, I developed a reproducible analytical
+                        workflow to reconstruct my scientific career from the full text and
+                        metadata of my publications.
+                    </p>
+
+                    <p>
+                        The project combined <strong>Natural Language Processing, unsupervised
+                        machine learning, topic modelling, dimensionality reduction, publication
+                        analytics, and network science</strong> to identify the major themes,
+                        transitions, collaborations, and methodological developments that have
+                        shaped my research trajectory.
+                    </p>
+
+                    <ul>
+                        <li>Converted a scientific publication record into an analysable text corpus</li>
+                        <li>Measured changes in scientific vocabulary across career stages</li>
+                        <li>Identified latent publication groups and dominant research themes</li>
+                        <li>Mapped thematic progression across nearly three decades</li>
+                        <li>Analysed semantic relationships between publications</li>
+                        <li>Visualised the development of my scientific collaboration network</li>
+                        <li>Generated a reusable corpus for future website-chatbot retrieval</li>
+                    </ul>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Overview of the scientific career roadmap project combining publication documents, natural language processing, machine learning, analytics, interpretation, and reporting"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp2.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>1. Project Objectives and Data Sources</h4>
+
+                    <p><strong>Objective:</strong>
+                        Extract structured information from my publication record and use
+                        NLP and machine learning to create an interpretable, data-driven
+                        representation of my scientific career.
+                    </p>
+
+                    <p>
+                        The corpus comprised <strong>56 PDF documents</strong> linked to a
+                        manually curated metadata spreadsheet containing 53 descriptive fields.
+                    </p>
+
+                    <ul>
+                        <li><strong>45 peer-reviewed outputs:</strong> 39 research articles, 4 book chapters, and 2 review papers</li>
+                        <li><strong>8 additional scholarly outputs:</strong> 4 editorials, 1 conference proceeding, 2 patents, and 1 thesis</li>
+                        <li><strong>3 GitHub technical reports:</strong> slide-based analytical project reports</li>
+                        <li>Metadata included authors, authorship role, title, publication type, journal, year, career stage, research field, and thematic descriptors</li>
+                        <li>Publication files were linked programmatically to their corresponding metadata records</li>
+                    </ul>
+
+                    <p>
+                        The analysis was designed to summarise scientific contributions,
+                        reveal thematic and methodological patterns, identify career transitions,
+                        and support future website, portfolio, chatbot, and professional-visibility
+                        applications.
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Publication corpus and metadata used to construct the scientific career roadmap, including journal articles, book chapters, reviews, editorials, patents, thesis, and technical reports"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp3.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>2. NLP Computational Pipeline</h4>
+
+                    <p>
+                        I developed a hybrid text-processing pipeline to convert the publication
+                        PDFs into structured linguistic and numerical features suitable for
+                        semantic analysis and machine learning.
+                    </p>
+
+                    <ul>
+                        <li>Combined <strong>PyMuPDF and GROBID</strong> for PDF text extraction</li>
+                        <li>Removed references, URLs, citation artefacts, and publisher-specific noise</li>
+                        <li>Applied tokenisation, linguistic normalisation, and noun-lemma filtering</li>
+                        <li>Generated curated domain-keyword counts across 16 scientific vocabularies</li>
+                        <li>Created TF-IDF representations to preserve publication-specific lexical information</li>
+                        <li>Generated 384-dimensional MiniLM sentence embeddings to represent broader semantic meaning</li>
+                        <li>Exported cleaned text, noun corpora, TF-IDF matrices, embeddings, and publication-level feature tables</li>
+                    </ul>
+
+                    <p>
+                        The resulting corpus contained <strong>366,849 extracted words</strong>
+                        and <strong>16,542 sentences</strong>. Text-quality checks indicated that
+                        core scientific content, sentence structure, and lexical diversity were
+                        retained after cleaning.
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Natural language processing pipeline from publication PDF extraction and text cleaning through tokenisation, linguistic processing, TF-IDF features, sentence embeddings, and data export"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp4.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>3. NLP Results and Career-Language Evolution</h4>
+
+                    <p>
+                        The NLP analysis revealed a progressive change in scientific language
+                        across three major career stages while also demonstrating continuity
+                        between my biological and computational work.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Junior Scientist, 2003–2012:</strong>
+                            vocabulary centred on plant stress physiology, water deficit,
+                            salinity, leaves, genes, transcripts, and gel-based proteomics
+                        </li>
+                        <li>
+                            <strong>Senior Scientist, 2013–2023:</strong>
+                            increasing emphasis on dairy and grain proteomics, milk, wheat,
+                            cannabis, peptides, extraction methods, and mass spectrometry
+                        </li>
+                        <li>
+                            <strong>Data Scientist, 2024–2026:</strong>
+                            growing use of computational and integrative terms including
+                            features, models, classes, matrices, biomarkers, metabolites,
+                            genes, proteins, and peptides
+                        </li>
+                    </ul>
+
+                    <p>
+                        Curated keyword profiles showed that machine learning, statistics,
+                        NLP, and computational vocabulary increased during the Data Science
+                        phase, while genomics, proteomics, and mass-spectrometry terminology
+                        remained prominent.
+                    </p>
+
+                    <p>
+                        This indicated <strong>progressive scientific diversification rather
+                        than an abrupt disciplinary change</strong>: new computational
+                        capabilities were added to an established foundation in biological
+                        research and omics technologies.
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Natural language processing results showing changes in scientific vocabulary across junior scientist, senior scientist, and data scientist career stages"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp5.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>4. Unsupervised Machine Learning and Topic Modelling</h4>
+
+                    <p>
+                        I used dimensionality reduction, clustering, and complementary topic
+                        models to identify latent scientific structure without imposing
+                        predefined career categories.
+                    </p>
+
+                    <ul>
+                        <li>Applied <strong>PCA and UMAP</strong> to reduce high-dimensional semantic embeddings</li>
+                        <li>Used elbow and silhouette analyses to select an interpretable KMeans solution</li>
+                        <li>Identified <strong>seven coherent publication clusters</strong> representing distinct or overlapping scientific families</li>
+                        <li>Applied <strong>Non-negative Matrix Factorisation</strong> to assign thematic meaning to the publication clusters</li>
+                        <li>Identified themes including abiotic stress, biotic interactions, gel proteomics, cannabis science, dairy husbandry, milk proteomics, and wheat science</li>
+                        <li>Used <strong>BERTopic</strong> as a transformer-based semantic validation approach</li>
+                        <li>Compared BERTopic and NMF outputs to assess the robustness of the inferred thematic structure</li>
+                    </ul>
+
+                    <p>
+                        The models showed that some publication clusters were dominated by
+                        highly specialised themes, whereas others connected multiple fields
+                        and represented interdisciplinary or transitional phases.
+                    </p>
+
+                    <p>
+                        Temporal topic analysis revealed successive waves of research emphasis:
+                        early work focused strongly on abiotic stress and gel proteomics,
+                        followed by wheat, dairy, cannabis, multi-omics, and computational
+                        science.
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Unsupervised machine-learning workflow using semantic embeddings, PCA, UMAP, KMeans clustering, NMF topic modelling, and BERTopic validation to identify publication themes"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp6.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>5. Publication, Semantic and Collaboration Analytics</h4>
+
+                    <p>
+                        I developed complementary analytical views to quantify the distribution,
+                        connectivity, evolution, and collaboration architecture of my scientific
+                        portfolio.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Portfolio distribution:</strong>
+                            plant abiotic responses, plant–microbe interactions, and cannabis
+                            science represented 62.5% of the analysed portfolio
+                        </li>
+                        <li>
+                            <strong>Computational expansion:</strong>
+                            computational science represented 16.1% and dairy science 14.3%,
+                            demonstrating diversification beyond the original plant-science core
+                        </li>
+                        <li>
+                            <strong>Career Sankey diagram:</strong>
+                            connected biological systems, species, research themes, and broader
+                            scientific domains across the career trajectory
+                        </li>
+                        <li>
+                            <strong>Semantic network:</strong>
+                            linked publications using cosine similarity above 0.45 to identify
+                            thematic neighbourhoods, bridging publications, and specialised outputs
+                        </li>
+                        <li>
+                            <strong>Co-authorship network:</strong>
+                            revealed a highly connected central collaboration hub surrounded by
+                            specialised project- and domain-specific partnership clusters
+                        </li>
+                    </ul>
+
+                    <p>
+                        The semantic network demonstrated that publications from apparently
+                        different scientific areas remained connected through shared biological
+                        concepts, methods, analytical approaches, or vocabulary.
+                    </p>
+
+                    <p>
+                        The collaboration analysis showed that thematic diversification was
+                        accompanied by expansion from long-term core partnerships into a broader
+                        network of specialised research communities.
+                    </p>
+
+                    <p class="project-links">
+                        <img class="codecademy-icons"
+                            alt="Career analytics including portfolio distribution, Sankey diagram of thematic transitions, publication semantic network, and co-authorship collaboration network"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp7.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>6. Main Conclusions and Professional Applications</h4>
+
+                    <ul>
+                        <li>
+                            NLP and machine learning successfully reconstructed a coherent
+                            scientific trajectory spanning nearly three decades.
+                        </li>
+                        <li>
+                            Text statistics, embeddings, clustering, and topic modelling
+                            converged towards the same major scientific families.
+                        </li>
+                        <li>
+                            My research diversified progressively without becoming fragmented.
+                        </li>
+                        <li>
+                            New fields—including dairy science, cannabis research,
+                            computational analytics, machine learning, and NLP—were layered
+                            onto a persistent foundation in plant biology, proteomics,
+                            genomics, and molecular science.
+                        </li>
+                        <li>
+                            Collaboration-network growth paralleled thematic and methodological expansion.
+                        </li>
+                        <li>
+                            The project converted a conventional publication list into a
+                            dynamic and interpretable scientific-career resource.
+                        </li>
+                    </ul>
+
+                    <p>
+                        The cleaned corpus and publication-level features now form a reusable
+                        professional asset. They can support semantic retrieval, website-chatbot
+                        development, portfolio illustrations, grant and application writing,
+                        researcher profiling, strategic planning, and future career-roadmap updates.
+                    </p>
+
+                    <p>
+                        The workflow can be extended as new publications, technical reports,
+                        consultancy outputs, presentations, code repositories, and other
+                        professional resources are produced.
+                    </p>
+
+                    <p class="project-links">
+                        <a href="https://github.com/dlf2024/Python_NLP_ML_publication_corpus"
+                            target="_blank"
+                            rel="noreferrer">
+                            View the GitHub repository
+                        </a>
+
+                        <a href="https://github.com/dlf2024/Python_NLP_ML_publication_corpus/blob/main/notebooks/NLP-ML_Delphine-career-roadmap_dlf2024.pdf"
+                            target="_blank"
+                            rel="noreferrer">
+                            Read the report
+                        </a>
+
+                        <img class="codecademy-icons"
+                            alt="Main conclusions and future applications of the scientific career roadmap, including portfolio communication, semantic retrieval, chatbot integration, strategic planning, and continued corpus expansion"
+                            loading="lazy"
+                            width="100%"
+                            height="auto"
+                            src="resources/images/logo_icons/learningnlp8.png">
+                    </p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Project Delivery</h4>
+
+                    <p>
+                        The final portfolio project was completed in March 2026 and delivered
+                        as a reproducible Python workflow, enriched metadata resource,
+                        publication corpus, analytical report, and collection of visual outputs.
+                    </p>
+
+                    <ul>
+                        <li>Python and JupyterLab analytical workflow</li>
+                        <li>Cleaned and structured publication corpus</li>
+                        <li>Publication metadata containing 53 descriptive fields</li>
+                        <li>TF-IDF, keyword, noun-lemma, and semantic-embedding feature tables</li>
+                        <li>Unsupervised clustering and topic-modelling outputs</li>
+                        <li>Career timelines, word clouds, UMAP projections, heat maps, radar charts, and biplots</li>
+                        <li>Portfolio, semantic-similarity, Sankey, and co-authorship network visualisations</li>
+                        <li>Twenty-nine-page final analytical report</li>
+                    </ul>
+
+                    <p><strong>Status:</strong> Completed on 13 March 2026</p>
+                </div>
+
+                <div class="project-summary">
+                    <h4>Professional Relevance</h4>
+
+                    <p>
+                        This project demonstrates my ability to develop an end-to-end NLP and
+                        unsupervised machine-learning workflow for a complex collection of
+                        long scientific documents.
+                    </p>
+
+                    <ul>
+                        <li>Build a domain-specific corpus from heterogeneous PDF documents</li>
+                        <li>Combine automated text extraction with manual metadata curation</li>
+                        <li>Generate complementary lexical and contextual text representations</li>
+                        <li>Apply dimensionality reduction, clustering, and multiple topic models</li>
+                        <li>Validate inferred themes using complementary analytical approaches</li>
+                        <li>Integrate textual, temporal, thematic, and collaboration data</li>
+                        <li>Transform model outputs into an interpretable visual narrative</li>
+                        <li>Create reusable resources for retrieval, communication, and future AI applications</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Technical highlights:</strong> CodeCademy • Python • pandas •
+                    PyMuPDF • GROBID • regular expressions • spaCy • noun lemmatisation •
+                    TF-IDF • MiniLM • SentenceTransformers • semantic embeddings • PCA •
+                    UMAP • KMeans • NMF • BERTopic • cosine similarity • NetworkX •
+                    publication analytics • topic modelling • semantic networks •
+                    co-authorship analysis • JupyterLab • GitHub • scientific storytelling
+                </p>                
 
             </div>    
 

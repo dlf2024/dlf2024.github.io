@@ -783,10 +783,24 @@ button.skills_tab_button.active, button.portofolio_tab_button.active, button.lea
     margin-bottom: 0.35rem;
 }
 
-#editor a, #storytelling a, #bigdata a, #systemsbiology a, #datascience a, #lifescience a, #Biography a,
-#patents a, #youtube a, #webdesign a, #codecademycareer a, #codecademycareerML a, #codecademyskill a, #codecademyskill2 a, #codecademyprompt a {
+#editor a,
+#storytelling a,
+#bigdata a,
+#systemsbiology a,
+#datascience a,
+#lifescience a,
+#Biography a,
+#patents a,
+#youtube a,
+#webdesign a,
+#codecademycareer a,
+#codecademycareerML a,
+#codecademycareerNLP a,
+#codecademyskill a,
+#codecademyskill2 a,
+#codecademyprompt a {
     text-decoration: underline;
-    color:  #3F007E;
+    color: #3F007E;
 }
 
 #Certificates {
